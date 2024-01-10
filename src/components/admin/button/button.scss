@@ -1,7 +1,7 @@
 @import "../../../styles/vendor/mixins";
 @import "../../../styles/vendor/extends";
 
-.button {
+.admin-button {
     @extend %reset-btn;
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@
         min-width: unset;
         padding: 0.5em;
         border-radius: 50%;
-        .button__icon {
+        .admin-button__icon {
             @include box(1.5em);
             margin-block: auto;
         }

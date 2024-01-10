@@ -1,0 +1,24 @@
+/* Блок иконка-кнопка */
+.icon-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    inline-size: 1.87em;
+    block-size: 1.87em;
+
+    svg {
+        transition: 0.25s ease-in;
+    }
+
+    &:hover {
+        color: var(--accent-color);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--main-text-color);
+    }
+}

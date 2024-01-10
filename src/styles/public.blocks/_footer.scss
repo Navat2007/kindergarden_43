@@ -1,0 +1,104 @@
+.footer {
+    background-color: #fff;
+    inline-size: var(--main-inline-size);
+    padding-inline: var(--indent-small);
+    padding-block: clamp(0.625em, 4.8vw, 3em);
+    margin-inline: auto;
+
+    &__logo-link {
+        display: block;
+        text-decoration: none;
+        flex: none;
+        background: url("../../images/logo-desktop.svg") no-repeat center / contain;
+        inline-size: 300px;
+        block-size: 87px;
+        margin-block-end: clamp(0.625em, 3vw, 1.875em);
+
+        @include media(lg) {
+            inline-size: 374px;
+            block-size: 112px;
+        }
+    }
+
+    &__columns {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.875em;
+        padding-block-end: 1.25em;
+        margin-block-end: 1.25em;
+        border-block-end: 2px solid var(--grey-100-color);
+    }
+
+    &__menu {
+        @include media(md, max) {
+            display: none;
+        }
+    }
+
+    &__address {
+        flex: 0 1 25em;
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    &__link {
+        text-decoration: unset;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        transition: 0.25s ease-in;
+
+        &:hover {
+            color: var(--accent-color);
+        }
+
+        &_type_phone {
+            display: grid;
+            grid-template-columns: auto 1fr;
+
+            .footer__link-text {
+                font-size: clamp(1.5em, 3vw, 1.875em);
+                font-weight: 600;
+            }
+
+            .footer__text-small {
+                grid-column: 2/3;
+            }
+        }
+    }
+
+    &__link-icon {
+        display: inline-block;
+        inline-size: 1.5em;
+        block-size: 1.5em;
+    }
+
+    &__social-group {
+        margin-block-start: 0.875em;
+    }
+
+    // &__link-text {}
+
+    &__text-highlight {
+        font-weight: 600;
+    }
+
+    &__color-main {
+        color: var(--main-color);
+    }
+
+    &__text-small {
+        font-size: 0.875em;
+        color: var(--main-text-low-color);
+    }
+
+    &__copyright {
+        color: var(--main-text-low-color);
+
+        p {
+            margin-block: 1.25em;
+        }
+    }
+}

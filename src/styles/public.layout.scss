@@ -27,15 +27,27 @@
 
     --main-font-family: "Montserrat Alternates", sans-serif;
     --heading-font-family: "RF Krabuler", sans-serif;
+    --main-font-weight: 500;
 
     --box-shadow-small: 0 0 4px rgba(0, 0, 0, 0.15);
     --box-shadow-medium: 0 0 8px rgba(0, 0, 0, 0.15);
+
     --main-inline-size: clamp(20rem, 0rem + 100vw, 91.25rem); // 1460
     --wide-inline-size: clamp(20rem, 0rem + 100vw, 110rem); // 1760
-    --indent-block: clamp(1.875rem, 8vw, 5rem); // 30 - 80
-    --indent-inline: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
+    --indent-block-section: clamp(1.875rem, 8vw, 5rem); // 30 - 80
+    --indent-small: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
+    --indent-medium: clamp(1rem, 2.4vw, 1.5rem); // 16 - 24
 }
 
+// layout
 @import "./public.blocks/page";
+
+// ui
+@import "./public.blocks/button";
+@import "./public.blocks/icon-button";
+@import "./public.blocks/social-group";
+
+// blocks
 @import "./public.blocks/header";
+@import "./public.blocks/menu";
 @import "./public.blocks/footer";

@@ -1,0 +1,31 @@
+.menu {
+    flex: auto;
+    display: flex;
+
+    &__list {
+        @extend %reset-list;
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        padding: 0.875em;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+            color: var(--accent-color);
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--main-text-color);
+        }
+    }
+}

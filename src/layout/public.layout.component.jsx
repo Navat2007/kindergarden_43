@@ -24,7 +24,7 @@ const PublicLayout = () => {
         <PreloaderContext.Provider value={{ loading, setLoading }}>
             <Preloader loading={loading} />
             <motion.main
-                className='main-content'
+                className='page'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

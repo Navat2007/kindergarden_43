@@ -14,17 +14,17 @@ const Button = ({
 }) => {
     return (
         <button
-            className={`button${theme ? ` button_theme_${theme}` : ``}${extraClass ? ` ${extraClass}` : ``}${
-                isIconBtn ? ` button_type_only-icon` : ``
-            }${spinnerActive ? ` button_loading` : ``}`}
+            className={`admin-button${theme ? ` admin-button_theme_${theme}` : ``}${extraClass ? ` ${extraClass}` : ``}${
+                isIconBtn ? ` admin-button_type_only-icon` : ``
+            }${spinnerActive ? ` admin-button_loading` : ``}`}
             disabled={spinnerActive}
             type={type}
             {...rest}
         >
-            {iconName && <span className={`button__icon${extraClass ? ` ${extraClass}-icon` : ``}`}>{iconName}</span>}
+            {iconName && <span className={`admin-button__icon${extraClass ? ` ${extraClass}-icon` : ``}`}>{iconName}</span>}
             {children}
             {spinnerActive && (
-                <div className={"button__spinner"}>
+                <div className={"admin-button__spinner"}>
                     <div></div>
                     <div></div>
                     <div></div>

@@ -1,21 +1,23 @@
 .page {
-  &__wrap {
-    max-inline-size: var(--main-block-size);
-    padding-block: var(--section-gap);
-    margin-inline: auto;
+    font-size: 100%;
+    font-family: var(--main-font-family, sans-serif);
+    font-weight: var(--main-font-weight);
+    color: var(--main-text-color);
+    min-block-size: 100vh;
+    min-block-size: 100dvb;
 
-    &_size_wide {
-      max-inline-size: var(--wide-block-size);
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        flex: auto;
     }
-  }
 
-  &__title {
-    margin: 0;
-    color: var(--main-color);
-    font-size: clamp(2.5rem, 1.875rem + 3.125vw, 5.625rem);
-    display: block;
-    font-family: var(--heading-font-family);
-    font-weight: normal;
-    text-transform: uppercase;
-  }
+    &__header {
+        flex: none;
+    }
+
+    &__footer {
+        flex: none;
+    }
 }
