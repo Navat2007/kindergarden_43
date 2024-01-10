@@ -2,7 +2,7 @@ import axios from 'axios'
 import { userStore } from '../store/userStore'
 
 const axiosAPI = axios.create({
-  baseURL: 'https://dssosny.ru/php/models/',
+  baseURL:  process.env.REACT_APP_BASE_URL + 'php/models/',
 })
 
 const apiRequest = (method, url, request) => {
