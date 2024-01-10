@@ -1,0 +1,33 @@
+.header {
+  &__wrap {
+    padding-block: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    gap: var(--padding-gap);
+  }
+
+  &__logo {
+    flex: none;
+    min-inline-size: 275px;
+    max-inline-size: 275px;
+  }
+
+  &__menu {
+    flex: auto;
+  }
+
+  &__panel {
+    margin-inline-start: auto;
+    flex: none;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__search-button {
+    min-inline-size: unset;
+  }
+}

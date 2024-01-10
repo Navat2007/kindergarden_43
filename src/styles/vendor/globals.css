@@ -37,6 +37,11 @@ a {
     cursor: pointer;
 }
 
+button:focus,
+a:focus {
+    outline: none;
+}
+
 img,
 iframe {
     display: block;

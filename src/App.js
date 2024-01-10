@@ -12,7 +12,7 @@ import Preloader from "./components/public/preloader/preloader.component";
 import RoutesList from "./components/routes.list.component";
 import ToTopButton from "./components/general/to.top.button/to.top.button.component";
 
-import "./styles/globals.css";
+import "./styles/vendor/globals.css";
 
 const App = () => {
     const [loading, setLoading] = React.useState(true);

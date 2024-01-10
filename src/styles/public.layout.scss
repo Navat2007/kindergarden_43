@@ -1,5 +1,5 @@
-@import "../styles/mixins";
-@import "../styles/extends";
+@import "./vendor/mixins";
+@import "./vendor/extends";
 
 @import "../../node_modules/@splidejs/splide/dist/css/splide.min.css";
 @import "react-loading-skeleton/dist/skeleton.css";
@@ -36,4 +36,6 @@
     --indent-inline: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
 }
 
-@import "./blocks/article";
+@import "./public.blocks/page";
+@import "./public.blocks/header";
+@import "./public.blocks/footer";

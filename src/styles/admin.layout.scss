@@ -1,5 +1,5 @@
-@import "../styles/mixins";
-@import "../styles/extends";
+@import "./vendor/mixins";
+@import "./vendor/extends";
 
 :root {
     --admin-text-color: #323c47;
@@ -67,7 +67,7 @@
     }
 }
 
-@import "./blocks/admin-form";
-@import "./blocks/admin-view-section";
-@import "./blocks/admin-section";
-@import "./blocks/admin-menu-constructor";
+@import "./admin.blocks/admin-form";
+@import "./admin.blocks/admin-view-section";
+@import "./admin.blocks/admin-section";
+@import "./admin.blocks/admin-menu-constructor";
