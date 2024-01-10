@@ -42,7 +42,7 @@
                 top: 14%;
                 left: 107%;
                 display: block;
-                background-image: url("../../../images/feedback__arrow.svg");
+                // background-image: url("../../../images/feedback__arrow.svg");
                 background-repeat: no-repeat;
                 background-size: contain;
                 width: 6.5em;
@@ -216,3 +216,16 @@
         }
     }
 }
+
+@keyframes ripple {
+    20% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+
+    60%,
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+  }

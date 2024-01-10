@@ -72,29 +72,7 @@ $breakpoints: (
     overflow: hidden;
 }
 
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-
-    @-ms-keyframes #{$name} {
-        @content;
-    }
-
-    @keyframes #{$name} {
-        @content;
-    }
-}
-
 @mixin box($inline-size, $block-size: $inline-size) {
     inline-size: $inline-size;
     block-size: $block-size;
-}
-
-@function fs-scale($dimention) {
-    @return $dimention + math.div($dimention, 3) * 1vmax;
 }

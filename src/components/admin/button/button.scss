@@ -142,7 +142,7 @@
     }
 }
 
-@include keyframes(loader) {
+@keyframes loader  {
     0%,
     80%,
     100% {

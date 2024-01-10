@@ -69,7 +69,7 @@
   }
 }
 
-@include keyframes(spin) {
+@keyframes spin {
 
   0%,
   100% {

@@ -10,7 +10,6 @@ import SingleImageWithPreview from "../../../components/general/single.image.wit
 import BasicPage from "../../../components/public/basic.page/basic.page.component";
 
 import "./food.scss";
-import Food__image from "../../../images/food__image.jpg";
 
 const FoodPage = () => {
     const DOMPurify = createDOMPurify(window);
@@ -52,7 +51,7 @@ const FoodPage = () => {
                     <div className='food__column'>
                         <img
                             className='food__image'
-                            src={Food__image}
+                            src={""}
                             loading='lazy'
                             alt='Изображение супа со слоненком из хлеба, обед в детском садике'
                         />

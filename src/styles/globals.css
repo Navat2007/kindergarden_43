@@ -3,21 +3,17 @@
 *::after {
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    min-inline-size: 375px;
+    min-inline-size: 360px;
     margin: 0;
     font-family: var(--main-font-family, sans-serif);
     font-size: 100%;
     color: var(--main-text-color);
-    scroll-behavior: smooth;
-}
-
-#root {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-block-size: 100vh;
-    min-block-size: 100dvb;
 }
 
 menu,
@@ -38,15 +34,14 @@ a {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    cursor: pointer;
 }
 
-img {
+img,
+iframe {
     display: block;
-    width: 100%;
-}
-
-.--hide {
-    display: none;
+    inline-size: 100%;
+    max-inline-size: 100%;
 }
 
 .visually-hidden {

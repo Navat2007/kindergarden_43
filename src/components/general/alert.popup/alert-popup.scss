@@ -115,7 +115,7 @@
     }
 }
 
-@include keyframes(fadeIn) {
+@keyframes fadeIn  {
     from {
         opacity: 0;
     }
@@ -124,7 +124,7 @@
     }
 }
 
-@include keyframes(PopupShow) {
+@keyframes PopupShow  {
     0% {
         opacity: 0;
         transform: scale(0.95);
@@ -138,7 +138,7 @@
     }
 }
 
-@include keyframes(notificShow) {
+@keyframes notificShow  {
     0% {
         opacity: 0;
         transform: translate3d(0, -10%, 0) scale(0);
@@ -153,7 +153,7 @@
     }
 }
 
-@include keyframes(notificInfo) {
+@keyframes notificInfo  {
     0% {
         opacity: 0;
         transform: translate3d(0, -10%, 0) scale(1, 0);

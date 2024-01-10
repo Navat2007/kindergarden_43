@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'RF Krabuler';
+  src:
+    local('RF Krabuler'),
+    url(./RF-Krabuler-Regular.woff) format('woff'),
+    url(./RF-Krabuler-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src:
+    local('Montserrat Alternates'),
+    url(./MontserratAlternates-Regular.woff) format('woff'),
+    url(./MontserratAlternates-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src:
+    local('Montserrat Alternates'),
+    url(./MontserratAlternates-Medium.woff) format('woff'),
+    url(./MontserratAlternates-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src:
+    local('Montserrat Alternates'),
+    url(./MontserratAlternates-SemiBold.woff) format('woff'),
+    url(./MontserratAlternates-SemiBold.woff2) format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}

@@ -12,7 +12,6 @@ import BasicPage from "../../../components/public/basic.page/basic.page.componen
 import TeachersSlider from "../../../components/general/teachers.slider/teachers.slider";
 
 import "./about.scss";
-import about__image from "../../../images/about__image.jpg";
 
 const GroupsPage = () => {
     const DOMPurify = createDOMPurify(window);
@@ -50,7 +49,7 @@ const GroupsPage = () => {
                     </div>
                     <img
                         className='about__image'
-                        src={about__image}
+                        src={""}
                         loading="lazy"
                         alt='Изображение девочки с большим мыльным пузырем'
                     />
