@@ -75,7 +75,7 @@ const CustomPagesPage = lazy(() => import("../pages/admin/custom.pages/custom.pa
 const EditCustomPagesPage = lazy(() => import("../pages/admin/custom.pages/edit.custom.pages.page"));
 
 const RoutesList = () => {
-    const menu = menuStore.value.all.filter(item => item.custom_page === 1);
+    const menu = menuStore.value.all ? menuStore.value.all.filter(item => item.custom_page === 1) : [];
 
     const customRoutes = React.useMemo(() => {
         return (
