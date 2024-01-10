@@ -1,0 +1,25 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.employees {
+    @extend %main-width;
+    padding: min(3.25vmax, 1.875em) var(--padding-gor-size-sm);
+    margin-bottom: min(7.5vmax, 10em);
+
+    &__title {
+        margin: 0 0 min(4.5vmax, 2.875rem);
+        font-family: var(--font-headings);
+        font-size: var(--title-size-xl);
+        font-weight: normal;
+    }
+
+    &__list {
+        @extend %reset-list;
+        margin: 0 0 min(7.5vmax, 5.125rem);
+        display: grid;
+        gap: min(3.25vmax, 1.875em);
+        grid-template-columns: repeat(auto-fill, minmax(min(20em, 100%), 1fr));
+    }
+
+    // &__item {}
+}

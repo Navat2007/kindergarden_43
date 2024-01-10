@@ -1,0 +1,13 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.logo {
+    display: block;
+    transition: 0.5s;
+
+    img {
+        block-size: 100%;
+        inline-size: 100%;
+        object-fit: contain;
+    }
+}

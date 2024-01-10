@@ -1,0 +1,79 @@
+.admin-menu-constructor {
+    // Режим редактирования
+    &_mode_editing {
+        .admin-menu-constructor__caption-panel {
+            display: flex;
+        }
+        .admin-menu-constructor__button__edit{
+            display: none;
+        }
+    }
+
+    &__list {
+        @extend %reset-list;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75em;
+    }
+
+    &__item {
+        width: clamp(20em, 50vi, 50em);
+
+        &_opened > .admin-menu-constructor__container {
+            display: flex;
+        }
+    }
+
+    &__caption {
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+    }
+
+    &__caption-panel {
+        display: none;
+        flex-direction: column;
+    }
+
+    &__caption-info {
+        flex: auto;
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+        border: 1px solid var(--admin-grey-100-color);
+        padding-inline: 0.5em;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    &__caption-title {
+        font-size: inherit;
+        font-weight: 600;
+        margin-inline-end: auto;
+    }
+
+    &__container {
+        padding-inline-start: 3em;
+        padding-block-start: 0.75em;
+        display: none;
+        gap: 0.5em;
+    }
+
+    &__button {
+        border-radius: 5px;
+        .admin-menu-constructor__button-icon {
+            inline-size: 1.25em;
+            block-size: 1.25em;
+        }
+    }
+
+    &__sorting-button {
+        border-radius: 5px;
+        padding: 0em;
+
+        .admin-menu-constructor__sorting-button-icon {
+            inline-size: 1.25em;
+            block-size: 1.25em;
+        }
+    }
+}

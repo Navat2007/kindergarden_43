@@ -1,0 +1,207 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.field {
+    &_state_error {
+        .field__inner::after {
+            @extend %visibility-block;
+        }
+        .field__inner.field__inner_content_select::before {
+            @extend %hidden-block;
+        }
+        .field__input {
+            padding-inline-end: 2.875em;
+        }
+        .field__info-text {
+            padding-top: 10px;
+            @extend %visibility-block;
+        }
+        .field__icon-eye {
+            @extend %hidden-block;
+        }
+    }
+
+    &_content_checkbox {
+        display: grid;
+        align-items: center;
+        gap: 0 1em;
+        grid-template-columns: 1fr auto;
+
+        .field__label {
+            flex: auto;
+            cursor: pointer;
+        }
+
+        .field__inner {
+            margin-inline-start: auto;
+            padding-inline-end: 1em;
+        }
+
+        .field__info-text {
+            grid-column: 1/-1;
+            padding-inline-start: 1rem;
+        }
+    }
+
+    &__inner {
+        display: grid;
+
+        &:after {
+            content: "";
+            display: block;
+            background-color: var(--admin-error-color);
+            mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxwYXRoIGQ9Ik0xMyAxM2gtMlY3aDJtMCAxMGgtMnYtMmgyTTEyIDJhMTAgMTAgMCAxIDAgMCAyMCAxMCAxMCAwIDAgMCAwLTIwWiIvPgo8L3N2Zz4K");
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            @include box(1.5em);
+            grid-area: 1/1/2/2;
+            align-self: center;
+            justify-self: end;
+            margin-right: 0.875em;
+
+            @extend %hidden-block;
+        }
+
+        // Для селекта иконка
+        &_content_select::before {
+            content: "";
+            display: block;
+            background-color: currentColor;
+            mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxwYXRoIGQ9Im03IDEwIDUgNSA1LTVIN1oiLz4KPC9zdmc+Cg==");
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            @include box(1.5em);
+            grid-area: 1/1/2/2;
+            align-self: center;
+            justify-self: end;
+            margin-right: 0.875em;
+
+            pointer-events: none;
+        }
+
+        &_content_url-image-search {
+            .field__input {
+                padding-inline-end: 3.25em;
+            }
+        }
+    }
+
+    &__label {
+        line-height: 2;
+        padding-inline-start: 1rem;
+        font-size: 0.875em;
+        color: var(--admin-text-low-color);
+
+        &_hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+        }
+    }
+
+    &__input {
+        @extend %reset-input;
+        background-color: #fff;
+        grid-area: 1/1/2/2;
+        padding: 1em;
+        outline: 1px solid var(--admin-grey-200-color);
+        border-radius: 5px;
+
+        &:focus-visible {
+            background-color: white;
+            outline: 1px solid var(--admin-grey-300-color);
+        }
+    }
+
+    &__select {
+        @extend .field__input;
+    }
+
+    &__checkbox {
+        @extend %reset-checkbox;
+        grid-area: 1/1/2/2;
+        min-inline-size: 46px;
+        max-inline-size: 46px;
+        cursor: pointer;
+        position: relative;
+
+        &:checked::after {
+            left: calc(100% - 22px);
+        }
+
+        &:checked::before {
+            background-color: var(--admin-primary-color);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            @include box(46px, 24px);
+            border-radius: 25px;
+            background-color: var(--admin-grey-200-color);
+            box-shadow: inset 0 0 6px rgba(black, 0.15);
+            transition: background-color 0.25s ease-in;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            inset-block-start: 2px;
+            inset-inline-start: 2px;
+            display: block;
+            @include box(20px);
+            border-radius: 25px;
+            background-color: #fff;
+            box-shadow: 0 0 3px rgba(black, 0.15);
+            transition: left 0.25s ease-in;
+        }
+    }
+
+    &__info-text {
+        @extend %cut-text;
+        display: block;
+        font-size: 0.75em;
+        line-height: 1;
+        color: var(--admin-error-color);
+
+        @extend %hidden-block;
+    }
+
+    // Для пароля глазик
+    &__icon-eye {
+        display: block;
+        background-color: var(--admin-text-low-color);
+        mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxwYXRoIGQ9Ik0xMiA5YTMgMyAwIDEgMCAwIDYgMyAzIDAgMCAwIDAtNlptMCA4YTUgNSAwIDEgMSAwLTEwIDUgNSAwIDAgMSAwIDEwWm0wLTEyLjVDNyA0LjUgMi43MyA3LjYxIDEgMTJjMS43MyA0LjM5IDYgNy41IDExIDcuNXM5LjI3LTMuMTEgMTEtNy41Yy0xLjczLTQuMzktNi03LjUtMTEtNy41WiIvPgo8L3N2Zz4K");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        @include box(1.5em);
+        grid-area: 1/1/2/2;
+        align-self: center;
+        justify-self: end;
+        margin-right: 0.875em;
+        cursor: pointer;
+
+        @extend %visibility-block;
+
+        &:active {
+            transform: translateY(1px);
+        }
+
+        &_active {
+            mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxwYXRoIGQ9Ik0xMS44MyA5IDE1IDEyLjE2VjEyYTMgMyAwIDAgMC0zLTNoLS4xN1ptLTQuMy44IDEuNTUgMS41NWMtLjA1LjIxLS4wOC40Mi0uMDguNjVhMyAzIDAgMCAwIDMgM2MuMjIgMCAuNDQtLjAzLjY1LS4wOGwxLjU1IDEuNTVjLS42Ny4zMy0xLjQxLjUzLTIuMi41M2E1IDUgMCAwIDEtNS01YzAtLjc5LjItMS41My41My0yLjJaTTIgNC4yN2wyLjI4IDIuMjguNDUuNDVDMy4wOCA4LjMgMS43OCAxMCAxIDEyYzEuNzMgNC4zOSA2IDcuNSAxMSA3LjUgMS41NSAwIDMuMDMtLjMgNC4zOC0uODRsLjQzLjQyTDE5LjczIDIyIDIxIDIwLjczIDMuMjcgM00xMiA3YTUgNSAwIDAgMSA1IDVjMCAuNjQtLjEzIDEuMjYtLjM2IDEuODJsMi45MyAyLjkzYzEuNS0xLjI1IDIuNy0yLjg5IDMuNDMtNC43NS0xLjczLTQuMzktNi03LjUtMTEtNy41LTEuNCAwLTIuNzQuMjUtNCAuN2wyLjE3IDIuMTVDMTAuNzQgNy4xMyAxMS4zNSA3IDEyIDdaIi8+Cjwvc3ZnPgo=");
+        }
+    }
+
+    &__icon-image-search {
+        grid-area: 1/1/2/2;
+        justify-self: end;
+        align-self: center;
+        margin-inline-end: 0.375em;
+        border-radius: 5px;
+    }
+}

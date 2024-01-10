@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    min-inline-size: 375px;
+    margin: 0;
+    font-family: var(--main-font-family, sans-serif);
+    font-size: 100%;
+    color: var(--main-text-color);
+    scroll-behavior: smooth;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-block-size: 100vh;
+    min-block-size: 100dvb;
+}
+
+menu,
+picture {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+a {
+    color: currentColor;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.--hide {
+    display: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
