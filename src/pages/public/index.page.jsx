@@ -466,7 +466,31 @@ const IndexPage = () => {
                     </button>
                 </div>
             </header>
-            <main className='page__content'></main>
+            <main className='page__content'>
+                {/* Главный баннер со слайдером */}
+                <section class='lead wave-decor wave-decor_inset_bottom'>
+                    <div class='lead__columns section-wrap'>
+                        <div class='lead__column'>
+                            <p class='lead__subtitle'>Центр развития ребёнка</p>
+                            <h1 class='lead__title'>Детский сад № 43</h1>
+                            <div class='lead__main-text'>
+                                <p>
+                                    Мы осуществляем качественное воспитание и обучение детей благодаря подбору
+                                    квалифицированных педагогов и использованию инновационных эффективных методик.
+                                </p>
+                                <p>
+                                    Мы успешно создаём в детском саду атмосферу дома, мира удивительных открытий, мира
+                                    творчества и познания.
+                                </p>
+                            </div>
+                            <a href='#0' class='button button_theme_outline-white button_content_icon-arrow-next'>
+                                <span class='button__text'>Об учреждении</span>
+                                <span class='button__icon'>{AdminIcons.arrow_next}</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
             {/* Подвал */}
             <footer className='footer page__footer'>
                 {/* Лого-компонент */}

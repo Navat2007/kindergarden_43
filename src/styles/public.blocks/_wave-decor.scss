@@ -1,0 +1,25 @@
+.wave-decor {
+    position: relative;
+    background-color: white;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        transform: scale(1, -1);
+        inline-size: 100%;
+        block-size: clamp(1.25em, 4vw, 2.5em);
+        background-image: url("../../images/curve.svg");
+        background-repeat: repeat-x;
+        background-position: top center;
+        background-size: auto 100%;
+    }
+
+    &_inset_bottom {
+        padding-block-end: var(--indent-block-decor);
+        &::after {
+            inset: auto 0 0 0;
+            transform: unset;
+        }
+    }
+}

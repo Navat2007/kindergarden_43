@@ -1,0 +1,38 @@
+.lead {
+    padding-block: var(--indent-block-section);
+    background: var(--main-color) linear-gradient(90deg, var(--main-gradient-color)) no-repeat center / cover;
+    color: var(--grey-100-color);
+
+    &__columns {
+        display: grid;
+        gap: var(--indent-large);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    // &__column {}
+
+    &__subtitle {
+        margin: 0;
+        font-size: clamp(1.25rem, 3.6vw, 2.25rem);
+        color: var(--local-pink-color);
+    }
+
+    &__title {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(2.5rem, 9vw, 5.625rem);
+        display: block;
+        font-family: var(--heading-font-family);
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    &__main-text {
+        font-size: clamp(1em, 2vw, 1.25em);
+        margin-block-end: 2.5em;
+
+        p {
+            margin-block: 1.25rem;
+        }
+    }
+}

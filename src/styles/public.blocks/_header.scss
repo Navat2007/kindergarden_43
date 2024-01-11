@@ -39,6 +39,11 @@
     &__search-button {
         min-inline-size: unset;
         border-color: var(--grey-200-color);
+
+        &:hover {
+            border-color: currentColor;
+        }
+
         @include media(lg, max) {
             display: none;
         }

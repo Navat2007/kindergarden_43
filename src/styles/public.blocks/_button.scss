@@ -28,13 +28,13 @@
         inline-size: 1.5em;
         block-size: 1.5em;
 
-        &::before {
-            transition: transform 0.2s ease-in;
+        & svg {
+            transition: transform 0.25s ease-in;
         }
     }
 
     &:hover {
-        .button__icon::before {
+        .button__icon svg {
             transform: translateX(-5%) scale(1.1);
         }
     }
@@ -48,13 +48,14 @@
     }
 
     &_theme_outline {
-        &-accent {
-            color: var(--accent-color);
+        &-white {
+            color: #fff;
             &:hover {
-                background-color: var(--accent-color);
-                color: rgba(white, 0.9);
+                background-color: #fff;
+                color: var(--main-color);
             }
         }
+
         &-main {
             color: var(--main-color);
             &:hover {
@@ -66,43 +67,23 @@
 
     &_theme_fill {
         &-main {
+            position: relative;
+            overflow: hidden;
             color: #fff;
             background-color: var(--main-color);
             background-image: linear-gradient(90deg, var(--main-gradient-color));
 
             &:hover {
-            }
-        }
-    }
-
-    &_theme_text {
-        &-main {
-            background-color: transparent;
-            color: var(--main-color);
-            border-color: transparent;
-
-            &:hover {
-                background-color: rgba(var(--main-color-opacity), 0.25);
-            }
-        }
-        &-red {
-            background-color: transparent;
-            color: var(--local-red-color);
-            border-color: transparent;
-
-            &:hover {
-                background-color: rgba(var(--local-red-color-opacity), 0.25);
+                opacity: 0.9;
             }
         }
     }
 
     &_content {
-
-        // стрелочка далее
         &_icon-arrow-next {
-            padding-inline-end: 0;
+            padding-inline-end: 0.5em;
 
-            &:hover .button__icon::before {
+            &:hover .button__icon svg {
                 animation:
                     move-right-initial 0.2s forwards,
                     move-right-end 0.4s forwards 0.2s;
@@ -113,8 +94,9 @@
                 inline-size: 2.75em;
                 min-inline-size: 2.75em;
                 max-inline-size: 2.75em;
+                margin-inline-start: -10px;
 
-                &::before {
+                & svg {
                     inline-size: 1.5em;
                 }
             }
