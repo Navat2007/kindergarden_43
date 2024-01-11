@@ -28,10 +28,10 @@
     // &__button-text {}
 
     &__wrap {
-        @include media(lg, max) {
+        @include media(md, max) {
             display: none;
         }
-        @include media(lg) {
+        @include media(md) {
             position: absolute;
             inset: 100% 0 auto 0;
             margin-block-start: 2px;
@@ -54,7 +54,8 @@
     &__top-list-container {
         padding-inline: var(--indent-small);
         max-inline-size: var(--main-inline-size);
-        @include media(lg) {
+
+        @include media(md) {
             margin: 1.5em auto;
         }
     }
@@ -97,23 +98,23 @@
 
     &__title {
         margin-block: 0 1em;
-        font-size: 1.875em;
+        font-size: clamp(1.25em, 3vw, 1.875em);
         font-weight: 600;
 
-        @include media(lg, max) {
+        @include media(md, max) {
             display: none;
         }
     }
 
     &_opened {
         .submenu__wrap {
-            @include media(lg, max) {
+            @include media(md, max) {
                 display: block;
                 li {
                     animation: slide-in-top 0.35s ease-in-out backwards;
                 }
             }
-            @include media(lg) {
+            @include media(md) {
                 visibility: visible;
                 opacity: 1;
                 pointer-events: all;
@@ -135,17 +136,5 @@
                 }
             }
         }
-    }
-}
-
-@keyframes slide-in-left {
-    from {
-        transform: translate(-1.5em, 0);
-        opacity: 0;
-    }
-
-    to {
-        transform: translate(0, 0);
-        opacity: 1;
     }
 }

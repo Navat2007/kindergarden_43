@@ -45,7 +45,7 @@
     }
 
     &__feedback-button {
-        @include media(lg, max) {
+        @include media(xl, max) {
             display: none;
         }
     }
