@@ -557,6 +557,36 @@ const IndexPage = () => {
                                     Расписание
                                 </a>
                             </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    Главная
+                                </a>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    О нас
+                                </a>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    Сведения об образовательной организации
+                                </a>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    Программы
+                                </a>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    Режим
+                                </a>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    Расписание
+                                </a>
+                            </li>
                         </ul>
                     </menu>
                 </div>

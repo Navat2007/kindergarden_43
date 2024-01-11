@@ -7,14 +7,9 @@
 
     &__logo-link {
         flex: none;
-        inline-size: 300px;
-        block-size: 87px;
+        inline-size: clamp(300px, 37.4vw, 374px);
+        block-size: clamp(87px, 11.2vw, 112px);
         margin-block-end: clamp(0.625em, 3vw, 1.875em);
-
-        @include media(lg) {
-            inline-size: 374px;
-            block-size: 112px;
-        }
     }
 
     &__columns {
@@ -33,7 +28,7 @@
     }
 
     &__address {
-        flex: 0 1 25em;
+        flex: 1 0 min(40vw, 25em);
         font-style: normal;
         display: flex;
         flex-direction: column;
@@ -96,7 +91,8 @@
         color: var(--main-text-low-color);
 
         p {
-            margin-block: 1.25em;
+            margin-block: 1.25rem;
+            font-size: clamp(0.875em, 1.6vw, 1em);
         }
     }
 }
