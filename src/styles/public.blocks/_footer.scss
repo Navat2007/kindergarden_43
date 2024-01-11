@@ -6,10 +6,7 @@
     margin-inline: auto;
 
     &__logo-link {
-        display: block;
-        text-decoration: none;
         flex: none;
-        background: url("../../images/logo-desktop.svg") no-repeat center / contain;
         inline-size: 300px;
         block-size: 87px;
         margin-block-end: clamp(0.625em, 3vw, 1.875em);
@@ -55,6 +52,7 @@
         }
 
         &_type_phone {
+            white-space: nowrap;
             display: grid;
             grid-template-columns: auto 1fr;
 

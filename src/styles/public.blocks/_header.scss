@@ -1,6 +1,7 @@
 .header {
     background-color: white;
     box-shadow: var(--box-shadow-small);
+    position: relative;
 
     &__wrap {
         max-inline-size: 120em;
@@ -13,17 +14,12 @@
     }
 
     &__logo-link {
-        display: block;
-        text-decoration: none;
         flex: none;
-        background: url("../../images/logo.svg") no-repeat center / contain;
-        inline-size: 55px;
-        block-size: 44px;
 
-        @include media(lg) {
-            inline-size: 280px;
-            block-size: 70px;
-            background-image: url("../../images/logo-desktop.svg");
+        @include media(lg, max) {
+            inline-size: 55px;
+            block-size: 44px;
+            background-image: url("../../images/logo.svg");
         }
     }
 
@@ -55,6 +51,9 @@
     }
 
     &__mobile-button {
+        &_actived {
+            color: var(--accent-color);
+        }
         @include media(lg) {
             display: none;
         }
