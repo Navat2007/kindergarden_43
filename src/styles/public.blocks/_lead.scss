@@ -13,23 +13,22 @@
 
     &__subtitle {
         margin: 0;
-        font-size: clamp(1.25rem, 3.6vw, 2.25rem);
+        font-size: clamp(1.25rem, 0.9597rem + 1.2903vw, 2.25rem);
         color: var(--local-pink-color);
     }
 
     &__title {
         margin: 0;
         color: #fff;
-        font-size: clamp(2.5rem, 9vw, 5.625rem);
+        font-size: clamp(2.5rem, 1.5927rem + 4.0323vw, 5.625rem);
         display: block;
         font-family: var(--heading-font-family);
         font-weight: normal;
-        text-transform: uppercase;
     }
 
     &__main-text {
-        font-size: clamp(1em, 2vw, 1.25em);
-        margin-block-end: 2.5em;
+        font-size: clamp(1em, 1.8vw, 1.125em);
+        margin-block-end: clamp(2em, 6.4vw, 4em);
 
         p {
             margin-block: 1.25rem;

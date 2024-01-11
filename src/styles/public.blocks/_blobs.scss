@@ -1,0 +1,40 @@
+.blobs {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &__item {
+        position: absolute;
+        z-index: -1;
+        inline-size: 640px;
+        aspect-ratio: 60/80;
+        mask: url("../../images/blobs__item-1.svg") no-repeat center / contain;
+
+        &_type_secondary {
+            aspect-ratio: 75/73;
+            mask: url("../../images/blobs__item-2.svg") no-repeat center / contain;
+        }
+
+        &_theme {
+            &_secondary {
+                background-image: linear-gradient(90deg, var(--secondary-gradient-color));
+            }
+
+            &_accent {
+                background-image: linear-gradient(90deg, var(--accent-gradient-color));
+            }
+        }
+
+        &_place {
+            &_lead-top-left {
+                inset: -29% auto auto -11%;
+                rotate: -29deg;
+            }
+
+            &_lead-bottom-right {
+                inset: auto -4% -33% auto;
+                rotate: 10deg;
+            }
+        }
+    }
+}

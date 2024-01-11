@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import useNewsStore from "../../store/public/newsStore";
 
@@ -44,6 +45,11 @@ const IndexPage = () => {
                             <li>
                                 <a className='menu__link' href='./'>
                                     Главная
+                                </a>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    О нас
                                 </a>
                             </li>
                             <li
@@ -196,6 +202,16 @@ const IndexPage = () => {
                                         </ul>
                                     </div>
                                 </div>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    Программы
+                                </a>
+                            </li>
+                            <li>
+                                <a className='menu__link' href='./'>
+                                    Режим
+                                </a>
                             </li>
                             <li
                                 className={classNames({
@@ -448,7 +464,7 @@ const IndexPage = () => {
                         {/* Кнопка для вызова панели с поиском */}
                         <button className='button button_theme_outline-main header__search-button' type='button'>
                             <span className='button__icon'>{AdminIcons.search}</span>
-                            <span className='button__text'>Найти</span>
+                            <span className='button__text'>Найти...</span>
                         </button>
                     </div>
                     <button
@@ -468,7 +484,15 @@ const IndexPage = () => {
             </header>
             <main className='page__content'>
                 {/* Главный баннер со слайдером */}
-                <section class='lead wave-decor wave-decor_inset_bottom'>
+                <section class='lead wave-decor wave-decor_inset_bottom blobs'>
+                    <div
+                        className='blobs__item blobs__item_theme_secondary blobs__item_place_lead-top-left'
+                        aria-hidden='true'
+                    ></div>
+                    <div
+                        className='blobs__item blobs__item_type_secondary blobs__item_theme_accent blobs__item_place_lead-bottom-right'
+                        aria-hidden='true'
+                    ></div>
                     <div class='lead__columns section-wrap'>
                         <div class='lead__column'>
                             <p class='lead__subtitle'>Центр развития ребёнка</p>
@@ -488,6 +512,31 @@ const IndexPage = () => {
                                 <span class='button__icon'>{AdminIcons.arrow_next}</span>
                             </a>
                         </div>
+                        <Splide
+                            aria-label='Фотографии детского садика'
+                            options={{
+                                type: "fade",
+                                rewind: true,
+                                autoplay: true,
+                                cover: true,
+                                heightRatio: 0.608,
+                                pagination: false,
+                                arrows: false,
+                            }}
+                        >
+                            <SplideSlide className='corner-rounded corner-rounded_size_lg'>
+                                <img
+                                    src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                    alt='Image 1'
+                                />
+                            </SplideSlide>
+                            <SplideSlide className='corner-rounded corner-rounded_size_lg'>
+                                <img
+                                    src='https://img.goodfon.ru/original/1600x900/7/f4/novyi-god-bokaly-shampanskoe-ukrashenie-lenta-dekor.jpg'
+                                    alt='Image 2'
+                                />
+                            </SplideSlide>
+                        </Splide>
                     </div>
                 </section>
             </main>
