@@ -28,8 +28,6 @@
     // &__button-text {}
 
     &__wrap {
-        padding-inline: var(--indent-small);
-
         @include media(md, max) {
             display: none;
         }
@@ -54,8 +52,8 @@
     }
 
     &__top-list-container {
-        // padding-inline: var(--indent-small);
-        max-inline-size: var(--main-inline-size);
+        inline-size: var(--large-inline-size);
+        padding-inline: var(--large-inline-section-indent);
 
         @include media(md) {
             margin: 1.5em auto;

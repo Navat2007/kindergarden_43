@@ -1,10 +1,17 @@
 .section {
-    padding: var(--indent-block-section) var(--indent-small);
-    margin-inline: auto;
-
     &__wrap {
         margin-inline: auto;
-        inline-size: var(--main-inline-size);
+        inline-size: var(--large-inline-size);
+        padding: var(--indent-block-section) var(--large-inline-section-indent);
+
+        &_size_medium {
+            inline-size: var(--medium-inline-size);
+            padding-inline: var(--medium-inline-section-indent);
+        }
+
+        &_bg_main-light {
+            background-color: var(--main-light-color);
+        }
     }
 
     &__title {
@@ -37,11 +44,7 @@
         grid-template-columns: repeat(auto-fill, minmax(min(22em, 100%), 1fr));
     }
 
-    &_bg_main-light {
-        background-color: var(--main-light-color);
-    }
-
-    &_size_wide {
-        inline-size: var(--wide-inline-size);
+    &_indent-small {
+        padding-inline: var(--indent-small);
     }
 }

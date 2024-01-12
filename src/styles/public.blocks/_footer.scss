@@ -1,5 +1,7 @@
 .footer {
-    padding-block: clamp(0.625em, 4.8vw, 3em);
+    &__wrap {
+        padding-block: clamp(0.625em, 4.8vw, 3em);
+    }
 
     &__logo-link {
         flex: none;

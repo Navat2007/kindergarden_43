@@ -31,8 +31,8 @@ const IndexPage = () => {
                 <title>Детский сад № 43 УДПРФ</title>
             </Helmet>
             {/* Шапка */}
-            <header className='header page__header'>
-                <div className='header__wrap'>
+            <header className='header page__header section'>
+                <div className='header__wrap section__wrap'>
                     {/* Лого-компонент */}
                     <a className='header__logo-link logo-link' href='./' aria-label='Логотип' />
                     <menu
@@ -640,8 +640,8 @@ const IndexPage = () => {
                     </div>
                 </section>
                 {/* Об учреждении */}
-                <section className='section section_size_wide section_bg_main-light corner-rounded corner-rounded_size_lg about'>
-                    <div className='section__wrap'>
+                <section className='section section_indent-small about'>
+                    <div className='section__wrap section__wrap_size_medium section__wrap_bg_main-light corner-rounded corner-rounded_size_lg'>
                         <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
                             <img
@@ -687,7 +687,7 @@ const IndexPage = () => {
             </main>
             {/* Подвал */}
             <footer className='footer page__footer section'>
-                <div className='section__wrap'>
+                <div className='section__wrap footer__wrap'>
                     {/* Лого-компонент */}
                     <a className='footer__logo-link logo-link' href='./' aria-label='Логотип' />
                     <div className='footer__columns'>

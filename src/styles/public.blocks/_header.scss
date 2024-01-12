@@ -5,8 +5,6 @@
     z-index: 10;
 
     &__wrap {
-        max-inline-size: 120em;
-        margin-inline: auto;
         padding: clamp(0.625rem, 2.4vw, 1.5rem) clamp(0.625rem, 4.8vw, 3rem);
 
         display: flex;

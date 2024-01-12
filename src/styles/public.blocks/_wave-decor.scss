@@ -11,7 +11,7 @@
     }
 
     &_inset_bottom {
-        padding-block-end: var(--indent-block-decor);
+        padding-block-end: var(--indent-wave-decor);
         &::before {
             inset: auto 0 0 0;
         }
