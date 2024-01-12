@@ -17,6 +17,6 @@
         @extend %reset-list;
         display: grid;
         gap: var(--indent-medium);
-        grid-template-columns: repeat(auto-fill, minmax(min(21em, 100%), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(22em, 100%), 1fr));
     }
 }
