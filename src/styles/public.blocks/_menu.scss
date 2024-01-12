@@ -8,6 +8,7 @@
         min-block-size: 100vh;
         min-block-size: 100dvb;
         background-color: white;
+        border-block-start: 2px solid var(--grey-100-color);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
         visibility: hidden;
@@ -45,9 +46,9 @@
         @extend %reset-list;
 
         display: flex;
-        max-inline-size: 20em;
-        overflow: hidden;
-        // flex-wrap: wrap;
+        // max-inline-size: 20em;
+        // overflow: hidden;
+        flex-wrap: wrap;
 
         & li {
             flex: none;

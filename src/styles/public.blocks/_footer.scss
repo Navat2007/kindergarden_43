@@ -1,9 +1,5 @@
 .footer {
-    background-color: #fff;
-    inline-size: var(--main-inline-size);
-    padding-inline: var(--indent-small);
     padding-block: clamp(0.625em, 4.8vw, 3em);
-    margin-inline: auto;
 
     &__logo-link {
         flex: none;

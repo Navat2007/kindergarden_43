@@ -32,10 +32,10 @@
     --box-shadow-small: 0 0 4px rgba(0, 0, 0, 0.15);
     --box-shadow-medium: 0 0 8px rgba(0, 0, 0, 0.15);
 
-    --main-inline-size: min(91.25rem, 100%); // 1460
-    --wide-inline-size: min(110rem, 100%); // 1760
+    --main-inline-size: min(88.75rem, 100%); // 1420
+    --wide-inline-size: min(107.5rem, 100%); // 1720
     --indent-block-section: clamp(1.875rem, 8vw, 5rem); // 30 - 80
-    --indent-block-decor: clamp(2.5rem, 9vw, 5.625rem); // 40 - 90
+    --indent-block-decor: clamp(3.125rem, 2.25rem + 4.375vw, 7.5rem); // 50 - 120
     --indent-small: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
     --indent-medium: clamp(1rem, 2.4vw, 1.5rem); // 16 - 24
     --indent-large: clamp(1.5rem, 4.8vw, 3rem); // 24 - 48
@@ -64,6 +64,7 @@
 // sections
 @import "./public.blocks/lead";
 @import "./public.blocks/advantages";
+@import "./public.blocks/about";
 
 // decor
 @import "./public.blocks/wave-decor";

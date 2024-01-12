@@ -639,136 +639,183 @@ const IndexPage = () => {
                         </ul>
                     </div>
                 </section>
+                {/* Об учреждении */}
+                <section className='section section_size_wide section_bg_main-light corner-rounded corner-rounded_size_lg about'>
+                    <div className='section__wrap'>
+                        <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
+                        <div className='about__two-columns'>
+                            <img
+                                className='about__image'
+                                src='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
+                                alt='Описание фотографии'
+                                loading='lazy'
+                            />
+                            <div className='about__content'>
+                                <div className='about__main-info'>
+                                    <h3 className='about__title'>
+                                        <span className='about__title-accent'>Булаева</span>
+                                        Татьяна Александровна
+                                    </h3>
+                                    <p>Занимаемая должность: Заведующая</p>
+                                    <p>Стаж работы по специальности: 24 года</p>
+                                </div>
+                                <div className='about__main-text'>
+                                    <p>
+                                        ФГБДОУ "Центр развития ребенка - детский сад № 43" Управления делами Президента
+                                        Российской Федерации расположен в экологически чистом Западном районе г. Москвы.
+                                    </p>
+                                    <p>
+                                        В детском саду № 43 реализуется уникальная образовательная программа, проводится
+                                        качественная подготовка детей к школе, после которой дети с легкостью поступают
+                                        в престижные школы. С детьми работают опытные и квалифицированные педагоги
+                                        (воспитатели, учителя-логопеды, инструктор по физической культуре, тренер по
+                                        плаванию, музыкальные руководители, педагог-психолог и педагоги дополнительного
+                                        образования).
+                                    </p>
+                                </div>
+                                <a
+                                    href='#0'
+                                    className='button button_theme_outline-main button_content_icon-arrow-next'
+                                >
+                                    <span className='button__text'>На страницу учреждения</span>
+                                    <span className='button__icon'>{Icons.arrow_next}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             {/* Подвал */}
-            <footer className='footer page__footer'>
-                {/* Лого-компонент */}
-                <a className='footer__logo-link logo-link' href='./' aria-label='Логотип' />
-                <div className='footer__columns'>
-                    <address className='footer__address'>
-                        <a
-                            className='footer__link footer__link_type_phone'
-                            href='tel:84991493724'
-                            rel='noreferrer noopener nofollow'
-                        >
-                            <span className='footer__link-icon'>{Icons.phone}</span>
-                            <span className='footer__link-text'>+7 499 149-37-24</span>
-                            <span className='footer__text-small'>Пн-пт с 7:00 до 19:00</span>
-                        </a>
-                        <a
-                            className='footer__link footer__color-main'
-                            href='#0'
-                            target='_blank'
-                            rel='noreferrer noopener nofollow'
-                        >
-                            <span className='footer__link-text'>г. Москва, ул. Академика Павлова, д. 14, к. 2</span>
-                        </a>
-                        <a
-                            className='footer__link'
-                            href='mailto:fgdou43@bk.ru'
-                            target='_blank'
-                            rel='noreferrer noopener nofollow'
-                        >
-                            <span className='footer__link-icon'>{Icons.email}</span>
-                            <span className='footer__link-text footer__text-highlight'>fgdou43@bk.ru</span>
-                        </a>
-                        {/* Панель соцссылок */}
-                        <ul className='footer__social-group social-group'>
-                            <li>
-                                <a
-                                    className='social-group__link-icon'
-                                    target='_blank'
-                                    href='https://vk.com/public219786348'
-                                    rel='noreferrer noopener nofollow'
-                                    aria-label='Вконтакте'
-                                >
-                                    {SocialIcons.vk_without_color}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='social-group__link-icon'
-                                    target='_blank'
-                                    href='http://t.me/Fgdou43'
-                                    rel='noreferrer noopener nofollow'
-                                    aria-label='Телеграм'
-                                >
-                                    {SocialIcons.t_without_color}
-                                </a>
-                            </li>
-                        </ul>
-                    </address>
-                    <menu className='footer__menu menu'>
-                        <ul className='menu__list'>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Главная
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    О нас
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Сведения об образовательной организации
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Программы
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Режим
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Расписание
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Главная
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    О нас
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Сведения об образовательной организации
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Программы
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Режим
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Расписание
-                                </a>
-                            </li>
-                        </ul>
-                    </menu>
-                </div>
-                <div className='footer__copyright'>
-                    <p>
-                        Федеральное государственное бюджетное дошкольное образовательное учреждение «Центр развития
-                        ребёнка — детский сад № 43» Управления делами Президента Российской Федерации
-                    </p>
-                    <p>1958–2023 ©Все права защищены</p>
+            <footer className='footer page__footer section'>
+                <div className='section__wrap'>
+                    {/* Лого-компонент */}
+                    <a className='footer__logo-link logo-link' href='./' aria-label='Логотип' />
+                    <div className='footer__columns'>
+                        <address className='footer__address'>
+                            <a
+                                className='footer__link footer__link_type_phone'
+                                href='tel:84991493724'
+                                rel='noreferrer noopener nofollow'
+                            >
+                                <span className='footer__link-icon'>{Icons.phone}</span>
+                                <span className='footer__link-text'>+7 499 149-37-24</span>
+                                <span className='footer__text-small'>Пн-пт с 7:00 до 19:00</span>
+                            </a>
+                            <a
+                                className='footer__link footer__color-main'
+                                href='#0'
+                                target='_blank'
+                                rel='noreferrer noopener nofollow'
+                            >
+                                <span className='footer__link-text'>г. Москва, ул. Академика Павлова, д. 14, к. 2</span>
+                            </a>
+                            <a
+                                className='footer__link'
+                                href='mailto:fgdou43@bk.ru'
+                                target='_blank'
+                                rel='noreferrer noopener nofollow'
+                            >
+                                <span className='footer__link-icon'>{Icons.email}</span>
+                                <span className='footer__link-text footer__text-highlight'>fgdou43@bk.ru</span>
+                            </a>
+                            {/* Панель соцссылок */}
+                            <ul className='footer__social-group social-group'>
+                                <li>
+                                    <a
+                                        className='social-group__link-icon'
+                                        target='_blank'
+                                        href='https://vk.com/public219786348'
+                                        rel='noreferrer noopener nofollow'
+                                        aria-label='Вконтакте'
+                                    >
+                                        {SocialIcons.vk_without_color}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        className='social-group__link-icon'
+                                        target='_blank'
+                                        href='http://t.me/Fgdou43'
+                                        rel='noreferrer noopener nofollow'
+                                        aria-label='Телеграм'
+                                    >
+                                        {SocialIcons.t_without_color}
+                                    </a>
+                                </li>
+                            </ul>
+                        </address>
+                        <menu className='footer__menu menu'>
+                            <ul className='menu__list'>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Главная
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        О нас
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Сведения об образовательной организации
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Программы
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Режим
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Расписание
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Главная
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        О нас
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Сведения об образовательной организации
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Программы
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Режим
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='menu__link' href='./'>
+                                        Расписание
+                                    </a>
+                                </li>
+                            </ul>
+                        </menu>
+                    </div>
+                    <div className='footer__copyright'>
+                        <p>
+                            Федеральное государственное бюджетное дошкольное образовательное учреждение «Центр развития
+                            ребёнка — детский сад № 43» Управления делами Президента Российской Федерации
+                        </p>
+                        <p>1958–2023 ©Все права защищены</p>
+                    </div>
                 </div>
             </footer>
         </BasicPage>

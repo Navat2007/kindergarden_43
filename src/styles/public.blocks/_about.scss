@@ -1,0 +1,47 @@
+.about {
+    &__two-columns {
+        display: grid;
+        gap: var(--indent-large);
+        grid-template-columns: 0.4fr 0.972fr;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--indent-medium);
+    }
+
+    &__image {
+        @extend .corner-rounded;
+        aspect-ratio: 4/5.32;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__main-info {
+        font-size: min(2vw, 1.25em);
+        p {
+            margin-block: 0.75rem;
+        }
+    }
+
+    &__title {
+        margin-block: 0 1.5rem;
+        font-size: clamp(1rem, 3vw, 1.875rem);
+    }
+
+    &__title-accent {
+        display: block;
+        margin-block-end: 0.75rem;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    &__main-text {
+        font-size: min(2vw, 1.25em);
+        line-height: 1.4;
+        p {
+            margin-block: 0;
+        }
+    }
+}
