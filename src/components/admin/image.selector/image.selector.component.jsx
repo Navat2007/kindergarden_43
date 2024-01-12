@@ -6,7 +6,7 @@ import FieldInput from "../field/field.text.component";
 import AlertPopup from "../../general/alert.popup/alert.popup";
 import Popup from "../../general/popup/popup.component";
 import "./image.selector.scss";
-import {AdminIcons, FileIcons} from "../../svgs.js";
+import {Icons, FileIcons} from "../../svgs.js";
 import FieldTextarea from "../field/field.textarea.component";
 
 const ImageSelector = ({
@@ -175,7 +175,7 @@ const ImageSelector = ({
                 <Popup opened={true} onClose={() => setNotif(<></>)} title={"Ошибка загрузки файлов"}>
                     <div className='admin-image-alert'>
                         <h3 className={`admin-image-alert__caption`}>
-                            {AdminIcons.error} Не удалось добавить следующие файлы:
+                            {Icons.error} Не удалось добавить следующие файлы:
                         </h3>
                         <ol className={`admin-image-alert__list`}>
                             {errorFiles.map((error) => (
@@ -317,7 +317,7 @@ const ImageSelector = ({
                                     type='button'
                                     isIconBtn='true'
                                     theme='white'
-                                    iconName={AdminIcons.close}
+                                    iconName={Icons.close}
                                     aria-label='Удалить'
                                     disabled={photoAddBtnDisabled}
                                     onClick={() => handleDeletePhoto(item)}
@@ -362,7 +362,7 @@ const ImageSelector = ({
                                     type='button'
                                     isIconBtn='true'
                                     theme='white'
-                                    iconName={AdminIcons.close}
+                                    iconName={Icons.close}
                                     aria-label='Удалить'
                                     disabled={photoAddBtnDisabled}
                                     onClick={() => handleDeletePhoto(item)}
@@ -373,7 +373,7 @@ const ImageSelector = ({
                                     type='button'
                                     isIconBtn='true'
                                     theme='white'
-                                    iconName={AdminIcons.chevron_left}
+                                    iconName={Icons.chevron_left}
                                     aria-label='Назад'
                                     disabled={photoAddBtnDisabled}
                                     onClick={() => handleMovePhoto(item.order, item.order - 1)}
@@ -383,7 +383,7 @@ const ImageSelector = ({
                                         type='button'
                                         theme='white'
                                         isIconBtn='true'
-                                        iconName={AdminIcons.chevron_right}
+                                        iconName={Icons.chevron_right}
                                         aria-label='Вперед'
                                         disabled={photoAddBtnDisabled}
                                         onClick={() => handleMovePhoto(item.order, item.order + 1)}
@@ -460,7 +460,7 @@ const ImageSelector = ({
                     <Button
                         type='button'
                         theme='text'
-                        iconName={AdminIcons.plus}
+                        iconName={Icons.plus}
                         isIconBtn='true'
                         aria-label='Добавить поле'
                         disabled={photoAddBtnDisabled}

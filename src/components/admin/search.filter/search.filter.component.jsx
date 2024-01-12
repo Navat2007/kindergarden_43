@@ -11,7 +11,7 @@ import FieldNumber from "../field/field.number.component";
 import FieldDate from "../field/field.date.component";
 
 import "./search.filter.scss";
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 import FieldSelect from "../field/field.select.component";
 
 const SearchFilter = ({ config, onSubmit, items, children, front }) => {
@@ -164,7 +164,7 @@ const SearchFilter = ({ config, onSubmit, items, children, front }) => {
                 />
                 <Button
                     type='button'
-                    iconName={AdminIcons.filter}
+                    iconName={Icons.filter}
                     aria-label={opened ? "Скрыть" : "Фильтр"}
                     onClick={() => setOpened(!opened)}
                 >

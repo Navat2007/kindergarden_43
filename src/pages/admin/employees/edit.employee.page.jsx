@@ -17,7 +17,7 @@ import FieldText from "../../../components/admin/field/field.text.component";
 import FieldUrl from "../../../components/admin/field/field.url.component";
 import FieldSelect from "../../../components/admin/field/field.select.component";
 
-import {AdminIcons} from "../../../components/svgs";
+import {Icons} from "../../../components/svgs";
 
 const EditEmployeePage = () => {
     let {id} = useParams();
@@ -502,7 +502,7 @@ const EditEmployeePage = () => {
                     </Button>
                     <Button
                         type='button'
-                        iconName={AdminIcons.delete}
+                        iconName={Icons.delete}
                         theme='text-error'
                         onClick={onDelete}
                         spinnerActive={store.sending}

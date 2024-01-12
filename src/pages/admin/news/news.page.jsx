@@ -12,7 +12,7 @@ import Tab from "../../../components/general/tabs/tab.component";
 import ImageGallery from "../../../components/general/image.gallery/image.gallery.component";
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminNewsPage = (props) => {
     let { id } = useParams();
@@ -37,7 +37,7 @@ const AdminNewsPage = (props) => {
                     type='submit'
                     isIconBtn='true'
                     theme='text'
-                    iconName={AdminIcons.edit}
+                    iconName={Icons.edit}
                     aria-label='Редактировать новость'
                     onClick={() => navigate(`/admin/news/edit/${id}`)}
                 />
@@ -69,7 +69,7 @@ const AdminNewsPage = (props) => {
                                         target={"_blank"}
                                         rel='noopener nofollow noreferrer'
                                     >
-                                        На страницу {AdminIcons.open_in_new}
+                                        На страницу {Icons.open_in_new}
                                     </NavLink>
                                 </p>
                             </li>

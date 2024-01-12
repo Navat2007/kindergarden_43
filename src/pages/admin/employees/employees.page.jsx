@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 import useTeachersStore from "../../../store/admin/employeesStore";
 import useTeachersCategoriesStore from "../../../store/admin/employeeCategoriesStore";
-import {userStore} from "../../../store/userStore";
+import { userStore } from "../../../store/userStore";
 
 import Table from "../../../components/admin/table/table.component";
 import Button from "../../../components/admin/button/button.component";
 import Tab from "../../../components/general/tabs/tab.component";
 import Tabs from "../../../components/general/tabs/tabs.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminEmployeesPage = () => {
     const navigate = useNavigate();
@@ -75,7 +75,7 @@ const AdminEmployeesPage = () => {
             >
                 <Button
                     type='button'
-                    iconName={AdminIcons.plus}
+                    iconName={Icons.plus}
                     aria-label='Добавить педагога'
                     onClick={() => navigate(`/${url}/new`)}
                 >
@@ -136,7 +136,7 @@ const AdminEmployeesPage = () => {
             >
                 <Button
                     type='button'
-                    iconName={AdminIcons.plus}
+                    iconName={Icons.plus}
                     aria-label='Добавить подразделение'
                     onClick={() => navigate(`/${url}/new`)}
                 >

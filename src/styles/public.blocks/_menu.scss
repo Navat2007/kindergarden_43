@@ -7,7 +7,6 @@
         inset: 100% 0 auto 0;
         min-block-size: 100vh;
         min-block-size: 100dvb;
-        margin-block-start: 2px;
         background-color: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
@@ -46,7 +45,13 @@
         @extend %reset-list;
 
         display: flex;
-        flex-wrap: wrap;
+        max-inline-size: 20em;
+        overflow: hidden;
+        // flex-wrap: wrap;
+
+        & li {
+            flex: none;
+        }
 
         @include media(md, max) {
             flex-direction: column;

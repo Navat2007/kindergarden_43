@@ -8,7 +8,7 @@ import AlertPopup from "../../../components/general/alert.popup/alert.popup";
 import Popup from "../../../components/general/popup/popup.component";
 import FieldInput from "../../../components/general/field/field.input.component";
 
-import { AdminIcons } from "../../../components/svgs.js";
+import { Icons } from "../../../components/svgs.js";
 import noPhoto from "../../../images/no-photo.jpg";
 
 const ProfilePage = () => {
@@ -229,7 +229,7 @@ const ProfilePage = () => {
                                 rel='noreferrer nofollow noopener'
                                 target='_blank'
                             >
-                                <span className={"commonStyles.svgIcon"}>{AdminIcons.phone}</span>
+                                <span className={"commonStyles.svgIcon"}>{Icons.phone}</span>
                                 {phone}
                             </a>
                         </li>
@@ -237,7 +237,7 @@ const ProfilePage = () => {
                     {user?.org_name && user?.org_short_name && user?.org_name !== "" && user?.org_short_name !== "" && (
                         <li>
                             <p className={"commonStyles.profile_item"}>
-                                <span className={"commonStyles.svgIcon"}>{AdminIcons.toolbox}</span>
+                                <span className={"commonStyles.svgIcon"}>{Icons.toolbox}</span>
                                 {user?.org_name}
                                 <span className={"commonStyles.profile_description"}>{user?.org_short_name}</span>
                             </p>
@@ -246,7 +246,7 @@ const ProfilePage = () => {
                     {user?.mrsd && user?.mrsd.length > 0 && user?.mrsd[0] !== "" && user?.mrsd[0] !== 0 && (
                         <li>
                             <p className={"commonStyles.profile_item"}>
-                                <span className={"commonStyles.svgIcon"}>{AdminIcons.crosshairs}</span>
+                                <span className={"commonStyles.svgIcon"}>{Icons.crosshairs}</span>
                                 {user.mrsd.map((mrsd) => (
                                     <>№ {mrsd} </>
                                 ))}

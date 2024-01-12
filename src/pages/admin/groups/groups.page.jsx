@@ -7,7 +7,7 @@ import {userStore} from "../../../store/userStore";
 import Table from "../../../components/admin/table/table.component";
 import Button from "../../../components/admin/button/button.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminGroupsPage = () => {
     const navigate = useNavigate();
@@ -62,7 +62,7 @@ const AdminGroupsPage = () => {
         >
             <Button
                 type='button'
-                iconName={AdminIcons.plus}
+                iconName={Icons.plus}
                 aria-label='Добавить группу'
                 onClick={() => navigate(`/${url}/new`)}
             >

@@ -7,7 +7,7 @@ import FileSelectorPopup from "../file.selector.popup/file.selector.popup";
 import Popup from "../../general/popup/popup.component";
 
 import "./field.scss";
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 
 const FieldUrl = (
     {
@@ -59,7 +59,7 @@ const FieldUrl = (
                         extraClass={"field__icon-image-search"}
                         title='Выбрать из структуры'
                         aria-label='Выбрать из структуры'
-                        iconName={AdminIcons.image_search}
+                        iconName={Icons.image_search}
                         isIconBtn={true}
                         onClick={() =>
                             setPopup(

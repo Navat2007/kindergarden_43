@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import Button from "../../../../components/admin/button/button.component";
 import MenuList from "./menu.list";
 
-import {AdminIcons} from "../../../../components/svgs";
+import {Icons} from "../../../../components/svgs";
 
 const MenuItem = ({title, item, firstSorting, lastSorting, onUpSorting = () => {}, onDownSorting = () => {}}) => {
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const MenuItem = ({title, item, firstSorting, lastSorting, onUpSorting = () => {
                                 extraClass={"admin-menu-constructor__sorting-button"}
                                 isIconBtn='true'
                                 theme='text'
-                                iconName={AdminIcons.chevron_up}
+                                iconName={Icons.chevron_up}
                                 aria-label='Поднять на уровень вверх'
                                 onClick={() => {
                                     onUpSorting(item);
@@ -40,7 +40,7 @@ const MenuItem = ({title, item, firstSorting, lastSorting, onUpSorting = () => {
                                 extraClass={"admin-menu-constructor__sorting-button"}
                                 isIconBtn='true'
                                 theme='text'
-                                iconName={AdminIcons.chevron_down}
+                                iconName={Icons.chevron_down}
                                 aria-label='Поднять на уровень вниз'
                                 onClick={() => {
                                     onDownSorting(item);
@@ -57,7 +57,7 @@ const MenuItem = ({title, item, firstSorting, lastSorting, onUpSorting = () => {
                                 extraClass={"admin-menu-constructor__button__edit"}
                                 isIconBtn='true'
                                 theme='text'
-                                iconName={AdminIcons.plus}
+                                iconName={Icons.plus}
                                 aria-label='Добавить подменю'
                                 title='Добавить подменю'
                                 onClick={() => {
@@ -71,7 +71,7 @@ const MenuItem = ({title, item, firstSorting, lastSorting, onUpSorting = () => {
                             isIconBtn='true'
                             extraClass={"admin-menu-constructor__button__edit"}
                             theme='text'
-                            iconName={AdminIcons.edit}
+                            iconName={Icons.edit}
                             aria-label='Редактировать страницу'
                             title='Редактировать страницу'
                             onClick={() => navigate(`edit/${item.ID}`)}
@@ -85,7 +85,7 @@ const MenuItem = ({title, item, firstSorting, lastSorting, onUpSorting = () => {
                                 extraClass={"admin-menu-constructor__button"}
                                 isIconBtn='true'
                                 theme='text'
-                                iconName={isOpen ? AdminIcons.chevron_up : AdminIcons.chevron_down}
+                                iconName={isOpen ? Icons.chevron_up : Icons.chevron_down}
                                 aria-label={isOpen ? "Свернуть" : "Развернуть"}
                                 onClick={() => setIsOpen((prev) => !prev)}
                             />

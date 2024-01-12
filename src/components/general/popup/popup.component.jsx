@@ -1,5 +1,5 @@
 import React from "react";
-import { AdminIcons } from "../../svgs.js";
+import { Icons } from "../../svgs.js";
 import "./popup.scss";
 
 const Popup = ({ opened = false, title, extraClass, children, buttons, onClose }) => {
@@ -17,7 +17,7 @@ const Popup = ({ opened = false, title, extraClass, children, buttons, onClose }
             <div className={"popup__container"}>
                 <h2 className={"popup__title"}>{title}</h2>
                 <button type='button' className={"popup__close"} aria-label='Закрыть окно' onClick={onClose}>
-                    {AdminIcons.close}
+                    {Icons.close}
                 </button>
                 <div className={"popup__body"}>{children}</div>
                 {buttons && <div className={"popup__controls"}>{buttons}</div>}

@@ -1,20 +1,22 @@
 .lead {
-    padding-block: var(--indent-block-section);
     background: var(--main-color) linear-gradient(90deg, var(--main-gradient-color)) no-repeat center / cover;
-    color: var(--grey-100-color);
+    color: rgb(255 255 255 / 0.9);
 
     &__columns {
         display: grid;
         gap: var(--indent-large);
         grid-template-columns: 1fr 1fr;
+
+        @include media(lg, max) {
+            grid-template-columns: 1fr;
+        }
     }
 
     // &__column {}
 
     &__subtitle {
         margin: 0;
-        font-size: clamp(1.25rem, 0.9597rem + 1.2903vw, 2.25rem);
-        color: var(--local-pink-color);
+        font-size: clamp(0.875rem, 0.4173rem + 2.2887vw, 2.5rem);
     }
 
     &__title {
@@ -27,7 +29,7 @@
     }
 
     &__main-text {
-        font-size: clamp(1em, 1.8vw, 1.125em);
+        font-size: clamp(0.875em, 1.8vw, 1.125em);
         margin-block-end: clamp(2em, 6.4vw, 4em);
 
         p {

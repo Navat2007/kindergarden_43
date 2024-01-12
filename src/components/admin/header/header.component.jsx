@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../admin/button/button.component";
 import ProfileHeader from "../profile.header/profile.header.component";
-import { AdminIcons } from "../../svgs.js";
+import { Icons } from "../../svgs.js";
 import "./header.scss";
 
 const HeaderComponent = ({ children, extraClass, handleBurger }) => {
@@ -11,7 +11,7 @@ const HeaderComponent = ({ children, extraClass, handleBurger }) => {
                 type='button'
                 isIconBtn
                 extraClass='admin-header__burger'
-                iconName={AdminIcons.menu}
+                iconName={Icons.menu}
                 aria-label='Открыть/Закрыть меню'
                 onClick={handleBurger}
             />

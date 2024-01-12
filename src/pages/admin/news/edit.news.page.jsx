@@ -17,7 +17,7 @@ import FieldCheckbox from "../../../components/admin/field/field.checkbox.compon
 import FieldText from "../../../components/admin/field/field.text.component";
 import FieldDate from "../../../components/admin/field/field.date.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminNewsPage = (props) => {
     let { id } = useParams();
@@ -373,7 +373,7 @@ const AdminNewsPage = (props) => {
                     </Button>
                     <Button
                         type='button'
-                        iconName={AdminIcons.delete}
+                        iconName={Icons.delete}
                         theme='text-error'
                         onClick={onDelete}
                         spinnerActive={store.sending}

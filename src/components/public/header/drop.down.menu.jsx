@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink, useLocation} from "react-router-dom";
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 import { GenerateUrl } from "../../../utils/generateUrl";
 import classNames from "classnames";
 import useOnClickOutside from "../../../hook/onClickOutside";
@@ -70,7 +70,7 @@ function DropdownItem({ item, items, level }) {
                 onClick={() => setSubmenuOpened(!submenuOpened)}
             >
                 {item.title}
-                <span className='header__submenu-button-icon'>{AdminIcons.chevron_down}</span>
+                <span className='header__submenu-button-icon'>{Icons.chevron_down}</span>
             </button>
             <div className='header__submenu-list-container' ref={node}>
                 <ul className='header__submenu-list'>

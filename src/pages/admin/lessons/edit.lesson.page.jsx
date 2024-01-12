@@ -12,7 +12,7 @@ import ImageSelector from "../../../components/admin/image.selector/image.select
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 
 import FieldText from "../../../components/admin/field/field.text.component";
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const EditLessonPage = () => {
     let { id } = useParams();
@@ -216,7 +216,7 @@ const EditLessonPage = () => {
                     </Button>
                     <Button
                         type='button'
-                        iconName={AdminIcons.delete}
+                        iconName={Icons.delete}
                         theme='text-error'
                         onClick={onDelete}
                         spinnerActive={store.sending}

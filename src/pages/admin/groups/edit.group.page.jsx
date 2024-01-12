@@ -14,7 +14,7 @@ import TitleBlock from "../../../components/admin/title.block/title.block.compon
 import MultiSelect from "../../../components/admin/multi_select/multi_select.component";
 import FieldText from "../../../components/admin/field/field.text.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const EditGroupPage = () => {
     let { id } = useParams();
@@ -29,15 +29,15 @@ const EditGroupPage = () => {
     const [image, setImage] = React.useState(
         store.item.image !== ""
             ? [
-                {
-                    ID: store.item.ID,
-                    url: store.item.image,
-                    main: 1,
-                    order: 1,
-                    isFile: 1,
-                    isLoaded: 1,
-                },
-            ]
+                  {
+                      ID: store.item.ID,
+                      url: store.item.image,
+                      main: 1,
+                      order: 1,
+                      isFile: 1,
+                      isLoaded: 1,
+                  },
+              ]
             : []
     );
     const [popup, setPopup] = React.useState(<></>);
@@ -87,14 +87,7 @@ const EditGroupPage = () => {
         await store.edit(sendObject);
 
         if (!store.error) {
-            setPopup(
-                <AlertPopup
-                    title=''
-                    text={"Занятие успешно отредактировано"}
-                    opened={true}
-                    onClose={back}
-                />
-            );
+            setPopup(<AlertPopup title='' text={"Занятие успешно отредактировано"} opened={true} onClose={back} />);
         } else {
             setPopup(
                 <AlertPopup
@@ -203,12 +196,14 @@ const EditGroupPage = () => {
                                 value: item.ID,
                             };
                         })}
-                        options={teachersStore.items?.sort((a, b) => a.fio.localeCompare(b.fio)).map((item) => {
-                            return {
-                                label: item.fio,
-                                value: item.ID,
-                            };
-                        })}
+                        options={teachersStore.items
+                            ?.sort((a, b) => a.fio.localeCompare(b.fio))
+                            .map((item) => {
+                                return {
+                                    label: item.fio,
+                                    value: item.ID,
+                                };
+                            })}
                     />
                     <p className='admin-form__subtitle'>Фотография</p>
                     <ImageSelector
@@ -238,7 +233,7 @@ const EditGroupPage = () => {
                     </Button>
                     <Button
                         type='button'
-                        iconName={AdminIcons.delete}
+                        iconName={Icons.delete}
                         theme='text-error'
                         onClick={onDelete}
                         spinnerActive={store.sending}

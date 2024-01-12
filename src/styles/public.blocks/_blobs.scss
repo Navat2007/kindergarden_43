@@ -6,7 +6,7 @@
     &__item {
         position: absolute;
         z-index: -1;
-        inline-size: 640px;
+        inline-size: min(45vw, 640px);
         aspect-ratio: 60/80;
         mask: url("../../images/blobs__item-1.svg") no-repeat center / contain;
 
@@ -27,12 +27,12 @@
 
         &_place {
             &_lead-top-left {
-                inset: -29% auto auto -11%;
-                rotate: -29deg;
+                inset: -16vw auto auto -11vw;
+                rotate: -30deg;
             }
 
             &_lead-bottom-right {
-                inset: auto -4% -33% auto;
+                inset: auto -5vw -11vw auto;
                 rotate: 10deg;
             }
         }

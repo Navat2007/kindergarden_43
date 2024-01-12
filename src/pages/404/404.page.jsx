@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import "./not-found.scss";
-import { AdminIcons } from "../../components/svgs";
+import { Icons } from "../../components/svgs";
 
 const Page404 = () => {
     return (
@@ -31,7 +31,7 @@ const Page404 = () => {
                         <br />
                         <br />
                         <NavLink className={"not-found__link"} to={"/"}>
-                            Вернуться на главную {AdminIcons.open_in_new}
+                            Вернуться на главную {Icons.open_in_new}
                         </NavLink>
                     </p>
                 </section>

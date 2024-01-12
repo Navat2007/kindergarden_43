@@ -15,7 +15,7 @@ import Editor from "../../../components/general/reach.editor/editor.component";
 import AlertPopup from "../../../components/general/alert.popup/alert.popup";
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 import BasicPage from "../../../components/admin/basic.page/basic.page.component";
 
 const AdminFoodsPage = () => {
@@ -164,7 +164,7 @@ const AdminFoodsPage = () => {
                             type='submit'
                             isIconBtn='true'
                             theme='text'
-                            iconName={AdminIcons.edit}
+                            iconName={Icons.edit}
                             aria-label='Редактировать'
                             onClick={() => {
                                 setEdit(true);
@@ -249,7 +249,7 @@ const AdminFoodsPage = () => {
             >
                 <Button
                     type='button'
-                    iconName={AdminIcons.plus}
+                    iconName={Icons.plus}
                     aria-label='Добавить'
                     onClick={() => navigate(`/${url}/new`)}
                 >

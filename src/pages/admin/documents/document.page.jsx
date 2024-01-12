@@ -8,7 +8,7 @@ import ImageGallery from "../../../components/general/image.gallery/image.galler
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 import BasicPage from "../../../components/admin/basic.page/basic.page.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const ViewDocumentPage = () => {
     let { id } = useParams();
@@ -33,7 +33,7 @@ const ViewDocumentPage = () => {
                     type='submit'
                     isIconBtn='true'
                     theme='text'
-                    iconName={AdminIcons.edit}
+                    iconName={Icons.edit}
                     aria-label='Редактировать'
                     onClick={() => {
                         navigate(`/admin/documents/edit/${id}`);
@@ -50,9 +50,7 @@ const ViewDocumentPage = () => {
                                 <p className='admin-view-section__description'>{store.item.titleShort}</p>
                             </li>
                             <li className='admin-view-section__item'>
-                                <h3 className='admin-view-section__label'>
-                                    Название документа (полностью)
-                                </h3>
+                                <h3 className='admin-view-section__label'>Название документа (полностью)</h3>
                                 <p className='admin-view-section__description'>{store.item.title}</p>
                             </li>
                             <li className='admin-view-section__item'>
@@ -64,7 +62,7 @@ const ViewDocumentPage = () => {
                                         target={"_blank"}
                                         rel='noopener nofollow noreferrer'
                                     >
-                                        Открыть {AdminIcons.open_in_new}
+                                        Открыть {Icons.open_in_new}
                                     </NavLink>
                                 </p>
                             </li>

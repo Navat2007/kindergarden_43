@@ -10,7 +10,7 @@ import ImageGallery from "../../../components/general/image.gallery/image.galler
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 import TeachersSlider from "../../../components/general/teachers.slider/teachers.slider";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminGroupPage = () => {
     let { id } = useParams();
@@ -23,7 +23,7 @@ const AdminGroupPage = () => {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            await store.loadByID({ id },true);
+            await store.loadByID({ id }, true);
         };
 
         fetchData();
@@ -36,7 +36,7 @@ const AdminGroupPage = () => {
                     type='submit'
                     isIconBtn='true'
                     theme='text'
-                    iconName={AdminIcons.edit}
+                    iconName={Icons.edit}
                     aria-label='Редактировать'
                     onClick={() => navigate(`/admin/groups/edit/${id}`)}
                 />
@@ -52,7 +52,7 @@ const AdminGroupPage = () => {
                                 target={"_blank"}
                                 rel='noopener nofollow noreferrer'
                             >
-                                На страницу {AdminIcons.open_in_new}
+                                На страницу {Icons.open_in_new}
                             </NavLink>
                         </p>
                     </li>
@@ -77,15 +77,10 @@ const AdminGroupPage = () => {
                 {store.item?.employees?.length > 0 && (
                     <>
                         <h2 className='admin-view-section__title'>Воспитатели</h2>
-                        <TeachersSlider
-                            isBorderGradient={false}
-                            type={"slide"}
-                            items={store.item?.employees}
-                        />
+                        <TeachersSlider isBorderGradient={false} type={"slide"} items={store.item?.employees} />
                     </>
                 )}
-                {
-                    store.item?.text &&
+                {store.item?.text && (
                     <>
                         <h2 className='admin-view-section__title'>Детальное описание</h2>
                         <div
@@ -95,7 +90,7 @@ const AdminGroupPage = () => {
                             }}
                         />
                     </>
-                }
+                )}
             </section>
         </BasicPage>
     );

@@ -14,7 +14,7 @@ import FieldNumber from "../../admin/field/field.number.component";
 import FieldDate from "../../admin/field/field.date.component";
 
 import "./table.scss";
-import { AdminIcons } from "../../svgs.js";
+import { Icons } from "../../svgs.js";
 
 const Table = ({
     children,
@@ -484,7 +484,7 @@ const Table = ({
             {withItemControls && withFilter === false && (
                 <div className='table-panel'>
                     {((itemControlsOneItem && items.length === 0) || itemControlsOneItem === false) && (
-                        <Button type='button' iconName={AdminIcons.plus} aria-label='Добавить' onClick={onItemAdd}>
+                        <Button type='button' iconName={Icons.plus} aria-label='Добавить' onClick={onItemAdd}>
                             Добавить
                         </Button>
                     )}
@@ -518,8 +518,8 @@ const Table = ({
                                                             {item.sorting && (
                                                                 <>
                                                                     {sortKey === item.key && order === "ASC"
-                                                                        ? AdminIcons.ascending
-                                                                        : AdminIcons.descending}
+                                                                        ? Icons.ascending
+                                                                        : Icons.descending}
                                                                 </>
                                                             )}
 
@@ -554,7 +554,7 @@ const Table = ({
                                                             theme='text'
                                                             extraClass={"table__cell-panel-button"}
                                                             isIconBtn={true}
-                                                            iconName={AdminIcons.edit}
+                                                            iconName={Icons.edit}
                                                             aria-label='Редактировать'
                                                             onClick={() => {
                                                                 onItemEdit(item);
@@ -565,7 +565,7 @@ const Table = ({
                                                             theme='text-error'
                                                             extraClass={"table__cell-panel-button"}
                                                             isIconBtn={true}
-                                                            iconName={AdminIcons.delete}
+                                                            iconName={Icons.delete}
                                                             aria-label='Удалить'
                                                             onClick={() => {
                                                                 onItemRemove(item);

@@ -11,7 +11,7 @@ import Popup from "../../general/popup/popup.component";
 import AlertPopup from "../../general/alert.popup/alert.popup";
 
 import "./file.selector.popup.scss";
-import {AdminIcons, FileIcons} from "../../svgs";
+import {Icons, FileIcons} from "../../svgs";
 
 const FileSelectorPopup = ({ onFileSelected = () => {}, onClose = () => {}, accept = "*.*", maxFileSize = 5 }) => {
     const store = useMediaFilesStore();
@@ -58,11 +58,11 @@ const FileSelectorPopup = ({ onFileSelected = () => {}, onClose = () => {}, acce
     const contextMenu = [
         {
             title: "Список",
-            icon: AdminIcons.view_list,
+            icon: Icons.view_list,
         },
         {
             title: "Плитка",
-            icon: AdminIcons.view_module,
+            icon: Icons.view_module,
         },
     ];
 
@@ -194,7 +194,7 @@ const FileSelectorPopup = ({ onFileSelected = () => {}, onClose = () => {}, acce
                 <Popup opened={true} onClose={() => setNotif(<></>)} title={"Ошибка загрузки файлов"}>
                     <div className='admin-image-alert'>
                         <h3 className={`admin-image-alert__caption`}>
-                            {AdminIcons.error} Не удалось добавить следующие файлы:
+                            {Icons.error} Не удалось добавить следующие файлы:
                         </h3>
                         <ol className={`admin-image-alert__list`}>
                             {errorFiles.map((error) => (
@@ -423,7 +423,7 @@ const FileSelectorPopup = ({ onFileSelected = () => {}, onClose = () => {}, acce
                 </Button>
                 <Button
                     type='button'
-                    iconName={AdminIcons.upload}
+                    iconName={Icons.upload}
                     extraClass={"file-selector-popup__upload-button"}
                     onClick={() => inputFileRef.current.click()}
                     spinnerActive={store.loading}

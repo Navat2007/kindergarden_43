@@ -1,6 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
-import { AdminIcons, SocialIcons } from "../../svgs";
+import { Icons, SocialIcons } from "../../svgs";
 import "./video.player.scss";
 
 const VideoPlayer = ({ source, style, extraClass }) => {
@@ -21,7 +21,7 @@ const VideoPlayer = ({ source, style, extraClass }) => {
         else if (link.includes("yandex.ru/")) return SocialIcons.yandex;
         else if (link.includes("rutube.ru/")) return SocialIcons.rutube;
         else if (link.includes("youtube.com/") || link.includes("youtu.be/")) return SocialIcons.youtube;
-        else return AdminIcons.error;
+        else return Icons.error;
     };
 
     if (source.includes("iframe") === false) {

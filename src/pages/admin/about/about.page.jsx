@@ -8,7 +8,7 @@ import BasicPage from "../../../components/admin/basic.page/basic.page.component
 import Button from "../../../components/admin/button/button.component";
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminAboutPage = () => {
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const AdminAboutPage = () => {
                     type='submit'
                     isIconBtn='true'
                     theme='text'
-                    iconName={AdminIcons.edit}
+                    iconName={Icons.edit}
                     aria-label='Редактировать'
                     onClick={() => {
                         navigate("/admin/about/edit");

@@ -3,7 +3,7 @@ import React from "react";
 import Button from "../button/button.component";
 import FieldUrl from "../field/field.url.component";
 
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 import "./urls-selector.scss";
 
 const UrlsSelector = ({ items, withFiles, accept = "*.*" }) => {
@@ -51,7 +51,7 @@ const UrlsSelector = ({ items, withFiles, accept = "*.*" }) => {
                             target={"_blank"}
                             rel='nofollow noreferrer noopener'
                         >
-                            {AdminIcons.open_in_new}
+                            {Icons.open_in_new}
                         </a>
                     )}
                     <Button
@@ -59,7 +59,7 @@ const UrlsSelector = ({ items, withFiles, accept = "*.*" }) => {
                         theme={"text-error"}
                         extraClass={"urls-selector__delete-button"}
                         isIconBtn={true}
-                        iconName={AdminIcons.close}
+                        iconName={Icons.close}
                         aria-label='Удалить поле'
                         title='Удалить поле'
                         onClick={() => {

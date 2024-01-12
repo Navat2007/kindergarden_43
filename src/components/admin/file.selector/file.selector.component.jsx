@@ -7,7 +7,7 @@ import AlertPopup from "../../general/alert.popup/alert.popup";
 import Popup from "../../general/popup/popup.component";
 
 import "./file.selector.scss";
-import {AdminIcons, FileIcons} from "../../svgs.js";
+import {Icons, FileIcons} from "../../svgs.js";
 
 const FileSelector = ({
     orientation,
@@ -183,7 +183,7 @@ const FileSelector = ({
                 <Popup opened={true} onClose={() => setNotif(<></>)} title={"Ошибка загрузки файлов"}>
                     <div className='admin-file-alert'>
                         <h3 className={`admin-file-alert__caption`}>
-                            {AdminIcons.error} Не удалось добавить следующие файлы:
+                            {Icons.error} Не удалось добавить следующие файлы:
                         </h3>
                         <ol className={`admin-file-alert__list`}>
                             {errorFiles.map((error) => (
@@ -318,7 +318,7 @@ const FileSelector = ({
                                 <Button
                                     type='button'
                                     isIconBtn='true'
-                                    iconName={AdminIcons.close}
+                                    iconName={Icons.close}
                                     aria-label='Удалить'
                                     disabled={photoAddBtnDisabled}
                                     onClick={() => handleDeletePhoto(item)}
@@ -347,7 +347,7 @@ const FileSelector = ({
                                 <Button
                                     type='button'
                                     isIconBtn='true'
-                                    iconName={AdminIcons.close}
+                                    iconName={Icons.close}
                                     aria-label='Удалить'
                                     disabled={photoAddBtnDisabled}
                                     onClick={() => handleDeletePhoto(item)}
@@ -357,7 +357,7 @@ const FileSelector = ({
                                 <Button
                                     type='button'
                                     isIconBtn='true'
-                                    iconName={AdminIcons.chevron_left}
+                                    iconName={Icons.chevron_left}
                                     aria-label='Назад'
                                     disabled={photoAddBtnDisabled}
                                     onClick={() => handleMovePhoto(item.order, item.order - 1)}
@@ -366,7 +366,7 @@ const FileSelector = ({
                                     <Button
                                         type='button'
                                         isIconBtn='true'
-                                        iconName={AdminIcons.chevron_right}
+                                        iconName={Icons.chevron_right}
                                         aria-label='Вперед'
                                         disabled={photoAddBtnDisabled}
                                         onClick={() => handleMovePhoto(item.order, item.order + 1)}

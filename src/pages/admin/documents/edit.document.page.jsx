@@ -10,7 +10,7 @@ import ImageSelector from "../../../components/admin/image.selector/image.select
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 import FieldText from "../../../components/admin/field/field.text.component";
 import FieldUrl from "../../../components/admin/field/field.url.component";
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 import BasicPage from "../../../components/admin/basic.page/basic.page.component";
 
 const EditDocumentPage = () => {
@@ -273,7 +273,7 @@ const EditDocumentPage = () => {
                     </Button>
                     <Button
                         type='button'
-                        iconName={AdminIcons.delete}
+                        iconName={Icons.delete}
                         theme='text'
                         onClick={onDelete}
                         spinnerActive={store.sending}

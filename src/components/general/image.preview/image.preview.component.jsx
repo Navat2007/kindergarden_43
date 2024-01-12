@@ -3,7 +3,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 import Button from "../../admin/button/button.component";
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 import "./image.preview.scss";
 
 const ImagePreview = ({ items, open = false, index = 0, onClose }) => {
@@ -20,7 +20,7 @@ const ImagePreview = ({ items, open = false, index = 0, onClose }) => {
             <Button
                 type='button'
                 theme={"text"}
-                iconName={AdminIcons.close}
+                iconName={Icons.close}
                 isIconBtn={"true"}
                 extraClass={"image-preview__close"}
                 aria-label='Закрыть'

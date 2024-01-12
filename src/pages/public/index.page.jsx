@@ -7,7 +7,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import useNewsStore from "../../store/public/newsStore";
 
 import BasicPage from "../../components/public/basic.page/basic.page.component";
-import { AdminIcons, SocialIcons } from "../../components/svgs";
+import { Icons, AdvantagesIcons, SocialIcons } from "../../components/svgs";
 
 const IndexPage = () => {
     const store = useNewsStore();
@@ -72,7 +72,7 @@ const IndexPage = () => {
                                     <span className='submenu__button-text'>
                                         Сведения об образовательной организации
                                     </span>
-                                    <span className='submenu__button-icon'>{AdminIcons.chevron_down}</span>
+                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
                                 </button>
                                 {/* первая вложенность с большим заголовком и оберткой для размещения под шапкой */}
                                 <div className='submenu__wrap'>
@@ -108,9 +108,7 @@ const IndexPage = () => {
                                                     }}
                                                 >
                                                     <span className='submenu__button-text'>Документы</span>
-                                                    <span className='submenu__button-icon'>
-                                                        {AdminIcons.chevron_down}
-                                                    </span>
+                                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
                                                 </button>
                                                 <div className='submenu__list-container'>
                                                     <ul className='submenu__list'>
@@ -231,7 +229,7 @@ const IndexPage = () => {
                                     }}
                                 >
                                     <span className='submenu__button-text'>Еще</span>
-                                    <span className='submenu__button-icon'>{AdminIcons.chevron_down}</span>
+                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
                                 </button>
                                 {/* первая вложенность с большим заголовком и оберткой для размещения под шапкой */}
                                 <div className='submenu__wrap'>
@@ -267,9 +265,7 @@ const IndexPage = () => {
                                                     }}
                                                 >
                                                     <span className='submenu__button-text'>Документы</span>
-                                                    <span className='submenu__button-icon'>
-                                                        {AdminIcons.chevron_down}
-                                                    </span>
+                                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
                                                 </button>
                                                 <div className='submenu__list-container'>
                                                     <ul className='submenu__list'>
@@ -306,7 +302,7 @@ const IndexPage = () => {
                                                             >
                                                                 <span className='submenu__button-text'>Документы</span>
                                                                 <span className='submenu__button-icon'>
-                                                                    {AdminIcons.chevron_down}
+                                                                    {Icons.chevron_down}
                                                                 </span>
                                                             </button>
                                                             <div className='submenu__list-container'>
@@ -431,7 +427,7 @@ const IndexPage = () => {
                                     rel='noreferrer noopener nofollow'
                                     aria-label='Вконтакте'
                                 >
-                                    {SocialIcons.vk_currentColor}
+                                    {SocialIcons.vk_without_color}
                                 </a>
                             </li>
                             <li>
@@ -442,7 +438,7 @@ const IndexPage = () => {
                                     rel='noreferrer noopener nofollow'
                                     aria-label='Телеграм'
                                 >
-                                    {SocialIcons.t_currentColor}
+                                    {SocialIcons.t_without_color}
                                 </a>
                             </li>
                             <li>
@@ -453,7 +449,7 @@ const IndexPage = () => {
                                     rel='noreferrer noopener nofollow'
                                     aria-label='Телефон'
                                 >
-                                    {AdminIcons.phone}
+                                    {Icons.phone}
                                 </a>
                             </li>
                         </ul>
@@ -463,7 +459,7 @@ const IndexPage = () => {
                         </a>
                         {/* Кнопка для вызова панели с поиском */}
                         <button className='button button_theme_outline-main header__search-button' type='button'>
-                            <span className='button__icon'>{AdminIcons.search}</span>
+                            <span className='button__icon'>{Icons.search}</span>
                             <span className='button__text'>Найти...</span>
                         </button>
                     </div>
@@ -478,13 +474,13 @@ const IndexPage = () => {
                             setMobileMenuOpened(!mobileMenuOpened);
                         }}
                     >
-                        {mobileMenuOpened ? AdminIcons.close : AdminIcons.menu}
+                        {mobileMenuOpened ? Icons.close : Icons.menu}
                     </button>
                 </div>
             </header>
             <main className='page__content'>
                 {/* Главный баннер со слайдером */}
-                <section class='lead wave-decor wave-decor_inset_bottom blobs'>
+                <section className='lead section wave-decor wave-decor_inset_bottom blobs'>
                     <div
                         className='blobs__item blobs__item_theme_secondary blobs__item_place_lead-top-left'
                         aria-hidden='true'
@@ -493,11 +489,11 @@ const IndexPage = () => {
                         className='blobs__item blobs__item_type_secondary blobs__item_theme_accent blobs__item_place_lead-bottom-right'
                         aria-hidden='true'
                     ></div>
-                    <div class='lead__columns section-wrap'>
-                        <div class='lead__column'>
-                            <p class='lead__subtitle'>Центр развития ребёнка</p>
-                            <h1 class='lead__title'>Детский сад № 43</h1>
-                            <div class='lead__main-text'>
+                    <div className='lead__columns section__wrap'>
+                        <div className='lead__column'>
+                            <p className='lead__subtitle'>Центр развития ребёнка</p>
+                            <h1 className='lead__title'>Детский сад № 43</h1>
+                            <div className='lead__main-text'>
                                 <p>
                                     Мы осуществляем качественное воспитание и обучение детей благодаря подбору
                                     квалифицированных педагогов и использованию инновационных эффективных методик.
@@ -507,9 +503,9 @@ const IndexPage = () => {
                                     творчества и познания.
                                 </p>
                             </div>
-                            <a href='#0' class='button button_theme_outline-white button_content_icon-arrow-next'>
-                                <span class='button__text'>Об учреждении</span>
-                                <span class='button__icon'>{AdminIcons.arrow_next}</span>
+                            <a href='#0' className='button button_theme_outline-white button_content_icon-arrow-next'>
+                                <span className='button__text'>Об учреждении</span>
+                                <span className='button__icon'>{Icons.arrow_next}</span>
                             </a>
                         </div>
                         <Splide
@@ -539,6 +535,110 @@ const IndexPage = () => {
                         </Splide>
                     </div>
                 </section>
+                {/* Блок преимуществ */}
+                <section className='section advantages' aria-label='Преимущества'>
+                    <div className='section__wrap'>
+                        <ul className='section__card-deck advantages__color-list'>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.time}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Режим работы: <span className='text-item__text-accent'>с 07:00 до 19:00</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.child}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Группы: <span className='text-item__text-accent'>до 15 человек</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.territory}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Площадь для прогулок:{" "}
+                                        <span className='text-item__text-accent'>
+                                            собственная оборудованная территория для прогулок
+                                        </span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.medical_v3}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Утренний фильтр медработником:{" "}
+                                        <span className='text-item__text-accent'>ежедневно</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.baby}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Возраст детей: <span className='text-item__text-accent'>с 1,6 до 7 лет</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.food}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Питание:{" "}
+                                        <span className='text-item__text-accent'>
+                                            сбалансированное 4-х разовое питание
+                                        </span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.house}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Помещение: <span className='text-item__text-accent'>800 кв.м</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.gym}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Тренажёрный зал: <span className='text-item__text-accent'>с 4 лет</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.pool}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Бассеин: <span className='text-item__text-accent'>с 3–4 лет</span>
+                                    </span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </main>
             {/* Подвал */}
             <footer className='footer page__footer'>
@@ -551,7 +651,7 @@ const IndexPage = () => {
                             href='tel:84991493724'
                             rel='noreferrer noopener nofollow'
                         >
-                            <span className='footer__link-icon'>{AdminIcons.phone}</span>
+                            <span className='footer__link-icon'>{Icons.phone}</span>
                             <span className='footer__link-text'>+7 499 149-37-24</span>
                             <span className='footer__text-small'>Пн-пт с 7:00 до 19:00</span>
                         </a>
@@ -569,7 +669,7 @@ const IndexPage = () => {
                             target='_blank'
                             rel='noreferrer noopener nofollow'
                         >
-                            <span className='footer__link-icon'>{AdminIcons.email}</span>
+                            <span className='footer__link-icon'>{Icons.email}</span>
                             <span className='footer__link-text footer__text-highlight'>fgdou43@bk.ru</span>
                         </a>
                         {/* Панель соцссылок */}
@@ -582,7 +682,7 @@ const IndexPage = () => {
                                     rel='noreferrer noopener nofollow'
                                     aria-label='Вконтакте'
                                 >
-                                    {SocialIcons.vk_currentColor}
+                                    {SocialIcons.vk_without_color}
                                 </a>
                             </li>
                             <li>
@@ -593,7 +693,7 @@ const IndexPage = () => {
                                     rel='noreferrer noopener nofollow'
                                     aria-label='Телеграм'
                                 >
-                                    {SocialIcons.t_currentColor}
+                                    {SocialIcons.t_without_color}
                                 </a>
                             </li>
                         </ul>

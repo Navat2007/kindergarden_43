@@ -4,7 +4,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import styles from "./field.module.scss";
 
-import { AdminIcons } from "../../svgs.js";
+import { Icons } from "../../svgs.js";
 
 const FieldInput = (
     {
@@ -173,14 +173,14 @@ const FieldInput = (
                             >
                                 <div className={styles.input_container}>{getElementByType(type)}</div>
                                 {errorText !== "" ? (
-                                    <span className={styles.icon}>{AdminIcons.error}</span>
+                                    <span className={styles.icon}>{Icons.error}</span>
                                 ) : type === "password" ? (
                                     <span
                                         className={styles.icon}
                                         aria-label={`${eyeActive ? "Скрыть пароль" : "Показать пароль"}`}
                                         onClick={toggleEye}
                                     >
-                                        {eyeActive ? AdminIcons.eye_off : AdminIcons.eye}
+                                        {eyeActive ? Icons.eye_off : Icons.eye}
                                     </span>
                                 ) : (
                                     ""
@@ -223,14 +223,14 @@ const FieldInput = (
                         >
                             <div className={styles.input_container}>{getElementByType(type)}</div>
                             {errorText !== "" ? (
-                                <span className={styles.icon}>{AdminIcons.error}</span>
+                                <span className={styles.icon}>{Icons.error}</span>
                             ) : type === "password" ? (
                                 <span
                                     className={styles.icon}
                                     aria-label={`${eyeActive ? "Скрыть пароль" : "Показать пароль"}`}
                                     onClick={toggleEye}
                                 >
-                                    {eyeActive ? AdminIcons.eye_off : AdminIcons.eye}
+                                    {eyeActive ? Icons.eye_off : Icons.eye}
                                 </span>
                             ) : (
                                 ""

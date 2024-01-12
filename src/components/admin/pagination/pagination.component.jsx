@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import _ from "lodash";
 import "./pagination.scss";
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 
 const Pagination = ({ pageCount, pageIndex = 1, minCount = 10, setPageChangeCallback = () => {} }) => {
     const [page, setPage] = React.useState(1);
@@ -29,7 +29,7 @@ const Pagination = ({ pageCount, pageIndex = 1, minCount = 10, setPageChangeCall
                         aria-label='Назад'
                         disabled={page === 1}
                     >
-                        <span className='admin-pagination__thumb-icon'>{AdminIcons.chevron_left}</span>
+                        <span className='admin-pagination__thumb-icon'>{Icons.chevron_left}</span>
                     </button>
                     <ul className='admin-pagination__list'>
                         {pages.map((item, index) => (
@@ -76,7 +76,7 @@ const Pagination = ({ pageCount, pageIndex = 1, minCount = 10, setPageChangeCall
                         aria-label='Вперед'
                         disabled={page === pageCount}
                     >
-                        <span className='admin-pagination__thumb-icon'>{AdminIcons.chevron_right}</span>
+                        <span className='admin-pagination__thumb-icon'>{Icons.chevron_right}</span>
                     </button>
                 </div>
             )}

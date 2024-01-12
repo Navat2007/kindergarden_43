@@ -8,7 +8,7 @@ import Button from "../button/button.component";
 import AlertPopup from "../../general/alert.popup/alert.popup";
 import noPhoto from "../../../images/no-photo.jpg";
 import "./profile.scss";
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 
 const ProfileHeader = ({ className }) => {
     const navigate = useNavigate();
@@ -51,7 +51,7 @@ const ProfileHeader = ({ className }) => {
             </div>
             <Button
                 type='button'
-                iconName={AdminIcons.exit}
+                iconName={Icons.exit}
                 isIconBtn
                 aria-label='Выйти из профиля'
                 onClick={() => setPopupOpened(true)}

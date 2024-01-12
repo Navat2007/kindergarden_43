@@ -1,11 +1,11 @@
-import React from 'react';
-import {useNavigate} from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import {userStore} from "../../../store/userStore";
+import { userStore } from "../../../store/userStore";
 import useCustomPagesStore from "../../../store/admin/customPagesStore";
 
 import Table from "../../../components/admin/table/table.component";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const CustomPagesPage = () => {
     const navigate = useNavigate();

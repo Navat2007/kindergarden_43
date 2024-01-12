@@ -9,7 +9,7 @@ import Button from "../../../components/admin/button/button.component";
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 import BasicPage from "../../../components/admin/basic.page/basic.page.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const MenuPage = () => {
     const [isEditing, setIsEditing] = React.useState(false);
@@ -55,7 +55,7 @@ const MenuPage = () => {
                     <>
                         <Button
                             type='button'
-                            iconName={AdminIcons.ascending}
+                            iconName={Icons.ascending}
                             aria-label='Сортировать'
                             onClick={() => setIsEditing((prev) => !prev)}
                             style={{ paddingBlock: ".75em", marginLeft: "1.875em" }}
@@ -64,7 +64,7 @@ const MenuPage = () => {
                         </Button>
                         <Button
                             type='button'
-                            iconName={AdminIcons.plus}
+                            iconName={Icons.plus}
                             aria-label='Добавить'
                             onClick={() => navigate("new/0/" + store.items.value.sorted[store.items.value.sorted.length - 1]?.sorting)}
                             style={{ paddingBlock: ".75em"}}

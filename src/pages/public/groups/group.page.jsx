@@ -2,7 +2,7 @@ import React from "react";
 import createDOMPurify from "dompurify";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 import useGroupsStore from "../../../store/public/groupsStore";
 
@@ -78,11 +78,7 @@ const GroupPage = () => {
                         {store.item?.employees?.length > 0 && (
                             <>
                                 <h2 className='article__title'>Воспитатели</h2>
-                                <TeachersSlider
-                                    isBorderGradient={false}
-                                    type={"slide"}
-                                    items={store.item?.employees}
-                                />
+                                <TeachersSlider isBorderGradient={false} type={"slide"} items={store.item?.employees} />
                             </>
                         )}
                     </>

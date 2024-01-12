@@ -12,7 +12,7 @@ import AlertPopup from "../../../components/general/alert.popup/alert.popup";
 import {GenerateUrl} from "../../../utils/generateUrl";
 import FieldSelect from "../../../components/admin/field/field.select.component";
 
-import {AdminIcons} from "../../../components/svgs";
+import {Icons} from "../../../components/svgs";
 import {getMenuList} from "../../../services/menu";
 
 const EditMenuPage = () => {
@@ -356,7 +356,7 @@ const EditMenuPage = () => {
                     </Button>
                     <Button
                         type='button'
-                        iconName={AdminIcons.delete}
+                        iconName={Icons.delete}
                         theme='text-error'
                         onClick={onDelete}
                         spinnerActive={store.sending.value}

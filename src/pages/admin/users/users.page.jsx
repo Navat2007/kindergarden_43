@@ -8,7 +8,7 @@ import {userStore} from "../../../store/userStore";
 import Table from "../../../components/admin/table/table.component";
 import Button from "../../../components/admin/button/button.component";
 
-import { AdminIcons } from "../../../components/svgs.js";
+import { Icons } from "../../../components/svgs.js";
 
 const UsersPage = () => {
     const user = userStore.value;
@@ -81,7 +81,7 @@ const UsersPage = () => {
             >
                 <Button
                     type='button'
-                    iconName={AdminIcons.plus}
+                    iconName={Icons.plus}
                     aria-label='Создать пользователя'
                     onClick={() => navigate("/admin/users/new")}
                 >

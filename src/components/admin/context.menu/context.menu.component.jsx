@@ -3,7 +3,7 @@ import {AnimatePresence, motion} from "framer-motion";
 
 import Button from "../button/button.component";
 
-import {AdminIcons} from "../../svgs";
+import {Icons} from "../../svgs";
 
 const ContextMenu = ({items, onItemClick}) => {
     const [opened, setOpened] = React.useState(false);
@@ -26,7 +26,7 @@ const ContextMenu = ({items, onItemClick}) => {
                 type='button'
                 isIconBtn={true}
                 extraClass={"admin-context-menu__menu-button"}
-                iconName={AdminIcons.view_list}
+                iconName={Icons.view_list}
                 onClick={() => setOpened(!opened)}
             />
             <motion.div animate={opened ? "open" : "closed"} variants={variants}>
@@ -85,7 +85,7 @@ const ContextMenu = ({items, onItemClick}) => {
                                                 {item.icon}
                                                 {item.title}
                                             </span>
-                                                <span className='admin-context-menu-item__icon'>{AdminIcons.check}</span>
+                                                <span className='admin-context-menu-item__icon'>{Icons.check}</span>
                                             </p>
                                         </li>
                                     ))}

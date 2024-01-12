@@ -17,7 +17,7 @@ import BasicPage from "../../../components/admin/basic.page/basic.page.component
 import AlertPopup from "../../../components/general/alert.popup/alert.popup";
 import { GenerateUrl } from "../../../utils/generateUrl";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 import UrlsSelector from "../../../components/admin/urls.selector/urls.selector";
 import { signal } from "@preact/signals-react";
 
@@ -58,26 +58,26 @@ const EditCustomPagesPage = () => {
                         case "photo":
                             photo.value.push({
                                 id: window.global.makeid(12),
-                                url: item.url
-                            })
+                                url: item.url,
+                            });
                             break;
 
                         case "video":
                             video.value.push({
                                 id: window.global.makeid(12),
-                                url: item.url
-                            })
+                                url: item.url,
+                            });
                             break;
 
                         case "file":
                             files.value.push({
                                 id: window.global.makeid(12),
                                 url: item.url,
-                                title: item.title
-                            })
+                                title: item.title,
+                            });
                             break;
                     }
-                })
+                });
             }
         };
 
@@ -111,14 +111,16 @@ const EditCustomPagesPage = () => {
         if (!checkForComplete(sendObject)) return;
 
         sendObject["id"] = id;
-        sendObject["photo"] = photo.value.filter((item) => item.url).map(item => item.url);
-        sendObject["video"] = video.value.filter((item) => item.url).map(item => item.url);
-        sendObject["files"] = files.value.filter((item) => item.url).map(item => {
-            return {
-                title: item.title,
-                url: item.url
-            }
-        });
+        sendObject["photo"] = photo.value.filter((item) => item.url).map((item) => item.url);
+        sendObject["video"] = video.value.filter((item) => item.url).map((item) => item.url);
+        sendObject["files"] = files.value
+            .filter((item) => item.url)
+            .map((item) => {
+                return {
+                    title: item.title,
+                    url: item.url,
+                };
+            });
 
         const response = await store.edit(sendObject);
 
@@ -247,7 +249,7 @@ const EditCustomPagesPage = () => {
                     <Tab title={"Фотографии"}>
                         <fieldset className='admin-form__section admin-form__section_width_one-col'>
                             <h2 className='admin-form__title'>Фотографии</h2>
-                            <UrlsSelector items={photo} withFiles={true} accept={"image/*"}/>
+                            <UrlsSelector items={photo} withFiles={true} accept={"image/*"} />
                         </fieldset>
                     </Tab>
                     <Tab title={"Видео"}>
@@ -278,7 +280,7 @@ const EditCustomPagesPage = () => {
                     </Button>
                     <Button
                         type='button'
-                        iconName={AdminIcons.delete}
+                        iconName={Icons.delete}
                         theme='text-error'
                         onClick={onDelete}
                         spinnerActive={store.sending.value}

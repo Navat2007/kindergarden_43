@@ -7,7 +7,7 @@ import {userStore} from "../../../store/userStore";
 import Table from "../../../components/admin/table/table.component";
 import Button from "../../../components/admin/button/button.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminMediaFilesPage = () => {
     const navigate = useNavigate();
@@ -69,7 +69,7 @@ const AdminMediaFilesPage = () => {
         >
             <Button
                 type='button'
-                iconName={AdminIcons.plus}
+                iconName={Icons.plus}
                 aria-label='Добавить'
                 onClick={() => navigate(`/${url}/new`)}
             >

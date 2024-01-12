@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/admin/header/header.component";
 import Menu from "../components/admin/menu/menu.component";
 
-import { MenuIcons } from "../components/svgs.js";
+import { AdminMenuIcons } from "../components/svgs.js";
 import "../styles/admin.layout.scss";
 
 const AdminLayout = () => {
@@ -12,22 +12,22 @@ const AdminLayout = () => {
     const menu = [
         {
             title: "Пользователи",
-            icon: MenuIcons.users,
+            icon: AdminMenuIcons.users,
             link: "/admin/users",
         },
         {
             title: "Файлы",
-            icon: MenuIcons.media,
+            icon: AdminMenuIcons.media,
             link: "/admin/mediaFiles",
         },
         {
             title: "Меню",
-            icon: MenuIcons.menu,
+            icon: AdminMenuIcons.menu,
             link: "/admin/menu",
         },
         {
             title: "Cтраницы",
-            icon: MenuIcons.user_pages,
+            icon: AdminMenuIcons.user_pages,
             link: "/admin/customPages",
         },
         {
@@ -36,42 +36,42 @@ const AdminLayout = () => {
         },
         {
             title: "Документы",
-            icon: MenuIcons.documents,
+            icon: AdminMenuIcons.documents,
             link: "/admin/documents",
         },
         {
             title: "Платные услуги",
-            icon: MenuIcons.lessons,
+            icon: AdminMenuIcons.lessons,
             link: "/admin/lessons",
         },
         {
             title: "Сотрудники",
-            icon: MenuIcons.employers,
+            icon: AdminMenuIcons.employers,
             link: "/admin/employees",
         },
         {
             title: "Группы",
-            icon: MenuIcons.groups,
+            icon: AdminMenuIcons.groups,
             link: "/admin/groups",
         },
         {
             title: "Питание",
-            icon: MenuIcons.food,
+            icon: AdminMenuIcons.food,
             link: "/admin/food",
         },
         // {
         //     title: "Режим",
-        //     icon: MenuIcons.mode,
+        //     icon: AdminMenuIcons.mode,
         //     link: "/admin/mode",
         // },
         {
             title: "Новости",
-            icon: MenuIcons.news,
+            icon: AdminMenuIcons.news,
             link: "/admin/news",
         },
         {
             title: "О нас",
-            icon: MenuIcons.company,
+            icon: AdminMenuIcons.company,
             link: "/admin/about",
         },
     ];

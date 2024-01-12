@@ -1,0 +1,27 @@
+.text-item {
+    margin-block: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--indent-small);
+
+    &__icon {
+        flex: none;
+        min-inline-size: clamp(3em, 7.6vw, 4.75em);
+        max-inline-size: clamp(3em, 7.6vw, 4.75em);
+        inline-size: clamp(3em, 7.6vw, 4.75em);
+        block-size: clamp(3em, 7.6vw, 4.75em);
+    }
+
+    &__text {
+        font-size: clamp(0.875em, 1.8vw, 1.125em);
+    }
+
+    &__text-accent {
+        font-weight: 600;
+    }
+
+    @include media(md, max) {
+        flex-direction: column;
+        text-align: center;
+    }
+}

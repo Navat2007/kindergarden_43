@@ -5,7 +5,7 @@ import Logo from "../../public/logo/logo";
 import Button from "../button/button.component";
 
 import "./menu.scss";
-import { AdminIcons } from "../../svgs.js";
+import { Icons } from "../../svgs.js";
 
 const Menu = ({ menu, burgerOpened, setBurgerOpened }) => {
     const [menuSize, setMenuSize] = React.useState("");
@@ -81,7 +81,7 @@ const Menu = ({ menu, burgerOpened, setBurgerOpened }) => {
                     </ul>
                     <Button
                         type='button'
-                        iconName={AdminIcons.chevron_down}
+                        iconName={Icons.chevron_down}
                         extraClass='admin-menu__button'
                         aria-label='Свернуть/Развернуть меню'
                         onClick={handleResize}

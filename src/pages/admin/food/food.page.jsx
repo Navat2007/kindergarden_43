@@ -8,7 +8,7 @@ import Button from "../../../components/admin/button/button.component";
 import ImageGallery from "../../../components/general/image.gallery/image.gallery.component";
 import TitleBlock from "../../../components/admin/title.block/title.block.component";
 
-import { AdminIcons } from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const AdminFoodPage = () => {
     let { id } = useParams();
@@ -32,7 +32,7 @@ const AdminFoodPage = () => {
                     type='submit'
                     isIconBtn='true'
                     theme='text'
-                    iconName={AdminIcons.edit}
+                    iconName={Icons.edit}
                     aria-label='Редактировать'
                     onClick={() => navigate(`/admin/food/menu/edit/${id}`)}
                 />
@@ -59,7 +59,7 @@ const AdminFoodPage = () => {
                                         target={"_blank"}
                                         rel='noopener nofollow noreferrer'
                                     >
-                                        Открыть {AdminIcons.open_in_new}
+                                        Открыть {Icons.open_in_new}
                                     </NavLink>
                                 </p>
                             </li>

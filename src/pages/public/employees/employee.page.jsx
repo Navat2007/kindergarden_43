@@ -1,7 +1,7 @@
 import React from "react";
-import {motion} from "framer-motion";
-import {useParams} from "react-router-dom";
-import {Helmet} from "react-helmet";
+import { motion } from "framer-motion";
+import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import moment from "moment";
 
 import useEmployeesStore from "../../../store/public/employeesStore";
@@ -13,16 +13,16 @@ import SingleImageWithPreview from "../../../components/general/single.image.wit
 import Table from "../../../components/public/table/table.component";
 import Breadcrumbs from "../../../components/public/breadcrumbs/breadcrumbs";
 
-import {AdminIcons} from "../../../components/svgs";
+import { Icons } from "../../../components/svgs";
 
 const EmployeePage = () => {
-    let {id} = useParams();
+    let { id } = useParams();
 
     const store = useEmployeesStore();
 
     React.useEffect(() => {
         const fetchData = async () => {
-            await store.loadByID({id});
+            await store.loadByID({ id });
         };
 
         fetchData();
@@ -154,10 +154,10 @@ const EmployeePage = () => {
             />
             <motion.section
                 className='article'
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                exit={{opacity: 0}}
-                transition={{delay: 0.2, duration: 1}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.2, duration: 1 }}
             >
                 <article className='person'>
                     <SingleImageWithPreview
@@ -176,13 +176,12 @@ const EmployeePage = () => {
                                     rel='noopener nofollow noreferrer'
                                     target='_blank'
                                 >
-                                    Личная страница {AdminIcons.open_in_new}
+                                    Личная страница {Icons.open_in_new}
                                 </a>
                             )}
                         </div>
                         <Tabs>
-                            {
-                                store?.item?.educations?.length > 0 &&
+                            {store?.item?.educations?.length > 0 && (
                                 <Tab title={"Образование"}>
                                     <Table
                                         title={"Информация об образовании"}
@@ -190,9 +189,8 @@ const EmployeePage = () => {
                                         itemsConfig={itemConfigEducation}
                                     />
                                 </Tab>
-                            }
-                            {
-                                store?.item?.qualifications?.length > 0 &&
+                            )}
+                            {store?.item?.qualifications?.length > 0 && (
                                 <Tab title={"Повышение квалификации"}>
                                     <Table
                                         title={"Информация об квалификации"}
@@ -200,58 +198,53 @@ const EmployeePage = () => {
                                         itemsConfig={itemConfigQualification}
                                     />
                                 </Tab>
-                            }
-                            {
-                                store?.item?.works && Object.keys(store.item.works).length > 0 &&
+                            )}
+                            {store?.item?.works && Object.keys(store.item.works).length > 0 && (
                                 <Tab title={"Трудовой стаж"}>
                                     <ul className='person__list'>
-                                        {
-                                            store.item.works.summary &&
+                                        {store.item.works.summary && (
                                             <li className='person__item'>
                                                 <p className='person__label'>Общий стаж</p>
                                                 <p className='person__description'>{store.item.works.summary}</p>
                                             </li>
-                                        }
-                                        {
-                                            store.item.works.education &&
+                                        )}
+                                        {store.item.works.education && (
                                             <li className='person__item'>
                                                 <p className='person__label'>Педагогический стаж</p>
                                                 <p className='person__description'>{store.item.works.education}</p>
                                             </li>
-                                        }
-                                        {
-                                            store.item.works.work &&
+                                        )}
+                                        {store.item.works.work && (
                                             <li className='person__item'>
                                                 <p className='person__label'>В данном учреждении</p>
                                                 <p className='person__description'>{store.item.works.work}</p>
                                             </li>
-                                        }
-                                        {
-                                            store.item.works.category &&
+                                        )}
+                                        {store.item.works.category && (
                                             <li className='person__item'>
                                                 <p className='person__label'>Квалификационная категория</p>
                                                 <p className='person__description'>{store.item.works.category}</p>
                                             </li>
-                                        }
-                                        {
-                                            store.item.works.date_order && store.item.works.date !== "0000-00-00" &&
+                                        )}
+                                        {store.item.works.date_order && store.item.works.date !== "0000-00-00" && (
                                             <li className='person__item'>
                                                 <p className='person__label'>Дата аттестации</p>
-                                                <p className='person__description'>{store.item.works.date !== "0000-00-00" && moment(store.item.works.date).format("DD.MM.YYYY")}</p>
+                                                <p className='person__description'>
+                                                    {store.item.works.date !== "0000-00-00" &&
+                                                        moment(store.item.works.date).format("DD.MM.YYYY")}
+                                                </p>
                                             </li>
-                                        }
-                                        {
-                                            store.item.works.date_order &&
+                                        )}
+                                        {store.item.works.date_order && (
                                             <li className='person__item'>
                                                 <p className='person__label'>Приказ</p>
                                                 <p className='person__description'>{store.item.works.date_order}</p>
                                             </li>
-                                        }
+                                        )}
                                     </ul>
                                 </Tab>
-                            }
-                            {
-                                store?.item?.rewards?.length > 0 &&
+                            )}
+                            {store?.item?.rewards?.length > 0 && (
                                 <Tab title={"Награды, благодарности"}>
                                     <Table
                                         title={"Информация о наградах, благодарностях"}
@@ -259,7 +252,7 @@ const EmployeePage = () => {
                                         itemsConfig={itemConfigReward}
                                     />
                                 </Tab>
-                            }
+                            )}
                         </Tabs>
                     </div>
                 </article>

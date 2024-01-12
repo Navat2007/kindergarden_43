@@ -2,6 +2,7 @@
     background-color: white;
     box-shadow: var(--box-shadow-small);
     position: relative;
+    z-index: 10;
 
     &__wrap {
         max-inline-size: 120em;

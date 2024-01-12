@@ -1,0 +1,25 @@
+.advantages {
+    &__color-list {
+        li:nth-child(4n + 1) .advantages__color-item-icon {
+            background-color: var(--main-alt-color);
+        }
+        li:nth-child(4n + 2) .advantages__color-item-icon {
+            background-color: var(--secondary-color);
+        }
+        li:nth-child(4n + 3) .advantages__color-item-icon {
+            background-color: var(--main-color);
+        }
+        li:nth-child(4n + 4) .advantages__color-item-icon {
+            background-color: var(--accent-alt-color);
+        }
+
+        @include media(md, max) {
+            grid-template-columns: repeat(auto-fill, minmax(min(10em, 100%), 1fr));
+        }
+    }
+
+    &__color-item-icon {
+        @extend .corner-rounded;
+        color: #fff;
+    }
+}

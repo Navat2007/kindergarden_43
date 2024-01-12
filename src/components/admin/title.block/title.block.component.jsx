@@ -1,10 +1,10 @@
 import React from "react";
 
 import Button from "../button/button.component";
-import { AdminIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 import "./title.block.scss";
 
-const TitleBlock = ({ children, onBack, title = "", iconName = AdminIcons.back }) => {
+const TitleBlock = ({ children, onBack, title = "", iconName = Icons.back }) => {
     return (
         <div className='admin-title-block'>
             {onBack && (

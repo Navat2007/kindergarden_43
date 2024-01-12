@@ -1,6 +1,6 @@
 import React from "react";
 import "./alert-popup.scss";
-import { AdminIcons } from "../../svgs.js";
+import { Icons } from "../../svgs.js";
 
 function Notif({ opened, onClose, state = "info", title = "Внимание", text, extraClass, timerInSeconds = 0, buttons }) {
     if (timerInSeconds > 0) {
@@ -24,7 +24,7 @@ function Notif({ opened, onClose, state = "info", title = "Внимание", te
             onClick={(e) => handleBackgroundClick(e)}
         >
             <div className='alert-popup__container'>
-                <span className='alert-popup__icon'>{AdminIcons[state]}</span>
+                <span className='alert-popup__icon'>{Icons[state]}</span>
                 <h3 className='alert-popup__title'>{title}</h3>
                 <p className='alert-popup__text'>{text}</p>
                 <div className='alert-popup__controls'>{buttons}</div>

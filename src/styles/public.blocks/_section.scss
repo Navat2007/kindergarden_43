@@ -1,0 +1,22 @@
+.section {
+    padding-block: var(--indent-block-section);
+
+    &__wrap {
+        margin-inline: auto;
+        padding-inline: var(--indent-small);
+        inline-size: var(--main-inline-size);
+    }
+
+    &__title {
+        margin-block: 0;
+        font-family: var(--font-headings);
+        font-size: clamp(1.875rem, 7.4vw, 4.625rem);
+    }
+
+    &__card-deck {
+        @extend %reset-list;
+        display: grid;
+        gap: var(--indent-medium);
+        grid-template-columns: repeat(auto-fill, minmax(min(21em, 100%), 1fr));
+    }
+}
