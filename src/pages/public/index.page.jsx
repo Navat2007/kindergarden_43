@@ -8,6 +8,8 @@ import useNewsStore from "../../store/public/newsStore";
 
 import BasicPage from "../../components/public/basic.page/basic.page.component";
 import { Icons, AdvantagesIcons, SocialIcons } from "../../components/svgs";
+import Tabs from "../../components/public/tabs/tabs.component";
+import Tab from "../../components/public/tabs/tab.component";
 
 const IndexPage = () => {
     const store = useNewsStore();
@@ -682,6 +684,271 @@ const IndexPage = () => {
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </section>
+                {/* Наши услуги */}
+                <section className='section services'>
+                    <div className='section__wrap section__wrap_size_large'>
+                        <div className='section__title-block'>
+                            <h2 className='section__title section__title_with-decor'>Наши услуги</h2>
+                            <div className='section__main-text'>
+                                <p>
+                                    Реализут образовательную программу дошкольного образования в рамках ФГОС в программу
+                                    «Развитие» НОУ учебный центр им. Л.А. Вангера
+                                </p>
+                            </div>
+                        </div>
+                        <Tabs>
+                            <Tab title='Образовательные услуги'>
+                                <div className='services__content'>
+                                    <ul className='services__list'>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.bag}</span>
+                                                <span className='text-item__text'>Подготовка детей к школе</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.growth}</span>
+                                                <span className='text-item__text'>Ранее развитие (с 1,6лет)</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.art}</span>
+                                                <span className='text-item__text'>Изостудия</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.sensorics}</span>
+                                                <span className='text-item__text'>Сенсорика</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.math}</span>
+                                                <span className='text-item__text'>Математика</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.brain}</span>
+                                                <span className='text-item__text'>Логика</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.music_v2}</span>
+                                                <span className='text-item__text'>Музыка, пение</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.dance}</span>
+                                                <span className='text-item__text'>Музыкально-ритмические движения</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.lego}</span>
+                                                <span className='text-item__text'>Конструирование</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.english}</span>
+                                                <span className='text-item__text'>Английский язык</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.logoped}</span>
+                                                <span className='text-item__text'>Занятия с логопедом</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.ecology}</span>
+                                                <span className='text-item__text'>Экология</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <Splide
+                                        className='splide splide_type_carousel'
+                                        aria-label='Фотографии детского садика'
+                                        options={{
+                                            type: "loop",
+                                            cloneStatus: false,
+                                            pagination: false,
+                                            arrows: true,
+                                            autoplay: true,
+                                            lazyLoad: "nearby",
+                                            perPage: 1,
+                                            focus: "center",
+                                            updateOnMove: true,
+                                            gap: ".5em",
+                                            padding: "clamp(0rem, -8.7379rem + 37.2816vw, 36rem)",
+                                        }}
+                                    >
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                    </Splide>
+                                </div>
+                            </Tab>
+                            <Tab title='Оздоровительные услуги'>
+                                <div className='services__content'>
+                                    <ul className='services__list'>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.fitness_v4}</span>
+                                                <span className='text-item__text'>Физкультурные занятий</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.fitness_v5}</span>
+                                                <span className='text-item__text'>Занятия на свежем воздухе</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.pool}</span>
+                                                <span className='text-item__text'>Бассеин</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.sand}</span>
+                                                <span className='text-item__text'>Песочная терапия</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.sun}</span>
+                                                <span className='text-item__text'>Утренняя гимнастика</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.fitness}</span>
+                                                <span className='text-item__text'>Оздоровительная гимнастика</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.fitness_v3}</span>
+                                                <span className='text-item__text'>Корригирующая гимнастика</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.gym_v2}</span>
+                                                <span className='text-item__text'>Фитнес</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.basketball}</span>
+                                                <span className='text-item__text'>Баскетбол</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.mini_football}</span>
+                                                <span className='text-item__text'>Мини-футбол</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p className='text-item services__item'>
+                                                <span className='text-item__icon'>{AdvantagesIcons.kinesiology}</span>
+                                                <span className='text-item__text'>Кинезиология “МегаМозг”</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <Splide
+                                        className='splide splide_type_carousel'
+                                        aria-label='Фотографии детского садика'
+                                        options={{
+                                            type: "loop",
+                                            cloneStatus: false,
+                                            pagination: false,
+                                            arrows: true,
+                                            autoplay: true,
+                                            lazyLoad: "nearby",
+                                            perPage: 1,
+                                            focus: "center",
+                                            updateOnMove: true,
+                                            gap: ".5em",
+                                            padding: "clamp(0rem, -8.7379rem + 37.2816vw, 36rem)",
+                                        }}
+                                    >
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                        <SplideSlide>
+                                            <img
+                                                data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                                alt='Image 1'
+                                                className='corner-rounded corner-rounded_size_lg'
+                                            />
+                                        </SplideSlide>
+                                    </Splide>
+                                </div>
+                            </Tab>
+                        </Tabs>
                     </div>
                 </section>
             </main>

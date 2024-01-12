@@ -1,0 +1,49 @@
+.splide {
+    &_type_carousel {
+        .splide__track {
+            @include media(sm) {
+                padding-block: 0 clamp(2.75rem, 2.0825rem + 2.8479vw, 5.5rem);
+            }
+        }
+
+        .splide__slide {
+            & > * {
+                inline-size: 100%;
+                aspect-ratio: 6.48/3.85;
+                object-fit: cover;
+                object-position: center;
+                @include media(sm) {
+                    opacity: 0.4;
+                    transition: transform 0.15s ease-in;
+                }
+            }
+            &.is-active > * {
+                @include media(sm) {
+                    transform: scale(1.15) translateY(15%);
+                    position: relative;
+                    z-index: 1;
+                    opacity: 1;
+                    transition: transform 0.35s ease-in;
+                }
+            }
+        }
+
+        .splide__arrow {
+            block-size: 100%;
+            background-color: transparent;
+            color: transparent;
+            inline-size: clamp(0rem, -6.8rem + 34vw, 34rem);
+
+            svg {
+                fill: transparent;
+            }
+
+            &.splide__arrow--next {
+                right: 0;
+            }
+            &.splide__arrow--prev {
+                left: 0;
+            }
+        }
+    }
+}

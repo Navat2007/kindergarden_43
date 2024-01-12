@@ -2,11 +2,16 @@
     &__wrap {
         margin-inline: auto;
         inline-size: var(--large-inline-size);
-        padding: var(--indent-block-section) var(--large-inline-section-indent);
+        padding-block: var(--indent-block-section);
+        padding-inline: var(--large-inline-section-indent);
 
         &_size_medium {
             inline-size: var(--medium-inline-size);
             padding-inline: var(--medium-inline-section-indent);
+        }
+
+        &_size_large {
+            padding-inline: var(--small-inline-section-indent);
         }
 
         &_bg_main-light {
@@ -14,8 +19,16 @@
         }
     }
 
+    &__title-block {
+        @extend .section__wrap_size_medium;
+        margin-block: 0 var(--indent-large);
+        @include media(sm) {
+            padding-inline: var(--indent-large);
+        }
+    }
+
     &__title {
-        margin-block: 0 0.5em;
+        margin-block: 0 0.45em;
         font-family: var(--heading-font-family);
         font-size: clamp(1.875rem, 7.4vw, 4.625rem);
         font-weight: normal;
@@ -38,6 +51,14 @@
                     inset: -0.125em auto auto -0.625em;
                 }
             }
+        }
+    }
+
+    &__main-text {
+        font-size: clamp(1em, 2vw, 1.25em);
+        max-inline-size: 44em;
+        p {
+            margin-block: 0;
         }
     }
 

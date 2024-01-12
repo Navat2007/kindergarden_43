@@ -1,0 +1,43 @@
+.services {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--indent-large);
+    }
+    &__list {
+        @extend %reset-list;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--indent-medium);
+
+        @include media(sm) {
+            padding-inline: var(--medium-inline-section-indent);
+        }
+
+        li {
+            flex: auto;
+            @include media(sm, max) {
+                flex: 1 0 6.5em;
+            }
+        }
+    }
+    &__item {
+        height: 100%;
+        @extend .corner-rounded;
+        background-color: var(--accent-alt-color);
+        padding: 0.75em;
+        gap: 0.75em;
+
+        .text-item__text {
+            flex: auto;
+            font-size: clamp(1em, 2vw, 1.25em);
+            text-align: center;
+        }
+
+        .text-item__icon {
+            color: var(--main-alt-color);
+            background-color: #fff;
+            border-radius: inherit;
+        }
+    }
+}

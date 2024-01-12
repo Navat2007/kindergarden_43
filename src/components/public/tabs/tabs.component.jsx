@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./tabs.scss";
 
 const Tabs = ({ children, extraClass, theme, place = window.global.makeid(6) }) => {
-    const [activeTab, setActiveTab] = React.useState(place && window.localStorage.getItem(`${place}_tab`) ? parseInt(window.localStorage.getItem(`${place}_tab`)) : 0);
+    const [activeTab, setActiveTab] = React.useState(
+        place && window.localStorage.getItem(`${place}_tab`) ? parseInt(window.localStorage.getItem(`${place}_tab`)) : 0
+    );
 
     if (!children.length)
         return (
@@ -17,14 +19,12 @@ const Tabs = ({ children, extraClass, theme, place = window.global.makeid(6) }) 
         <div className={`tabs${theme ? ` tabs_theme_${theme}` : ``}${extraClass ? ` ${extraClass}` : ``}`}>
             <ul className={`tabs__list${extraClass ? ` ${extraClass}-list` : ``}`}>
                 {children.map((child, index) => {
-                    if(child)
-                    {
+                    if (child) {
                         return (
                             <li
                                 key={child?.props?.title}
                                 onClick={() => {
-                                    if(place)
-                                    {
+                                    if (place) {
                                         window.localStorage.setItem(`${place}_tab`, index);
                                     }
 
@@ -36,7 +36,7 @@ const Tabs = ({ children, extraClass, theme, place = window.global.makeid(6) }) 
                             >
                                 {child?.props?.title}
                             </li>
-                        )
+                        );
                     }
                 })}
             </ul>
