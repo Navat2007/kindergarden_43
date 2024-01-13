@@ -24,7 +24,7 @@
     }
 
     &__main-info {
-        font-size: clamp(1em, 2vw, 1.25em);
+        font-size: clamp(.875em, 2vw, 1.25em);
         p {
             margin-block: 0.75rem;
         }
@@ -42,7 +42,7 @@
     }
 
     &__main-text {
-        font-size: min(2vw, 1.25em);
+        font-size: clamp(.875em, 2vw, 1.25em);
         line-height: 1.4;
         p {
             margin-block: 0;

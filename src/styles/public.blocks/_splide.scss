@@ -1,8 +1,44 @@
 .splide {
-    &_type_carousel {
+    .splide__track {
+        padding-block: var(--indent-2);
+    }
+
+    .splide__arrow {
+        inline-size: clamp(3em, 7.6vw, 4.75em);
+        block-size: clamp(3em, 7.6vw, 4.75em);
+        box-shadow: var(--box-shadow-small);
+        background-color: #fff;
+        opacity: 1;
+        color: var(--main-text-low-color);
+
+        &:hover {
+            color: var(--main-color);
+        }
+
+        &:disabled {
+            color: var(--grey-200-color);
+            box-shadow: none;
+            background-color: #ffffff56;
+        }
+
+        svg {
+            block-size: 80%;
+            inline-size: 80%;
+            fill: currentColor;
+        }
+
+        &.splide__arrow--prev {
+            left: calc(clamp(0rem, -1.45rem + 7.25vw, 7.25rem) * -1);
+        }
+        &.splide__arrow--next {
+            right: calc(clamp(0rem, -1.45rem + 7.25vw, 7.25rem) * -1);
+        }
+    }
+
+    &_type_bottom-carousel {
         .splide__track {
             @include media(sm) {
-                padding-block: 0 clamp(2.75rem, 2.0825rem + 2.8479vw, 5.5rem);
+                padding-block: 0 clamp(2.5em, 10vw, 7em);
             }
         }
 
@@ -19,7 +55,8 @@
             }
             &.is-active > * {
                 @include media(sm) {
-                    transform: scale(1.15) translateY(15%);
+                    scale: 1.15;
+                    inset-block-start: clamp(1em, 8vw, 4.5em);
                     position: relative;
                     z-index: 1;
                     opacity: 1;
@@ -30,9 +67,11 @@
 
         .splide__arrow {
             block-size: 100%;
+            border-radius: 0;
+            box-shadow: unset;
             background-color: transparent;
             color: transparent;
-            inline-size: clamp(0rem, -6.8rem + 34vw, 34rem);
+            inline-size: clamp(0rem, -6.8rem + 30vw, 30rem);
 
             svg {
                 fill: transparent;
@@ -44,6 +83,18 @@
             &.splide__arrow--prev {
                 left: 0;
             }
+        }
+    }
+
+    &_size_wide {
+        margin-inline: auto;
+        inline-size: var(--inline-size-large);
+        padding-inline: var(--inline-indent-small);
+    }
+
+    &_mobile_auto-width {
+        .splide__slide {
+            width: min(18em, 100%);
         }
     }
 }

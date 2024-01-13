@@ -700,7 +700,7 @@ const IndexPage = () => {
                     <Tabs>
                         <Tab title='Образовательные услуги'>
                             <div className='services__content'>
-                                <ul className='services__list'>
+                                <ul className='services__list section__wrap'>
                                     <li>
                                         <p className='text-item services__item'>
                                             <span className='text-item__icon'>{AdvantagesIcons.bag}</span>
@@ -775,7 +775,7 @@ const IndexPage = () => {
                                     </li>
                                 </ul>
                                 <Splide
-                                    className='splide splide_type_carousel'
+                                    className='splide splide_size_wide splide_type_bottom-carousel'
                                     aria-label='Фотографии детского садика'
                                     options={{
                                         type: "loop",
@@ -788,7 +788,7 @@ const IndexPage = () => {
                                         focus: "center",
                                         updateOnMove: true,
                                         gap: ".5em",
-                                        padding: "clamp(0rem, -8.7379rem + 37.2816vw, 36rem)",
+                                        padding: "clamp(0rem, -7.1875rem + 35.9375vw, 35.9375rem)",
                                     }}
                                 >
                                     <SplideSlide>
@@ -838,7 +838,7 @@ const IndexPage = () => {
                         </Tab>
                         <Tab title='Оздоровительные услуги'>
                             <div className='services__content'>
-                                <ul className='services__list'>
+                                <ul className='services__list section__wrap'>
                                     <li>
                                         <p className='text-item services__item'>
                                             <span className='text-item__icon'>{AdvantagesIcons.fitness_v4}</span>
@@ -907,7 +907,7 @@ const IndexPage = () => {
                                     </li>
                                 </ul>
                                 <Splide
-                                    className='splide splide_type_carousel'
+                                    className='splide splide_size_wide splide_type_bottom-carousel'
                                     aria-label='Фотографии детского садика'
                                     options={{
                                         type: "loop",
@@ -920,7 +920,7 @@ const IndexPage = () => {
                                         focus: "center",
                                         updateOnMove: true,
                                         gap: ".5em",
-                                        padding: "clamp(0rem, -8.7379rem + 37.2816vw, 36rem)",
+                                        padding: "clamp(0rem, -7.1875rem + 35.9375vw, 35.9375rem)",
                                     }}
                                 >
                                     <SplideSlide>
@@ -950,8 +950,8 @@ const IndexPage = () => {
                     </Tabs>
                 </section>
                 {/* Наш коллектив */}
-                <section className='section'>
-                    <div className='section__wrap section__wrap_size_large'>
+                <section className='section page__section-indent'>
+                    <div className='section__wrap'>
                         <div className='section__title-block'>
                             <h2 className='section__title section__title_with-decor'>Наш коллектив</h2>
                             <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
@@ -966,6 +966,97 @@ const IndexPage = () => {
                                 </p>
                             </div>
                         </div>
+                        <Splide
+                            className='splide splide_mobile_auto-width'
+                            aria-label='Фотографии педагогов детского садика'
+                            options={{
+                                type: "loop",
+                                arrowPath:
+                                    "M24.6183 20.3627C24.8187 20.1623 24.8187 19.8373 24.6183 19.6368L13.1799 8.19882C12.8413 7.85997 12.8416 7.31101 13.1799 6.97278L13.18 6.97261C13.5183 6.63422 14.0673 6.63399 14.4061 6.97278L26.8207 19.3872C26.9901 19.5568 27.0743 19.7763 27.0743 19.9997C27.0743 20.2233 26.9898 20.4432 26.8203 20.6128L14.4058 33.0269L14.4056 33.0271C14.0668 33.3661 13.5181 33.3658 13.18 33.0273L13.1796 33.0269C12.8412 32.6885 12.8412 32.1394 13.1795 31.8011L24.6183 20.3627Z",
+                                cloneStatus: false,
+                                pagination: false,
+                                arrows: true,
+                                autoplay: true,
+                                lazyLoad: "nearby",
+                                perPage: 4,
+                                updateOnMove: true,
+                                gap: "var(--indent-2)",
+                                padding: "var(--indent-1)",
+                                breakpoints: {
+                                    1460: {
+                                        perPage: 3,
+                                    },
+                                    960: {
+                                        perPage: 2,
+                                    },
+                                    576: {
+                                        autoWidth: true,
+                                        arrows: false,
+                                    },
+                                },
+                            }}
+                        >
+                            <SplideSlide>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card'>
+                                        <img
+                                            className='card__image'
+                                            data-splide-lazy='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <h3 className='card__title'>
+                                            <span className='card__title-accent'>Годик</span>
+                                            Татьяна Михайловна
+                                        </h3>
+                                        <div className='card__main-content'>
+                                            <p className='card__text'>Старший воспитатель</p>
+                                            <p className='card__text'>Стаж работы: 29 лет</p>
+                                        </div>
+                                    </article>
+                                </a>
+                            </SplideSlide>
+                            <SplideSlide>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card'>
+                                        <img
+                                            className='card__image'
+                                            data-splide-lazy='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <h3 className='card__title'>
+                                            <span className='card__title-accent'>Годик</span>
+                                            Татьяна Михайловна
+                                        </h3>
+                                        <div className='card__main-content'>
+                                            <p className='card__text'>Старший воспитатель</p>
+                                            <p className='card__text'>Стаж работы: 29 лет</p>
+                                        </div>
+                                    </article>
+                                </a>
+                            </SplideSlide>
+                            <SplideSlide>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card'>
+                                        <img
+                                            className='card__image'
+                                            data-splide-lazy='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <h3 className='card__title'>
+                                            <span className='card__title-accent'>Годик</span>
+                                            Татьяна Михайловна
+                                        </h3>
+                                        <div className='card__main-content'>
+                                            <p className='card__text'>Старший воспитатель</p>
+                                            <p className='card__text'>Стаж работы: 29 лет</p>
+                                        </div>
+                                    </article>
+                                </a>
+                            </SplideSlide>
+                        </Splide>
                     </div>
                 </section>
             </main>

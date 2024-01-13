@@ -1,4 +1,5 @@
 .services {
+    padding-block-end: var(--indent-2);
     &__content {
         display: flex;
         flex-direction: column;
@@ -9,10 +10,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: var(--indent-2);
-
-        @include media(sm) {
-            padding-inline: var(--inline-indent-medium);
-        }
 
         li {
             flex: auto;
@@ -29,7 +26,7 @@
 
         .text-item__text {
             flex: auto;
-            font-size: clamp(1em, 2vw, 1.25em);
+            font-size: clamp(.875em, 2vw, 1.25em);
             text-align: center;
         }
 

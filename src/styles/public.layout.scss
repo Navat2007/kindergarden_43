@@ -34,20 +34,25 @@
 
     --inline-size-large: min(120rem, 100%); // 1920
     --inline-size-medium: min(107.5rem, 100%); // 1720
-    --inline-indent-large: clamp(0.625rem, -2.8365rem + 15.3846vw, 15.625rem); // 10 - 250
-    --inline-indent-medium: clamp(0.625rem, -1.3942rem + 8.9744vw, 9.375rem); // 10 - 150
-    --inline-indent-small: clamp(0.625rem, -0.6731rem + 5.7692vw, 6.25rem); // 10 - 100
-
-    --indent-block-section: clamp(1.875rem, 8vw, 5rem); // 30 - 80
-    --indent-wave-decor: clamp(3.125rem, 1.8926rem + 6.162vw, 7.5rem); // 50 - 120
+    --inline-indent-large: 1.5em;
+    --inline-indent-medium: 1.5em;
+    --inline-indent-small: 1.5em;
+    --indent-block-section: 1.875em;
+    --indent-wave-decor: var(--indent-4);
 
     --indent-1: clamp(0.25rem, 1vw, 0.625rem); // 4 - 10
     --indent-2: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
     --indent-3: clamp(1rem, 3vw, 1.875rem); // 16 - 30
     --indent-4: clamp(1.25rem, 4vw, 2.5rem); // 20 - 40
-    // --indent-small: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
-    // --indent-medium: clamp(1rem, 2.4vw, 1.5rem); // 16 - 24
-    // --indent-large: clamp(1.5rem, 4.8vw, 3rem); // 24 - 48
+
+    @include media(lg) {
+        --inline-indent-small: clamp(1.25rem, -4.1848rem + 8.6957vw, 6.25rem); // 10 - 100
+        --inline-indent-medium: clamp(1.25rem, -7.5815rem + 14.1304vw, 9.375rem); // 10 - 150
+        --inline-indent-large: clamp(1.25rem, -14.375rem + 25vw, 15.625rem); // 10 - 250
+
+        --indent-block-section: clamp(1.875rem, -1.5217rem + 5.4348vw, 5rem); // 30 - 80
+        --indent-wave-decor: clamp(3.125rem, -1.6304rem + 7.6087vw, 7.5rem); // 50 - 120
+    }
 }
 
 // layout
@@ -58,12 +63,15 @@
 @import "./public.blocks/animations";
 
 // ui
+@import "./public.blocks/card-link";
 @import "./public.blocks/logo-link";
 @import "./public.blocks/button";
 @import "./public.blocks/icon-button";
 @import "./public.blocks/social-group";
 @import "./public.blocks/text-item";
 @import "./public.blocks/splide";
+@import "./public.blocks/tabs";
+@import "./public.blocks/card";
 
 // blocks
 @import "./public.blocks/header";

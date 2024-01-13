@@ -1,8 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import "./tabs.scss";
-
 const Tabs = ({ children, extraClass, theme, place = window.global.makeid(6) }) => {
     const [activeTab, setActiveTab] = React.useState(
         place && window.localStorage.getItem(`${place}_tab`) ? parseInt(window.localStorage.getItem(`${place}_tab`)) : 0

@@ -1,15 +1,15 @@
-@import "../../../styles/vendor/mixins";
-@import "../../../styles/vendor/extends";
-
 .tabs {
     &__list {
         @extend %reset-list;
+        padding-inline: var(--inline-indent-small);
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         gap: var(--indent-3);
-        overflow-x: auto;
 
         @include media(sm) {
-            justify-content: center;
+            flex-direction: row;
+            overflow-x: auto;
         }
     }
 
@@ -19,7 +19,7 @@
         font-size: clamp(1em, 2vw, 1.25em);
         font-weight: 600;
         padding: 0.625rem 1rem;
-        inline-size: min(60vw, 30.75rem);
+        inline-size: min(30em, 100%);
         border-radius: 22px;
         background-color: var(--grey-100-color);
         opacity: 0.54;

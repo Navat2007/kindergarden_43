@@ -1,0 +1,39 @@
+.card {
+    display: grid;
+    gap: var(--indent-2);
+    background-color: #fff;
+    box-shadow: var(--box-shadow-medium);
+    @extend .corner-rounded_size_lg;
+
+    &__image {
+        @extend %alt-text-on-after;
+        aspect-ratio: 340/430;
+        object-fit: cover;
+        object-position: center;
+        border-radius: inherit;
+    }
+
+    &__title {
+        padding-inline: 1.25em;
+        margin-block: 0;
+        font-weight: inherit;
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    }
+
+    &__title-accent {
+        display: block;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__main-content {
+        padding: var(--indent-2) 1.25em 1.25em;
+        display: grid;
+        gap: 0.5em;
+    }
+
+    &__text {
+        margin-block: 0;
+        color: var(--main-text-low-color);
+    }
+}
