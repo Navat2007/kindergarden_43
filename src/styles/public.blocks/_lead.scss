@@ -4,7 +4,7 @@
 
     &__columns {
         display: grid;
-        gap: var(--indent-large);
+        gap: var(--indent-4);
         grid-template-columns: 1fr 1fr;
 
         @include media(lg, max) {

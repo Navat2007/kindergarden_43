@@ -13,7 +13,7 @@
     &__columns {
         display: flex;
         align-items: flex-start;
-        gap: 1.875em;
+        gap: var(--indent-3);
         padding-block-end: 1.25em;
         margin-block-end: 1.25em;
         border-block-end: 2px solid var(--grey-100-color);

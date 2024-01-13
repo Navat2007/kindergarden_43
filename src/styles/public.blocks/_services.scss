@@ -2,16 +2,16 @@
     &__content {
         display: flex;
         flex-direction: column;
-        gap: var(--indent-large);
+        gap: var(--indent-4);
     }
     &__list {
         @extend %reset-list;
         display: flex;
         flex-wrap: wrap;
-        gap: var(--indent-medium);
+        gap: var(--indent-2);
 
         @include media(sm) {
-            padding-inline: var(--medium-inline-section-indent);
+            padding-inline: var(--inline-indent-medium);
         }
 
         li {
@@ -26,7 +26,6 @@
         @extend .corner-rounded;
         background-color: var(--accent-alt-color);
         padding: 0.75em;
-        gap: 0.75em;
 
         .text-item__text {
             flex: auto;

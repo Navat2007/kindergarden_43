@@ -32,17 +32,22 @@
     --box-shadow-small: 0 0 4px rgba(0, 0, 0, 0.15);
     --box-shadow-medium: 0 0 8px rgba(0, 0, 0, 0.15);
 
-    --large-inline-size: min(120rem, 100%); // 1920
-    --medium-inline-size: min(107.5rem, 100%); // 1720
-    --large-inline-section-indent: clamp(0.625rem, -2.8365rem + 15.3846vw, 15.625rem); // 10 - 250
-    --medium-inline-section-indent: clamp(0.625rem, -1.3942rem + 8.9744vw, 9.375rem); // 10 - 150
-    --small-inline-section-indent: clamp(0.625rem, -0.6731rem + 5.7692vw, 6.25rem); // 10 - 100
+    --inline-size-large: min(120rem, 100%); // 1920
+    --inline-size-medium: min(107.5rem, 100%); // 1720
+    --inline-indent-large: clamp(0.625rem, -2.8365rem + 15.3846vw, 15.625rem); // 10 - 250
+    --inline-indent-medium: clamp(0.625rem, -1.3942rem + 8.9744vw, 9.375rem); // 10 - 150
+    --inline-indent-small: clamp(0.625rem, -0.6731rem + 5.7692vw, 6.25rem); // 10 - 100
 
     --indent-block-section: clamp(1.875rem, 8vw, 5rem); // 30 - 80
-    --indent-wave-decor: clamp(1.25rem, 0.9615rem + 1.2821vw, 2.5rem); // 20 - 40
-    --indent-small: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
-    --indent-medium: clamp(1rem, 2.4vw, 1.5rem); // 16 - 24
-    --indent-large: clamp(1.5rem, 4.8vw, 3rem); // 24 - 48
+    --indent-wave-decor: clamp(3.125rem, 1.8926rem + 6.162vw, 7.5rem); // 50 - 120
+
+    --indent-1: clamp(0.25rem, 1vw, 0.625rem); // 4 - 10
+    --indent-2: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
+    --indent-3: clamp(1rem, 3vw, 1.875rem); // 16 - 30
+    --indent-4: clamp(1.25rem, 4vw, 2.5rem); // 20 - 40
+    // --indent-small: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
+    // --indent-medium: clamp(1rem, 2.4vw, 1.5rem); // 16 - 24
+    // --indent-large: clamp(1.5rem, 4.8vw, 3rem); // 24 - 48
 }
 
 // layout
@@ -73,6 +78,7 @@
 @import "./public.blocks/services";
 
 // decor
+@import "./public.blocks/bg-color";
 @import "./public.blocks/wave-decor";
 @import "./public.blocks/blobs";
 @import "./public.blocks/corner-rounded";

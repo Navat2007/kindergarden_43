@@ -1,7 +1,7 @@
 .about {
     &__two-columns {
         display: grid;
-        gap: var(--indent-large);
+        gap: var(--indent-4);
 
         @include media(lg) {
             grid-template-columns: 0.4fr 0.972fr;
@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--indent-medium);
+        gap: var(--indent-3);
     }
 
     &__image {

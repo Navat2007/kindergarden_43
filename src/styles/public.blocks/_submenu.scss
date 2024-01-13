@@ -34,7 +34,7 @@
         @include media(md) {
             position: absolute;
             inset: 100% 0 auto 0;
-            // margin-block-start: 2px;
+            padding-block: 1.5em;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
             border-block-start: 2px solid var(--grey-100-color);
@@ -52,12 +52,7 @@
     }
 
     &__top-list-container {
-        inline-size: var(--large-inline-size);
-        padding-inline: var(--large-inline-section-indent);
-
-        @include media(md) {
-            margin: 1.5em auto;
-        }
+        @extend .section__wrap;
     }
 
     &__list-container {
@@ -66,7 +61,6 @@
 
     &__top-list {
         @extend %reset-list;
-        gap: 0 1.875em;
         columns: auto 21em;
         column-gap: 1.875em;
         column-fill: balance-all;
@@ -82,7 +76,6 @@
 
     &__list {
         @extend %reset-list;
-        margin-block-end: 1.5em;
     }
 
     &__item {

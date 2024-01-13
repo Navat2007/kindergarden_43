@@ -5,7 +5,7 @@
     &__list {
         @extend %reset-list;
         display: flex;
-        gap: var(--indent-large);
+        gap: var(--indent-3);
         overflow-x: auto;
 
         @include media(sm) {
@@ -43,6 +43,6 @@
     }
 
     &__section {
-        padding-block: var(--indent-large);
+        padding-block: var(--indent-4);
     }
 }

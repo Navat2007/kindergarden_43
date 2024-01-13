@@ -1,34 +1,49 @@
 .section {
     &__wrap {
         margin-inline: auto;
-        inline-size: var(--large-inline-size);
-        padding-block: var(--indent-block-section);
-        padding-inline: var(--large-inline-section-indent);
-
-        &_size_medium {
-            inline-size: var(--medium-inline-size);
-            padding-inline: var(--medium-inline-section-indent);
-        }
+        inline-size: var(--inline-size-large);
+        padding-inline: var(--inline-indent-large);
 
         &_size_large {
-            padding-inline: var(--small-inline-section-indent);
-        }
-
-        &_bg_main-light {
-            background-color: var(--main-light-color);
+            padding-inline: var(--inline-indent-small);
         }
     }
 
+    &__card {
+        @extend .corner-rounded_size_lg;
+        margin-inline: auto;
+        inline-size: var(--inline-size-medium);
+        padding-inline: var(--inline-indent-medium);
+    }
+
     &__title-block {
-        @extend .section__wrap_size_medium;
-        margin-block: 0 var(--indent-large);
+        display: grid;
+        gap: var(--indent-3);
+        margin-block-end: var(--indent-4);
+        grid-template-columns: 1fr auto;
+
+        .section__title {
+            margin-block: 0;
+        }
+
+        .button {
+            place-self: center start;
+            grid-row: 3;
+        }
+
+        .section__main-text {
+            grid-column: 1/-1;
+        }
+
         @include media(sm) {
-            padding-inline: var(--indent-large);
+            .button {
+                grid-row: unset;
+            }
         }
     }
 
     &__title {
-        margin-block: 0 0.45em;
+        margin-block: 0 var(--indent-4);
         font-family: var(--heading-font-family);
         font-size: clamp(1.875rem, 7.4vw, 4.625rem);
         font-weight: normal;
@@ -65,13 +80,13 @@
     &__card-deck {
         @extend %reset-list;
         display: grid;
-        gap: var(--indent-medium);
+        gap: var(--indent-3);
         grid-template-columns: repeat(auto-fill, minmax(min(22em, 100%), 1fr));
     }
 
-    &_indent-small {
+    &_mobile-indent_small {
         @include media(sm) {
-            padding-inline: var(--indent-small);
+            padding-inline: var(--indent-1);
         }
     }
 }
