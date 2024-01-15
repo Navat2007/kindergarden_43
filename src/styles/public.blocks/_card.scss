@@ -16,9 +16,16 @@
     }
 
     &__content {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: var(--indent-2);
         padding: 1.25em;
+    }
+
+    &__title-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5em;
     }
 
     // &__date {}
@@ -47,6 +54,33 @@
     &_type_article {
     }
 
+    &_type_review {
+        @extend .bg-color;
+
+        .card__content {
+            flex: auto;
+            padding: clamp(1.25em, 3.6vw, 2em);
+        }
+
+        .card__title-block {
+            flex-direction: column;
+        }
+
+        .card__title {
+            font-size: clamp(1.25em, 2.4vw, 1.5em);
+        }
+
+        .card__date {
+            font-size: 0.875em;
+            color: var(--main-text-low-color);
+        }
+
+        .card__main-text {
+            margin-block: auto;
+            @include clamp(10, 1.2);
+        }
+    }
+
     &_type_people {
         @extend .corner-rounded_size_lg;
 
@@ -73,7 +107,6 @@
         .card__content {
             flex: auto;
             place-self: center;
-            grid-template-columns: 1fr auto;
             gap: 0.5em;
         }
         .card__date {
@@ -82,6 +115,7 @@
         }
         .card__title {
             order: -1;
+            flex: auto;
             @include clamp(2, 1.2);
         }
         .card__text {
@@ -90,17 +124,19 @@
     }
 
     &_size_large {
-        .card__content {
-            gap: 0.5em;
-        }
         .card__image {
             aspect-ratio: unset;
             flex: auto;
         }
+
+        .card__title-block {
+            flex-direction: column;
+        }
+
         .card__title {
             font-size: clamp(1.25em, 3vw, 1.875em);
-            margin-block-end: 0.75rem;
         }
+
         .card__text {
             font-size: clamp(1em, 1.8vw, 1.125em);
         }

@@ -1,4 +1,27 @@
 .splide {
+    .splide__pagination {
+        position: relative;
+
+        .splide__pagination__page {
+            inline-size: 15px;
+            block-size: 15px;
+            background-color: #fff;
+            margin: var(--indent-2) 5px;
+            outline: 2px solid transparent;
+            transition: 0.15s ease-in;
+
+            &:hover {
+                outline-color: var(--grey-200-color);
+            }
+
+            &.is-active {
+                background-color: var(--main-color);
+                transform: unset;
+                pointer-events: none;
+            }
+        }
+    }
+
     .splide__arrow {
         inline-size: clamp(3em, 7.6vw, 4.75em);
         block-size: clamp(3em, 7.6vw, 4.75em);
@@ -123,6 +146,10 @@
                 fill: transparent;
             }
 
+            &:disabled {
+                opacity: 0;
+            }
+
             &.splide__arrow--next {
                 right: 0;
             }
@@ -146,5 +173,9 @@
 
     &_indent-block .splide__track {
         padding-block: var(--indent-2);
+    }
+
+    &_pagination_grey .splide__pagination .splide__pagination__page {
+        background-color: var(--grey-100-color);
     }
 }

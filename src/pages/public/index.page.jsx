@@ -991,10 +991,12 @@ const IndexPage = () => {
                                             loading='lazy'
                                         />
                                         <div className='card__content'>
-                                            <time className='card__date' dateTime='2022-02-01'>
-                                                01.08.23г.
-                                            </time>
-                                            <h3 className='card__title'>Открытие нашего сада!</h3>
+                                            <div className='card__title-block'>
+                                                <time className='card__date' dateTime='2022-02-01'>
+                                                    01.08.23г.
+                                                </time>
+                                                <h3 className='card__title'>Открытие нашего сада!</h3>
+                                            </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'>
                                                     НАШ детский сад открыл двери для своих воспитанников!
@@ -1014,12 +1016,14 @@ const IndexPage = () => {
                                             loading='lazy'
                                         />
                                         <div className='card__content'>
-                                            <time className='card__date' dateTime='2022-02-01'>
-                                                31.07.23г.
-                                            </time>
-                                            <h3 className='card__title'>
-                                                Открытие ФГБДОУ «Центр развития ребёнка — детский сад № 43»...
-                                            </h3>
+                                            <div className='card__title-block'>
+                                                <time className='card__date' dateTime='2022-02-01'>
+                                                    31.07.23г.
+                                                </time>
+                                                <h3 className='card__title'>
+                                                    Открытие ФГБДОУ «Центр развития ребёнка — детский сад № 43»
+                                                </h3>
+                                            </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'></p>
                                             </div>
@@ -1037,13 +1041,15 @@ const IndexPage = () => {
                                             loading='lazy'
                                         />
                                         <div className='card__content'>
-                                            <time className='card__date' dateTime='2022-02-01'>
-                                                01.09.23г.
-                                            </time>
-                                            <h3 className='card__title'>
-                                                График проведения выпускных утренников в нашем детском саду График
-                                                проведения выпускных утренников в нашем детском саду
-                                            </h3>
+                                            <div className='card__title-block'>
+                                                <time className='card__date' dateTime='2022-02-01'>
+                                                    01.09.23г.
+                                                </time>
+                                                <h3 className='card__title'>
+                                                    График проведения выпускных утренников в нашем детском саду График
+                                                    проведения выпускных утренников в нашем детском саду
+                                                </h3>
+                                            </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'>
                                                     НАШ детский сад открыл двери для своих воспитанников! НАШ детский
@@ -1065,10 +1071,12 @@ const IndexPage = () => {
                                             loading='lazy'
                                         />
                                         <div className='card__content'>
-                                            <time className='card__date' dateTime='2022-02-01'>
-                                                02.05.23г.
-                                            </time>
-                                            <h3 className='card__title'>День Победы 2023 год</h3>
+                                            <div className='card__title-block'>
+                                                <time className='card__date' dateTime='2022-02-01'>
+                                                    02.05.23г.
+                                                </time>
+                                                <h3 className='card__title'>День Победы 2023 год</h3>
+                                            </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'>Мы помним! Мы гордимся!</p>
                                             </div>
@@ -1086,10 +1094,12 @@ const IndexPage = () => {
                                             loading='lazy'
                                         />
                                         <div className='card__content'>
-                                            <time className='card__date' dateTime='2022-02-01'>
-                                                17.02.23г.
-                                            </time>
-                                            <h3 className='card__title'>Масленица 2023 год</h3>
+                                            <div className='card__title-block'>
+                                                <time className='card__date' dateTime='2022-02-01'>
+                                                    17.02.23г.
+                                                </time>
+                                                <h3 className='card__title'>Масленица 2023 год</h3>
+                                            </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'>Сегодня блины, а завтра весна!</p>
                                             </div>
@@ -1107,10 +1117,12 @@ const IndexPage = () => {
                                             loading='lazy'
                                         />
                                         <div className='card__content'>
-                                            <time className='card__date' dateTime='2022-02-01'>
-                                                17.02.23г.
-                                            </time>
-                                            <h3 className='card__title'>Масленица 2023 год</h3>
+                                            <div className='card__title-block'>
+                                                <time className='card__date' dateTime='2022-02-01'>
+                                                    17.02.23г.
+                                                </time>
+                                                <h3 className='card__title'>Масленица 2023 год</h3>
+                                            </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'>Сегодня блины, а завтра весна!</p>
                                             </div>
@@ -1265,17 +1277,153 @@ const IndexPage = () => {
                                 allowfullscreen
                             ></iframe>
                         </SplideSlide>
-                        <SplideSlide>
-                            <iframe
-                                className='corner-rounded corner-rounded_size_lg'
-                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
-                                title='YouTube video player'
-                                frameborder='0'
-                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                                allowfullscreen
-                            ></iframe>
-                        </SplideSlide>
                     </Splide>
+                </section>
+                {/* Отзывы о нас */}
+                <section className='section page__section-indent'>
+                    <div className='section__wrap'>
+                        <div className='section__title-block'>
+                            <h2 className='section__title section__title_with-decor'>Отзывы о нас</h2>
+                            <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
+                                <span className='button__text'>Отзывы о нас</span>
+                                <span className='button__icon'>{Icons.arrow_next}</span>
+                            </a>
+                        </div>
+                        <Splide
+                            className='splide splide_mobile_auto-width splide_indent-block splide_pagination_grey'
+                            aria-label='Отзывы родителей о детском садике'
+                            options={{
+                                type: "loop",
+                                arrowPath:
+                                    "M24.6183 20.3627C24.8187 20.1623 24.8187 19.8373 24.6183 19.6368L13.1799 8.19882C12.8413 7.85997 12.8416 7.31101 13.1799 6.97278L13.18 6.97261C13.5183 6.63422 14.0673 6.63399 14.4061 6.97278L26.8207 19.3872C26.9901 19.5568 27.0743 19.7763 27.0743 19.9997C27.0743 20.2233 26.9898 20.4432 26.8203 20.6128L14.4058 33.0269L14.4056 33.0271C14.0668 33.3661 13.5181 33.3658 13.18 33.0273L13.1796 33.0269C12.8412 32.6885 12.8412 32.1394 13.1795 31.8011L24.6183 20.3627Z",
+                                cloneStatus: false,
+                                pagination: true,
+                                arrows: true,
+                                autoplay: true,
+                                perPage: 3,
+                                updateOnMove: true,
+                                gap: "var(--indent-2)",
+                                padding: "var(--indent-1)",
+                                breakpoints: {
+                                    960: {
+                                        perPage: 2,
+                                    },
+                                    576: {
+                                        autoWidth: true,
+                                        arrows: false,
+                                    },
+                                },
+                            }}
+                        >
+                            <SplideSlide>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_review'>
+                                        <div className='card__content'>
+                                            <div className='card__title-block'>
+                                                <h3 className='card__title'>Анна</h3>
+                                                <time className='card__date' datetime='2022-10-10'>
+                                                    8 ноября 2023 г.
+                                                </time>
+                                            </div>
+                                            <div className='card__main-text'>
+                                                <p className='card__text'>
+                                                    Здравствуйте.Благодарю воспитателей, 2-ясельной группы, Прыгункову
+                                                    Любовь Александровну, Ситникову Елену Вячеславовну и помощницу
+                                                    воспитателяЗа доброту, терпение и чуткость к каждому малышу. Детки
+                                                    познакомились друг с другом, полюбили воспитателей. Адаптация прошла
+                                                    быстро.Спасибо за фотографии, которые делают на занятиях. Большая
+                                                    радость для родителей ❤️
+                                                </p>
+                                            </div>
+                                            <button className='button button_theme_fill-light-main'>
+                                                <span className='button__text'>Читать полностью</span>
+                                            </button>
+                                        </div>
+                                    </article>
+                                </a>
+                            </SplideSlide>
+                            <SplideSlide>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_review'>
+                                        <div className='card__content'>
+                                            <div className='card__title-block'>
+                                                <h3 className='card__title'>Таранова Татьяна Сергеевна</h3>
+                                                <time className='card__date' datetime='2022-10-10'>
+                                                    8 ноября 2023 г.
+                                                </time>
+                                            </div>
+                                            <div className='card__main-text'>
+                                                <p className='card__text'>
+                                                    Уважаемые Светлана Анатольевна и Анастасия Александровна! Огромное
+                                                    вам спасибо за ваш каждодневный труд, заботу и любовь к детям!
+                                                    И за чудесный осенний праздник! Также благодарность музыкальному
+                                                    работнику и хореографу — все номера на высоком уровне, слаженно,
+                                                    красиво!
+                                                </p>
+                                            </div>
+                                            <button className='button button_theme_fill-light-main'>
+                                                <span className='button__text'>Читать полностью</span>
+                                            </button>
+                                        </div>
+                                    </article>
+                                </a>
+                            </SplideSlide>
+                            <SplideSlide>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_review'>
+                                        <div className='card__content'>
+                                            <div className='card__title-block'>
+                                                <h3 className='card__title'>Виктория Волкова</h3>
+                                                <time className='card__date' datetime='2022-10-10'>
+                                                    8 ноября 2023 г.
+                                                </time>
+                                            </div>
+                                            <div className='card__main-text'>
+                                                <p className='card__text'>
+                                                    «Мой ребёнок с удовольствием идёт в детский сад» – фраза, которую
+                                                    мечтает сказать каждая мама. Нам повезло, мы можем произнести
+                                                    эти слова.Каждый родитель знает, насколько волнующим и нервным может
+                                                    быть период адаптации! Наши уже любимые и прекрасные Прыгункова
+                                                    Любовь Александровна, Ситникова Елена Вячеславовна, Орехова Татьяна
+                                                    Юрьевна совершили маленькое чудо для нашей…
+                                                </p>
+                                            </div>
+                                            <button className='button button_theme_fill-light-main'>
+                                                <span className='button__text'>Читать полностью</span>
+                                            </button>
+                                        </div>
+                                    </article>
+                                </a>
+                            </SplideSlide>
+                            <SplideSlide>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_review'>
+                                        <div className='card__content'>
+                                            <div className='card__title-block'>
+                                                <h3 className='card__title'>Анна</h3>
+                                                <time className='card__date' datetime='2022-10-10'>
+                                                    8 ноября 2023 г.
+                                                </time>
+                                            </div>
+                                            <div className='card__main-text'>
+                                                <p className='card__text'>
+                                                    Здравствуйте.Благодарю воспитателей, 2-ясельной группы, Прыгункову
+                                                    Любовь Александровну, Ситникову Елену Вячеславовну и помощницу
+                                                    воспитателяЗа доброту, терпение и чуткость к каждому малышу. Детки
+                                                    познакомились друг с другом, полюбили воспитателей. Адаптация прошла
+                                                    быстро.Спасибо за фотографии, которые делают на занятиях. Большая
+                                                    радость для родителей ❤️
+                                                </p>
+                                            </div>
+                                            <button className='button button_theme_fill-light-main'>
+                                                <span className='button__text'>Читать полностью</span>
+                                            </button>
+                                        </div>
+                                    </article>
+                                </a>
+                            </SplideSlide>
+                        </Splide>
+                    </div>
                 </section>
             </main>
             {/* Подвал */}
