@@ -10,14 +10,12 @@ import BasicPage from "../../components/public/basic.page/basic.page.component";
 import { Icons, AdvantagesIcons, SocialIcons } from "../../components/svgs";
 import Tabs from "../../components/public/tabs/tabs.component";
 import Tab from "../../components/public/tabs/tab.component";
+import Footer from "../../components/public/footer/footer";
+import Header from "../../components/public/header/header";
+import VideoPlayer from "../../components/public/video.player/video.player.component";
 
 const IndexPage = () => {
     const store = useNewsStore();
-    const [mobileMenuOpened, setMobileMenuOpened] = React.useState(false);
-    const [subMenuOpened, setSubMenuOpened] = React.useState(false);
-    const [moreMenuOpened, setMoreMenuOpened] = React.useState(false);
-    const [dropDownMenuOpened, setDropDownMenuOpened] = React.useState(false);
-    const [thirdDropDownMenuOpened, setThirdDropDownMenuOpened] = React.useState(false);
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -32,454 +30,7 @@ const IndexPage = () => {
             <Helmet>
                 <title>Детский сад № 43 УДПРФ</title>
             </Helmet>
-            {/* Шапка */}
-            <header className='header page__header'>
-                <div className='header__wrap'>
-                    {/* Лого-компонент */}
-                    <a className='header__logo-link logo-link' href='./' aria-label='Логотип' />
-                    <menu
-                        className={classNames({
-                            "header__menu menu": true,
-                            menu_opened: mobileMenuOpened,
-                        })}
-                    >
-                        <ul className='menu__list'>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Главная
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    О нас
-                                </a>
-                            </li>
-                            <li
-                                className={classNames({
-                                    submenu: true,
-                                    submenu_opened: subMenuOpened,
-                                })}
-                            >
-                                <button
-                                    className={classNames({
-                                        "menu__link submenu__button": true,
-                                        submenu__button_actived: subMenuOpened,
-                                    })}
-                                    type='button'
-                                    aria-label='Развернуть список'
-                                    onClick={() => {
-                                        setSubMenuOpened(!subMenuOpened);
-                                    }}
-                                >
-                                    <span className='submenu__button-text'>
-                                        Сведения об образовательной организации
-                                    </span>
-                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                                </button>
-                                {/* первая вложенность с большим заголовком и оберткой для размещения под шапкой */}
-                                <div className='submenu__wrap'>
-                                    <div className='submenu__top-list-container'>
-                                        <p className='submenu__title'>Сведения об образовательной организации</p>
-                                        <ul className='submenu__top-list'>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Основные сведения
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Структура и органы управления образовательной организацией
-                                                </a>
-                                            </li>
-                                            {/* Вторая вложенность без заголовка раздела и обертки, с классом submenu__item submenu__item_has-submenu */}
-                                            <li
-                                                className={classNames({
-                                                    "submenu__item submenu__item_has-submenu": true,
-                                                    "submenu__item_has-submenu_opened": dropDownMenuOpened,
-                                                })}
-                                            >
-                                                <button
-                                                    className={classNames({
-                                                        "submenu__button menu__link": true,
-                                                        submenu__button_actived: dropDownMenuOpened,
-                                                    })}
-                                                    type='button'
-                                                    aria-label='Развернуть список'
-                                                    onClick={() => {
-                                                        setDropDownMenuOpened(!dropDownMenuOpened);
-                                                    }}
-                                                >
-                                                    <span className='submenu__button-text'>Документы</span>
-                                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                                                </button>
-                                                <div className='submenu__list-container'>
-                                                    <ul className='submenu__list'>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Основные сведения
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Структура и органы управления образовательной
-                                                                организацией
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Документы
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Образование
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Образовательные стандарты и требования
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Образование
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Образовательные стандарты и требования
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Руководство. Педагогический (научно-педагогический) состав
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Материально-техническое обеспечение и оснащённость образовательного
-                                                    процесса
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Стипендии и меры поддержки обучающихся
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Платные образовательные услуги
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Финансово-хозяйственная деятельность
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Вакантные места для приёма (перевода) обучающихся
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Доступная среда
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Международное сотрудничество
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Организация питания в образовательной организации
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Программы
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Режим
-                                </a>
-                            </li>
-                            <li
-                                className={classNames({
-                                    submenu: true,
-                                    submenu_opened: moreMenuOpened,
-                                })}
-                            >
-                                <button
-                                    className={classNames({
-                                        "menu__link submenu__button": true,
-                                        submenu__button_actived: moreMenuOpened,
-                                    })}
-                                    type='button'
-                                    aria-label='Развернуть список'
-                                    onClick={() => {
-                                        setMoreMenuOpened(!moreMenuOpened);
-                                    }}
-                                >
-                                    <span className='submenu__button-text'>Еще</span>
-                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                                </button>
-                                {/* первая вложенность с большим заголовком и оберткой для размещения под шапкой */}
-                                <div className='submenu__wrap'>
-                                    <div className='submenu__top-list-container'>
-                                        <p className='submenu__title'>Меню</p>
-                                        <ul className='submenu__top-list'>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Основные сведения
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Структура и органы управления образовательной организацией
-                                                </a>
-                                            </li>
-                                            {/* Вторая вложенность без заголовка раздела и обертки, с классом submenu__item submenu__item_has-submenu */}
-                                            <li
-                                                className={classNames({
-                                                    "submenu__item submenu__item_has-submenu": true,
-                                                    "submenu__item_has-submenu_opened": dropDownMenuOpened,
-                                                })}
-                                            >
-                                                <button
-                                                    className={classNames({
-                                                        "menu__link submenu__button": true,
-                                                        submenu__button_actived: dropDownMenuOpened,
-                                                    })}
-                                                    type='button'
-                                                    aria-label='Развернуть список'
-                                                    onClick={() => {
-                                                        setDropDownMenuOpened(!dropDownMenuOpened);
-                                                    }}
-                                                >
-                                                    <span className='submenu__button-text'>Документы</span>
-                                                    <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                                                </button>
-                                                <div className='submenu__list-container'>
-                                                    <ul className='submenu__list'>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Основные сведения
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Образовательные стандарты и требования
-                                                            </a>
-                                                        </li>
-                                                        {/* Третья вложенность без заголовка раздела и обертки, с классом submenu__item submenu__item_has-submenu */}
-                                                        <li
-                                                            className={classNames({
-                                                                "submenu__item submenu__item_has-submenu": true,
-                                                                "submenu__item_has-submenu_opened":
-                                                                    thirdDropDownMenuOpened,
-                                                            })}
-                                                        >
-                                                            <button
-                                                                className={classNames({
-                                                                    "menu__link submenu__button": true,
-                                                                    submenu__button_actived: thirdDropDownMenuOpened,
-                                                                })}
-                                                                type='button'
-                                                                aria-label='Развернуть список'
-                                                                onClick={() => {
-                                                                    setThirdDropDownMenuOpened(
-                                                                        !thirdDropDownMenuOpened
-                                                                    );
-                                                                }}
-                                                            >
-                                                                <span className='submenu__button-text'>Документы</span>
-                                                                <span className='submenu__button-icon'>
-                                                                    {Icons.chevron_down}
-                                                                </span>
-                                                            </button>
-                                                            <div className='submenu__list-container'>
-                                                                <ul className='submenu__list'>
-                                                                    <li>
-                                                                        <a className='menu__link' href='./'>
-                                                                            Основные сведения
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a className='menu__link' href='./'>
-                                                                            Структура и органы управления
-                                                                            образовательной организацией
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a className='menu__link' href='./'>
-                                                                            Документы
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a className='menu__link' href='./'>
-                                                                            Образование
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a className='menu__link' href='./'>
-                                                                            Образовательные стандарты и требования
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Документы
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Образование
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className='menu__link' href='./'>
-                                                                Образовательные стандарты и требования
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Образование
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Образовательные стандарты и требования
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Руководство. Педагогический (научно-педагогический) состав
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Материально-техническое обеспечение и оснащённость образовательного
-                                                    процесса
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Стипендии и меры поддержки обучающихся
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Платные образовательные услуги
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Финансово-хозяйственная деятельность
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Вакантные места для приёма (перевода) обучающихся
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Доступная среда
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Международное сотрудничество
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className='menu__link' href='./'>
-                                                    Организация питания в образовательной организации
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </menu>
-                    <div className='header__panel'>
-                        {/* Панель соцссылок */}
-                        <ul className='social-group'>
-                            <li>
-                                <a
-                                    className='social-group__link-icon'
-                                    target='_blank'
-                                    href='https://vk.com/public219786348'
-                                    rel='noreferrer noopener nofollow'
-                                    aria-label='Вконтакте'
-                                >
-                                    {SocialIcons.vk_without_color}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='social-group__link-icon'
-                                    target='_blank'
-                                    href='http://t.me/Fgdou43'
-                                    rel='noreferrer noopener nofollow'
-                                    aria-label='Телеграм'
-                                >
-                                    {SocialIcons.t_without_color}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='social-group__link-icon'
-                                    target='_blank'
-                                    href='tel:84991493724'
-                                    rel='noreferrer noopener nofollow'
-                                    aria-label='Телефон'
-                                >
-                                    {Icons.phone}
-                                </a>
-                            </li>
-                        </ul>
-                        {/* Кнопка перехода к форме обратной связи - можно якорем */}
-                        <a href='#feedback-form' className='header__feedback-button button button_theme_fill-main'>
-                            <span className='button__text'>Задать вопрос</span>
-                        </a>
-                        {/* Кнопка для вызова панели с поиском */}
-                        <button className='button button_theme_outline-main header__search-button' type='button'>
-                            <span className='button__icon'>{Icons.search}</span>
-                            <span className='button__text'>Найти...</span>
-                        </button>
-                    </div>
-                    <button
-                        className={classNames({
-                            "icon-button header__mobile-button": true,
-                            "header__mobile-button_actived": mobileMenuOpened,
-                        })}
-                        type='button'
-                        aria-label='Мобильное выпадающее меню'
-                        onClick={() => {
-                            setMobileMenuOpened(!mobileMenuOpened);
-                        }}
-                    >
-                        {mobileMenuOpened ? Icons.close : Icons.menu}
-                    </button>
-                </div>
-            </header>
+            <Header />
             <main className='page__content'>
                 {/* Главный баннер со слайдером */}
                 <section className='lead page__section-indent section wave-decor wave-decor_place_bottom blobs'>
@@ -1248,34 +799,10 @@ const IndexPage = () => {
                         }}
                     >
                         <SplideSlide>
-                            <iframe
-                                className='corner-rounded corner-rounded_size_lg'
-                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
-                                title='YouTube video player'
-                                frameborder='0'
-                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                                allowfullscreen
-                            ></iframe>
-                        </SplideSlide>
-                        <SplideSlide>
-                            <iframe
-                                className='corner-rounded corner-rounded_size_lg'
-                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
-                                title='YouTube video player'
-                                frameborder='0'
-                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                                allowfullscreen
-                            ></iframe>
-                        </SplideSlide>
-                        <SplideSlide>
-                            <iframe
-                                className='corner-rounded corner-rounded_size_lg'
-                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
-                                title='YouTube video player'
-                                frameborder='0'
-                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                                allowfullscreen
-                            ></iframe>
+                            <VideoPlayer
+                                extraClass={"corner-rounded corner-rounded_size_lg"}
+                                source={'https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'}
+                            />
                         </SplideSlide>
                     </Splide>
                 </section>
@@ -1321,7 +848,7 @@ const IndexPage = () => {
                                         <div className='card__content'>
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Анна</h3>
-                                                <time className='card__date' datetime='2022-10-10'>
+                                                <time className='card__date' dateTime='2022-10-10'>
                                                     8 ноября 2023 г.
                                                 </time>
                                             </div>
@@ -1348,7 +875,7 @@ const IndexPage = () => {
                                         <div className='card__content'>
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Таранова Татьяна Сергеевна</h3>
-                                                <time className='card__date' datetime='2022-10-10'>
+                                                <time className='card__date' dateTime='2022-10-10'>
                                                     8 ноября 2023 г.
                                                 </time>
                                             </div>
@@ -1374,7 +901,7 @@ const IndexPage = () => {
                                         <div className='card__content'>
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Виктория Волкова</h3>
-                                                <time className='card__date' datetime='2022-10-10'>
+                                                <time className='card__date' dateTime='2022-10-10'>
                                                     8 ноября 2023 г.
                                                 </time>
                                             </div>
@@ -1401,7 +928,7 @@ const IndexPage = () => {
                                         <div className='card__content'>
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Анна</h3>
-                                                <time className='card__date' datetime='2022-10-10'>
+                                                <time className='card__date' dateTime='2022-10-10'>
                                                     8 ноября 2023 г.
                                                 </time>
                                             </div>
@@ -1426,139 +953,7 @@ const IndexPage = () => {
                     </div>
                 </section>
             </main>
-            {/* Подвал */}
-            <footer className='footer page__footer section'>
-                <div className='section__wrap footer__wrap'>
-                    {/* Лого-компонент */}
-                    <a className='footer__logo-link logo-link' href='./' aria-label='Логотип' />
-                    <div className='footer__columns'>
-                        <address className='footer__address'>
-                            <a
-                                className='footer__link footer__link_type_phone'
-                                href='tel:84991493724'
-                                rel='noreferrer noopener nofollow'
-                            >
-                                <span className='footer__link-icon'>{Icons.phone}</span>
-                                <span className='footer__link-text'>+7 499 149-37-24</span>
-                                <span className='footer__text-small'>Пн-пт с 7:00 до 19:00</span>
-                            </a>
-                            <a
-                                className='footer__link footer__color-main'
-                                href='#0'
-                                target='_blank'
-                                rel='noreferrer noopener nofollow'
-                            >
-                                <span className='footer__link-text'>г. Москва, ул. Академика Павлова, д. 14, к. 2</span>
-                            </a>
-                            <a
-                                className='footer__link'
-                                href='mailto:fgdou43@bk.ru'
-                                target='_blank'
-                                rel='noreferrer noopener nofollow'
-                            >
-                                <span className='footer__link-icon'>{Icons.email}</span>
-                                <span className='footer__link-text footer__text-highlight'>fgdou43@bk.ru</span>
-                            </a>
-                            {/* Панель соцссылок */}
-                            <ul className='footer__social-group social-group'>
-                                <li>
-                                    <a
-                                        className='social-group__link-icon'
-                                        target='_blank'
-                                        href='https://vk.com/public219786348'
-                                        rel='noreferrer noopener nofollow'
-                                        aria-label='Вконтакте'
-                                    >
-                                        {SocialIcons.vk_without_color}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        className='social-group__link-icon'
-                                        target='_blank'
-                                        href='http://t.me/Fgdou43'
-                                        rel='noreferrer noopener nofollow'
-                                        aria-label='Телеграм'
-                                    >
-                                        {SocialIcons.t_without_color}
-                                    </a>
-                                </li>
-                            </ul>
-                        </address>
-                        <menu className='footer__menu menu'>
-                            <ul className='menu__list'>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Главная
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        О нас
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Сведения об образовательной организации
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Программы
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Режим
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Расписание
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Главная
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        О нас
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Сведения об образовательной организации
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Программы
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Режим
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='menu__link' href='./'>
-                                        Расписание
-                                    </a>
-                                </li>
-                            </ul>
-                        </menu>
-                    </div>
-                    <div className='footer__copyright'>
-                        <p>
-                            Федеральное государственное бюджетное дошкольное образовательное учреждение «Центр развития
-                            ребёнка — детский сад № 43» Управления делами Президента Российской Федерации
-                        </p>
-                        <p>1958–2023 ©Все права защищены</p>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </BasicPage>
     );
 };
