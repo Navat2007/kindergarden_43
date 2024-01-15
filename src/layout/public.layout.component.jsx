@@ -25,6 +25,7 @@ const PublicLayout = () => {
     return (
         <PreloaderContext.Provider value={{loading, setLoading}}>
             <Preloader loading={loading}/>
+            <Header/>
             <motion.main
                 className='page'
                 initial={{opacity: 0}}
@@ -32,10 +33,9 @@ const PublicLayout = () => {
                 exit={{opacity: 0}}
                 transition={{delay: 0.2, duration: 1}}
             >
-                <Header/>
                 <Outlet/>
-                <Footer/>
             </motion.main>
+            <Footer/>
         </PreloaderContext.Provider>
     );
 };
