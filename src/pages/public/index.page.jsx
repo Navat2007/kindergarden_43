@@ -482,7 +482,7 @@ const IndexPage = () => {
             </header>
             <main className='page__content'>
                 {/* Главный баннер со слайдером */}
-                <section className='lead page__section-indent section wave-decor wave-decor_inset_bottom blobs'>
+                <section className='lead page__section-indent section wave-decor wave-decor_place_bottom blobs'>
                     <div
                         className='blobs__item blobs__item_theme_secondary blobs__item_place_lead-top-left'
                         aria-hidden='true'
@@ -525,7 +525,7 @@ const IndexPage = () => {
                             <SplideSlide className='corner-rounded corner-rounded_size_lg'>
                                 <img
                                     src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                    alt='Image 1'
+                                    alt='Описание изображения'
                                 />
                             </SplideSlide>
                             <SplideSlide className='corner-rounded corner-rounded_size_lg'>
@@ -783,7 +783,6 @@ const IndexPage = () => {
                                         pagination: false,
                                         arrows: true,
                                         autoplay: true,
-                                        lazyLoad: "nearby",
                                         perPage: 1,
                                         focus: "center",
                                         updateOnMove: true,
@@ -793,44 +792,10 @@ const IndexPage = () => {
                                 >
                                     <SplideSlide>
                                         <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
+                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
-                                        />
-                                    </SplideSlide>
-                                    <SplideSlide>
-                                        <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
-                                            className='corner-rounded corner-rounded_size_lg'
-                                        />
-                                    </SplideSlide>
-                                    <SplideSlide>
-                                        <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
-                                            className='corner-rounded corner-rounded_size_lg'
-                                        />
-                                    </SplideSlide>
-                                    <SplideSlide>
-                                        <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
-                                            className='corner-rounded corner-rounded_size_lg'
-                                        />
-                                    </SplideSlide>
-                                    <SplideSlide>
-                                        <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
-                                            className='corner-rounded corner-rounded_size_lg'
-                                        />
-                                    </SplideSlide>
-                                    <SplideSlide>
-                                        <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
-                                            className='corner-rounded corner-rounded_size_lg'
+                                            loading='lazy'
                                         />
                                     </SplideSlide>
                                 </Splide>
@@ -915,7 +880,6 @@ const IndexPage = () => {
                                         pagination: false,
                                         arrows: true,
                                         autoplay: true,
-                                        lazyLoad: "nearby",
                                         perPage: 1,
                                         focus: "center",
                                         updateOnMove: true,
@@ -925,22 +889,8 @@ const IndexPage = () => {
                                 >
                                     <SplideSlide>
                                         <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
-                                            className='corner-rounded corner-rounded_size_lg'
-                                        />
-                                    </SplideSlide>
-                                    <SplideSlide>
-                                        <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
-                                            className='corner-rounded corner-rounded_size_lg'
-                                        />
-                                    </SplideSlide>
-                                    <SplideSlide>
-                                        <img
-                                            data-splide-lazy='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
-                                            alt='Image 1'
+                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
                                         />
                                     </SplideSlide>
@@ -967,7 +917,7 @@ const IndexPage = () => {
                             </div>
                         </div>
                         <Splide
-                            className='splide splide_mobile_auto-width'
+                            className='splide splide_mobile_auto-width splide_indent-block'
                             aria-label='Фотографии педагогов детского садика'
                             options={{
                                 type: "loop",
@@ -977,7 +927,6 @@ const IndexPage = () => {
                                 pagination: false,
                                 arrows: true,
                                 autoplay: true,
-                                lazyLoad: "nearby",
                                 perPage: 4,
                                 updateOnMove: true,
                                 gap: "var(--indent-2)",
@@ -998,66 +947,335 @@ const IndexPage = () => {
                         >
                             <SplideSlide>
                                 <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card'>
+                                    <article className='card card_type_people'>
                                         <img
                                             className='card__image'
-                                            data-splide-lazy='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
+                                            src='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
                                             alt='Описание фотографии'
                                             loading='lazy'
                                         />
-                                        <h3 className='card__title'>
-                                            <span className='card__title-accent'>Годик</span>
-                                            Татьяна Михайловна
-                                        </h3>
-                                        <div className='card__main-content'>
-                                            <p className='card__text'>Старший воспитатель</p>
-                                            <p className='card__text'>Стаж работы: 29 лет</p>
-                                        </div>
-                                    </article>
-                                </a>
-                            </SplideSlide>
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card'>
-                                        <img
-                                            className='card__image'
-                                            data-splide-lazy='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <h3 className='card__title'>
-                                            <span className='card__title-accent'>Годик</span>
-                                            Татьяна Михайловна
-                                        </h3>
-                                        <div className='card__main-content'>
-                                            <p className='card__text'>Старший воспитатель</p>
-                                            <p className='card__text'>Стаж работы: 29 лет</p>
-                                        </div>
-                                    </article>
-                                </a>
-                            </SplideSlide>
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card'>
-                                        <img
-                                            className='card__image'
-                                            data-splide-lazy='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <h3 className='card__title'>
-                                            <span className='card__title-accent'>Годик</span>
-                                            Татьяна Михайловна
-                                        </h3>
-                                        <div className='card__main-content'>
-                                            <p className='card__text'>Старший воспитатель</p>
-                                            <p className='card__text'>Стаж работы: 29 лет</p>
+                                        <div className='card__content'>
+                                            <h3 className='card__title'>
+                                                <span className='card__title-accent'>Годик</span>
+                                                Татьяна Михайловна
+                                            </h3>
+                                            <div className='card__main-text'>
+                                                <p className='card__text'>Старший воспитатель</p>
+                                                <p className='card__text'>Стаж работы: 29 лет</p>
+                                            </div>
                                         </div>
                                     </article>
                                 </a>
                             </SplideSlide>
                         </Splide>
                     </div>
+                </section>
+                {/* Наши новости */}
+                <section className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
+                    <div className='section__wrap'>
+                        <div className='section__title-block section__title-block_theme_white'>
+                            <h2 className='section__title section__title_with-decor'>Наши новости</h2>
+                            <a href='#0' className='button button_theme_outline-white button_content_icon-arrow-next'>
+                                <span className='button__text'>Новости</span>
+                                <span className='button__icon'>{Icons.arrow_next}</span>
+                            </a>
+                        </div>
+                        <ul className='news__card-deck'>
+                            <li>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_article card_size_large'>
+                                        <img
+                                            className='card__image'
+                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <div className='card__content'>
+                                            <time className='card__date' dateTime='2022-02-01'>
+                                                01.08.23г.
+                                            </time>
+                                            <h3 className='card__title'>Открытие нашего сада!</h3>
+                                            <div className='card__main-content'>
+                                                <p className='card__text'>
+                                                    НАШ детский сад открыл двери для своих воспитанников!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_article card_size_small'>
+                                        <img
+                                            className='card__image'
+                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <div className='card__content'>
+                                            <time className='card__date' dateTime='2022-02-01'>
+                                                31.07.23г.
+                                            </time>
+                                            <h3 className='card__title'>
+                                                Открытие ФГБДОУ «Центр развития ребёнка — детский сад № 43»...
+                                            </h3>
+                                            <div className='card__main-content'>
+                                                <p className='card__text'></p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_article card_size_small'>
+                                        <img
+                                            className='card__image'
+                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <div className='card__content'>
+                                            <time className='card__date' dateTime='2022-02-01'>
+                                                01.09.23г.
+                                            </time>
+                                            <h3 className='card__title'>
+                                                График проведения выпускных утренников в нашем детском саду График
+                                                проведения выпускных утренников в нашем детском саду
+                                            </h3>
+                                            <div className='card__main-content'>
+                                                <p className='card__text'>
+                                                    НАШ детский сад открыл двери для своих воспитанников! НАШ детский
+                                                    сад открыл двери для своих воспитанников! НАШ детский сад открыл
+                                                    двери для своих воспитанников!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_article card_size_small'>
+                                        <img
+                                            className='card__image'
+                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <div className='card__content'>
+                                            <time className='card__date' dateTime='2022-02-01'>
+                                                02.05.23г.
+                                            </time>
+                                            <h3 className='card__title'>День Победы 2023 год</h3>
+                                            <div className='card__main-content'>
+                                                <p className='card__text'>Мы помним! Мы гордимся!</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_article card_size_small'>
+                                        <img
+                                            className='card__image'
+                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <div className='card__content'>
+                                            <time className='card__date' dateTime='2022-02-01'>
+                                                17.02.23г.
+                                            </time>
+                                            <h3 className='card__title'>Масленица 2023 год</h3>
+                                            <div className='card__main-content'>
+                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
+                                    <article className='card card_type_article card_size_small'>
+                                        <img
+                                            className='card__image'
+                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                            alt='Описание фотографии'
+                                            loading='lazy'
+                                        />
+                                        <div className='card__content'>
+                                            <time className='card__date' dateTime='2022-02-01'>
+                                                17.02.23г.
+                                            </time>
+                                            <h3 className='card__title'>Масленица 2023 год</h3>
+                                            <div className='card__main-content'>
+                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {/* Почему нас выбирают */}
+                <section className='why page__section-indent section blobs'>
+                    <div
+                        className='blobs__item blobs__item_type_secondary blobs__item_theme_accent blobs__item_place_why-bottom-left'
+                        aria-hidden='true'
+                    ></div>
+                    <div
+                        className='blobs__item blobs__item_type_secondary blobs__item_theme_accent blobs__item_place_why-top-right'
+                        aria-hidden='true'
+                    ></div>
+                    <div className='why__card section__wrap'>
+                        <h2 className='section__title'>Почему нас выбирают:</h2>
+                        <ul className='why__list'>
+                            <li>за доброе и уважительное отношение к детям, за терпение и душевную теплоту</li>
+                            <li>мы умеем завоёвывать доверие ребёнка, быть его надёжным другом</li>
+                            <li>
+                                мы всегда учитываем возрастные особенности дошкольника, а также индивидуальные
+                                возможности каждого ребёнка
+                            </li>
+                            <li>мы много играем с детьми, предоставляем свободу действий и творчества</li>
+                            <li>у нас каждый ребёнок «единственный»</li>
+                            <li>
+                                мы работаем более 60 лет, завоевали признание и уважение органов образования и родителей
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {/* Наши фотографии */}
+                <section className='gallery page__section-indent section'>
+                    <div className='section__title-block section__wrap'>
+                        <h2 className='section__title section__title_with-decor'>Наши фотографии</h2>
+                        <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
+                            <span className='button__text'>Галерея</span>
+                            <span className='button__icon'>{Icons.arrow_next}</span>
+                        </a>
+                    </div>
+                    <div className='section__wrap section__wrap_size_large'>
+                        <ul className='section__card-deck gallery__card-deck'>
+                            <li>
+                                <img
+                                    className='gallery__image'
+                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    alt='Описание фотографии'
+                                    loading='lazy'
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    className='gallery__image'
+                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    alt='Описание фотографии'
+                                    loading='lazy'
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    className='gallery__image'
+                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    alt='Описание фотографии'
+                                    loading='lazy'
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    className='gallery__image'
+                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    alt='Описание фотографии'
+                                    loading='lazy'
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    className='gallery__image'
+                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    alt='Описание фотографии'
+                                    loading='lazy'
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    className='gallery__image'
+                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    alt='Описание фотографии'
+                                    loading='lazy'
+                                />
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {/* Наши видео */}
+                <section className='gallery page__section-indent section bg-color clouds-decor clouds-decor_place_top clouds-decor_place_bottom'>
+                    <div className='section__title-block section__wrap'>
+                        <h2 className='section__title section__title_with-decor'>Видео</h2>
+                        <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
+                            <span className='button__text'>Галерея</span>
+                            <span className='button__icon'>{Icons.arrow_next}</span>
+                        </a>
+                    </div>
+                    <Splide
+                        className='splide splide_size_wide splide_type_center-carousel'
+                        aria-label='Видео детского садика'
+                        options={{
+                            type: "slide",
+                            cloneStatus: false,
+                            pagination: true,
+                            arrows: true,
+                            autoplay: true,
+                            perPage: 1,
+                            focus: "center",
+                            updateOnMove: true,
+                            gap: ".5em",
+                            padding: "clamp(0rem, -7.1875rem + 35.9375vw, 35.9375rem)",
+                        }}
+                    >
+                        <SplideSlide>
+                            <iframe
+                                className='corner-rounded corner-rounded_size_lg'
+                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
+                                title='YouTube video player'
+                                frameborder='0'
+                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                                allowfullscreen
+                            ></iframe>
+                        </SplideSlide>
+                        <SplideSlide>
+                            <iframe
+                                className='corner-rounded corner-rounded_size_lg'
+                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
+                                title='YouTube video player'
+                                frameborder='0'
+                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                                allowfullscreen
+                            ></iframe>
+                        </SplideSlide>
+                        <SplideSlide>
+                            <iframe
+                                className='corner-rounded corner-rounded_size_lg'
+                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
+                                title='YouTube video player'
+                                frameborder='0'
+                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                                allowfullscreen
+                            ></iframe>
+                        </SplideSlide>
+                        <SplideSlide>
+                            <iframe
+                                className='corner-rounded corner-rounded_size_lg'
+                                src='https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'
+                                title='YouTube video player'
+                                frameborder='0'
+                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                                allowfullscreen
+                            ></iframe>
+                        </SplideSlide>
+                    </Splide>
                 </section>
             </main>
             {/* Подвал */}

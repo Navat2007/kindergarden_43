@@ -1,0 +1,35 @@
+.why {
+    &__card {
+        @extend .bg-color_main-gradient;
+        @extend .corner-rounded_size_lg;
+        @extend .section__wrap;
+        inline-size: min(1000px, 100%);
+        color: #fff;
+        padding: 48px 64px;
+        text-align: center;
+    }
+    &__list {
+        @extend %reset-list;
+        text-align: left;
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5em;
+            font-size: clamp(1em, 2vw, 1.25em);
+            line-height: 1.5;
+            &::before {
+                content: "";
+                flex: none;
+                inline-size: 1.5em;
+                min-inline-size: 1.5em;
+                max-inline-size: 1.5em;
+                block-size: 1.5em;
+                background: url("../../images/bullit.svg") no-repeat center / contain;
+            }
+        }
+    }
+}

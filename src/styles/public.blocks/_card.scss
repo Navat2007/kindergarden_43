@@ -1,23 +1,32 @@
 .card {
-    display: grid;
-    gap: var(--indent-2);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     box-shadow: var(--box-shadow-medium);
-    @extend .corner-rounded_size_lg;
+    @extend .corner-rounded;
 
     &__image {
         @extend %alt-text-on-after;
-        aspect-ratio: 340/430;
+        aspect-ratio: 1/1;
         object-fit: cover;
         object-position: center;
         border-radius: inherit;
     }
 
+    &__content {
+        display: grid;
+        gap: var(--indent-2);
+        padding: 1.25em;
+    }
+
+    // &__date {}
+
     &__title {
-        padding-inline: 1.25em;
         margin-block: 0;
-        font-weight: inherit;
-        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        font-weight: 600;
+        font-size: 1.25em;
     }
 
     &__title-accent {
@@ -26,14 +35,74 @@
         text-transform: uppercase;
     }
 
-    &__main-content {
-        padding: var(--indent-2) 1.25em 1.25em;
+    &__main-text {
         display: grid;
         gap: 0.5em;
     }
 
     &__text {
         margin-block: 0;
-        color: var(--main-text-low-color);
+    }
+
+    &_type_article {
+    }
+
+    &_type_people {
+        @extend .corner-rounded_size_lg;
+
+        .card__image {
+            aspect-ratio: 340/430;
+        }
+        .card__title {
+            font-weight: inherit;
+            font-size: clamp(1.25em, 2.4vw, 1.5em);
+        }
+        .card__text {
+            color: var(--main-text-low-color);
+        }
+    }
+
+    &_size_small {
+        flex-direction: row;
+
+        .card__image {
+            inline-size: 130px;
+            min-inline-size: 130px;
+            max-inline-size: 130px;
+        }
+        .card__content {
+            flex: auto;
+            place-self: center;
+            grid-template-columns: 1fr auto;
+            gap: 0.5em;
+        }
+        .card__date {
+            font-size: 0.875em;
+            line-height: 1.6;
+        }
+        .card__title {
+            order: -1;
+            @include clamp(2, 1.2);
+        }
+        .card__text {
+            @include clamp(2, 1.2);
+        }
+    }
+
+    &_size_large {
+        .card__content {
+            gap: 0.5em;
+        }
+        .card__image {
+            aspect-ratio: unset;
+            flex: auto;
+        }
+        .card__title {
+            font-size: clamp(1.25em, 3vw, 1.875em);
+            margin-block-end: 0.75rem;
+        }
+        .card__text {
+            font-size: clamp(1em, 1.8vw, 1.125em);
+        }
     }
 }

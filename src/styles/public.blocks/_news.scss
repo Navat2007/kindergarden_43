@@ -1,0 +1,16 @@
+.news {
+    &__card-deck {
+        @extend %reset-list;
+
+        display: grid;
+        gap: var(--indent-2);
+        grid-template-columns: repeat(auto-fill, minmax(min(20em, 100%), 1fr));
+
+        @include media(lg) {
+            grid-template-columns: 0.71fr 0.69fr;
+            li:first-child {
+                grid-row: span 5;
+            }
+        }
+    }
+}

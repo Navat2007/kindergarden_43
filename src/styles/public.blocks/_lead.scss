@@ -5,7 +5,7 @@
     &__columns {
         display: grid;
         gap: var(--indent-4);
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.1fr 1fr;
 
         @include media(lg, max) {
             grid-template-columns: 1fr;
@@ -22,7 +22,7 @@
     &__title {
         margin: 0;
         color: #fff;
-        font-size: clamp(2.5rem, 1.5927rem + 4.0323vw, 5.625rem);
+        font-size: clamp(2.5rem, 1.6728rem + 3.6765vw, 5.625rem);
         display: block;
         font-family: var(--heading-font-family);
         font-weight: normal;

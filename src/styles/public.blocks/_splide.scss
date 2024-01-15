@@ -1,8 +1,4 @@
 .splide {
-    .splide__track {
-        padding-block: var(--indent-2);
-    }
-
     .splide__arrow {
         inline-size: clamp(3em, 7.6vw, 4.75em);
         block-size: clamp(3em, 7.6vw, 4.75em);
@@ -50,7 +46,7 @@
                 object-position: center;
                 @include media(sm) {
                     opacity: 0.4;
-                    transition: transform 0.15s ease-in;
+                    transition: 0.15s ease-in;
                 }
             }
             &.is-active > * {
@@ -60,7 +56,57 @@
                     position: relative;
                     z-index: 1;
                     opacity: 1;
-                    transition: transform 0.35s ease-in;
+                    transition: 0.35s ease-in;
+                }
+            }
+        }
+
+        .splide__arrow {
+            block-size: 100%;
+            border-radius: 0;
+            box-shadow: unset;
+            background-color: transparent;
+            color: transparent;
+            inline-size: clamp(0rem, -6.8rem + 30vw, 30rem);
+
+            svg {
+                fill: transparent;
+            }
+
+            &.splide__arrow--next {
+                right: 0;
+            }
+            &.splide__arrow--prev {
+                left: 0;
+            }
+        }
+    }
+
+    &_type_center-carousel {
+        .splide__track {
+            @include media(sm) {
+                padding-block: clamp(1.5em, 4.8vw, 3em);
+            }
+        }
+
+        .splide__slide {
+            & > * {
+                inline-size: 100%;
+                aspect-ratio: 6.48/3.85;
+                object-fit: cover;
+                object-position: center;
+                @include media(sm) {
+                    opacity: 0.4;
+                    transition: 0.15s ease-in;
+                }
+            }
+            &.is-active > * {
+                @include media(sm) {
+                    scale: 1.25;
+                    position: relative;
+                    z-index: 1;
+                    opacity: 1;
+                    transition: 0.35s ease-in;
                 }
             }
         }
@@ -96,5 +142,9 @@
         .splide__slide {
             width: min(18em, 100%);
         }
+    }
+
+    &_indent-block .splide__track {
+        padding-block: var(--indent-2);
     }
 }

@@ -35,6 +35,18 @@
                 inset: auto -5vw -11vw auto;
                 rotate: 10deg;
             }
+
+            &_why-bottom-left {
+                inline-size: min(35vw, 430px);
+                inset: auto auto -3vw -9vw;
+                rotate: 220deg;
+            }
+
+            &_why-top-right {
+                inline-size: min(40vw, 490px);
+                inset: -1vw -11vw auto auto;
+                rotate: 62deg;
+            }
         }
     }
 }
