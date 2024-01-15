@@ -30,7 +30,6 @@ const IndexPage = () => {
             <Helmet>
                 <title>Детский сад № 43 УДПРФ</title>
             </Helmet>
-            <Header />
             <main className='page__content'>
                 {/* Главный баннер со слайдером */}
                 <section className='lead page__section-indent section wave-decor wave-decor_place_bottom blobs'>
@@ -953,7 +952,6 @@ const IndexPage = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
         </BasicPage>
     );
 };

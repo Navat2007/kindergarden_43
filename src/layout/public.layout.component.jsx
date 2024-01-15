@@ -1,11 +1,13 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import {Outlet, useLocation} from "react-router-dom";
+import {motion} from "framer-motion";
 
-import { PreloaderContext } from "../context";
+import {PreloaderContext} from "../context";
 import Preloader from "../components/public/preloader/preloader.component";
 
 import "../styles/public.layout.scss";
+import Header from "../components/public/header/header";
+import Footer from "../components/public/footer/footer";
 
 const PublicLayout = () => {
     const location = useLocation();
@@ -21,16 +23,18 @@ const PublicLayout = () => {
     }, [location]);
 
     return (
-        <PreloaderContext.Provider value={{ loading, setLoading }}>
-            <Preloader loading={loading} />
+        <PreloaderContext.Provider value={{loading, setLoading}}>
+            <Preloader loading={loading}/>
             <motion.main
                 className='page'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.2, duration: 1 }}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                exit={{opacity: 0}}
+                transition={{delay: 0.2, duration: 1}}
             >
-                <Outlet />
+                <Header/>
+                <Outlet/>
+                <Footer/>
             </motion.main>
         </PreloaderContext.Provider>
     );
