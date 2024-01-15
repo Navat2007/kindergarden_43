@@ -535,10 +535,10 @@ const Header = () => {
                         <span className='button__text'>Задать вопрос</span>
                     </a>
                     {/* Кнопка для вызова панели с поиском */}
-                    <button className='button button_theme_outline-main header__search-button' type='button'>
-                        <span className='button__icon'>{Icons.search}</span>
-                        <span className='button__text'>Найти...</span>
-                    </button>
+                    {/*<button className='button button_theme_outline-main header__search-button' type='button'>*/}
+                    {/*    <span className='button__icon'>{Icons.search}</span>*/}
+                    {/*    <span className='button__text'>Найти...</span>*/}
+                    {/*</button>*/}
                 </div>
                 <button
                     className={classNames({

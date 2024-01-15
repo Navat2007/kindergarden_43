@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
-import classNames from "classnames";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import useNewsStore from "../../store/public/newsStore";
@@ -10,8 +9,6 @@ import BasicPage from "../../components/public/basic.page/basic.page.component";
 import { Icons, AdvantagesIcons, SocialIcons } from "../../components/svgs";
 import Tabs from "../../components/public/tabs/tabs.component";
 import Tab from "../../components/public/tabs/tab.component";
-import Footer from "../../components/public/footer/footer";
-import Header from "../../components/public/header/header";
 import VideoPlayer from "../../components/public/video.player/video.player.component";
 
 const IndexPage = () => {
