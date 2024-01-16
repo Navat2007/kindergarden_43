@@ -17,10 +17,10 @@ class TableCreator{
     private function CheckTableEmpty($table): bool
     {
         global $conn;
-        $sql = "SELECT * FROM '$table'";
-        $result = $conn->query($sql);
+        $sql = "SELECT * FROM " . $table;
+        $result = mysqli_query($conn, $sql);
 
-        return $result->num_rows === 0;
+        return mysqli_num_rows($result) === 0;
     }
 
     private function CreateSuccessMessage($table)
@@ -86,11 +86,14 @@ class TableCreator{
 
             if($this->CheckTableEmpty($table))
             {
+                $pass1 = '$2y$10$I3JRCN0eO/YuXEHfkgNoIO03PSOq4E//e.ovhq.pE3V9vawdUftu.';
+                $pass2 = '$2y$10$XVY7Qp0Z6w9fZsUQW7Wg5u5rDhVv7d7XZq6o6j8hP9aLQ5KpC7C.';
+
                 $sql = "INSERT INTO accounts (email, pwd, role, fio, phone) 
-                    VALUES ('navat2007@yandex.ru', '$2y$10$I3JRCN0eO/YuXEHfkgNoIO03PSOq4E//e.ovhq.pE3V9vawdUftu.', 'superadmin', 'Сергей', '9207312060')";
+                    VALUES ('navat2007@yandex.ru', '$pass1', 'superadmin', 'Сергей', '9207312060')";
                 $conn->query($sql);
                 $sql = "INSERT INTO accounts (email, pwd, role, fio, phone) 
-                    VALUES ('phenix-vn@yandex.ru', '$2y$10$NAHvK0xxV2RYzuWgVbledef81iX/joLrpHgQw1Sea./twDpTAvFKK', 'admin', 'Варвара', '9207312080')";
+                    VALUES ('phenix-vn@yandex.ru', '$pass2', 'admin', 'Варвара', '9207312080')";
                 $conn->query($sql);
 
                 echo "Добавлены админы по умолчанию в таблицу $table<br/>";
@@ -435,6 +438,7 @@ class TableCreator{
             sorting INT(11) UNSIGNED DEFAULT 0 NOT NULL,
             page INT(11) UNSIGNED DEFAULT 1 NOT NULL,
             custom_page INT(11) UNSIGNED DEFAULT 0 NOT NULL,
+            external INT(11) UNSIGNED DEFAULT 0 NOT NULL,
             create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             userID INT(11) UNSIGNED NOT NULL,
