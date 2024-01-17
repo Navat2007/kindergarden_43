@@ -70,6 +70,8 @@ const Header = () => {
         if(!menuItems.value || menuItems.value.length === 0)
             return;
 
+        console.log(menuItems.value);
+
         let offset = 40;
         let availableSpace = menuList.current.getBoundingClientRect().width;
         let requiredSpace =
@@ -118,6 +120,34 @@ const Header = () => {
                         menu_opened: mobileMenuOpened,
                     })}
                 >
+                    <ul className={`menu__list`} ref={menuList}>
+                        <DropdownMenu items={menuItems.value} />
+                    </ul>
+                    <div
+                        className={classNames({
+                            header__submenu: true,
+                            header__submenu_opened: burgerOpened,
+                        })}
+                        ref={mobileMenu}
+                        data-level='1'
+                    >
+                        <button
+                            ref={button}
+                            type='button'
+                            className='header__burger-button'
+                            aria-label='Свернуть/Развернуть меню'
+                            onClick={() => {
+                                setBurgerOpened(!burgerOpened);
+                            }}
+                        >
+                            <div></div>
+                        </button>
+                        <div className='header__submenu-list-container' ref={node}>
+                            <ul className='header__submenu-list' ref={mobileMenuList}>
+                                <DropdownMenu items={menuMobileItems.value} level={1}/>
+                            </ul>
+                        </div>
+                    </div>
                     <ul ref={menuList} className='menu__list'>
                         <li>
                             <a className='menu__link' href='./'>

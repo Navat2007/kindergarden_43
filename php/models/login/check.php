@@ -23,7 +23,7 @@ if (strlen($password) > 72) {
     die();
 }
 
-if (!empty($login) && !empty($password) ) {
+if (!empty($login) && !empty($password)) {
 
     $sql = "SELECT 
                 accounts.*
@@ -35,16 +35,14 @@ if (!empty($login) && !empty($password) ) {
     $result = mysqli_query($conn, $sql);
     $params->sql = $sql;
 
-    if (mysqli_num_rows($result) > 0) {
+    if ($result && mysqli_num_rows($result) > 0) {
 
         $row = mysqli_fetch_object($result);
 
-        if((int)$row->active === 0)
-        {
+        if ((int)$row->active === 0) {
             $error = 1;
             $error_text = "Ошибка, учетная запись отключена";
-        }
-        else if (password_verify($password, $row->pwd)) {
+        } else if (password_verify($password, $row->pwd)) {
 
             $params = get_all_info($row, $conn);
 
@@ -55,8 +53,7 @@ if (!empty($login) && !empty($password) ) {
 
         }
 
-    }
-    else {
+    } else {
 
         $error = 1;
         $error_text = "Ошибка, логин или пароль введен неверно";
@@ -104,7 +101,6 @@ function gen_token(): string
 
 function get_all_info($row, $conn): object
 {
-
     $token = gen_token();
 
     $sql = "UPDATE accounts SET token = '$token' WHERE ID = '$row->ID'";
@@ -112,7 +108,7 @@ function get_all_info($row, $conn): object
 
     $roleTitle = "";
 
-    switch ($row->role){
+    switch ($row->role) {
 
         case "user":
             $roleTitle = "Пользователь";
@@ -127,7 +123,6 @@ function get_all_info($row, $conn): object
     }
 
     return (object)[
-
         'ID' => (int)$row->ID,
         'login' => $row->login,
         'email' => $row->email,
@@ -140,20 +135,19 @@ function get_all_info($row, $conn): object
         'roles' => get_roles($conn, $row->ID, $row->role),
         'new_user' => (int)$row->new_user,
         'token' => $token,
-
     ];
 
 }
 
-function get_roles($conn, $userID, $role){
-
+function get_roles($conn, $userID, $role)
+{
     $sql1 = "SELECT * FROM admin_role WHERE userID = '$userID'";
     $result1 = mysqli_query($conn, $sql1);
 
     $roles = array();
-    $roles[] = $role == "superadmin" ? 1:0;
+    $roles[] = $role == "superadmin" ? 1 : 0;
 
-    if(mysqli_num_rows($result1) > 0) {
+    if ($result1 && mysqli_num_rows($result1) > 0) {
         while ($row1 = mysqli_fetch_object($result1)) {
 
             $roles[] = (int)$row1->roleID;
@@ -162,5 +156,4 @@ function get_roles($conn, $userID, $role){
     }
 
     return $roles;
-
 }

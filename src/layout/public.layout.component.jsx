@@ -8,6 +8,7 @@ import Preloader from "../components/public/preloader/preloader.component";
 import "../styles/public.layout.scss";
 import Header from "../components/public/header/header";
 import Footer from "../components/public/footer/footer";
+import Feedback from "../components/public/feedback/feedback";
 
 const PublicLayout = () => {
     const location = useLocation();
@@ -34,6 +35,7 @@ const PublicLayout = () => {
                 transition={{delay: 0.2, duration: 1}}
             >
                 <Outlet/>
+                <Feedback />
             </motion.main>
             <Footer/>
         </PreloaderContext.Provider>

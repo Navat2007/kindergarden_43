@@ -10,6 +10,8 @@ import { Icons, AdvantagesIcons, SocialIcons } from "../../components/svgs";
 import Tabs from "../../components/public/tabs/tabs.component";
 import Tab from "../../components/public/tabs/tab.component";
 import VideoPlayer from "../../components/public/video.player/video.player.component";
+import Contact from "../../components/public/contact/contact";
+import News from "../../components/public/news/news";
 
 const IndexPage = () => {
     const store = useNewsStore();
@@ -680,6 +682,11 @@ const IndexPage = () => {
                         </ul>
                     </div>
                 </section>
+                <News items={store.itemsMain}>
+                    <NavLink className={"more-button-link"} to='/новости'>
+                        Все новости &rarr;
+                    </NavLink>
+                </News>
                 {/* Почему нас выбирают */}
                 <section className='why page__section-indent section blobs'>
                     <div
@@ -774,7 +781,7 @@ const IndexPage = () => {
                     <div className='section__title-block section__wrap'>
                         <h2 className='section__title section__title_with-decor'>Видео</h2>
                         <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
-                            <span className='button__text'>Галерея</span>
+                            <span className='button__text'>Видео</span>
                             <span className='button__icon'>{Icons.arrow_next}</span>
                         </a>
                     </div>
@@ -794,6 +801,18 @@ const IndexPage = () => {
                             padding: "clamp(0rem, -7.1875rem + 35.9375vw, 35.9375rem)",
                         }}
                     >
+                        <SplideSlide>
+                            <VideoPlayer
+                                extraClass={"corner-rounded corner-rounded_size_lg"}
+                                source={'https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'}
+                            />
+                        </SplideSlide>
+                        <SplideSlide>
+                            <VideoPlayer
+                                extraClass={"corner-rounded corner-rounded_size_lg"}
+                                source={'https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH'}
+                            />
+                        </SplideSlide>
                         <SplideSlide>
                             <VideoPlayer
                                 extraClass={"corner-rounded corner-rounded_size_lg"}

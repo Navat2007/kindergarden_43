@@ -144,6 +144,9 @@ const Footer = () => {
                         ребёнка — детский сад № 43» Управления делами Президента Российской Федерации
                     </p>
                     <p>1958–2023 ©Все права защищены</p>
+                    <NavLink to={"/login"} className={"footer__lk-link main-link"}>
+                        Личный кабинет &rarr;
+                    </NavLink>
                 </div>
             </div>
         </motion.footer>
