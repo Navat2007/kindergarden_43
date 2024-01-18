@@ -1,13 +1,13 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
-import { signal } from "@preact/signals-react";
+import {useLocation} from "react-router-dom";
+import {motion} from "framer-motion";
+import {signal} from "@preact/signals-react";
 import classNames from "classnames";
 
 import useWindowSize from "../../../hook/useWindowSize";
 import useOnClickOutside from "../../../hook/onClickOutside";
 
-import { menuStore } from "../../../store/public/menuStore";
+import {menuStore} from "../../../store/public/menuStore";
 
 import DropdownMenu from "./drop.down.menu";
 
@@ -67,7 +67,7 @@ const Header = () => {
     }, []);
 
     React.useEffect(() => {
-        if(!menuItems.value || menuItems.value.length === 0)
+        if (!menuItems.value || menuItems.value.length === 0)
             return;
 
         console.log(menuItems.value);
@@ -106,14 +106,14 @@ const Header = () => {
         <motion.header
             ref={stickyHeader}
             className='header page__header'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ delay: 0.2, duration: 1 }}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{delay: 0.2, duration: 1}}
         >
             <div className='header__wrap'>
                 {/* Лого-компонент */}
-                <a className='header__logo-link logo-link' href='./' aria-label='Логотип' />
+                <a className='header__logo-link logo-link' href='./' aria-label='Логотип'/>
                 <menu
                     className={classNames({
                         "header__menu menu": true,
@@ -121,402 +121,33 @@ const Header = () => {
                     })}
                 >
                     <ul className={`menu__list`} ref={menuList}>
-                        <DropdownMenu items={menuItems.value} />
-                    </ul>
-                    <div
-                        className={classNames({
-                            header__submenu: true,
-                            header__submenu_opened: burgerOpened,
+                        <DropdownMenu items={menuItems.value}/>
+                        <li className={classNames({
+                            submenu: true,
+                            submenu_opened: burgerOpened,
                         })}
-                        ref={mobileMenu}
-                        data-level='1'
-                    >
-                        <button
-                            ref={button}
-                            type='button'
-                            className='header__burger-button'
-                            aria-label='Свернуть/Развернуть меню'
-                            onClick={() => {
-                                setBurgerOpened(!burgerOpened);
-                            }}
-                        >
-                            <div></div>
-                        </button>
-                        <div className='header__submenu-list-container' ref={node}>
-                            <ul className='header__submenu-list' ref={mobileMenuList}>
-                                <DropdownMenu items={menuMobileItems.value} level={1}/>
-                            </ul>
-                        </div>
-                    </div>
-                    <ul ref={menuList} className='menu__list'>
-                        <li>
-                            <a className='menu__link' href='./'>
-                                Главная
-                            </a>
-                        </li>
-                        <li>
-                            <a className='menu__link' href='./'>
-                                О нас
-                            </a>
-                        </li>
-                        <li
-                            className={classNames({
-                                submenu: true,
-                                submenu_opened: subMenuOpened,
-                            })}
-                        >
+                            ref={mobileMenu}
+                            data-level='1'>
                             <button
+                                ref={button}
                                 className={classNames({
                                     "menu__link submenu__button": true,
-                                    submenu__button_actived: subMenuOpened,
+                                    submenu__button_actived: burgerOpened,
                                 })}
                                 type='button'
                                 aria-label='Развернуть список'
                                 onClick={() => {
-                                    setSubMenuOpened(!subMenuOpened);
-                                }}
-                            >
-                                    <span className='submenu__button-text'>
-                                        Сведения об образовательной организации
-                                    </span>
-                                <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                            </button>
-                            {/* первая вложенность с большим заголовком и оберткой для размещения под шапкой */}
-                            <div className='submenu__wrap'>
-                                <div className='submenu__top-list-container'>
-                                    <p className='submenu__title'>Сведения об образовательной организации</p>
-                                    <ul className='submenu__top-list'>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Основные сведения
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Структура и органы управления образовательной организацией
-                                            </a>
-                                        </li>
-                                        {/* Вторая вложенность без заголовка раздела и обертки, с классом submenu__item submenu__item_has-submenu */}
-                                        <li
-                                            className={classNames({
-                                                "submenu__item submenu__item_has-submenu": true,
-                                                "submenu__item_has-submenu_opened": dropDownMenuOpened,
-                                            })}
-                                        >
-                                            <button
-                                                className={classNames({
-                                                    "submenu__button menu__link": true,
-                                                    submenu__button_actived: dropDownMenuOpened,
-                                                })}
-                                                type='button'
-                                                aria-label='Развернуть список'
-                                                onClick={() => {
-                                                    setDropDownMenuOpened(!dropDownMenuOpened);
-                                                }}
-                                            >
-                                                <span className='submenu__button-text'>Документы</span>
-                                                <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                                            </button>
-                                            <div className='submenu__list-container'>
-                                                <ul className='submenu__list'>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Основные сведения
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Структура и органы управления образовательной
-                                                            организацией
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Документы
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Образование
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Образовательные стандарты и требования
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Образование
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Образовательные стандарты и требования
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Руководство. Педагогический (научно-педагогический) состав
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Материально-техническое обеспечение и оснащённость образовательного
-                                                процесса
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Стипендии и меры поддержки обучающихся
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Платные образовательные услуги
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Финансово-хозяйственная деятельность
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Вакантные места для приёма (перевода) обучающихся
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Доступная среда
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Международное сотрудничество
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Организация питания в образовательной организации
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a className='menu__link' href='./'>
-                                Программы
-                            </a>
-                        </li>
-                        <li>
-                            <a className='menu__link' href='./'>
-                                Режим
-                            </a>
-                        </li>
-                        <li
-                            className={classNames({
-                                submenu: true,
-                                submenu_opened: moreMenuOpened,
-                            })}
-                        >
-                            <button
-                                className={classNames({
-                                    "menu__link submenu__button": true,
-                                    submenu__button_actived: moreMenuOpened,
-                                })}
-                                type='button'
-                                aria-label='Развернуть список'
-                                onClick={() => {
-                                    setMoreMenuOpened(!moreMenuOpened);
+                                    setBurgerOpened(!burgerOpened);
                                 }}
                             >
                                 <span className='submenu__button-text'>Еще</span>
                                 <span className='submenu__button-icon'>{Icons.chevron_down}</span>
                             </button>
-                            {/* первая вложенность с большим заголовком и оберткой для размещения под шапкой */}
                             <div className='submenu__wrap'>
-                                <div className='submenu__top-list-container'>
+                                <div className='submenu__top-list-container' ref={node}>
                                     <p className='submenu__title'>Меню</p>
-                                    <ul className='submenu__top-list'>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Основные сведения
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Структура и органы управления образовательной организацией
-                                            </a>
-                                        </li>
-                                        {/* Вторая вложенность без заголовка раздела и обертки, с классом submenu__item submenu__item_has-submenu */}
-                                        <li
-                                            className={classNames({
-                                                "submenu__item submenu__item_has-submenu": true,
-                                                "submenu__item_has-submenu_opened": dropDownMenuOpened,
-                                            })}
-                                        >
-                                            <button
-                                                className={classNames({
-                                                    "menu__link submenu__button": true,
-                                                    submenu__button_actived: dropDownMenuOpened,
-                                                })}
-                                                type='button'
-                                                aria-label='Развернуть список'
-                                                onClick={() => {
-                                                    setDropDownMenuOpened(!dropDownMenuOpened);
-                                                }}
-                                            >
-                                                <span className='submenu__button-text'>Документы</span>
-                                                <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                                            </button>
-                                            <div className='submenu__list-container'>
-                                                <ul className='submenu__list'>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Основные сведения
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Образовательные стандарты и требования
-                                                        </a>
-                                                    </li>
-                                                    {/* Третья вложенность без заголовка раздела и обертки, с классом submenu__item submenu__item_has-submenu */}
-                                                    <li
-                                                        className={classNames({
-                                                            "submenu__item submenu__item_has-submenu": true,
-                                                            "submenu__item_has-submenu_opened":
-                                                            thirdDropDownMenuOpened,
-                                                        })}
-                                                    >
-                                                        <button
-                                                            className={classNames({
-                                                                "menu__link submenu__button": true,
-                                                                submenu__button_actived: thirdDropDownMenuOpened,
-                                                            })}
-                                                            type='button'
-                                                            aria-label='Развернуть список'
-                                                            onClick={() => {
-                                                                setThirdDropDownMenuOpened(
-                                                                    !thirdDropDownMenuOpened
-                                                                );
-                                                            }}
-                                                        >
-                                                            <span className='submenu__button-text'>Документы</span>
-                                                            <span className='submenu__button-icon'>
-                                                                    {Icons.chevron_down}
-                                                                </span>
-                                                        </button>
-                                                        <div className='submenu__list-container'>
-                                                            <ul className='submenu__list'>
-                                                                <li>
-                                                                    <a className='menu__link' href='./'>
-                                                                        Основные сведения
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a className='menu__link' href='./'>
-                                                                        Структура и органы управления
-                                                                        образовательной организацией
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a className='menu__link' href='./'>
-                                                                        Документы
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a className='menu__link' href='./'>
-                                                                        Образование
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a className='menu__link' href='./'>
-                                                                        Образовательные стандарты и требования
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Документы
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Образование
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className='menu__link' href='./'>
-                                                            Образовательные стандарты и требования
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Образование
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Образовательные стандарты и требования
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Руководство. Педагогический (научно-педагогический) состав
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Материально-техническое обеспечение и оснащённость образовательного
-                                                процесса
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Стипендии и меры поддержки обучающихся
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Платные образовательные услуги
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Финансово-хозяйственная деятельность
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Вакантные места для приёма (перевода) обучающихся
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Доступная среда
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Международное сотрудничество
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className='menu__link' href='./'>
-                                                Организация питания в образовательной организации
-                                            </a>
-                                        </li>
+                                    <ul className='submenu__top-list' ref={mobileMenuList}>
+                                        <DropdownMenu items={menuMobileItems.value} level={2}/>
                                     </ul>
                                 </div>
                             </div>

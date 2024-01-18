@@ -83,7 +83,7 @@
             .submenu__list-container {
                 display: none;
             }
-            &_opened > .submenu__list-container {
+            &.submenu_opened > .submenu__list-container {
                 display: block;
             }
         }

@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink, useLocation} from "react-router-dom";
-import { Icons } from "../../svgs";
-import { GenerateUrl } from "../../../utils/generateUrl";
+import {Icons} from "../../svgs";
+import {GenerateUrl} from "../../../utils/generateUrl";
 import classNames from "classnames";
 import useOnClickOutside from "../../../hook/onClickOutside";
 
@@ -15,8 +15,8 @@ const getMenuLink = (menu) => {
     }
 };
 
-function MenuItem({ item }) {
-    let className = ["header__menu-link"];
+function MenuItem({item}) {
+    let className = ["menu__link"];
 
     return (
         <li>
@@ -27,8 +27,8 @@ function MenuItem({ item }) {
             ) : (
                 <NavLink
                     to={getMenuLink(item)}
-                    className={({ isActive }) => {
-                        if (isActive) className.push("header__menu-link_active");
+                    className={({isActive}) => {
+                        if (isActive) className.push("menu__link_actived");
                         return className.join(" ");
                     }}
                 >
@@ -39,7 +39,7 @@ function MenuItem({ item }) {
     );
 }
 
-function DropdownItem({ item, items, level }) {
+function DropdownItem({item, items, level}) {
     const location = useLocation();
 
     const [submenuOpened, setSubmenuOpened] = React.useState(false);
@@ -58,37 +58,61 @@ function DropdownItem({ item, items, level }) {
     return (
         <li
             className={classNames({
-                header__submenu: true,
-                header__submenu_opened: submenuOpened,
+                submenu: true,
+                'submenu__item submenu__item_has-submenu': level > 1,
+                submenu_opened: submenuOpened,
             })}
             data-level={level}
         >
             <button
-                className='header__menu-link header__submenu-button'
+                className={classNames({
+                    "menu__link submenu__button": true,
+                    submenu__button_actived: submenuOpened,
+                })}
                 type='button'
                 aria-label='Развернуть список'
                 onClick={() => setSubmenuOpened(!submenuOpened)}
             >
-                {item.title}
-                <span className='header__submenu-button-icon'>{Icons.chevron_down}</span>
+                <span className='submenu__button-text'>{item.title}</span>
+                <span className='submenu__button-icon'>{Icons.chevron_down}</span>
             </button>
-            <div className='header__submenu-list-container' ref={node}>
-                <ul className='header__submenu-list'>
-                    <DropdownMenu items={items} level={level} />
-                </ul>
-            </div>
+            {
+                level === 1
+                &&
+                <div className='submenu__wrap'>
+                    <div className='submenu__top-list-container' ref={node}>
+                        <p className='submenu__title'>{item.title}</p>
+                        <ul className={'submenu__top-list'}>
+                            <DropdownMenu items={items} level={level}/>
+                        </ul>
+                    </div>
+                </div>
+            }
+            {
+                level > 1
+                &&
+                <div className='submenu__list-container' ref={node}>
+                    {/*<p className='submenu__title'>{item.title}</p>*/}
+                    <ul className={classNames({
+                        'submenu__top-list': level === 1,
+                        'submenu__list': level > 1
+                    })}>
+                        <DropdownMenu items={items} level={level}/>
+                    </ul>
+                </div>
+            }
         </li>
     );
 }
 
-const DropdownMenu = ({ items, level = 0 }) => {
+const DropdownMenu = ({items, level = 0}) => {
     if (!items) return null;
 
     return items.map((item) => {
         if (item.submenu?.length > 0)
-            return <DropdownItem key={item.title} item={item} items={item.submenu} level={level + 1} />;
+            return <DropdownItem key={item.title} item={item} items={item.submenu} level={level + 1}/>;
 
-        return <MenuItem key={item.title} item={item} />;
+        return <MenuItem key={item.title} item={item}/>;
     });
 };
 
