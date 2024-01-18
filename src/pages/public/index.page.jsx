@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 import useNewsStore from "../../store/public/newsStore";
 
@@ -1035,6 +1036,25 @@ const IndexPage = () => {
                         </Splide>
                     </div>
                 </section>
+                {/* Карта */}
+                <YMaps>
+                    <Map
+                        state={{
+                            center: [55.740882, 37.399416],
+                            zoom: 17,
+                        }}
+                        width='100%'
+                        height='clamp(25rem, 18.3824rem + 29.4118vw, 50rem)'
+                    >
+                        <Placemark
+                            geometry={[55.740882, 37.399416]}
+                            properties={{
+                                iconContent: "Детский сад № 43 УДПРФ",
+                            }}
+                            options={{ preset: "islands#blueStretchyIcon" }}
+                        />
+                    </Map>
+                </YMaps>
             </main>
         </BasicPage>
     );
