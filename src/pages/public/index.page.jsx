@@ -991,8 +991,14 @@ const IndexPage = () => {
                                 gap: "var(--indent-2)",
                                 padding: "var(--indent-1)",
                                 breakpoints: {
-                                    960: {
+                                    1420: {
+                                        perPage: 4,
+                                    },
+                                    1024: {
                                         perPage: 3,
+                                    },
+                                    768: {
+                                        perPage: 2,
                                     },
                                     576: {
                                         autoWidth: true,

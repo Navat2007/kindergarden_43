@@ -2,8 +2,13 @@
     &__image {
         @extend .corner-rounded;
         box-shadow: var(--box-shadow-medium);
-        min-block-size: 10em;
+        min-block-size: clamp(6em, 15vw, 10em);
         object-fit: contain;
         object-position: center;
+        transition: 0.15s ease-in;
+
+        &:hover {
+            translate: 0 -0.625em;
+        }
     }
 }
