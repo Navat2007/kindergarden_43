@@ -2,23 +2,15 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 import useNewsStore from "../../store/public/newsStore";
 
 import BasicPage from "../../components/public/basic.page/basic.page.component";
-import { Icons, AdvantagesIcons, SocialIcons } from "../../components/svgs";
+import { Icons, AdvantagesIcons } from "../../components/svgs";
 import Tabs from "../../components/public/tabs/tabs.component";
 import Tab from "../../components/public/tabs/tab.component";
 import VideoPlayer from "../../components/public/video.player/video.player.component";
-import Contact from "../../components/public/contact/contact";
 import News from "../../components/public/news/news";
-
-import resources__logo_01 from "../../images/resources__logo_01.jpg";
-import resources__logo_02 from "../../images/resources__logo_02.jpg";
-import resources__logo_03 from "../../images/resources__logo_03.jpg";
-import resources__logo_04 from "../../images/resources__logo_04.jpg";
-import resources__logo_05 from "../../images/resources__logo_05.jpg";
 
 const IndexPage = () => {
     const store = useNewsStore();
@@ -974,87 +966,6 @@ const IndexPage = () => {
                         </Splide>
                     </div>
                 </section>
-                {/* Полезные ресурсы */}
-                <section className='section page__section-indent resources'>
-                    <div className='section__wrap'>
-                        <h2 className='section__title section__title_with-decor'>Полезные ресурсы</h2>
-                        <Splide
-                            className='splide splide_mobile_auto-width splide_indent-block splide_pagination_grey'
-                            aria-label='Отзывы родителей о детском садике'
-                            options={{
-                                type: "loop",
-                                cloneStatus: false,
-                                pagination: true,
-                                arrows: false,
-                                autoplay: true,
-                                perPage: 5,
-                                updateOnMove: true,
-                                gap: "var(--indent-2)",
-                                padding: "var(--indent-1)",
-                                breakpoints: {
-                                    1420: {
-                                        perPage: 4,
-                                    },
-                                    1024: {
-                                        perPage: 3,
-                                    },
-                                    768: {
-                                        perPage: 2,
-                                    },
-                                    576: {
-                                        autoWidth: true,
-                                        arrows: false,
-                                    },
-                                },
-                            }}
-                        >
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <img className='resources__image' src={resources__logo_01} alt='Описание' />
-                                </a>
-                            </SplideSlide>
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <img className='resources__image' src={resources__logo_02} alt='Описание' />
-                                </a>
-                            </SplideSlide>
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <img className='resources__image' src={resources__logo_03} alt='Описание' />
-                                </a>
-                            </SplideSlide>
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <img className='resources__image' src={resources__logo_04} alt='Описание' />
-                                </a>
-                            </SplideSlide>
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <img className='resources__image' src={resources__logo_05} alt='Описание' />
-                                </a>
-                            </SplideSlide>
-                        </Splide>
-                    </div>
-                </section>
-                {/* Карта */}
-                <YMaps>
-                    <Map
-                        state={{
-                            center: [55.740882, 37.399416],
-                            zoom: 17,
-                        }}
-                        width='100%'
-                        height='clamp(25rem, 18.3824rem + 29.4118vw, 50rem)'
-                    >
-                        <Placemark
-                            geometry={[55.740882, 37.399416]}
-                            properties={{
-                                iconContent: "Детский сад № 43 УДПРФ",
-                            }}
-                            options={{ preset: "islands#blueStretchyIcon" }}
-                        />
-                    </Map>
-                </YMaps>
             </main>
         </BasicPage>
     );
