@@ -1,6 +1,5 @@
 .feedback {
     &__card {
-        background-color: white;
         display: grid;
         padding: 0;
 
@@ -102,25 +101,38 @@
 
         input[type="checkbox"] {
             appearance: none;
-            margin: 0.125em 0.625em 0 0;
+            margin: 0 0.625em -0.125em 0;
             font-size: 1em;
 
             cursor: pointer;
             position: relative;
 
-            &:checked::before {
+            &:hover::after {
+                background-color: var(--grey-200-color);
+            }
+
+            &:checked::after {
                 background-color: var(--main-color);
             }
 
             &::before {
                 content: "";
                 display: block;
-                inline-size: 0.75em;
-                block-size: 0.75em;
+                inline-size: 1em;
+                block-size: 1em;
                 border-radius: 50%;
                 background-color: #fff;
-                outline: 2px solid var(--main-color);
-                outline-offset: 2px;
+                border: 2px solid var(--main-color);
+                transition: 0.15s ease-in;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                inset: 3px;
+                border-radius: 50%;
+                background-color: #fff;
                 transition: 0.15s ease-in;
             }
         }

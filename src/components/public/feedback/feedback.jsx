@@ -36,7 +36,7 @@ const Feedback = () => {
                 transition={{ delay: 0.2, duration: 1 }}
             >
                 <div className='page__section-indent section__wrap'>
-                    <div className='section__card feedback__card'>
+                    <div className='section__card bg-color feedback__card'>
                         <form className='feedback__form' onSubmit={handleSubmit(onSubmit)}>
                             <h2 className='section__title feedback__title'>Задайте Ваш вопрос</h2>
                             <div className='section__main-text section__main-text_size_small'>

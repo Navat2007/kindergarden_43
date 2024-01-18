@@ -1,0 +1,9 @@
+.resources {
+    &__image {
+        @extend .corner-rounded;
+        box-shadow: var(--box-shadow-medium);
+        min-block-size: 10em;
+        object-fit: contain;
+        object-position: center;
+    }
+}
