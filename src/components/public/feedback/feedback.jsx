@@ -37,7 +37,7 @@ const Feedback = () => {
                 <div className='page__section-indent section__wrap'>
                     <div className='section__card feedback__card'>
                         <form className='feedback__form' onSubmit={handleSubmit(onSubmit)}>
-                            <h2 className='section__title feedback__title'>Задайте ваш вопрос</h2>
+                            <h2 className='section__title feedback__title'>Задайте Ваш вопрос</h2>
                             <div className='section__main-text section__main-text_size_small'>
                                 Оставьте ваши контактные данные, мы обязательно свяжемся с вами и ответим на все вопросы
                             </div>
