@@ -29,6 +29,7 @@ const Feedback = () => {
         <>
             <motion.section
                 className='feedback section bg-color bg-color_main-gradient'
+                id="feedback-form"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
