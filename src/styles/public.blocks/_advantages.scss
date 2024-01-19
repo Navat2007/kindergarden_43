@@ -1,5 +1,7 @@
 .advantages {
     &__color-list {
+        align-items: center;
+
         li:nth-child(4n + 1) .advantages__color-item-icon {
             background-color: var(--main-alt-color);
         }
@@ -14,11 +16,7 @@
         }
 
         @include media(lg, max) {
-            grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr));
-        }
-
-        @include media(md, max) {
-            grid-template-columns: repeat(auto-fill, minmax(min(10em, 100%), 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(17em, 100%), 1fr));
         }
     }
 

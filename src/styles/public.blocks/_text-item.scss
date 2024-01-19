@@ -2,18 +2,22 @@
     margin-block: 0;
     display: flex;
     align-items: center;
-    gap: .75em;
+    gap: 0.75em;
 
     &__icon {
         flex: none;
-        min-inline-size: clamp(3em, 7.6vw, 4.75em);
-        max-inline-size: clamp(3em, 7.6vw, 4.75em);
-        inline-size: clamp(3em, 7.6vw, 4.75em);
-        block-size: clamp(3em, 7.6vw, 4.75em);
+        min-inline-size: clamp(3rem, 1.0978rem + 3.0435vw, 4.75rem);
+        max-inline-size: clamp(3rem, 1.0978rem + 3.0435vw, 4.75rem);
+        inline-size: clamp(3rem, 1.0978rem + 3.0435vw, 4.75rem);
+        block-size: clamp(3rem, 1.0978rem + 3.0435vw, 4.75rem);
     }
 
     &__text {
-        font-size: clamp(0.75em, 1.8vw, 1.125em);
+        font-size: 1em;
+
+        @include media(lg) {
+            font-size: 1.25em;
+        }
     }
 
     &__text-accent {

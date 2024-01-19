@@ -17,9 +17,9 @@
     &__logo-link {
         flex: none;
 
-        @include media(xl, max) {
-            inline-size: clamp(55px, 10.5vw, 105px);
-            block-size: clamp(44px, 8.4vw, 84px);
+        @include media(lg, max) {
+            inline-size: clamp(55px, 8.8vw, 88px);
+            block-size: clamp(44px, 7vw, 70px);
             background-image: url("../../images/logo.svg");
         }
     }

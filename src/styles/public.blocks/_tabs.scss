@@ -1,11 +1,13 @@
 .tabs {
     &__list {
         @extend %reset-list;
-        padding-inline: var(--inline-indent-small);
+        margin-inline: auto;
+        inline-size: var(--inline-size-small);
+        padding-inline: var(--inline-indent);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: var(--indent-3);
+        gap: clamp(1rem, 0.0489rem + 1.5217vw, 1.875rem);
 
         @include media(sm) {
             flex-direction: row;
@@ -14,12 +16,13 @@
     }
 
     &__item {
+        flex: auto;
         text-align: center;
 
         font-size: clamp(1em, 2vw, 1.25em);
         font-weight: 600;
         padding: 0.625rem 1rem;
-        inline-size: min(25em, 100%);
+        max-inline-size: 31.25rem;
         border-radius: 22px;
         background-color: var(--grey-100-color);
         opacity: 0.54;
@@ -27,8 +30,6 @@
             background-color 0.25s ease-in,
             color 0.25s ease-in;
         cursor: pointer;
-
-        flex: none;
 
         &:hover {
             opacity: 1;

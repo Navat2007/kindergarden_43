@@ -3,13 +3,13 @@
     &__content {
         display: flex;
         flex-direction: column;
-        gap: var(--indent-4);
+        gap: clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
     }
     &__list {
         @extend %reset-list;
         display: flex;
         flex-wrap: wrap;
-        gap: var(--indent-2);
+        gap: clamp(1.25rem, 0.5707rem + 1.087vw, 1.875rem);
 
         li {
             flex: auto;
@@ -26,7 +26,6 @@
 
         .text-item__text {
             flex: auto;
-            font-size: clamp(.875em, 2vw, 1.25em);
             text-align: center;
         }
 

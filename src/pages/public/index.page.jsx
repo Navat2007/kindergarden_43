@@ -12,6 +12,8 @@ import Tab from "../../components/public/tabs/tab.component";
 import VideoPlayer from "../../components/public/video.player/video.player.component";
 import News from "../../components/public/news/news";
 
+import no_photo from "../../images/no-photo.jpg";
+
 const IndexPage = () => {
     const store = useNewsStore();
 
@@ -190,13 +192,13 @@ const IndexPage = () => {
                     </div>
                 </section>
                 {/* Об учреждении */}
-                <section className='section section_mobile-indent_small about'>
+                <section className='section about'>
                     <div className='section__wrap page__section-indent section__card bg-color'>
                         <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
                             <img
                                 className='about__image'
-                                src='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
+                                src={no_photo}
                                 alt='Описание фотографии'
                                 loading='lazy'
                             />
@@ -331,11 +333,15 @@ const IndexPage = () => {
                                         pagination: false,
                                         arrows: true,
                                         autoplay: true,
-                                        perPage: 1,
+                                        perPage: 3,
                                         focus: "center",
                                         updateOnMove: true,
                                         gap: ".5em",
-                                        padding: "clamp(0rem, -7.1875rem + 35.9375vw, 35.9375rem)",
+                                        breakpoints: {
+                                            1000: {
+                                                perPage: 2,
+                                            },
+                                        },
                                     }}
                                 >
                                     <SplideSlide>
@@ -428,11 +434,15 @@ const IndexPage = () => {
                                         pagination: false,
                                         arrows: true,
                                         autoplay: true,
-                                        perPage: 1,
+                                        perPage: 3,
                                         focus: "center",
                                         updateOnMove: true,
                                         gap: ".5em",
-                                        padding: "clamp(0rem, -7.1875rem + 35.9375vw, 35.9375rem)",
+                                        breakpoints: {
+                                            1000: {
+                                                perPage: 2,
+                                            },
+                                        },
                                     }}
                                 >
                                     <SplideSlide>
@@ -482,9 +492,11 @@ const IndexPage = () => {
                                 breakpoints: {
                                     1460: {
                                         perPage: 3,
+                                        arrows: false,
                                     },
                                     960: {
                                         perPage: 2,
+                                        arrows: false,
                                     },
                                     576: {
                                         autoWidth: true,
@@ -498,7 +510,7 @@ const IndexPage = () => {
                                     <article className='card card_type_people'>
                                         <img
                                             className='card__image'
-                                            src='http://ooo-ado.ru/wp-content/uploads/2021/06/265.jpg'
+                                            src={no_photo}
                                             alt='Описание фотографии'
                                             loading='lazy'
                                         />
@@ -531,7 +543,7 @@ const IndexPage = () => {
                         <ul className='news__card-deck'>
                             <li>
                                 <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article card_size_large'>
+                                    <article className='card card_type_article'>
                                         <img
                                             className='card__image'
                                             src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
@@ -556,7 +568,7 @@ const IndexPage = () => {
                             </li>
                             <li>
                                 <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article card_size_small'>
+                                    <article className='card card_type_article'>
                                         <img
                                             className='card__image'
                                             src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
@@ -581,7 +593,7 @@ const IndexPage = () => {
                             </li>
                             <li>
                                 <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article card_size_small'>
+                                    <article className='card card_type_article'>
                                         <img
                                             className='card__image'
                                             src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
@@ -611,7 +623,7 @@ const IndexPage = () => {
                             </li>
                             <li>
                                 <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article card_size_small'>
+                                    <article className='card card_type_article'>
                                         <img
                                             className='card__image'
                                             src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
@@ -634,7 +646,7 @@ const IndexPage = () => {
                             </li>
                             <li>
                                 <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article card_size_small'>
+                                    <article className='card card_type_article'>
                                         <img
                                             className='card__image'
                                             src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
@@ -657,7 +669,7 @@ const IndexPage = () => {
                             </li>
                             <li>
                                 <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article card_size_small'>
+                                    <article className='card card_type_article'>
                                         <img
                                             className='card__image'
                                             src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'

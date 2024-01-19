@@ -28,7 +28,9 @@
         gap: 0.5em;
     }
 
-    // &__date {}
+    &__date {
+        font-size: 0.875em;
+    }
 
     &__title {
         margin-block: 0;
@@ -52,6 +54,49 @@
     }
 
     &_type_article {
+        .card__title-block {
+            flex-direction: column;
+        }
+
+        .card__image {
+            aspect-ratio: 16/10;
+        }
+
+        .card__title {
+            order: -1;
+            flex: auto;
+            @include clamp(2, 1.2);
+
+            @include media(sm, max) {
+                max-height: unset;
+                line-height: unset;
+                display: unset;
+                -webkit-line-clamp: unset;
+                -webkit-box-orient: unset;
+                overflow: unset;
+            }
+        }
+
+        .card__content {
+            flex: auto;
+        }
+
+        .card__main-content {
+            margin-block-start: auto;
+        }
+
+        .card__text {
+            @include clamp(2, 1.2);
+
+            @include media(sm, max) {
+                max-height: unset;
+                line-height: unset;
+                display: unset;
+                -webkit-line-clamp: unset;
+                -webkit-box-orient: unset;
+                overflow: unset;
+            }
+        }
     }
 
     &_type_review {
@@ -93,52 +138,6 @@
         }
         .card__text {
             color: var(--main-text-low-color);
-        }
-    }
-
-    &_size_small {
-        flex-direction: row;
-
-        .card__image {
-            inline-size: 130px;
-            min-inline-size: 130px;
-            max-inline-size: 130px;
-        }
-        .card__content {
-            flex: auto;
-            place-self: center;
-            gap: 0.5em;
-        }
-        .card__date {
-            font-size: 0.875em;
-            line-height: 1.6;
-        }
-        .card__title {
-            order: -1;
-            flex: auto;
-            @include clamp(2, 1.2);
-        }
-        .card__text {
-            @include clamp(2, 1.2);
-        }
-    }
-
-    &_size_large {
-        .card__image {
-            aspect-ratio: unset;
-            flex: auto;
-        }
-
-        .card__title-block {
-            flex-direction: column;
-        }
-
-        .card__title {
-            font-size: clamp(1.25em, 3vw, 1.875em);
-        }
-
-        .card__text {
-            font-size: clamp(1em, 1.8vw, 1.125em);
         }
     }
 }

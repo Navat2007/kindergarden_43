@@ -4,12 +4,80 @@
 
         display: grid;
         gap: var(--indent-2);
-        grid-template-columns: repeat(auto-fill, minmax(min(20em, 100%), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(19em, 100%), 1fr));
 
-        @include media(lg) {
+        @include media(xl) {
             grid-template-columns: 0.71fr 0.69fr;
+            grid-auto-rows: clamp(6.25rem, 4.212rem + 3.2609vw, 8.125rem);
             li:first-child {
                 grid-row: span 5;
+                .card_type_article {
+                    .card__image {
+                        aspect-ratio: unset;
+                        flex: auto;
+                    }
+
+                    .card__title-block {
+                        flex-direction: column;
+                    }
+
+                    .card__title {
+                        font-size: clamp(1.25em, 3vw, 1.875em);
+                        max-height: unset;
+                        line-height: unset;
+                        display: unset;
+                        -webkit-line-clamp: unset;
+                        -webkit-box-orient: unset;
+                        overflow: unset;
+                    }
+
+                    .card__date {
+                        font-size: 1em;
+                    }
+
+                    .card__main-content {
+                        margin-block-start: unset;
+                    }
+
+                    .card__text {
+                        font-size: clamp(1em, 1.8vw, 1.125em);
+                        max-height: unset;
+                        line-height: unset;
+                        display: unset;
+                        -webkit-line-clamp: unset;
+                        -webkit-box-orient: unset;
+                        overflow: unset;
+                    }
+                }
+            }
+
+            li:not(:first-child) .card_type_article {
+                flex-direction: row;
+
+                .card__image {
+                    inline-size: clamp(6.25rem, 4.212rem + 3.2609vw, 8.125rem);
+                    min-inline-size: clamp(6.25rem, 4.212rem + 3.2609vw, 8.125rem);
+                    max-inline-size: clamp(6.25rem, 4.212rem + 3.2609vw, 8.125rem);
+                }
+                .card__content {
+                    flex: auto;
+                    place-self: center;
+                    gap: 0.5em;
+                }
+                .card__date {
+                    line-height: 1.6;
+                }
+                .card__title-block {
+                    flex-direction: row;
+                }
+                .card__title {
+                    order: -1;
+                    flex: auto;
+                    @include clamp(2, 1.2);
+                }
+                .card__text {
+                    @include clamp(2, 1.2);
+                }
             }
         }
     }

@@ -12,14 +12,18 @@
     &__card {
         @extend .corner-rounded_size_lg;
         margin-inline: auto;
-        inline-size: var(--inline-size-medium);
-        padding-inline: var(--inline-indent-medium);
+        inline-size: min(107.5em, 100%); // 1720
+        padding-inline: var(--inline-indent-medium); // 48 - 150
+
+        @include media(lg, max) {
+            border-radius: 0;
+        }
     }
 
     &__title-block {
         display: grid;
-        gap: var(--indent-3);
-        margin-block-end: var(--indent-4);
+        gap: clamp(1rem, 0.0489rem + 1.5217vw, 1.875rem);
+        margin-block-end: clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
         grid-template-columns: 1fr auto;
 
         .section__title {
@@ -47,9 +51,9 @@
     }
 
     &__title {
-        margin-block: 0 var(--indent-4);
+        margin-block: 0 clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
         font-family: var(--heading-font-family);
-        font-size: clamp(1.875rem, 1.1471rem + 3.2353vw, 4.625rem);
+        font-size: clamp(3rem, 1.2337rem + 2.8261vw, 4.625rem);
         line-height: 0.9;
         font-weight: normal;
 
@@ -60,37 +64,34 @@
             &::before {
                 content: "";
                 position: absolute;
-                inset: -0.25em auto auto -0.25em;
+                inset: -0.3em auto auto -0.6em;
                 z-index: -1;
-                block-size: clamp(1.5rem, 7.2vw, 4.5rem);
+                block-size: clamp(2.875rem, 1.5163rem + 2.1739vw, 4.125rem);
                 aspect-ratio: 1/1;
                 mask: url("../../images/section__title.svg") no-repeat center / contain;
                 background: var(--accent-color) linear-gradient(90deg, var(--accent-gradient-color));
-
-                @include media(sm) {
-                    inset: -0.125em auto auto -0.625em;
-                }
             }
         }
     }
 
     &__main-text {
-        font-size: clamp(1em, 2vw, 1.25em);
-        max-inline-size: 44em;
+        font-size: 1em;
+
         p {
             margin-block: 0;
         }
 
-        &_size_small {
-            font-size: clamp(0.875em, 1.6vw, 1em);
+        @include media(lg) {
+            font-size: 1.25em;
+            max-inline-size: 44em;
         }
     }
 
     &__card-deck {
         @extend %reset-list;
         display: grid;
-        gap: var(--indent-3);
-        grid-template-columns: repeat(auto-fill, minmax(min(22em, 100%), 1fr));
+        gap: clamp(1.25rem, 0.5707rem + 1.087vw, 1.875rem);
+        grid-template-columns: repeat(auto-fill, minmax(min(21em, 100%), 1fr));
     }
 
     &_mobile-indent_small {

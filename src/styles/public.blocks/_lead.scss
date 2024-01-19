@@ -29,11 +29,15 @@
     }
 
     &__main-text {
-        font-size: clamp(0.875em, 1.8vw, 1.125em);
-        margin-block-end: clamp(2em, 6.4vw, 4em);
+        margin-block-end: clamp(1.5em, 5vw, 4em);
+        font-size: 1em;
 
         p {
-            margin-block: 1.25rem;
+            margin-block: 1em;
+        }
+
+        @include media(lg) {
+            font-size: 1.125em;
         }
     }
 }
