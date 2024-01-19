@@ -41,7 +41,7 @@ function CheckPageExist(): bool
         menuID = '$ID'";
     $result = mysqli_query($conn, $sql);
 
-    return mysqli_num_rows($result) > 0;
+    return $result && mysqli_num_rows($result) > 0;
 }
 
 function UpdateMenu()

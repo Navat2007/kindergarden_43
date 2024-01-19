@@ -515,6 +515,45 @@ class TableCreator{
             $this->CreateErrorMessage($table, $conn->error);
         }
     }
+    function CreateCustomPagesTable(){
+        global $conn;
+        $table = "custom_pages";
+
+        $sql = "CREATE TABLE IF NOT EXISTS $table (
+            ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            menuID INT(11) UNSIGNED NOT NULL,
+            title VARCHAR(2000) NOT NULL,
+            content TEXT DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+            create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            userID INT(11) UNSIGNED NOT NULL,
+            last_userID INT(11) UNSIGNED NOT NULL
+        )";
+
+        if ($conn->query($sql) === TRUE) {
+            $this->CreateSuccessMessage($table);
+        } else {
+            $this->CreateErrorMessage($table, $conn->error);
+        }
+    }
+    function CreateCustomPagesFilesTable(){
+        global $conn;
+        $table = "custom_page_files";
+
+        $sql = "CREATE TABLE IF NOT EXISTS $table (
+            ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            menuID INT(11) UNSIGNED NOT NULL,
+            title VARCHAR(2000) NOT NULL,
+            url VARCHAR(2000) DEFAULT '' NOT NULL,        
+            type VARCHAR(100) DEFAULT '' NOT NULL
+        )";
+
+        if ($conn->query($sql) === TRUE) {
+            $this->CreateSuccessMessage($table);
+        } else {
+            $this->CreateErrorMessage($table, $conn->error);
+        }
+    }
 
     function CreateAllTables()
     {
@@ -538,6 +577,8 @@ class TableCreator{
         $this->CreateNewsTable();
         $this->CreateNewsImagesTable();
         $this->CreateSupportTable();
+        $this->CreateCustomPagesTable();
+        $this->CreateCustomPagesFilesTable();
     }
 }
 

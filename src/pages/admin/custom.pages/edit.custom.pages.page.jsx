@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { isArray } from "lodash";
+import {isArray, isObject} from "lodash";
 import { getMenuList } from "../../../services/menu";
 
 import useMenuStore from "../../../store/admin/menuStore";
@@ -44,7 +44,7 @@ const EditCustomPagesPage = () => {
             const data = await store.loadByID({ id });
             const menu = await menuStore.loadByID({ id });
 
-            if (!data || (isArray(data) && data.length === 0)) {
+            if (!data || (isObject(data) && Object.keys(data).length === 0) || (isArray(data) && data.length === 0)) {
                 setValue("title", menu.title);
                 setValue("url", GenerateUrl(menu.title));
                 setValue("content", "");
@@ -123,6 +123,8 @@ const EditCustomPagesPage = () => {
             });
 
         const response = await store.edit(sendObject);
+
+        console.log(response);
 
         if (response.error === 0) {
             setPopup(
