@@ -74,66 +74,6 @@ const Footer = () => {
                     </address>
                     <menu className='footer__menu menu'>
                         <ul className='footer__menu-list menu__list'>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Главная
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    О нас
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Сведения об образовательной организации
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Программы
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Режим
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Расписание
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Главная
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    О нас
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Сведения об образовательной организации
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Программы
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Режим
-                                </a>
-                            </li>
-                            <li>
-                                <a className='menu__link' href='./'>
-                                    Расписание
-                                </a>
-                            </li>
                         </ul>
                     </menu>
                 </div>
