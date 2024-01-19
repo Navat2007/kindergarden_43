@@ -38,9 +38,9 @@ const PublicLayout = () => {
                     transition={{delay: 0.2, duration: 1}}
                 >
                     <Outlet/>
-                    <Feedback />
-                    <Resourses />
-                    <MapSection />
+                    {/* <Feedback /> */}
+                    {/* <Resourses /> */}
+                    {/* <MapSection /> */}
                 </motion.main>
                 <Footer/>
             </PreloaderContext.Provider>
