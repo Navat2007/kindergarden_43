@@ -46,22 +46,22 @@ const CustomPage = ({ id }) => {
             isObject(store.item?.page) &&
             (store.item?.page?.content || store.item?.page?.files?.length > 0) ? (
                 <motion.section
-                    className='article'
+                    className='article section__wrap page__section-indent'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ delay: 0.2, duration: 1 }}
                 >
-                    <h1 className='article__title'>{store?.item?.page?.title}</h1>
+                    <h1 className='section__title'>{store?.item?.page?.title}</h1>
                     <div
-                        className='article__main-content'
+                        className='section__main-text'
                         dangerouslySetInnerHTML={{
                             __html: DOMPurify.sanitize(store?.item?.page?.content),
                         }}
                     />
                     {photo.value.length > 0 && (
                         <div className='article__section'>
-                            <h2 className='article__subtitle'>Галерея</h2>
+                            <h2 className='section__subtitle'>Галерея</h2>
                             <ImageGallery extraClass={"article__gallery"} items={photo.value} />
                         </div>
                     )}
