@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 
-import {Login, Loading, Error} from "../../services/user";
+import { Login, Loading, Error } from "../../services/user";
 
 import Logo from "../../components/public/logo/logo";
 import Button from "../../components/admin/button/button.component";
@@ -11,6 +11,7 @@ import FieldEmail from "../../components/admin/field/field.email.component";
 import FieldPassword from "../../components/admin/field/field.password.component";
 import FieldCheckbox from "../../components/admin/field/field.checkbox.component";
 
+import "../../styles/admin.layout.scss";
 import "./login.scss";
 
 const LoginPage = () => {
@@ -30,7 +31,7 @@ const LoginPage = () => {
                 <title>Авторизация</title>
             </Helmet>
             <motion.main
-                className='auth-form'
+                className='app auth-form'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

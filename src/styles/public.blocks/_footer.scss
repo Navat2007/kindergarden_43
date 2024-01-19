@@ -25,6 +25,10 @@
         }
     }
 
+    &__menu-list {
+        flex-wrap: wrap;
+    }
+
     &__address {
         flex: 1 0 min(40vw, 25em);
         font-style: normal;

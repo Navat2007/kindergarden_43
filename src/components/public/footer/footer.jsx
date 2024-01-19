@@ -2,8 +2,7 @@ import React from "react";
 import Logo from "../logo/logo";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import "./footer.scss";
-import {Icons, SocialIcons} from "../../svgs";
+import { Icons, SocialIcons } from "../../svgs";
 
 const Footer = () => {
     const node = React.useRef();
@@ -74,7 +73,7 @@ const Footer = () => {
                         </ul>
                     </address>
                     <menu className='footer__menu menu'>
-                        <ul className='menu__list'>
+                        <ul className='footer__menu-list menu__list'>
                             <li>
                                 <a className='menu__link' href='./'>
                                     Главная
