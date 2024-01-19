@@ -7,7 +7,7 @@
     &__wrap {
         margin-inline: auto;
         inline-size: var(--inline-size-large);
-        padding: clamp(0.625rem, 2.4vw, 1.5rem) clamp(0.625rem, 4.8vw, 3rem);
+        padding: clamp(1rem, 0.4565rem + 0.8696vw, 1.5rem) var(--inline-indent);
 
         display: flex;
         align-items: center;

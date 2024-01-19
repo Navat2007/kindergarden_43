@@ -1,11 +1,11 @@
 .section {
     &__wrap {
         margin-inline: auto;
-        inline-size: var(--inline-size-large);
-        padding-inline: var(--inline-indent-large);
+        inline-size: var(--inline-size-small);
+        padding-inline: var(--inline-indent);
 
         &_size_large {
-            padding-inline: var(--inline-indent-small);
+            inline-size: var(--inline-size-medium);
         }
     }
 
