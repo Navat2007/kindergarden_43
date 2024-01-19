@@ -10,7 +10,7 @@
     }
 
     &__card {
-        @extend .corner-rounded_size_lg;
+        border-radius: 1.5em;
         margin-inline: auto;
         inline-size: min(107.5em, 100%); // 1720
         padding-inline: var(--inline-indent-medium); // 48 - 150
@@ -31,6 +31,7 @@
         }
 
         .button {
+            inline-size: 100%;
             place-self: center start;
             grid-row: 3;
         }
@@ -53,7 +54,7 @@
     &__title {
         margin-block: 0 clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
         font-family: var(--heading-font-family);
-        font-size: clamp(3rem, 1.2337rem + 2.8261vw, 4.625rem);
+        font-size: clamp(1.875rem, 1.2422rem + 2.8125vw, 3rem);
         line-height: 0.9;
         font-weight: normal;
 
@@ -64,13 +65,22 @@
             &::before {
                 content: "";
                 position: absolute;
-                inset: -0.3em auto auto -0.6em;
+                inset: -0.3em auto auto -0.3em;
                 z-index: -1;
-                block-size: clamp(2.875rem, 1.5163rem + 2.1739vw, 4.125rem);
+                block-size: clamp(1.625rem, 0.9219rem + 3.125vw, 2.875rem);
                 aspect-ratio: 1/1;
                 mask: url("../../images/section__title.svg") no-repeat center / contain;
                 background: var(--accent-color) linear-gradient(90deg, var(--accent-gradient-color));
+
+                @include media(lg) {
+                    inset: -0.3em auto auto -0.6em;
+                    block-size: clamp(2.875rem, 1.5163rem + 2.1739vw, 4.125rem);
+                }
             }
+        }
+
+        @include media(lg) {
+            font-size: clamp(3rem, 1.2337rem + 2.8261vw, 4.625rem);
         }
     }
 

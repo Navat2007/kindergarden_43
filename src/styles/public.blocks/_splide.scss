@@ -168,7 +168,7 @@
 
     &_mobile_auto-width {
         .splide__slide {
-            width: min(18em, 100%);
+            inline-size: min(17em, 100%);
         }
     }
 

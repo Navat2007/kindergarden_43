@@ -39,7 +39,7 @@ const Feedback = () => {
                     <div className='section__card bg-color feedback__card'>
                         <form className='feedback__form' onSubmit={handleSubmit(onSubmit)}>
                             <h2 className='section__title feedback__title'>Задайте Ваш вопрос</h2>
-                            <div className='section__main-text section__main-text_size_small'>
+                            <div className='section__main-text feedback__main-text'>
                                 Оставьте ваши контактные данные, мы обязательно свяжемся с вами и ответим на все вопросы
                             </div>
                             <div className="feedback__fields">

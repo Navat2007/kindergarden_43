@@ -2,7 +2,10 @@
     &__two-columns {
         display: grid;
         gap: clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
-        grid-template-columns: 0.3fr 0.58fr;
+
+        @include media(sm) {
+            grid-template-columns: 0.3fr 0.58fr;
+        }
 
         @include media(lg) {
             grid-template-columns: 0.4fr 0.972fr;
@@ -18,10 +21,14 @@
 
     &__image {
         @extend .corner-rounded;
-        inline-size: min(25em, 100%);
+        inline-size: min(17em, 100%);
         aspect-ratio: 4/5.32;
         object-fit: cover;
         object-position: center;
+
+        @include media(lg) {
+            inline-size: min(25em, 100%);
+        }
     }
 
     &__main-info {

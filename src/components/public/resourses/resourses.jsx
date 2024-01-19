@@ -21,7 +21,7 @@ const Resourses = () => {
                 <div className='section__wrap'>
                     <h2 className='section__title section__title_with-decor'>Полезные ресурсы</h2>
                     <Splide
-                        className='splide splide_mobile_auto-width splide_indent-block splide_pagination_grey'
+                        className='splide splide_indent-block splide_pagination_grey'
                         aria-label='Отзывы родителей о детском садике'
                         options={{
                             type: "loop",
@@ -30,6 +30,7 @@ const Resourses = () => {
                             arrows: false,
                             autoplay: true,
                             perPage: 5,
+                            focus: "center",
                             updateOnMove: true,
                             gap: "var(--indent-2)",
                             padding: "var(--indent-1)",
@@ -37,15 +38,11 @@ const Resourses = () => {
                                 1420: {
                                     perPage: 4,
                                 },
-                                1024: {
+                                768: {
                                     perPage: 3,
                                 },
-                                768: {
-                                    perPage: 2,
-                                },
-                                576: {
-                                    autoWidth: true,
-                                    arrows: false,
+                                480: {
+                                    perPage: 1,
                                 },
                             },
                         }}

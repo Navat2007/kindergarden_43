@@ -1,7 +1,7 @@
 .gallery {
     &__card-deck {
         gap: var(--indent-2);
-        @include media(lg) {
+        @include media(xl) {
             grid-template-columns: 6.15fr 6.15fr 4.5fr;
             grid-auto-rows: 350px;
             li:nth-child(6n + 1) {

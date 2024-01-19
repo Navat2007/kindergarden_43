@@ -341,9 +341,29 @@ const IndexPage = () => {
                                             1000: {
                                                 perPage: 2,
                                             },
+                                            480: {
+                                                perPage: 1,
+                                                padding: "var(--inline-indent)",
+                                            },
                                         },
                                     }}
                                 >
+                                    <SplideSlide>
+                                        <img
+                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            alt='Описание изображения'
+                                            className='corner-rounded corner-rounded_size_lg'
+                                            loading='lazy'
+                                        />
+                                    </SplideSlide>
+                                    <SplideSlide>
+                                        <img
+                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            alt='Описание изображения'
+                                            className='corner-rounded corner-rounded_size_lg'
+                                            loading='lazy'
+                                        />
+                                    </SplideSlide>
                                     <SplideSlide>
                                         <img
                                             src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
@@ -445,6 +465,20 @@ const IndexPage = () => {
                                         },
                                     }}
                                 >
+                                    <SplideSlide>
+                                        <img
+                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            alt='Описание изображения'
+                                            className='corner-rounded corner-rounded_size_lg'
+                                        />
+                                    </SplideSlide>
+                                    <SplideSlide>
+                                        <img
+                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            alt='Описание изображения'
+                                            className='corner-rounded corner-rounded_size_lg'
+                                        />
+                                    </SplideSlide>
                                     <SplideSlide>
                                         <img
                                             src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
@@ -800,33 +834,41 @@ const IndexPage = () => {
                         className='splide splide_size_wide splide_type_center-carousel'
                         aria-label='Видео детского садика'
                         options={{
-                            type: "slide",
+                            type: "loop",
                             cloneStatus: false,
-                            pagination: true,
+                            pagination: false,
                             arrows: true,
                             autoplay: true,
-                            perPage: 1,
+                            perPage: 3,
                             focus: "center",
                             updateOnMove: true,
                             gap: ".5em",
-                            padding: "clamp(0rem, -7.1875rem + 35.9375vw, 35.9375rem)",
+                            breakpoints: {
+                                1000: {
+                                    perPage: 2,
+                                },
+                                480: {
+                                    perPage: 1,
+                                    padding: "var(--inline-indent)",
+                                },
+                            },
                         }}
                     >
                         <SplideSlide>
                             <VideoPlayer
-                                extraClass={"corner-rounded corner-rounded_size_lg"}
+                                extraClass={"iframe-item"}
                                 source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}
                             />
                         </SplideSlide>
                         <SplideSlide>
                             <VideoPlayer
-                                extraClass={"corner-rounded corner-rounded_size_lg"}
+                                extraClass={"iframe-item"}
                                 source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}
                             />
                         </SplideSlide>
                         <SplideSlide>
                             <VideoPlayer
-                                extraClass={"corner-rounded corner-rounded_size_lg"}
+                                extraClass={"iframe-item"}
                                 source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}
                             />
                         </SplideSlide>
@@ -858,8 +900,12 @@ const IndexPage = () => {
                                 gap: "var(--indent-2)",
                                 padding: "var(--indent-1)",
                                 breakpoints: {
+                                    1460: {
+                                        arrows: false,
+                                    },
                                     960: {
                                         perPage: 2,
+                                        arrows: false,
                                     },
                                     576: {
                                         autoWidth: true,
