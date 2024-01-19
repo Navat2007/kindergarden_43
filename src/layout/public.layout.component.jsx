@@ -26,8 +26,9 @@ const PublicLayout = () => {
     }, [location]);
 
     return (
-        <div className={"page"}>
-            <PreloaderContext.Provider value={{loading, setLoading}}>
+        <PreloaderContext.Provider value={{loading, setLoading}}>
+            <div className={"page"}>
+
                 <Preloader loading={loading}/>
                 <Header/>
                 <motion.main
@@ -43,8 +44,8 @@ const PublicLayout = () => {
                     {/* <MapSection /> */}
                 </motion.main>
                 <Footer/>
-            </PreloaderContext.Provider>
-        </div>
+            </div>
+        </PreloaderContext.Provider>
     );
 };
 
