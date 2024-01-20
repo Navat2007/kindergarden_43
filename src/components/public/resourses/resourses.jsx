@@ -48,28 +48,69 @@ const Resourses = () => {
                         }}
                     >
                         <SplideSlide>
-                            <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                <img className='resources__image' src={resources__logo_01} alt='Описание' />
+                            <a
+                                href='https://www.mos.ru/donm/'
+                                target='_blank'
+                                rel='noreferrer noopener ugs'
+                                className='card-link'
+                            >
+                                <img
+                                    className='resources__image'
+                                    src={resources__logo_01}
+                                    alt='Департамент образования и науки города Москвы'
+                                />
                             </a>
                         </SplideSlide>
                         <SplideSlide>
-                            <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                <img className='resources__image' src={resources__logo_02} alt='Описание' />
+                            <a
+                                href='https://minobrnauki.gov.ru/'
+                                target='_blank'
+                                rel='noreferrer noopener ugs'
+                                className='card-link'
+                            >
+                                <img
+                                    className='resources__image'
+                                    src={resources__logo_02}
+                                    alt='министерство науки и высшего образования российской федерации'
+                                />
                             </a>
                         </SplideSlide>
                         <SplideSlide>
-                            <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                <img className='resources__image' src={resources__logo_03} alt='Описание' />
+                            <a
+                                href='https://edu.gov.ru/'
+                                target='_blank'
+                                rel='noreferrer noopener ugs'
+                                className='card-link'
+                            >
+                                <img
+                                    className='resources__image'
+                                    src={resources__logo_03}
+                                    alt='министерство просвещения российской федерации'
+                                />
                             </a>
                         </SplideSlide>
                         <SplideSlide>
-                            <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                <img className='resources__image' src={resources__logo_04} alt='Описание' />
+                            <a
+                                href='https://www.mos.ru/'
+                                target='_blank'
+                                rel='noreferrer noopener ugs'
+                                className='card-link'
+                            >
+                                <img className='resources__image' src={resources__logo_04} alt='правительство москвы' />
                             </a>
                         </SplideSlide>
                         <SplideSlide>
-                            <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                <img className='resources__image' src={resources__logo_05} alt='Описание' />
+                            <a
+                                href='https://udprf.ru/'
+                                target='_blank'
+                                rel='noreferrer noopener ugs'
+                                className='card-link'
+                            >
+                                <img
+                                    className='resources__image'
+                                    src={resources__logo_05}
+                                    alt='управление делами президента российской федерации'
+                                />
                             </a>
                         </SplideSlide>
                     </Splide>
