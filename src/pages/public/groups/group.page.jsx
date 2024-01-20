@@ -46,7 +46,7 @@ const GroupPage = () => {
                 ]}
             />
             <motion.section
-                className='article'
+                className='section page__section-indent'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -54,32 +54,28 @@ const GroupPage = () => {
             >
                 {!store.loading && Object.keys(store.item).length > 0 && (
                     <>
-                        <div className='article__two-columns'>
-                            <img
-                                className='article__image'
-                                src={
-                                    store.item.image.includes("http")
-                                        ? store.item.image
-                                        : process.env.REACT_APP_BASE_URL + store.item.image
-                                }
-                                alt='Изображение группы'
-                            />
-                            <div>
-                                <h1 className='article__title'>{store.item.title}</h1>
-                                <p className='article__caption'>{store.item.preview}</p>
-                                <div
-                                    className='article__main-content'
-                                    dangerouslySetInnerHTML={{
-                                        __html: DOMPurify.sanitize(store.item.text),
-                                    }}
-                                />
-                            </div>
-                        </div>
+                        <h1 className='section__title section__title_with-decor'>{store.item.title}</h1>
+                        <p className='section__caption'>{store.item.preview}</p>
+                        <img
+                            className='section__article-image'
+                            src={
+                                store.item.image.includes("http")
+                                    ? store.item.image
+                                    : process.env.REACT_APP_BASE_URL + store.item.image
+                            }
+                            alt='Изображение занятия'
+                        />
+                        <div
+                            className='section__main-content'
+                            dangerouslySetInnerHTML={{
+                                __html: DOMPurify.sanitize(store.item.text),
+                            }}
+                        />
                         {store.item?.employees?.length > 0 && (
-                            <>
-                                <h2 className='article__title'>Воспитатели</h2>
+                            <div className='section__indent'>
+                                <h2 className='section__subtitle'>Воспитатели</h2>
                                 <TeachersSlider isBorderGradient={false} type={"slide"} items={store.item?.employees} />
-                            </>
+                            </div>
                         )}
                     </>
                 )}

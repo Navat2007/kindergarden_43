@@ -86,6 +86,12 @@
         font-weight: 600;
     }
 
+    &__caption {
+        margin-block: var(--indent-block-medium);
+        font-size: var(--title-card-font-size);
+        font-weight: 600;
+    }
+
     &__main-text {
         font-size: var(--text-large-font-size);
         max-inline-size: 50em;

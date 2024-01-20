@@ -1,64 +1,116 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
+import { Icons, SocialIcons } from "../../svgs";
 
-import "./contact.scss";
-
-const Contact = () => {
+const Contact = ({ place = "landing" }) => {
     return (
         <motion.section
-            className='contact'
+            className='section page__section-indent contacts'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
         >
-            <div className='contact__map' id='contact_map'>
+            {place === "page" && (
+                <div className='section__wrap contacts__columns'>
+                    <div className='contacts__content'>
+                        <h2 className='section__title section__title_with-decor'>Контакты</h2>
+                        <address className='address'>
+                            <a
+                                className='address__link address__link_type_phone'
+                                href='tel:84991493724'
+                                rel='noreferrer noopener nofollow'
+                            >
+                                <span className='address__link-icon'>{Icons.phone}</span>
+                                <span className='address__link-text'>+7 499 149-37-24</span>
+                                <span className='address__text-small'>Пн-пт с 7:00 до 19:00</span>
+                            </a>
+                            <a
+                                className='address__link address__color-main'
+                                href='#0'
+                                target='_blank'
+                                rel='noreferrer noopener nofollow'
+                            >
+                                <span className='address__link-text'>
+                                    г. Москва, ул. Академика Павлова, д. 14, к. 2
+                                </span>
+                            </a>
+                            <a
+                                className='address__link'
+                                href='mailto:fgdou43@bk.ru'
+                                target='_blank'
+                                rel='noreferrer noopener nofollow'
+                            >
+                                <span className='address__link-icon'>{Icons.email}</span>
+                                <span className='address__link-text address__text-highlight'>fgdou43@bk.ru</span>
+                            </a>
+                            <ul className='footer__social-group social-group'>
+                                <li>
+                                    <a
+                                        className='social-group__link-icon'
+                                        target='_blank'
+                                        href='https://vk.com/public219786348'
+                                        rel='noreferrer noopener nofollow'
+                                        aria-label='Вконтакте'
+                                    >
+                                        {SocialIcons.vk_without_color}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        className='social-group__link-icon'
+                                        target='_blank'
+                                        href='http://t.me/Fgdou43'
+                                        rel='noreferrer noopener nofollow'
+                                        aria-label='Телеграм'
+                                    >
+                                        {SocialIcons.t_without_color}
+                                    </a>
+                                </li>
+                            </ul>
+                        </address>
+                    </div>
+                    <YMaps>
+                        <Map
+                            state={{
+                                center: [55.740882, 37.399416],
+                                zoom: 17,
+                            }}
+                            className='contacts__map'
+                            width='100%'
+                        >
+                            <Placemark
+                                geometry={[55.740882, 37.399416]}
+                                properties={{
+                                    iconContent: "Детский сад № 43 УДПРФ",
+                                }}
+                                options={{ preset: "islands#blueStretchyIcon" }}
+                            />
+                        </Map>
+                    </YMaps>
+                </div>
+            )}
+            {place === "landing" && (
                 <YMaps>
                     <Map
                         state={{
-                            center: [55.733327, 37.055938],
-                            zoom: 16,
+                            center: [55.740882, 37.399416],
+                            zoom: 17,
                         }}
                         width='100%'
-                        height='min(50vb, 30em)'
+                        height='clamp(25rem, 18.3824rem + 29.4118vw, 50rem)'
                     >
                         <Placemark
-                            geometry={[55.733327, 37.055938]}
+                            geometry={[55.740882, 37.399416]}
                             properties={{
-                                iconContent: "Детский сад СОСНЫ",
+                                iconContent: "Детский сад № 43 УДПРФ",
                             }}
-                            options={{ preset: "islands#redStretchyIcon" }}
+                            options={{ preset: "islands#blueStretchyIcon" }}
                         />
                     </Map>
                 </YMaps>
-            </div>
-            <div className='contact__detail'>
-                <h2 className='contact__title'>Контакты</h2>
-                <address className='contact__address'>
-                    Адрес: город&nbsp;Одинцово, поселок&nbsp;Сосны
-                    <br />
-                    Телефон:{" "}
-                    <a
-                        className='contact__link'
-                        target={"_blank"}
-                        href='tel:84956302158'
-                        rel='noopener nofollow noreferrer'
-                    >
-                        +7&nbsp;(495)&nbsp;630-21-58
-                    </a>
-                    <br />
-                    E-mail:&nbsp;
-                    <a
-                        className='contact__link'
-                        target={"_blank"}
-                        href='mailto:crrds7777@gmail.com'
-                        rel='noopener nofollow noreferrer'
-                    >
-                        crrds7777@gmail.com
-                    </a>
-                </address>
-            </div>
+            )}
         </motion.section>
     );
 };

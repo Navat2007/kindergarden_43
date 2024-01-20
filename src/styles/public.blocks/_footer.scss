@@ -31,62 +31,10 @@
 
     &__address {
         flex: 1 0 min(40vw, 25em);
-        font-style: normal;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    &__link {
-        text-decoration: unset;
-        display: flex;
-        align-items: center;
-        gap: 0.5em;
-        transition: 0.25s ease-in;
-
-        &:hover {
-            color: var(--accent-color);
-        }
-
-        &_type_phone {
-            white-space: nowrap;
-            display: grid;
-            grid-template-columns: auto 1fr;
-
-            .footer__link-text {
-                font-size: clamp(1.5rem, 1.0924rem + 0.6522vw, 1.875rem);
-                font-weight: 600;
-            }
-
-            .footer__text-small {
-                grid-column: 2/3;
-            }
-        }
-    }
-
-    &__link-icon {
-        display: inline-block;
-        inline-size: 1.5em;
-        block-size: 1.5em;
     }
 
     &__social-group {
         margin-block-start: 0.875em;
-    }
-
-    // &__link-text {}
-
-    &__text-highlight {
-        font-weight: 600;
-    }
-
-    &__color-main {
-        color: var(--main-color);
-    }
-
-    &__text-small {
-        font-size: 0.875em;
-        color: var(--main-text-low-color);
     }
 
     &__login-link {

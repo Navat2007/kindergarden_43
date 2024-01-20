@@ -1,0 +1,26 @@
+.contacts {
+    &__columns {
+        display: grid;
+        gap: var(--indent-block-large);
+        grid-template-columns: 1fr 1.3fr;
+
+        @include media(lg, max) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__content {
+        margin-block: var(--indent-block-large);
+    }
+
+    &__map {
+        block-size: clamp(18.75rem, 5.163rem + 21.7391vw, 31.25rem);
+        border-radius: 1.5em;
+        overflow: hidden;
+
+        @include media(sm, max) {
+            border-radius: 0;
+            margin-inline: calc(var(--inline-indent) * -1);
+        }
+    }
+}

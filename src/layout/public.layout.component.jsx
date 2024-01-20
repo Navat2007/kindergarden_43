@@ -10,7 +10,7 @@ import Header from "../components/public/header/header";
 import Footer from "../components/public/footer/footer";
 import Resourses from "../components/public/resourses/resourses";
 import Feedback from "../components/public/feedback/feedback";
-import MapSection from "../components/public/map/map";
+import Contact from "../components/public/contact/contact";
 
 const PublicLayout = () => {
     const location = useLocation();
@@ -41,7 +41,7 @@ const PublicLayout = () => {
                     <Outlet/>
                      <Feedback />
                      <Resourses />
-                     {/*<MapSection />*/}
+                     <Contact place={"landing"} />
                 </motion.main>
                 <Footer/>
             </div>

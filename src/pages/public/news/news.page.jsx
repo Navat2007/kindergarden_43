@@ -48,29 +48,29 @@ const NewsPage = () => {
                 ]}
             />
             <motion.section
-                className='article'
+                className='section page__section-indent'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ delay: 0.2, duration: 1 }}
             >
-                <h1 className='article__title'>{store?.item?.title}</h1>
-                <time dateTime={store?.item?.date} className='article__caption'>
+                <div className='section__wrap'>
+                    <h1 className='section__title section__title_with-decor'>{store?.item?.title}</h1>
+                </div>
+                <time dateTime={store?.item?.date} className='section__caption'>
                     {moment(store?.item?.date).format("DD.MM.YYYY")}
                 </time>
-                {
-                    store?.item?.image && (
-                        <SingleImageWithPreview image={store.item.image} extraClass={"article__image article__gap"} />
-                    )
-                }
+                {store?.item?.image && (
+                    <SingleImageWithPreview image={store.item.image} extraClass={"section__article-image"} />
+                )}
                 <div
-                    className='article__main-content'
+                    className='section__main-text'
                     dangerouslySetInnerHTML={{
                         __html: DOMPurify.sanitize(store?.item?.text),
                     }}
                 />
                 {store?.item?.images?.length > 0 && (
-                    <ImageGallery extraClass={"article__gallery"} items={store.item.images} />
+                    <ImageGallery extraClass={"section__card-deck"} items={store.item.images} />
                 )}
             </motion.section>
         </BasicPage>

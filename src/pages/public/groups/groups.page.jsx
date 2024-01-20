@@ -1,15 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import {motion, Variants} from "framer-motion";
-import {NavLink} from "react-router-dom";
+import { motion, Variants } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 import useAboutStore from "../../../store/public/aboutStore";
 import useGroupsStore from "../../../store/public/groupsStore";
 import useEmployeesStore from "../../../store/public/employeesStore";
 
 import BasicPage from "../../../components/public/basic.page/basic.page.component";
-
-import "./about.scss";
 
 const GroupsPage = () => {
     const aboutStore = useAboutStore();
@@ -18,7 +16,7 @@ const GroupsPage = () => {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            await aboutStore.loadByID({id: 1});
+            await aboutStore.loadByID({ id: 1 });
             await groupsStore.loadAll();
             await teachersStore.loadAll();
         };
@@ -31,14 +29,16 @@ const GroupsPage = () => {
             <Helmet>
                 <title>Наши группы</title>
             </Helmet>
-            <section className='about about_contain_inner'>
-                <h2 id={"groups"} className='about__title'>Наши группы</h2>
+            <section className='section page__section-indent'>
+                <div className='section__wrap'>
+                    <h1 id={"groups"} className='section__title section__title_with-decor'>
+                        Наши группы
+                    </h1>
+                </div>
                 <ul className='about__list'>
-                    {
-                        groupsStore.loading && <h3>Загрузка...</h3>
-                    }
-                    {
-                        groupsStore.loading === false && groupsStore.items.map((item, index) => {
+                    {groupsStore.loading && <h3>Загрузка...</h3>}
+                    {groupsStore.loading === false &&
+                        groupsStore.items.map((item, index) => {
                             const cardVariants: Variants = {
                                 offscreen: {
                                     y: 300,
@@ -58,35 +58,34 @@ const GroupsPage = () => {
                             return (
                                 <motion.li
                                     key={index}
-                                    initial="offscreen"
-                                    whileInView="onscreen"
-                                    viewport={{once: true, amount: 0.05}}
+                                    initial='offscreen'
+                                    whileInView='onscreen'
+                                    viewport={{ once: true, amount: 0.05 }}
                                     variants={cardVariants}
                                 >
-                                    <NavLink
-                                        className={"card-link"}
-                                        to={"" + item.ID}
-                                        aria-label={"Главная страница"}
-                                    >
-                                        <article className='about-card'>
+                                    <NavLink className={"card-link"} to={"" + item.ID}>
+                                        <article className='card'>
                                             <img
-                                                className='about-card__image'
+                                                className='card__image'
                                                 src={
                                                     item.image.includes("http")
                                                         ? item.image
                                                         : process.env.REACT_APP_BASE_URL + item.image
                                                 }
-                                                loading="lazy"
+                                                loading='lazy'
                                                 alt='Изображение группы'
                                             />
-                                            <h3 className='about-card__title'>{item.title}</h3>
-                                            <p>{item.preview}</p>
+                                            <div className='card__content'>
+                                                <h2 className='card__title'>{item.title}</h2>
+                                                <div class="card__main-text">
+                                                    <p class="card__text">{item.preview}</p>
+                                                </div>
+                                            </div>
                                         </article>
                                     </NavLink>
                                 </motion.li>
                             );
-                        })
-                    }
+                        })}
                 </ul>
             </section>
         </BasicPage>

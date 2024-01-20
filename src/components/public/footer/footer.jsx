@@ -5,8 +5,6 @@ import { NavLink } from "react-router-dom";
 import { Icons, SocialIcons } from "../../svgs";
 
 const Footer = () => {
-    const node = React.useRef();
-
     return (
         <motion.footer
             className='footer page__footer section'
@@ -16,37 +14,35 @@ const Footer = () => {
             transition={{ delay: 0.2, duration: 1 }}
         >
             <div className='section__wrap footer__wrap'>
-                {/* Лого-компонент */}
                 <Logo extraClass='footer__logo-link' />
                 <div className='footer__columns'>
-                    <address className='footer__address'>
+                    <address className='footer__address address'>
                         <a
-                            className='footer__link footer__link_type_phone'
+                            className='address__link address__link_type_phone'
                             href='tel:84991493724'
                             rel='noreferrer noopener nofollow'
                         >
-                            <span className='footer__link-icon'>{Icons.phone}</span>
-                            <span className='footer__link-text'>+7 499 149-37-24</span>
-                            <span className='footer__text-small'>Пн-пт с 7:00 до 19:00</span>
+                            <span className='address__link-icon'>{Icons.phone}</span>
+                            <span className='address__link-text'>+7 499 149-37-24</span>
+                            <span className='address__text-small'>Пн-пт с 7:00 до 19:00</span>
                         </a>
                         <a
-                            className='footer__link footer__color-main'
+                            className='address__link address__color-main'
                             href='#0'
                             target='_blank'
                             rel='noreferrer noopener nofollow'
                         >
-                            <span className='footer__link-text'>г. Москва, ул. Академика Павлова, д. 14, к. 2</span>
+                            <span className='address__link-text'>г. Москва, ул. Академика Павлова, д. 14, к. 2</span>
                         </a>
                         <a
-                            className='footer__link'
+                            className='address__link'
                             href='mailto:fgdou43@bk.ru'
                             target='_blank'
                             rel='noreferrer noopener nofollow'
                         >
-                            <span className='footer__link-icon'>{Icons.email}</span>
-                            <span className='footer__link-text footer__text-highlight'>fgdou43@bk.ru</span>
+                            <span className='address__link-icon'>{Icons.email}</span>
+                            <span className='address__link-text address__text-highlight'>fgdou43@bk.ru</span>
                         </a>
-                        {/* Панель соцссылок */}
                         <ul className='footer__social-group social-group'>
                             <li>
                                 <a
@@ -71,7 +67,12 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
-                        <NavLink to={"/login"} className={"footer__login-link button button_theme_text-main button_content_icon-arrow-next"}>
+                        <NavLink
+                            to={"/login"}
+                            className={
+                                "footer__login-link button button_theme_text-main button_content_icon-arrow-next"
+                            }
+                        >
                             <span className='button__text'>Личный кабинет</span>
                             <span className='button__icon'>{Icons.arrow_next}</span>
                         </NavLink>
