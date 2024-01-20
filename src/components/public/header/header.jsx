@@ -10,9 +10,10 @@ import useOnClickOutside from "../../../hook/onClickOutside";
 import { menuStore } from "../../../store/public/menuStore";
 
 import Logo from "../logo/logo";
+import SocialGroup from "../social.group/social.group";
 import DropdownMenu from "./drop.down.menu";
 
-import { Icons, SocialIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 
 const menuItems = signal([]);
 const menuMobileItems = signal([]);
@@ -23,10 +24,6 @@ const Header = () => {
     const [width, height] = useWindowSize();
 
     const [mobileMenuOpened, setMobileMenuOpened] = React.useState(false);
-    const [subMenuOpened, setSubMenuOpened] = React.useState(false);
-    const [moreMenuOpened, setMoreMenuOpened] = React.useState(false);
-    const [dropDownMenuOpened, setDropDownMenuOpened] = React.useState(false);
-    const [thirdDropDownMenuOpened, setThirdDropDownMenuOpened] = React.useState(false);
 
     const node = React.useRef();
     const button = React.useRef();
@@ -154,43 +151,7 @@ const Header = () => {
                     </ul>
                 </menu>
                 <div className='header__panel'>
-                    {/* Панель соцссылок */}
-                    <ul className='social-group'>
-                        <li>
-                            <a
-                                className='social-group__link-icon'
-                                target='_blank'
-                                href='https://vk.com/public219786348'
-                                rel='noreferrer noopener nofollow'
-                                aria-label='Вконтакте'
-                            >
-                                {SocialIcons.vk_without_color}
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className='social-group__link-icon'
-                                target='_blank'
-                                href='http://t.me/Fgdou43'
-                                rel='noreferrer noopener nofollow'
-                                aria-label='Телеграм'
-                            >
-                                {SocialIcons.t_without_color}
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className='social-group__link-icon'
-                                target='_blank'
-                                href='tel:84991493724'
-                                rel='noreferrer noopener nofollow'
-                                aria-label='Телефон'
-                            >
-                                {Icons.phone}
-                            </a>
-                        </li>
-                    </ul>
-                    {/* Кнопка перехода к форме обратной связи - можно якорем */}
+                    <SocialGroup />
                     <a href='#feedback-form' className='header__feedback-button button button_theme_fill-main'>
                         <span className='button__text'>Задать вопрос</span>
                     </a>

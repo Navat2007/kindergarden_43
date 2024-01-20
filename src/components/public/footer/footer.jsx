@@ -1,8 +1,9 @@
 import React from "react";
 import Logo from "../logo/logo";
+import SocialGroup from "../social.group/social.group";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import { Icons, SocialIcons } from "../../svgs";
+import { Icons } from "../../svgs";
 
 const Footer = () => {
     return (
@@ -43,30 +44,7 @@ const Footer = () => {
                             <span className='address__link-icon'>{Icons.email}</span>
                             <span className='address__link-text address__text-highlight'>fgdou43@bk.ru</span>
                         </a>
-                        <ul className='footer__social-group social-group'>
-                            <li>
-                                <a
-                                    className='social-group__link-icon'
-                                    target='_blank'
-                                    href='https://vk.com/public219786348'
-                                    rel='noreferrer noopener nofollow'
-                                    aria-label='Вконтакте'
-                                >
-                                    {SocialIcons.vk_without_color}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='social-group__link-icon'
-                                    target='_blank'
-                                    href='http://t.me/Fgdou43'
-                                    rel='noreferrer noopener nofollow'
-                                    aria-label='Телеграм'
-                                >
-                                    {SocialIcons.t_without_color}
-                                </a>
-                            </li>
-                        </ul>
+                        <SocialGroup extraClass='footer__social-group' />
                         <NavLink
                             to={"/login"}
                             className={

@@ -13,6 +13,10 @@
         margin-block: var(--indent-block-large);
     }
 
+    &__social-group {
+        margin-block-start: 0.875em;
+    }
+
     &__map {
         block-size: clamp(18.75rem, 5.163rem + 21.7391vw, 31.25rem);
         border-radius: 1.5em;
