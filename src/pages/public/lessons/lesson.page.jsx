@@ -1,14 +1,12 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import createDOMPurify from "dompurify";
 
 import useLessonsStore from "../../../store/public/lessonsStore";
 
 import BasicPage from "../../../components/public/basic.page/basic.page.component";
-
-import "./lessons.scss";
 import Breadcrumbs from "../../../components/public/breadcrumbs/breadcrumbs";
 
 const LessonPage = () => {
@@ -47,15 +45,16 @@ const LessonPage = () => {
                 ]}
             />
             <motion.section
-                className='article'
+                className='section page__section-indent'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ delay: 0.2, duration: 1 }}
             >
-                <div className='article__two-columns'>
+                <div className='section__wrap'>
+                    <h1 className='section__title section__title_with-decor'>{store?.item?.title}</h1>
                     <img
-                        className='article__image'
+                        className='section__article-image'
                         src={
                             store?.item?.image?.includes("http")
                                 ? store?.item?.image
@@ -63,15 +62,12 @@ const LessonPage = () => {
                         }
                         alt='Изображение занятия'
                     />
-                    <div>
-                        <h1 className='article__title'>{store?.item?.title}</h1>
-                        <div
-                            className='article__main-content'
-                            dangerouslySetInnerHTML={{
-                                __html: DOMPurify.sanitize(store?.item?.text),
-                            }}
-                        />
-                    </div>
+                    <div
+                        className='section__main-content'
+                        dangerouslySetInnerHTML={{
+                            __html: DOMPurify.sanitize(store?.item?.text),
+                        }}
+                    />
                 </div>
             </motion.section>
         </BasicPage>

@@ -112,4 +112,10 @@
     &__indent {
         padding-block: calc(--indent-block-section / 2);
     }
+
+    &__article-image {
+        @extend .corner-rounded_size_lg;
+        margin-block: 0 var(--indent-block-medium);
+        max-width: min(50em, 100%);
+    }
 }

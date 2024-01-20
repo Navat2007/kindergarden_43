@@ -17,7 +17,7 @@ const Footer = () => {
         >
             <div className='section__wrap footer__wrap'>
                 {/* Лого-компонент */}
-                <a className='footer__logo-link logo-link' href='./' aria-label='Логотип' />
+                <Logo extraClass='footer__logo-link' />
                 <div className='footer__columns'>
                     <address className='footer__address'>
                         <a
@@ -73,8 +73,7 @@ const Footer = () => {
                         </ul>
                     </address>
                     <menu className='footer__menu menu'>
-                        <ul className='footer__menu-list menu__list'>
-                        </ul>
+                        <ul className='footer__menu-list menu__list'></ul>
                     </menu>
                 </div>
                 <div className='footer__copyright'>

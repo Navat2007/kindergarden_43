@@ -46,13 +46,13 @@ const CustomPage = ({ id }) => {
             isObject(store.item?.page) &&
             (store.item?.page?.content || store.item?.page?.files?.length > 0) ? (
                 <motion.section
-                    className='section'
+                    className='section page__section-indent'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ delay: 0.2, duration: 1 }}
                 >
-                    <div className='section__wrap page__section-indent'>
+                    <div className='section__wrap'>
                         <h1 className='section__title section__title_with-decor'>{store?.item?.page?.title}</h1>
                         <div
                             className='section__main-text'

@@ -1,19 +1,18 @@
 import React from "react";
-import {useLocation} from "react-router-dom";
-import {motion} from "framer-motion";
-import {signal} from "@preact/signals-react";
+import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import { signal } from "@preact/signals-react";
 import classNames from "classnames";
 
 import useWindowSize from "../../../hook/useWindowSize";
 import useOnClickOutside from "../../../hook/onClickOutside";
 
-import {menuStore} from "../../../store/public/menuStore";
-
-import DropdownMenu from "./drop.down.menu";
+import { menuStore } from "../../../store/public/menuStore";
 
 import Logo from "../logo/logo";
-import "./header.scss";
-import {Icons, SocialIcons} from "../../svgs";
+import DropdownMenu from "./drop.down.menu";
+
+import { Icons, SocialIcons } from "../../svgs";
 
 const menuItems = signal([]);
 const menuMobileItems = signal([]);
@@ -67,8 +66,7 @@ const Header = () => {
     }, []);
 
     React.useEffect(() => {
-        if (!menuItems.value || menuItems.value.length === 0)
-            return;
+        if (!menuItems.value || menuItems.value.length === 0) return;
 
         console.log(menuItems.value);
 
@@ -106,14 +104,13 @@ const Header = () => {
         <motion.header
             ref={stickyHeader}
             className='header page__header'
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            transition={{delay: 0.2, duration: 1}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.2, duration: 1 }}
         >
             <div className='header__wrap'>
-                {/* Лого-компонент */}
-                <a className='header__logo-link logo-link' href='./' aria-label='Логотип'/>
+                <Logo extraClass='header__logo-link' />
                 <menu
                     className={classNames({
                         "header__menu menu": true,
@@ -121,13 +118,15 @@ const Header = () => {
                     })}
                 >
                     <ul className={`menu__list`} ref={menuList}>
-                        <DropdownMenu items={menuItems.value}/>
-                        <li className={classNames({
-                            submenu: true,
-                            submenu_opened: burgerOpened,
-                        })}
+                        <DropdownMenu items={menuItems.value} />
+                        <li
+                            className={classNames({
+                                submenu: true,
+                                submenu_opened: burgerOpened,
+                            })}
                             ref={mobileMenu}
-                            data-level='1'>
+                            data-level='1'
+                        >
                             <button
                                 ref={button}
                                 className={classNames({
@@ -147,7 +146,7 @@ const Header = () => {
                                 <div className='submenu__top-list-container' ref={node}>
                                     <p className='submenu__title'>Меню</p>
                                     <ul className='submenu__top-list' ref={mobileMenuList}>
-                                        <DropdownMenu items={menuMobileItems.value} level={2}/>
+                                        <DropdownMenu items={menuMobileItems.value} level={2} />
                                     </ul>
                                 </div>
                             </div>

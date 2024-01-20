@@ -3,8 +3,6 @@ import {motion} from "framer-motion";
 import {NavLink} from "react-router-dom";
 import {HashLink as Link} from 'react-router-hash-link';
 
-import "./breadcrumbs.scss";
-
 const Breadcrumbs = ({items = []}) => {
     return (
         <motion.nav
