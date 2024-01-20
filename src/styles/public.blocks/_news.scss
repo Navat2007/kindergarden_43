@@ -3,7 +3,7 @@
         @extend %reset-list;
 
         display: grid;
-        gap: var(--indent-2);
+        gap: var(--indent-block-medium);
         grid-template-columns: repeat(auto-fill, minmax(min(19em, 100%), 1fr));
 
         @include media(xl) {

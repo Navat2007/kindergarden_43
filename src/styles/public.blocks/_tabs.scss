@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: clamp(1rem, 0.0489rem + 1.5217vw, 1.875rem);
+        gap: var(--indent-block-medium);
 
         @include media(sm) {
             flex-direction: row;
@@ -44,6 +44,6 @@
     }
 
     &__section {
-        padding-block: var(--indent-4);
+        padding-block: var(--indent-block-large);
     }
 }

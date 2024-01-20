@@ -3,15 +3,11 @@
         @extend .bg-color_main-gradient;
         @extend .corner-rounded_size_lg;
         @extend .section__wrap;
+        max-inline-size: calc(100% - 2 * var(--inline-indent));
         inline-size: clamp(46.875rem, 29.8913rem + 27.1739vw, 62.5rem);
         color: #fff;
-        padding: var(--inline-indent) calc(var(--inline-indent) * 2);
+        padding: var(--indent-block-large) var(--indent-block-xlarge);
         text-align: center;
-
-        @include media(md, max) {
-            inline-size: calc(100% - 2 * var(--inline-indent));
-            padding-inline: var(--inline-indent);
-        }
     }
 
     &__list {
@@ -25,7 +21,7 @@
             display: flex;
             align-items: flex-start;
             gap: 0.5em;
-            font-size: clamp(.875em, 2vw, 1.25em);
+            font-size: clamp(0.875em, 2vw, 1.25em);
             line-height: 1.5;
             &::before {
                 content: "";

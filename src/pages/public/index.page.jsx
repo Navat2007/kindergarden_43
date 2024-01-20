@@ -72,13 +72,13 @@ const IndexPage = () => {
                                 arrows: false,
                             }}
                         >
-                            <SplideSlide className='corner-rounded corner-rounded_size_lg'>
+                            <SplideSlide className='lead__image'>
                                 <img
                                     src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
                                     alt='Описание изображения'
                                 />
                             </SplideSlide>
-                            <SplideSlide className='corner-rounded corner-rounded_size_lg'>
+                            <SplideSlide className='lead__image'>
                                 <img
                                     src='https://img.goodfon.ru/original/1600x900/7/f4/novyi-god-bokaly-shampanskoe-ukrashenie-lenta-dekor.jpg'
                                     alt='Image 2'
@@ -196,12 +196,7 @@ const IndexPage = () => {
                     <div className='section__wrap page__section-indent section__card bg-color'>
                         <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
-                            <img
-                                className='about__image'
-                                src={no_photo}
-                                alt='Описание фотографии'
-                                loading='lazy'
-                            />
+                            <img className='about__image' src={no_photo} alt='Описание фотографии' loading='lazy' />
                             <div className='about__content'>
                                 <div className='about__main-info'>
                                     <h3 className='about__title'>
@@ -524,15 +519,15 @@ const IndexPage = () => {
                                 gap: "var(--indent-2)",
                                 padding: "var(--indent-1)",
                                 breakpoints: {
-                                    1460: {
+                                    1000: {
                                         perPage: 3,
                                         arrows: false,
                                     },
-                                    960: {
-                                        perPage: 2,
+                                    768: {
+                                        perPage: 3,
                                         arrows: false,
                                     },
-                                    576: {
+                                    480: {
                                         autoWidth: true,
                                         arrows: false,
                                     },

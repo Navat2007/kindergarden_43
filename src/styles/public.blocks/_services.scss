@@ -1,15 +1,15 @@
 .services {
-    padding-block-end: var(--indent-2);
+    padding-block-end: var(--indent-block-medium);
     &__content {
         display: flex;
         flex-direction: column;
-        gap: clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
+        gap: var(--indent-block-large);
     }
     &__list {
         @extend %reset-list;
         display: flex;
         flex-wrap: wrap;
-        gap: clamp(1.25rem, 0.5707rem + 1.087vw, 1.875rem);
+        gap: var(--indent-block-medium);
 
         li {
             flex: auto;
@@ -22,7 +22,7 @@
         height: 100%;
         @extend .corner-rounded;
         background-color: var(--accent-alt-color);
-        padding: 0.75em;
+        padding: var(--indent-block-small);
 
         .text-item__text {
             flex: auto;

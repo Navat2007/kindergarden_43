@@ -1,19 +1,19 @@
 .footer {
     &__wrap {
-        padding-block: clamp(0.625em, 4.8vw, 3em);
+        padding-block: clamp(1.5rem, -0.1304rem + 2.6087vw, 3rem);
     }
 
     &__logo-link {
         flex: none;
-        inline-size: clamp(300px, 37.4vw, 374px);
-        block-size: clamp(87px, 11.2vw, 112px);
-        margin-block-end: clamp(0.625em, 3vw, 1.875em);
+        inline-size: clamp(16.9375rem, 11.8424rem + 8.1522vw, 21.625rem);
+        block-size: clamp(4rem, 2.6413rem + 2.1739vw, 5.25rem);
+        margin-block-end: var(--indent-block-medium);
     }
 
     &__columns {
         display: flex;
         align-items: flex-start;
-        gap: var(--indent-3);
+        gap: var(--indent-block-large);
         padding-block-end: 1.25em;
         margin-block-end: 1.25em;
         border-block-end: 2px solid var(--grey-100-color);
@@ -54,7 +54,7 @@
             grid-template-columns: auto 1fr;
 
             .footer__link-text {
-                font-size: clamp(1.5em, 3vw, 1.875em);
+                font-size: clamp(1.5rem, 1.0924rem + 0.6522vw, 1.875rem);
                 font-weight: 600;
             }
 

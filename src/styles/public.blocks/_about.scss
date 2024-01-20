@@ -1,10 +1,10 @@
 .about {
     &__two-columns {
         display: grid;
-        gap: clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
+        gap: var(--indent-block-large);
 
         @include media(sm) {
-            grid-template-columns: 0.3fr 0.58fr;
+            grid-template-columns: 0.5fr 1fr;
         }
 
         @include media(lg) {
@@ -16,7 +16,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5em;
     }
 
     &__image {
@@ -44,13 +43,13 @@
     }
 
     &__title {
-        margin-block: 0 1.5rem;
+        margin-block: 0 var(--indent-block-medium);
         font-size: clamp(1.25rem, 0.5707rem + 1.087vw, 1.875rem);
     }
 
     &__title-accent {
         display: block;
-        margin-block-end: 0.75rem;
+        margin-block-end: var(--indent-block-small);
         font-size: clamp(1.875rem, 1.1957rem + 1.087vw, 2.5rem);
     }
 

@@ -6,7 +6,7 @@
             inline-size: 15px;
             block-size: 15px;
             background-color: #fff;
-            margin: var(--indent-2) 5px;
+            margin: var(--indent-block-medium) 5px;
             outline: 2px solid transparent;
             transition: 0.15s ease-in;
 
@@ -110,7 +110,7 @@
     &_type_center-carousel {
         .splide__track {
             @include media(sm) {
-                padding-block: clamp(1.5em, 4.8vw, 3em);
+                padding-block: var(--indent-block-large);
             }
         }
 
@@ -163,7 +163,7 @@
 
     &_size_wide {
         margin-inline: auto;
-        inline-size: min(107.5em, 100%); // 1720
+        inline-size: var(--inline-size-medium-whithout-indent);
     }
 
     &_mobile_auto-width {
@@ -173,7 +173,7 @@
     }
 
     &_indent-block .splide__track {
-        padding-block: var(--indent-2);
+        padding-block: var(--indent-block-medium);
     }
 
     &_pagination_grey .splide__pagination .splide__pagination__page {

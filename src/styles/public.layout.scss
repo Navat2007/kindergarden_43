@@ -32,33 +32,34 @@
     --box-shadow-small: 0 0 4px rgba(0, 0, 0, 0.15);
     --box-shadow-medium: 0 0 8px rgba(0, 0, 0, 0.15);
 
+    // layout 1000 - 1920
+    --inline-size-small-whithout-indent: min(88.75rem, 100%); // 1420
+    --inline-size-medium-whithout-indent: min(107.5rem, 100%); // 1720
     --inline-size-small: min(94.75rem, 100%); // 1420 + 48 + 48
     --inline-size-medium: min(113.5rem, 100%); // 1720 + 48 + 48
-    --inline-indent: 1.5em; // 24
+    --inline-size-large: min(120rem, 100%); // 1920
 
-    --inline-indent-medium: 1.5em;
+    // Горизонтальные отступы
+    --inline-indent: clamp(1.5rem, -0.1304rem + 2.6087vw, 3rem); // 24 - 48
+    --inline-indent-large: clamp(1.5rem, -7.0598rem + 13.6957vw, 9.375rem); // 24 - 150
 
-    --indent-block-section: clamp(1.875rem, 1.0478rem + 3.6765vw, 5rem); // 30 - 80
-    --indent-wave-decor: clamp(3.125rem, 2.4632rem + 2.9412vw, 5.625rem); // 50 - 90
+    // Вертикальные отступы для секций
+    --indent-block-section: clamp(2.25rem, -0.7391rem + 4.7826vw, 5rem); // 36 - 80
+    --indent-wave-decor: clamp(3.125rem, -0.2717rem + 5.4348vw, 6.25rem); // 50 - 100
     --indent-clouds-decor: clamp(3.4375rem, 2.6103rem + 3.6765vw, 6.5625rem); // 55 - 105
+
+    // Вертикальные отступы для элементов секции
+    --indent-block-small: clamp(0.5rem, 0.2283rem + 0.4348vw, 0.75rem); // 8 - 12
+    --indent-block-medium: clamp(1rem, 0.4565rem + 0.8696vw, 1.5rem); // 16 - 24
+    --indent-block-large: clamp(1.5rem, -0.1304rem + 2.6087vw, 3rem); // 24 - 48
+    --indent-block-xlarge: clamp(2.25rem, 0.3478rem + 3.0435vw, 4rem); // 36 - 64
 
     --indent-1: clamp(0.25rem, 1vw, 0.625rem); // 4 - 10
     --indent-2: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
     --indent-3: clamp(1rem, 3vw, 1.875rem); // 16 - 30
     --indent-4: clamp(1.25rem, 4vw, 2.5rem); // 20 - 40
 
-    @include media(lg) {
-        // 1000 - 1920
-        --inline-size-small: min(94.75rem, 100%); // 1420 + 48 + 48
-        --inline-size-medium: min(113.5rem, 100%); // 1720 + 48 + 48
-        --inline-size-large: min(120rem, 100%); // 1920
-        --inline-indent: 3em; // 48
-
-        --indent-block-section: clamp(2.25rem, -0.7391rem + 4.7826vw, 5rem); // 36 - 80
-        --indent-wave-decor: clamp(3.125rem, -0.2717rem + 5.4348vw, 6.25rem); // 50 - 100
-
-        --inline-indent-medium: clamp(3rem, -3.9293rem + 11.087vw, 9.375rem); // 48 - 150
-    }
+    // @include media(lg) {}
 }
 
 // layout

@@ -12,8 +12,8 @@
     &__card {
         border-radius: 1.5em;
         margin-inline: auto;
-        inline-size: min(107.5em, 100%); // 1720
-        padding-inline: var(--inline-indent-medium); // 48 - 150
+        inline-size: var(--inline-size-medium-whithout-indent);
+        padding-inline: var(--inline-indent-large);
 
         @include media(lg, max) {
             border-radius: 0;
@@ -21,9 +21,9 @@
     }
 
     &__title-block {
+        margin-block-end: var(--indent-block-large);
         display: grid;
-        gap: clamp(1rem, 0.0489rem + 1.5217vw, 1.875rem);
-        margin-block-end: clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
+        gap: var(--indent-block-medium);
         grid-template-columns: 1fr auto;
 
         .section__title {
@@ -52,7 +52,7 @@
     }
 
     &__title {
-        margin-block: 0 clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
+        margin-block: 0 var(--indent-block-large);
         font-family: var(--heading-font-family);
         font-size: clamp(1.875rem, 1.2422rem + 2.8125vw, 3rem);
         line-height: 0.9;
@@ -100,13 +100,7 @@
     &__card-deck {
         @extend %reset-list;
         display: grid;
-        gap: clamp(1.25rem, 0.5707rem + 1.087vw, 1.875rem);
+        gap: var(--indent-block-medium);
         grid-template-columns: repeat(auto-fill, minmax(min(21em, 100%), 1fr));
-    }
-
-    &_mobile-indent_small {
-        @include media(sm) {
-            padding-inline: var(--indent-1);
-        }
     }
 }
