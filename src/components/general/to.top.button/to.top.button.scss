@@ -1,10 +1,11 @@
-@import "../../../styles/vendor/mixins";
-@import "../../../styles/vendor/extends";
-
 .to-top-button {
-    @extend %reset-btn;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
 
-    @include box(3.5em);
+    inline-size: 3.5em;
+    block-size: 3.5em;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -15,7 +16,7 @@
     box-shadow: 0 0 15px 1px rgba(black, 0.26);
 
     &:hover::after {
-        background-color: var(--primary);
+        background-color: var(--main-color);
     }
 
     &::after {
@@ -25,7 +26,8 @@
         mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxwYXRoIGQ9Ik0xNi41OSAxNS40MiAxMiAxMC44M2wtNC41OSA0LjU5TDYgMTRsNi02IDYgNi0xLjQxIDEuNDJaIi8+Cjwvc3ZnPgo=");
         mask-size: contain;
         mask-repeat: no-repeat;
-        @include box(2.875em);
+        inline-size: 2.875em;
+        block-size: 2.875em;
         margin: auto;
     }
 }
