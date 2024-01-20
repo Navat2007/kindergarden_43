@@ -65,6 +65,16 @@
         }
     }
 
+    &_theme_text {
+        &-main {
+            border-color: transparent;
+            color: var(--main-color);
+            &:hover {
+                background-color: var(--main-light-color);
+            }
+        }
+    }
+
     &_theme_fill {
         &-main {
             color: #fff;

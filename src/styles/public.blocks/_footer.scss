@@ -89,12 +89,16 @@
         color: var(--main-text-low-color);
     }
 
+    &__login-link {
+        align-self: flex-start;
+    }
+
     &__copyright {
         color: var(--main-text-low-color);
 
         p {
             margin-block: 1.25rem;
-            font-size: clamp(0.875em, 1.6vw, 1em);
+            font-size: var(--text-medium-font-size);
         }
     }
 }

@@ -71,6 +71,10 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
+                        <NavLink to={"/login"} className={"footer__login-link button button_theme_text-main button_content_icon-arrow-next"}>
+                            <span className='button__text'>Личный кабинет</span>
+                            <span className='button__icon'>{Icons.arrow_next}</span>
+                        </NavLink>
                     </address>
                     <menu className='footer__menu menu'>
                         <ul className='footer__menu-list menu__list'></ul>
@@ -82,9 +86,6 @@ const Footer = () => {
                         ребёнка — детский сад № 43» Управления делами Президента Российской Федерации
                     </p>
                     <p>1958–2023 ©Все права защищены</p>
-                    <NavLink to={"/login"} className={"footer__lk-link main-link"}>
-                        Личный кабинет &rarr;
-                    </NavLink>
                 </div>
             </div>
         </motion.footer>

@@ -60,8 +60,9 @@
     --title-block-large-font-size: clamp(1.5rem, 0.413rem + 1.7391vw, 2.5rem);
     --title-block-font-size: clamp(1.25rem, 0.5707rem + 1.087vw, 1.875rem);
     --title-card-font-size: clamp(1.25rem, 0.9783rem + 0.4348vw, 1.5rem);
+
     --text-small-font-size: clamp(0.75rem, 0.6141rem + 0.2174vw, 0.875rem);
-    --text-medium-font-size: 1rem;
+    --text-medium-font-size: clamp(0.875rem, 0.7391rem + 0.2174vw, 1rem);
     --text-large-font-size: clamp(1rem, 0.8641rem + 0.2174vw, 1.125rem);
     --text-xlarge-font-size: clamp(1.125rem, 0.9891rem + 0.2174vw, 1.25rem);
 

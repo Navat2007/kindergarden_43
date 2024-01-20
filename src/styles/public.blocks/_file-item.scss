@@ -2,7 +2,7 @@
     text-decoration: unset;
     margin-block: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--indent-block-small);
     transition: 0.25s ease-in;
 
@@ -29,5 +29,6 @@
 
     &__text {
         font-size: var(--text-large-font-size);
+        align-self: center;
     }
 }

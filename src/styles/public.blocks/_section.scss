@@ -73,7 +73,7 @@
                 background: var(--accent-color) linear-gradient(90deg, var(--accent-gradient-color));
 
                 @include media(lg) {
-                    inset: -0.3em auto auto -0.6em;
+                    inset: -0.3em auto auto -0.5em;
                     block-size: clamp(2.875rem, 1.5163rem + 2.1739vw, 4.125rem);
                 }
             }
@@ -110,7 +110,7 @@
     }
 
     &__indent {
-        padding-block: calc(--indent-block-section / 2);
+        padding-block: calc(var(--indent-block-section) / 2);
     }
 
     &__article-image {
