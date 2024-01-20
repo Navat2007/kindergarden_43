@@ -1,9 +1,9 @@
-import React, {lazy, Suspense} from "react";
-import {Navigate, Route, Routes} from "react-router-dom";
-import {userStore} from "../store/userStore";
-import {menuStore} from "../store/public/menuStore";
+import React, { lazy, Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { userStore } from "../store/userStore";
+import { menuStore } from "../store/public/menuStore";
 
-import {GenerateUrl} from "../utils/generateUrl";
+import { GenerateUrl } from "../utils/generateUrl";
 
 import Preloader from "./public/preloader/preloader.component";
 import Page404 from "../pages/404/404.page";
@@ -75,54 +75,48 @@ const CustomPagesPage = lazy(() => import("../pages/admin/custom.pages/custom.pa
 const EditCustomPagesPage = lazy(() => import("../pages/admin/custom.pages/edit.custom.pages.page"));
 
 const RoutesList = () => {
-    const menu = menuStore.value.all ? menuStore.value.all.filter(item => item.custom_page === 1) : [];
+    const menu = menuStore.value.all ? menuStore.value.all.filter((item) => item.custom_page === 1) : [];
 
     const customRoutes = React.useMemo(() => {
         return (
             <>
-                {
-                    menu.map(item =>
-                        <Route
-                            key={item.title}
-                            path={GenerateUrl(item.title)}
-                            element={<CustomPage id={item.ID}/>}
-                        />
-                    )
-                }
+                {menu.map((item) => (
+                    <Route key={item.title} path={GenerateUrl(item.title)} element={<CustomPage id={item.ID} />} />
+                ))}
             </>
-        )
+        );
     }, [menu]);
 
     const publicRoutes = (
-        <Route path='/' element={<PublicLayout/>}>
-            <Route index element={<IndexPage/>}/>
+        <Route path='/' element={<PublicLayout />}>
+            <Route index element={<IndexPage />} />
             <Route path='/платные-услуги'>
-                <Route index element={<LessonsPage/>}/>
-                <Route path=':id' element={<LessonPage/>}/>
+                <Route index element={<LessonsPage />} />
+                <Route path=':id' element={<LessonPage />} />
             </Route>
-            <Route path='/документы' exact={true} element={<DocumentsPage/>}/>
+            <Route path='/документы' exact={true} element={<DocumentsPage />} />
             <Route path='/сотрудники'>
-                <Route index element={<EmployeesPage/>}/>
-                <Route path=':id' element={<EmployeePage/>}/>
+                <Route index element={<EmployeesPage />} />
+                <Route path=':id' element={<EmployeePage />} />
             </Route>
             <Route path='/employees'>
-                <Route index element={<EmployeesPage/>}/>
-                <Route path=':id' element={<EmployeePage/>}/>
+                <Route index element={<EmployeesPage />} />
+                <Route path=':id' element={<EmployeePage />} />
             </Route>
-            <Route path='/питание' exact={true} element={<FoodPage/>}/>
-            <Route path='/food' exact={true} element={<FoodPage/>}/>
-            <Route path='/контакты' exact={true} element={<ContactsPage/>}/>
-            <Route path='/задать-вопрос' exact={true} element={<SupportPage/>}/>
-            <Route path='/о-нас' exact={true} element={<AboutPage/>}/>
-            <Route path='/группы' exact={true} element={<GroupsPage/>}/>
-            <Route path='/группы/:id' exact={true} element={<GroupPage/>}/>
+            <Route path='/питание' exact={true} element={<FoodPage />} />
+            <Route path='/food' exact={true} element={<FoodPage />} />
+            <Route path='/контакты' exact={true} element={<ContactsPage />} />
+            <Route path='/задать-вопрос' exact={true} element={<SupportPage />} />
+            <Route path='/о-нас' exact={true} element={<AboutPage />} />
+            <Route path='/группы' exact={true} element={<GroupsPage />} />
+            <Route path='/группы/:id' exact={true} element={<GroupPage />} />
             <Route path='/новости'>
-                <Route index element={<AllNewsPage/>}/>
-                <Route path=':id' element={<NewsPage/>}/>
+                <Route index element={<AllNewsPage />} />
+                <Route path=':id' element={<NewsPage />} />
             </Route>
             <Route path='/news'>
-                <Route index element={<AllNewsPage/>}/>
-                <Route path=':id' element={<NewsPage/>}/>
+                <Route index element={<AllNewsPage />} />
+                <Route path=':id' element={<NewsPage />} />
             </Route>
             {customRoutes}
         </Route>
@@ -131,81 +125,81 @@ const RoutesList = () => {
     const adminRoutes = (
         <Suspense fallback={<Preloader loading={true} />}>
             <Routes>
-                <Route path='/admin' element={<AdminLayout/>}>
+                <Route path='/admin' element={<AdminLayout />}>
                     <Route path='users'>
-                        <Route index element={<UsersPage/>}/>
-                        <Route path='edit/:id' element={<EditUserPage/>}/>
-                        <Route path='new' element={<AddUserPage/>}/>
+                        <Route index element={<UsersPage />} />
+                        <Route path='edit/:id' element={<EditUserPage />} />
+                        <Route path='new' element={<AddUserPage />} />
                     </Route>
                     <Route path='mediaFiles'>
-                        <Route index element={<AdminMediaFilesPage/>}/>
-                        <Route path=':id' element={<AdminMediaFilePage/>}/>
-                        <Route path='new' element={<AddMediaFilePage/>}/>
-                        <Route path='edit/:id' element={<EditMediaFilePage/>}/>
+                        <Route index element={<AdminMediaFilesPage />} />
+                        <Route path=':id' element={<AdminMediaFilePage />} />
+                        <Route path='new' element={<AddMediaFilePage />} />
+                        <Route path='edit/:id' element={<EditMediaFilePage />} />
                     </Route>
                     <Route path='menu'>
-                        <Route index element={<MenuPage/>}/>
-                        <Route path='new/:id/:sorting' element={<AddMenuPage/>}/>
-                        <Route path='edit/:id' element={<EditMenuPage/>}/>
+                        <Route index element={<MenuPage />} />
+                        <Route path='new/:id/:sorting' element={<AddMenuPage />} />
+                        <Route path='edit/:id' element={<EditMenuPage />} />
                     </Route>
                     <Route path='customPages'>
-                        <Route index element={<CustomPagesPage/>}/>
-                        <Route path=':id' element={<EditCustomPagesPage/>}/>
+                        <Route index element={<CustomPagesPage />} />
+                        <Route path=':id' element={<EditCustomPagesPage />} />
                     </Route>
                     <Route path='news'>
-                        <Route index element={<AdminAllNewsPage/>}/>
-                        <Route path=':id' element={<AdminNewsPage/>}/>
-                        <Route path='new' element={<AddNewsPage/>}/>
-                        <Route path='edit/:id' element={<EditNewsPage/>}/>
+                        <Route index element={<AdminAllNewsPage />} />
+                        <Route path=':id' element={<AdminNewsPage />} />
+                        <Route path='new' element={<AddNewsPage />} />
+                        <Route path='edit/:id' element={<EditNewsPage />} />
                     </Route>
                     <Route path='documents'>
-                        <Route index element={<AdminDocumentsPage/>}/>
-                        <Route path=':id' element={<ViewDocumentPage/>}/>
-                        <Route path='new' element={<AddDocumentPage/>}/>
-                        <Route path='edit/:id' element={<EditDocumentPage/>}/>
+                        <Route index element={<AdminDocumentsPage />} />
+                        <Route path=':id' element={<ViewDocumentPage />} />
+                        <Route path='new' element={<AddDocumentPage />} />
+                        <Route path='edit/:id' element={<EditDocumentPage />} />
                     </Route>
                     <Route path='employees'>
-                        <Route index element={<AdminEmployeesPage/>}/>
-                        <Route path=':id' element={<AdminEmployeePage/>}/>
-                        <Route path='new' element={<AddEmployeePage/>}/>
-                        <Route path='edit/:id' element={<EditEmployeePage/>}/>
-                        <Route path='category/new' element={<AddCategoryEmployeesPage/>}/>
-                        <Route path='category/edit/:id' element={<EditCategoryEmployeesPage/>}/>
+                        <Route index element={<AdminEmployeesPage />} />
+                        <Route path=':id' element={<AdminEmployeePage />} />
+                        <Route path='new' element={<AddEmployeePage />} />
+                        <Route path='edit/:id' element={<EditEmployeePage />} />
+                        <Route path='category/new' element={<AddCategoryEmployeesPage />} />
+                        <Route path='category/edit/:id' element={<EditCategoryEmployeesPage />} />
                     </Route>
                     <Route path='food'>
-                        <Route index element={<AdminFoodsPage/>}/>
-                        <Route path='menu/:id' element={<AdminFoodPage/>}/>
-                        <Route path='menu/new' element={<AddFoodPage/>}/>
-                        <Route path='menu/edit/:id' element={<EditFoodPage/>}/>
+                        <Route index element={<AdminFoodsPage />} />
+                        <Route path='menu/:id' element={<AdminFoodPage />} />
+                        <Route path='menu/new' element={<AddFoodPage />} />
+                        <Route path='menu/edit/:id' element={<EditFoodPage />} />
                     </Route>
                     <Route path='mode'>
-                        <Route index element={<AdminModesPage/>}/>
-                        <Route path=':id' element={<AdminModePage/>}/>
-                        <Route path='new' element={<AdminModePage/>}/>
+                        <Route index element={<AdminModesPage />} />
+                        <Route path=':id' element={<AdminModePage />} />
+                        <Route path='new' element={<AdminModePage />} />
                     </Route>
                     <Route path='lessons'>
-                        <Route index element={<AdminLessonsPage/>}/>
-                        <Route path=':id' element={<AdminLessonPage/>}/>
-                        <Route path='new' element={<AddLessonPage/>}/>
-                        <Route path='edit/:id' element={<EditLessonPage/>}/>
+                        <Route index element={<AdminLessonsPage />} />
+                        <Route path=':id' element={<AdminLessonPage />} />
+                        <Route path='new' element={<AddLessonPage />} />
+                        <Route path='edit/:id' element={<EditLessonPage />} />
                     </Route>
                     <Route path='about'>
-                        <Route index element={<AdminAboutPage/>}/>
-                        <Route path='edit' element={<EditAboutPage/>}/>
+                        <Route index element={<AdminAboutPage />} />
+                        <Route path='edit' element={<EditAboutPage />} />
                     </Route>
                     <Route path='groups'>
-                        <Route index element={<AdminGroupsPage/>}/>
-                        <Route path=':id' element={<AdminGroupPage/>}/>
-                        <Route path='new' element={<AddGroupPage/>}/>
-                        <Route path='edit/:id' element={<EditGroupPage/>}/>
+                        <Route index element={<AdminGroupsPage />} />
+                        <Route path=':id' element={<AdminGroupPage />} />
+                        <Route path='new' element={<AddGroupPage />} />
+                        <Route path='edit/:id' element={<EditGroupPage />} />
                     </Route>
                 </Route>
-                <Route path='/profile' exact={true} element={<AdminLayout/>}>
-                    <Route index element={<ProfilePage/>}/>
+                <Route path='/profile' exact={true} element={<AdminLayout />}>
+                    <Route index element={<ProfilePage />} />
                 </Route>
-                <Route path='/login' exact={true} element={<Navigate to='/admin/users'/>}/>
+                <Route path='/login' exact={true} element={<Navigate to='/admin/users' />} />
                 {publicRoutes}
-                <Route path='*' element={<LoginPage />}/>
+                <Route path='*' element={<LoginPage />} />
             </Routes>
         </Suspense>
     );
@@ -218,8 +212,8 @@ const RoutesList = () => {
         <Suspense fallback={<Preloader loading={true} />}>
             <Routes>
                 {publicRoutes}
-                <Route path='/login' exact={true} element={<LoginPage/>}/>
-                <Route path='*' element={<Page404/>}/>
+                <Route path='/login' exact={true} element={<LoginPage />} />
+                <Route path='*' element={<Page404 />} />
             </Routes>
         </Suspense>
     );
