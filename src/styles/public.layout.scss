@@ -54,12 +54,20 @@
     --indent-block-large: clamp(1.5rem, -0.1304rem + 2.6087vw, 3rem); // 24 - 48
     --indent-block-xlarge: clamp(2.25rem, 0.3478rem + 3.0435vw, 4rem); // 36 - 64
 
-    --indent-1: clamp(0.25rem, 1vw, 0.625rem); // 4 - 10
-    --indent-2: clamp(0.625rem, 2vw, 1.25rem); // 10 - 20
-    --indent-3: clamp(1rem, 3vw, 1.875rem); // 16 - 30
-    --indent-4: clamp(1.25rem, 4vw, 2.5rem); // 20 - 40
+    // typo
+    --title-lead-font-size: clamp(2.5rem, 1.7969rem + 3.125vw, 3.75rem);
+    --title-section-font-size: clamp(1.875rem, 1.2422rem + 2.8125vw, 3rem);
+    --title-block-font-size: clamp(1.25rem, 0.5707rem + 1.087vw, 1.875rem);
+    --title-card-font-size: clamp(1.25rem, 0.9783rem + 0.4348vw, 1.5rem);
+    --text-small-font-size: clamp(0.75rem, 0.6141rem + 0.2174vw, 0.875rem);
+    --text-medium-font-size: 1rem;
+    --text-large-font-size: clamp(1rem, 0.8641rem + 0.2174vw, 1.125rem);
+    --text-xlarge-font-size: clamp(1.125rem, 0.9891rem + 0.2174vw, 1.25rem);
 
-    // @include media(lg) {}
+    @include media(lg) {
+        --title-lead-font-size: clamp(3.75rem, 1.712rem + 3.2609vw, 5.625rem);
+        --title-section-font-size: clamp(3rem, 1.2337rem + 2.8261vw, 4.625rem);
+    }
 }
 
 // layout

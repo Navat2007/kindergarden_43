@@ -25,16 +25,16 @@
 
     &__title {
         margin: 0;
-        color: #fff;
-        font-size: clamp(2.5rem, 1.6728rem + 3.6765vw, 5.625rem);
         display: block;
+        color: #fff;
         font-family: var(--heading-font-family);
+        font-size: var(--title-lead-font-size);
         font-weight: normal;
     }
 
     &__main-text {
         margin-block-end: clamp(1.5em, 5vw, 4em);
-        font-size: clamp(0.875rem, 0.6033rem + 0.4348vw, 1.125rem);
+        font-size: var(--text-large-font-size);
 
         p {
             margin-block: 1em;

@@ -32,8 +32,8 @@ const Resourses = () => {
                             perPage: 5,
                             focus: "center",
                             updateOnMove: true,
-                            gap: "var(--indent-2)",
-                            padding: "var(--indent-1)",
+                            gap: "var(--indent-block-medium)",
+                            padding: "var(--indent-block-small)",
                             breakpoints: {
                                 1420: {
                                     perPage: 4,

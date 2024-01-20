@@ -19,7 +19,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--indent-block-medium);
-        padding: 1.25em;
+        padding: var(--indent-block-medium);
     }
 
     &__title-block {
@@ -29,13 +29,13 @@
     }
 
     &__date {
-        font-size: 0.875em;
+        font-size: var(--text-small-font-size);
     }
 
     &__title {
         margin-block: 0;
         font-weight: 600;
-        font-size: 1.25em;
+        font-size: var(--text-xlarge-font-size);
     }
 
     &__title-accent {
@@ -51,6 +51,7 @@
 
     &__text {
         margin-block: 0;
+        font-size: var(--text-medium-font-size);
     }
 
     &_type_article {
@@ -104,7 +105,6 @@
 
         .card__content {
             flex: auto;
-            padding: var(--indent-block-medium);
         }
 
         .card__title-block {
@@ -112,21 +112,16 @@
         }
 
         .card__title {
-            font-size: clamp(1.125rem, 0.9141rem + 0.9375vw, 1.5rem);
+            font-size: var(--title-card-font-size);
         }
 
         .card__date {
-            font-size: clamp(0.75rem, 0.6797rem + 0.3125vw, 0.875rem);
             color: var(--main-text-low-color);
         }
 
         .card__main-text {
             margin-block: auto;
             @include clamp(10, 1.2);
-        }
-
-        .card__main-text {
-            font-size: clamp(0.875rem, 0.8047rem + 0.3125vw, 1rem);
         }
     }
 
@@ -138,7 +133,7 @@
         }
         .card__title {
             font-weight: inherit;
-            font-size: clamp(1.25em, 2.4vw, 1.5em);
+            font-size: var(--title-card-font-size);
         }
         .card__text {
             color: var(--main-text-low-color);

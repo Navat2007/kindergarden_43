@@ -54,7 +54,7 @@
     &__title {
         margin-block: 0 var(--indent-block-large);
         font-family: var(--heading-font-family);
-        font-size: clamp(1.875rem, 1.2422rem + 2.8125vw, 3rem);
+        font-size: var(--title-section-font-size);
         line-height: 0.9;
         font-weight: normal;
 
@@ -78,22 +78,14 @@
                 }
             }
         }
-
-        @include media(lg) {
-            font-size: clamp(3rem, 1.2337rem + 2.8261vw, 4.625rem);
-        }
     }
 
     &__main-text {
-        font-size: 1em;
+        font-size: var(--text-large-font-size);
+        max-inline-size: 50em;
 
         p {
             margin-block: 0;
-        }
-
-        @include media(lg) {
-            font-size: 1.25em;
-            max-inline-size: 44em;
         }
     }
 
@@ -101,6 +93,6 @@
         @extend %reset-list;
         display: grid;
         gap: var(--indent-block-medium);
-        grid-template-columns: repeat(auto-fill, minmax(min(21em, 100%), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(22em, 100%), 1fr));
     }
 }

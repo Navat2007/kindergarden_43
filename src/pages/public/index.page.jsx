@@ -516,8 +516,8 @@ const IndexPage = () => {
                                 autoplay: true,
                                 perPage: 4,
                                 updateOnMove: true,
-                                gap: "var(--indent-2)",
-                                padding: "var(--indent-1)",
+                                gap: "var(--indent-block-medium)",
+                                padding: "var(--indent-block-small)",
                                 breakpoints: {
                                     1000: {
                                         perPage: 3,
@@ -892,8 +892,8 @@ const IndexPage = () => {
                                 autoplay: true,
                                 perPage: 3,
                                 updateOnMove: true,
-                                gap: "var(--indent-2)",
-                                padding: "var(--indent-1)",
+                                gap: "var(--indent-block-medium)",
+                                padding: "var(--indent-block-small)",
                                 breakpoints: {
                                     1460: {
                                         arrows: false,

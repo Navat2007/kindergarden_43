@@ -31,14 +31,10 @@
     }
 
     &__main-info {
-        font-size: 1em;
+        font-size: var(--text-xlarge-font-size);
 
         p {
             margin-block: 0.5em;
-        }
-
-        @include media(lg) {
-            font-size: 1.25em;
         }
     }
 
@@ -54,15 +50,11 @@
     }
 
     &__main-text {
-        font-size: 1em;
+        font-size: var(--text-xlarge-font-size);
         line-height: 1.4;
 
         p {
             margin-block: 1em;
-        }
-
-        @include media(lg) {
-            font-size: 1.25em;
         }
     }
 }

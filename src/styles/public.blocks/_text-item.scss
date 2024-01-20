@@ -13,11 +13,7 @@
     }
 
     &__text {
-        font-size: 1em;
-
-        @include media(lg) {
-            font-size: 1.25em;
-        }
+        font-size: var(--text-large-font-size);
     }
 
     &__text-accent {
