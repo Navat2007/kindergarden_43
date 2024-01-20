@@ -3,12 +3,11 @@ import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import "./not-found.scss";
 import { Icons } from "../../components/svgs";
 
 const Page404 = () => {
     return (
-        <>
+        <div className="page">
             <Helmet>
                 <title>Страница не найдена</title>
             </Helmet>
@@ -36,7 +35,7 @@ const Page404 = () => {
                     </p>
                 </section>
             </motion.main>
-        </>
+        </div>
     );
 };
 

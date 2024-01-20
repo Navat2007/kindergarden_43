@@ -2,8 +2,8 @@ import React from "react";
 
 import "./preloader.scss";
 
-const Preloader = ({ children, loading}) => {
-    if(loading) {
+const Preloader = ({ children, loading }) => {
+    if (loading) {
         return (
             <div className={"preloader"}>
                 <div className={"preloader__item"}>
@@ -13,14 +13,10 @@ const Preloader = ({ children, loading}) => {
                     <div></div>
                 </div>
             </div>
-        )
+        );
     }
 
-    return (
-        <>
-            {children}
-        </>
-    );
+    return <>{children}</>;
 };
 
 export default Preloader;
