@@ -41,7 +41,7 @@ const PublicLayout = () => {
                     <Outlet/>
                      <Feedback />
                      <Resourses />
-                     <Contact place={"landing"} />
+                     {/*<Contact place={"landing"} />*/}
                 </motion.main>
                 <Footer/>
             </div>

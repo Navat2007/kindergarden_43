@@ -27,6 +27,7 @@ const Header = () => {
 
     const node = React.useRef();
     const button = React.useRef();
+    const menuContainer = React.useRef();
     const menuList = React.useRef();
     const mobileMenu = React.useRef();
     const mobileMenuList = React.useRef();
@@ -65,13 +66,14 @@ const Header = () => {
     React.useEffect(() => {
         if (!menuItems.value || menuItems.value.length === 0) return;
 
-        console.log(menuItems.value);
-
-        let offset = 40;
-        let availableSpace = menuList.current.getBoundingClientRect().width;
+        let offset = 100;
+        let availableSpace = menuContainer.current.getBoundingClientRect().width;
         let requiredSpace =
             Object.values(menuList.current.childNodes).reduce((total, children) => total + children.offsetWidth, 0) +
             offset;
+
+        console.log("availableSpace: ", availableSpace);
+        console.log("requiredSpace: ", requiredSpace);
 
         if (requiredSpace > availableSpace) {
             for (let i = menuList.current.childNodes.length - 1; i >= 0; i--) {
@@ -109,6 +111,7 @@ const Header = () => {
             <div className='header__wrap'>
                 <Logo extraClass='header__logo-link' />
                 <menu
+                    ref={menuContainer}
                     className={classNames({
                         "header__menu menu": true,
                         menu_opened: mobileMenuOpened,
