@@ -107,7 +107,7 @@ const IndexPage = () => {
                                         {AdvantagesIcons.child}
                                     </span>
                                     <span className='text-item__text'>
-                                        Группы: <span className='text-item__text-accent'>до 15 человек</span>
+                                        Группы: <span className='text-item__text-accent'>до 20 человек</span>
                                     </span>
                                 </p>
                             </li>
@@ -237,8 +237,8 @@ const IndexPage = () => {
                         <h2 className='section__title section__title_with-decor'>Наши услуги</h2>
                         <div className='section__main-text'>
                             <p>
-                                Реализут образовательную программу дошкольного образования в рамках ФГОС в программу
-                                «Развитие» НОУ учебный центр им. Л.А. Вангера
+                                Мы&nbsp;реализуем образовательную программу в&nbsp;соответствии с&nbsp;ФГОС
+                                ДО&nbsp;и&nbsp;ФОП&nbsp;ДО.
                             </p>
                         </div>
                     </div>
@@ -248,8 +248,8 @@ const IndexPage = () => {
                                 <ul className='services__list section__wrap'>
                                     <li>
                                         <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.bag}</span>
-                                            <span className='text-item__text'>Подготовка детей к школе</span>
+                                            <span className='text-item__icon'>{AdvantagesIcons.teaching}</span>
+                                            <span className='text-item__text'>Обучение грамоте</span>
                                         </p>
                                     </li>
                                     <li>
@@ -302,8 +302,8 @@ const IndexPage = () => {
                                     </li>
                                     <li>
                                         <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.english}</span>
-                                            <span className='text-item__text'>Английский язык</span>
+                                            <span className='text-item__icon'>{AdvantagesIcons.horeography}</span>
+                                            <span className='text-item__text'>Хореография</span>
                                         </p>
                                     </li>
                                     <li>
@@ -316,6 +316,12 @@ const IndexPage = () => {
                                         <p className='text-item services__item'>
                                             <span className='text-item__icon'>{AdvantagesIcons.ecology}</span>
                                             <span className='text-item__text'>Экология</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className='text-item services__item'>
+                                            <span className='text-item__icon'>{AdvantagesIcons.multy_studio}</span>
+                                            <span className='text-item__text'>Мультстудия</span>
                                         </p>
                                     </li>
                                 </ul>
@@ -393,12 +399,6 @@ const IndexPage = () => {
                                     </li>
                                     <li>
                                         <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.sand}</span>
-                                            <span className='text-item__text'>Песочная терапия</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
                                             <span className='text-item__icon'>{AdvantagesIcons.sun}</span>
                                             <span className='text-item__text'>Утренняя гимнастика</span>
                                         </p>
@@ -417,26 +417,8 @@ const IndexPage = () => {
                                     </li>
                                     <li>
                                         <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.gym_v2}</span>
-                                            <span className='text-item__text'>Фитнес</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.basketball}</span>
-                                            <span className='text-item__text'>Баскетбол</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.mini_football}</span>
-                                            <span className='text-item__text'>Мини-футбол</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.kinesiology}</span>
-                                            <span className='text-item__text'>Кинезиология “МегаМозг”</span>
+                                            <span className='text-item__icon'>{AdvantagesIcons.checkers}</span>
+                                            <span className='text-item__text'>Шашки</span>
                                         </p>
                                     </li>
                                 </ul>
