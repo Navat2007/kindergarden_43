@@ -106,7 +106,7 @@ function DropdownItem({item, items, level}) {
 }
 
 const DropdownMenu = ({items, level = 0}) => {
-    if (!items) return null;
+    if (!items || items.length === 0) return null;
 
     return items.map((item) => {
         if (item.submenu?.length > 0)
