@@ -1,0 +1,6 @@
+.mobile-visible {
+    display: none;
+    @include media(sm, max) {
+        display: initial;
+    }
+}

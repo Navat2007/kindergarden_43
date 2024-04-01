@@ -46,7 +46,7 @@ const Feedback = () => {
                                 <div className="feedback__fields-wrap">
                                     <input
                                         id='name'
-                                        className='feedback__field'
+                                        className='field feedback__field'
                                         type='text'
                                         name='name'
                                         autoComplete='name'
@@ -58,7 +58,7 @@ const Feedback = () => {
                                     />
                                     <input
                                         id='phone'
-                                        className='feedback__field'
+                                        className='field feedback__field'
                                         type='tel'
                                         name='phone'
                                         autoComplete='phone'
@@ -72,7 +72,7 @@ const Feedback = () => {
                                 </div>
                                 <textarea
                                     id='message'
-                                    className='feedback__field'
+                                    className='field feedback__field'
                                     rows='4'
                                     name='message'
                                     placeholder='Введите Ваш вопрос...'

@@ -13,7 +13,6 @@ import FieldText from "../../admin/field/field.text.component";
 import FieldNumber from "../../admin/field/field.number.component";
 import FieldDate from "../../admin/field/field.date.component";
 
-import "./table.scss";
 import { Icons } from "../../svgs.js";
 
 const Table = ({

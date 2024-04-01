@@ -1,0 +1,26 @@
+.article {
+    padding-block: var(--indent-block-section);
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--indent-block-large);
+        margin-block-end: var(--indent-block-large);
+    }
+
+    &__section {
+        padding-block: var(--indent-block-xlarge);
+    }
+
+    &__section-item {
+        padding-block: 0.625em;
+    }
+
+    &_place_groups {
+        padding-block-end: 0;
+
+        .article__section:nth-of-type(even) {
+            background-color: var(--main-light-color);
+        }
+    }
+}

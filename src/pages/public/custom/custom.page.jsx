@@ -75,7 +75,7 @@ const CustomPage = ({ id }) => {
                         {files.value.length > 0 && (
                             <div className='section__indent'>
                                 <h2 className='section__subtitle'>Документы</h2>
-                                <ul className='section__list'>
+                                <ul className='section__list section__list_indent_bottom'>
                                     {files.value.map((file) => (
                                         <li key={window.global.makeid(6)}>
                                             <a

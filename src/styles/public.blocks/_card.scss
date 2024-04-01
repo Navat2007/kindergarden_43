@@ -139,4 +139,13 @@
             color: var(--main-text-low-color);
         }
     }
+
+    &_orientation_horizontal {
+        // @include media(xs) {
+        flex-direction: row;
+        .card__image {
+            flex: 0 0 9.375em;
+        }
+        // }
+    }
 }

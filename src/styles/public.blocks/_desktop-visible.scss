@@ -1,0 +1,6 @@
+.desktop-visible {
+    display: none;
+    @include media(sm) {
+        display: initial;
+    }
+}

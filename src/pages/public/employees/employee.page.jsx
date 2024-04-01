@@ -136,50 +136,55 @@ const EmployeePage = () => {
             <Helmet>
                 <title>{store.item.fio}</title>
             </Helmet>
-            <Breadcrumbs
-                items={[
-                    {
-                        title: "Главная",
-                        url: "/",
-                    },
-                    {
-                        title: "Педагоги",
-                        url: "/сотрудники/",
-                    },
-                    {
-                        title: store.item.fio,
-                        url: "",
-                    },
-                ]}
-            />
             <motion.section
-                className='article'
+                className='article section'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ delay: 0.2, duration: 1 }}
             >
-                <article className='person'>
-                    <SingleImageWithPreview
-                        isPersonImage={true}
-                        image={store.item.photo}
-                        extraClass={"person__image"}
+                <div className='article__header'>
+                    <Breadcrumbs
+                        items={[
+                            {
+                                title: "Главная",
+                                url: "/",
+                            },
+                            {
+                                title: "Педагоги",
+                                url: "/сотрудники/",
+                            },
+                            {
+                                title: store.item.fio,
+                                url: "",
+                            },
+                        ]}
                     />
-                    <div className='person__section'>
-                        <div className='person__main-content'>
-                            <h1 className='person__title'>{store.item.fio}</h1>
-                            <p className='person__subtitle'>{store.item.position}</p>
-                            {store.item.page && (
-                                <a
-                                    className='person__link'
-                                    href={store.item.page}
-                                    rel='noopener nofollow noreferrer'
-                                    target='_blank'
-                                >
-                                    Личная страница {Icons.open_in_new}
-                                </a>
-                            )}
-                        </div>
+                    <div className='section__wrap'>
+                        <article className='card card_type_people' style={{ maxInlineSize: "min(20em, 100%)" }}>
+                            <SingleImageWithPreview
+                                isPersonImage={true}
+                                image={store.item.photo}
+                                extraClass={"card__image"}
+                            />
+                            <div className='card__content'>
+                                <h3 className='card__title'>{store.item.fio}</h3>
+                                <div className='card__main-text'>
+                                    <p className='card__text'>{store.item.position}</p>
+                                    {store.item.page && (
+                                        <a
+                                            className='person__link'
+                                            href={store.item.page}
+                                            rel='noopener nofollow noreferrer'
+                                            target='_blank'
+                                        >
+                                            Личная страница {Icons.open_in_new}
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        </article>
+                        <br />
                         <Tabs>
                             {store?.item?.educations?.length > 0 && (
                                 <Tab title={"Образование"}>
@@ -201,7 +206,7 @@ const EmployeePage = () => {
                             )}
                             {store?.item?.works && Object.keys(store.item.works).length > 0 && (
                                 <Tab title={"Трудовой стаж"}>
-                                    <ul className='person__list'>
+                                    <ul className='section__list'>
                                         {store.item.works.summary && (
                                             <li className='person__item'>
                                                 <p className='person__label'>Общий стаж</p>
@@ -255,7 +260,7 @@ const EmployeePage = () => {
                             )}
                         </Tabs>
                     </div>
-                </article>
+                </div>
             </motion.section>
         </BasicPage>
     );
