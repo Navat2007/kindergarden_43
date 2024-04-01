@@ -799,59 +799,59 @@ const IndexPage = () => {
                     </div>
                 </section>
                 {/* Наши видео */}
-                <section className='gallery page__section-indent section bg-color clouds-decor clouds-decor_place_top clouds-decor_place_bottom'>
-                    <div className='section__title-block section__wrap'>
-                        <h2 className='section__title section__title_with-decor'>Видео</h2>
-                        <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
-                            <span className='button__text'>Видео</span>
-                            <span className='button__icon'>{Icons.arrow_next}</span>
-                        </a>
-                    </div>
-                    <Splide
-                        className='splide splide_size_wide splide_type_center-carousel'
-                        aria-label='Видео детского садика'
-                        options={{
-                            type: "loop",
-                            cloneStatus: false,
-                            pagination: false,
-                            arrows: true,
-                            autoplay: true,
-                            perPage: 3,
-                            focus: "center",
-                            updateOnMove: true,
-                            gap: ".5em",
-                            breakpoints: {
-                                1000: {
-                                    perPage: 2,
-                                },
-                                480: {
-                                    perPage: 1,
-                                    padding: "var(--inline-indent)",
-                                },
-                            },
-                        }}
-                    >
-                        <SplideSlide>
-                            <VideoPlayer
-                                extraClass={"iframe-item"}
-                                source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}
-                            />
-                        </SplideSlide>
-                        <SplideSlide>
-                            <VideoPlayer
-                                extraClass={"iframe-item"}
-                                source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}
-                            />
-                        </SplideSlide>
-                        <SplideSlide>
-                            <VideoPlayer
-                                extraClass={"iframe-item"}
-                                source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}
-                            />
-                        </SplideSlide>
-                    </Splide>
-                </section>
-                {/* Отзывы о нас */}
+                {/*<section className='gallery page__section-indent section bg-color clouds-decor clouds-decor_place_top clouds-decor_place_bottom'>*/}
+                {/*    <div className='section__title-block section__wrap'>*/}
+                {/*        <h2 className='section__title section__title_with-decor'>Видео</h2>*/}
+                {/*        <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>*/}
+                {/*            <span className='button__text'>Видео</span>*/}
+                {/*            <span className='button__icon'>{Icons.arrow_next}</span>*/}
+                {/*        </a>*/}
+                {/*    </div>*/}
+                {/*    <Splide*/}
+                {/*        className='splide splide_size_wide splide_type_center-carousel'*/}
+                {/*        aria-label='Видео детского садика'*/}
+                {/*        options={{*/}
+                {/*            type: "loop",*/}
+                {/*            cloneStatus: false,*/}
+                {/*            pagination: false,*/}
+                {/*            arrows: true,*/}
+                {/*            autoplay: true,*/}
+                {/*            perPage: 3,*/}
+                {/*            focus: "center",*/}
+                {/*            updateOnMove: true,*/}
+                {/*            gap: ".5em",*/}
+                {/*            breakpoints: {*/}
+                {/*                1000: {*/}
+                {/*                    perPage: 2,*/}
+                {/*                },*/}
+                {/*                480: {*/}
+                {/*                    perPage: 1,*/}
+                {/*                    padding: "var(--inline-indent)",*/}
+                {/*                },*/}
+                {/*            },*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        <SplideSlide>*/}
+                {/*            <VideoPlayer*/}
+                {/*                extraClass={"iframe-item"}*/}
+                {/*                source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}*/}
+                {/*            />*/}
+                {/*        </SplideSlide>*/}
+                {/*        <SplideSlide>*/}
+                {/*            <VideoPlayer*/}
+                {/*                extraClass={"iframe-item"}*/}
+                {/*                source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}*/}
+                {/*            />*/}
+                {/*        </SplideSlide>*/}
+                {/*        <SplideSlide>*/}
+                {/*            <VideoPlayer*/}
+                {/*                extraClass={"iframe-item"}*/}
+                {/*                source={"https://www.youtube.com/embed/JiQVQIdoudU?si=FN19DOqq0iE9YusH"}*/}
+                {/*            />*/}
+                {/*        </SplideSlide>*/}
+                {/*    </Splide>*/}
+                {/*</section>*/}
+                {/*/!* Отзывы о нас *!/*/}
                 <section className='section page__section-indent'>
                     <div className='section__wrap'>
                         <div className='section__title-block'>
