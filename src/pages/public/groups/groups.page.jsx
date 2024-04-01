@@ -34,34 +34,28 @@ const GroupsPage = () => {
                     <h1 id={"groups"} className='section__title section__title_with-decor'>
                         Наши группы
                     </h1>
+                    <ul>
+                        <li>
+                            <article>
+                                <h2 className='section__subtitle'>Группа 1</h2>
+                                <div className='section__main-text'>
+                                    <p>Небольшое описание группы</p>
+                                </div>
+                                <h3 className='section__caption'>Воспитатели</h3>
+                            </article>
+                        </li>
+                    </ul>
                 </div>
                 <ul className='about__list'>
                     {groupsStore.loading && <h3>Загрузка...</h3>}
                     {groupsStore.loading === false &&
                         groupsStore.items.map((item, index) => {
-                            const cardVariants: Variants = {
-                                offscreen: {
-                                    y: 300,
-                                    rotate: window.global.getRandomIntNumber(-30, 30),
-                                },
-                                onscreen: {
-                                    y: 0,
-                                    rotate: 0,
-                                    transition: {
-                                        type: "spring",
-                                        bounce: 0.4,
-                                        duration: 0.8
-                                    }
-                                }
-                            };
-
                             return (
                                 <motion.li
                                     key={index}
                                     initial='offscreen'
                                     whileInView='onscreen'
                                     viewport={{ once: true, amount: 0.05 }}
-                                    variants={cardVariants}
                                 >
                                     <NavLink className={"card-link"} to={"" + item.ID}>
                                         <article className='card'>
@@ -77,8 +71,8 @@ const GroupsPage = () => {
                                             />
                                             <div className='card__content'>
                                                 <h2 className='card__title'>{item.title}</h2>
-                                                <div class="card__main-text">
-                                                    <p class="card__text">{item.preview}</p>
+                                                <div class='card__main-text'>
+                                                    <p class='card__text'>{item.preview}</p>
                                                 </div>
                                             </div>
                                         </article>
