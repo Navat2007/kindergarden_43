@@ -109,10 +109,12 @@ const DropdownMenu = ({items, level = 0}) => {
     if (!items || items.length === 0) return null;
 
     return items.map((item) => {
-        if (item.submenu?.length > 0)
-            return <DropdownItem key={item.title} item={item} items={item.submenu} level={level + 1}/>;
+        if(item){
+            if (item.submenu?.length > 0)
+                return <DropdownItem key={item.title} item={item} items={item.submenu} level={level + 1}/>;
 
-        return <MenuItem key={item.title} item={item}/>;
+            return <MenuItem key={item.title} item={item}/>;
+        }
     });
 };
 
