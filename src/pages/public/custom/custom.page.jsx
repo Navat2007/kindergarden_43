@@ -55,7 +55,7 @@ const CustomPage = ({ id }) => {
                     <div className='section__wrap'>
                         <h1 className='section__title section__title_with-decor'>{store?.item?.page?.title}</h1>
                         <div
-                            className='section__main-text'
+                            className='section__main-text section__main-text_wide'
                             dangerouslySetInnerHTML={{
                                 __html: DOMPurify.sanitize(store?.item?.page?.content),
                             }}

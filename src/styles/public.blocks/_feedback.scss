@@ -35,7 +35,7 @@
     }
 
     &__main-text {
-        font-size: clamp(0.875rem, 0.8047rem + 0.3125vw, 1rem);
+        font-size: var(--text-medium-font-size);
     }
 
     &__fields {

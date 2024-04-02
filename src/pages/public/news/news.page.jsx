@@ -64,7 +64,7 @@ const NewsPage = () => {
                     <SingleImageWithPreview image={store.item.image} extraClass={"section__article-image"} />
                 )}
                 <div
-                    className='section__main-text'
+                    className='section__main-text section__main-text_wide'
                     dangerouslySetInnerHTML={{
                         __html: DOMPurify.sanitize(store?.item?.text),
                     }}

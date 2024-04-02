@@ -108,6 +108,10 @@
         &_size_large {
             font-size: var(--title-card-font-size);
         }
+
+        &_wide {
+            max-inline-size: 100%;
+        }
     }
 
     &__card-deck {
