@@ -21,7 +21,8 @@ const AdminGroupsPage = () => {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            await store.loadAll();
+            const items = await store.loadAll();
+            //console.log(items);
         };
 
         fetchData();
@@ -43,10 +44,10 @@ const AdminGroupsPage = () => {
             sorting: true,
         },
         {
-            header: "Дата",
-            key: "create_time",
-            type: "datetime",
-            filter: "date",
+            header: "Расписание",
+            key: "schedules",
+            type: "string",
+            filter: "select",
             sorting: true,
         },
     ];

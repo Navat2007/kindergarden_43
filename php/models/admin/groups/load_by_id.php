@@ -28,7 +28,6 @@ function getTeachers($ID)
 
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_object($result)) {
-
             $data[] = (object)[
                 'ID' => (int)$row->ID,
                 'fio' => htmlspecialchars_decode($row->fio),
@@ -36,7 +35,70 @@ function getTeachers($ID)
                 'position' => htmlspecialchars_decode($row->position),
                 'category' => htmlspecialchars_decode($row->category),
             ];
+        }
+    }
 
+    return $data;
+}
+function getSchedules($ID)
+{
+    global $conn, $sqls;
+
+    $data = array();
+
+    $sql = "SELECT 
+            t1.*
+        FROM 
+            group_schedules as t1
+        WHERE 
+            t1.groupID = '$ID'
+        ORDER BY 
+            t1.day ASC";
+
+    $sqls[] = $sql;
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_object($result)) {
+            $data[] = (object)[
+                'ID' => (int)$row->ID,
+                'day' => (int)$row->day,
+                'time_from' => htmlspecialchars_decode($row->time_from),
+                'time_to' => htmlspecialchars_decode($row->time_to),
+                'text' => htmlspecialchars_decode($row->text),
+            ];
+        }
+    }
+
+    return $data;
+}
+function getImages($ID)
+{
+    global $conn;
+
+    $data = array();
+
+    $sql = "SELECT 
+            *
+        FROM 
+            group_images as image 
+        WHERE 
+            image.groupID = '$ID'";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_object($result)) {
+
+            $data[] = (object)[
+                'ID' => (int)$row->ID,
+                'url' => $row->url,
+                'title' => htmlspecialchars_decode($row->title),
+                'main' => (int)$row->main,
+                'order' => (int)$row->photo_order,
+                'isFile' => 1,
+                'isLoaded' => 1
+            ];
         }
     }
 
@@ -56,18 +118,16 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_object($result)) {
-
         $params = (object)[
-
             'ID' => (int)$row->ID,
             'title' => htmlspecialchars_decode($row->title),
             'preview' => htmlspecialchars_decode($row->preview),
             'text' => htmlspecialchars_decode($row->text),
             'employees' => getTeachers($row->ID),
+            'schedules' => getSchedules($row->ID),
             'image' => $row->image,
             'create_time' => $row->create_time,
         ];
-
     }
 }
 

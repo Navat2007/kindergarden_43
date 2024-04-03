@@ -48,7 +48,7 @@ const AdminGroupPage = () => {
                         <p className='admin-view-section__description'>
                             <NavLink
                                 className='admin-view-section__link'
-                                to={"/group/" + id}
+                                to={process.env.REACT_APP_BASE_URL + "группы"}
                                 target={"_blank"}
                                 rel='noopener nofollow noreferrer'
                             >
