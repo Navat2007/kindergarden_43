@@ -54,14 +54,12 @@ const EditGroupPage = () => {
             const item = await store.loadByID({ id });
             await teachersStore.loadAll();
 
-            console.log(item);
             reset(item);
 
             setValue("text", item.text);
             setPhoto(item.images ? item.images : []);
             setSchedules(item.schedules);
         };
-
 
         fetchData();
     }, []);
