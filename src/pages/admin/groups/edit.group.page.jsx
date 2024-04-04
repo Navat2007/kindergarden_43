@@ -145,7 +145,7 @@ const EditGroupPage = () => {
                                             opened={true}
                                             onClose={() => {
                                                 setPopup(<></>);
-                                                back();
+                                                navigate(`/admin/groups`);
                                             }}
                                         />
                                     );
@@ -183,7 +183,6 @@ const EditGroupPage = () => {
     const handleDeleteGalleryPhoto = async (item) => {
         let sendObject = { ...item };
 
-        sendObject["ID"] = id;
         sendObject["place"] = "gallery";
 
         await store.removeFile(sendObject);
@@ -356,6 +355,7 @@ const EditGroupPage = () => {
                         items={photo}
                         multiFiles={true}
                         withDescription={true}
+                        onDelete={handleDeleteGalleryPhoto}
                         onChange={(items) => setPhoto(items)}
                     />
                 </Tab>

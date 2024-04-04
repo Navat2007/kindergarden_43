@@ -8,6 +8,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/php/params.php';
 
 $ID = htmlspecialchars($_POST["ID"]);
 $url = htmlspecialchars($_POST["url"]);
+$place = htmlspecialchars($_POST["place"]);
 
 if(!empty($url))
 {
@@ -15,8 +16,16 @@ if(!empty($url))
     @unlink($photo_path);
 }
 
-$sql = "UPDATE groups SET image = '' WHERE ID = '$ID'";
-$sqls[] = $sql;
-$result = mysqli_query($conn, $sql);
+if($place == "gallery")
+{
+    $sql = "DELETE FROM group_images WHERE ID = '$ID'";
+    $sqls[] = $sql;
+    $result = mysqli_query($conn, $sql);
+}
+else{
+    $sql = "UPDATE groups SET image = '' WHERE ID = '$ID'";
+    $sqls[] = $sql;
+    $result = mysqli_query($conn, $sql);
+}
 
 require $_SERVER['DOCUMENT_ROOT'] . '/php/answer.php';
