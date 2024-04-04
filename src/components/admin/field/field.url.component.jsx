@@ -6,7 +6,6 @@ import Button from "../button/button.component";
 import FileSelectorPopup from "../file.selector.popup/file.selector.popup";
 import Popup from "../../general/popup/popup.component";
 
-import "./field.scss";
 import { Icons } from "../../svgs";
 
 const FieldUrl = (
@@ -28,9 +27,9 @@ const FieldUrl = (
     const { setPopup } = React.useContext(PopUpContext);
 
     return (
-        <div className={`field${errorText ? ` field_state_error` : ``}${extraClass ? ` ${extraClass}` : ``}`}>
+        <div className={`admin-field${errorText ? ` admin-field_state_error` : ``}${extraClass ? ` ${extraClass}` : ``}`}>
             <label
-                className={`field__label${extraClass ? ` ${extraClass}-label` : ``}${
+                className={`admin-field__label${extraClass ? ` ${extraClass}-label` : ``}${
                     !visuallyLabel ? ` visually-hidden` : ``
                 }`}
                 htmlFor={id}
@@ -38,13 +37,13 @@ const FieldUrl = (
                 {label}
             </label>
             <div
-                className={`field__inner field__inner_content_url-image-search${
+                className={`admin-field__inner admin-field__inner_content_url-image-search${
                     extraClass ? ` ${extraClass}-inner` : ``
                 }`}
             >
                 <input
                     ref={ref}
-                    className={`field__input${extraClass ? ` ${extraClass}-input` : ``}`}
+                    className={`admin-field__input${extraClass ? ` ${extraClass}-input` : ``}`}
                     id={id}
                     type='text'
                     name='url'
@@ -52,11 +51,11 @@ const FieldUrl = (
                     required={required}
                     {...rest}
                 />
-                <span className={`field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
+                <span className={`admin-field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
                 {withFileSelect && (
                     <Button
                         type='button'
-                        extraClass={"field__icon-image-search"}
+                        extraClass={"admin-field__icon-image-search"}
                         title='Выбрать из структуры'
                         aria-label='Выбрать из структуры'
                         iconName={Icons.image_search}

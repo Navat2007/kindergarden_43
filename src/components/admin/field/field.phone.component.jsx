@@ -1,7 +1,5 @@
 import React, { forwardRef } from "react";
 
-import "./field.scss";
-
 const FieldPhone = (
     {
         errorText,
@@ -15,19 +13,19 @@ const FieldPhone = (
     ref
 ) => {
     return (
-        <div className={`field${errorText ? " field_state_error" : ""}${extraClass ? ` ${extraClass}` : ``}`}>
+        <div className={`admin-field${errorText ? " admin-field_state_error" : ""}${extraClass ? ` ${extraClass}` : ``}`}>
             <label
-                className={`field__label${extraClass ? ` ${extraClass}-label` : ``}${
+                className={`admin-field__label${extraClass ? ` ${extraClass}-label` : ``}${
                     !visuallyLabel ? ` visually-hidden` : ``
                 }`}
                 htmlFor='tel'
             >
                 {label}
             </label>
-            <div className={`field__inner${extraClass ? ` ${extraClass}-inner` : ``}`}>
+            <div className={`admin-field__inner${extraClass ? ` ${extraClass}-inner` : ``}`}>
                 <input
                     ref={ref}
-                    className={`field__input${extraClass ? ` ${extraClass}-input` : ``}`}
+                    className={`admin-field__input${extraClass ? ` ${extraClass}-input` : ``}`}
                     id='tel'
                     type='tel'
                     autoComplete='tel'
@@ -37,7 +35,7 @@ const FieldPhone = (
                     required={required}
                     {...rest}
                 />
-                <span className={`field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
+                <span className={`admin-field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
             </div>
         </div>
     );

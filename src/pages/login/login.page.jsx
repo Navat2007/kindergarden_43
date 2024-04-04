@@ -70,7 +70,7 @@ const LoginPage = () => {
                         defaultChecked={window.localStorage.getItem("remember")}
                     />
                     <div className='auth-form__footer'>
-                        <p className='auth-form__error'>{Error.value}</p>
+                        <p className='auth-form__info-text'>{Error.value}</p>
                         <Button
                             extraClass={"auth-form__button"}
                             disabled={Loading.value === "loading"}

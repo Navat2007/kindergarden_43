@@ -1,7 +1,5 @@
 import React, { forwardRef } from "react";
 
-import "./field.scss";
-
 const FieldTextArea = (
     { errorText, extraClass, label = "", visuallyLabel = true, placeholder = "", required = false, ...rest },
     ref
@@ -16,19 +14,19 @@ const FieldTextArea = (
     };
 
     return (
-        <div className={`field${errorText ? ` field_state_error` : ``}${extraClass ? ` ${extraClass}` : ``}`}>
+        <div className={`admin-field${errorText ? ` admin-field_state_error` : ``}${extraClass ? ` ${extraClass}` : ``}`}>
             <label
-                className={`field__label${extraClass ? ` ${extraClass}-label` : ``}${
+                className={`admin-field__label${extraClass ? ` ${extraClass}-label` : ``}${
                     !visuallyLabel ? ` visually-hidden` : ``
                 }`}
                 htmlFor={id}
             >
                 {label}
             </label>
-            <div className={`field__inner${extraClass ? ` ${extraClass}-inner` : ``}`}>
+            <div className={`admin-field__inner${extraClass ? ` ${extraClass}-inner` : ``}`}>
                 <textarea
                     ref={ref}
-                    className={`field__input${extraClass ? ` ${extraClass}-input` : ``}`}
+                    className={`admin-field__input${extraClass ? ` ${extraClass}-input` : ``}`}
                     id={id}
                     name='textarea'
                     placeholder={placeholder}
@@ -37,7 +35,7 @@ const FieldTextArea = (
                     onKeyUp={handleKeyDown}
                     {...rest}
                 />
-                <span className={`field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
+                <span className={`admin-field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
             </div>
         </div>
     );

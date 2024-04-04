@@ -1,7 +1,5 @@
 import React, { forwardRef } from "react";
 
-import "./field.scss";
-
 const FieldSelect = (
     {
         errorText,
@@ -25,19 +23,19 @@ const FieldSelect = (
     const id = window.global.makeid(8);
 
     return (
-        <div className={`field${errorText ? ` field_state_error` : ``}${extraClass ? ` ${extraClass}` : ``}`}>
+        <div className={`admin-field${errorText ? ` admin-field_state_error` : ``}${extraClass ? ` ${extraClass}` : ``}`}>
             <label
-                className={`field__label${extraClass ? ` ${extraClass}-label` : ``}${
+                className={`admin-field__label${extraClass ? ` ${extraClass}-label` : ``}${
                     !visuallyLabel ? ` visually-hidden` : ``
                 }`}
                 htmlFor={id}
             >
                 {label}
             </label>
-            <div className={`field__inner field__inner_content_select${extraClass ? ` ${extraClass}-inner` : ``}`}>
+            <div className={`admin-field__inner admin-field__inner_content_select${extraClass ? ` ${extraClass}-inner` : ``}`}>
                 <select
                     ref={ref}
-                    className={`field__select${extraClass ? ` ${extraClass}-select` : ``}`}
+                    className={`admin-field__select${extraClass ? ` ${extraClass}-select` : ``}`}
                     required={required}
                     disabled={disabled}
                     {...rest}
@@ -54,7 +52,7 @@ const FieldSelect = (
                     ))}
                     {flatOptions}
                 </select>
-                <span className={`field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
+                <span className={`admin-field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
             </div>
         </div>
     );

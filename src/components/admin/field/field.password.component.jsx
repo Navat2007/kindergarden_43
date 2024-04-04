@@ -1,7 +1,5 @@
 import React, { forwardRef } from "react";
 
-import "./field.scss";
-
 const FieldPassword = (
     {
         errorText,
@@ -21,18 +19,18 @@ const FieldPassword = (
     };
 
     return (
-        <div className={`field${errorText ? " field_state_error" : ""}${extraClass ? ` ${extraClass}` : ``}`}>
+        <div className={`admin-field${errorText ? " admin-field_state_error" : ""}${extraClass ? ` ${extraClass}` : ``}`}>
             <label
-                className={`field__label${extraClass ? ` ${extraClass}-label` : ``}${
+                className={`admin-field__label${extraClass ? ` ${extraClass}-label` : ``}${
                     !visuallyLabel ? ` visually-hidden` : ``
                 }`}
                 htmlFor='password'
             >
                 {label}
             </label>
-            <div className={`field__inner${extraClass ? ` ${extraClass}-inner` : ``}`}>
+            <div className={`admin-field__inner${extraClass ? ` ${extraClass}-inner` : ``}`}>
                 <input
-                    className={`field__input${extraClass ? ` ${extraClass}-input` : ``}`}
+                    className={`admin-field__input${extraClass ? ` ${extraClass}-input` : ``}`}
                     id='password'
                     type={`${eyeActive ? "text" : "password"}`}
                     ref={ref}
@@ -44,9 +42,9 @@ const FieldPassword = (
                     minLength={3}
                     {...rest}
                 />
-                <span className={`field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
+                <span className={`admin-field__info-text${extraClass ? ` ${extraClass}-info-text` : ``}`}>{errorText}</span>
                 <span
-                    className={`field__icon-eye${eyeActive ? ` field__icon-eye_active` : ``}${
+                    className={`admin-field__icon-eye${eyeActive ? ` admin-field__icon-eye_active` : ``}${
                         extraClass ? ` ${extraClass}-icon-eye` : ``
                     }`}
                     aria-label='Скрыть/Отобразить пароль'
