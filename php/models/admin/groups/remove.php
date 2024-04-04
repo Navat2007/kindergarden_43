@@ -12,6 +12,10 @@ $sql = "DELETE FROM group_teachers WHERE groupID = '$id'";
 $sqls[] = $sql;
 mysqli_query($conn, $sql);
 
+$sql = "DELETE FROM group_schedules WHERE groupID = '$id'";
+$sqls[] = $sql;
+mysqli_query($conn, $sql);
+
 $sql = "DELETE FROM groups WHERE ID = '$id'";
 $sqls[] = $sql;
 mysqli_query($conn, $sql);

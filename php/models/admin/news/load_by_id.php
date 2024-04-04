@@ -45,7 +45,7 @@ $id = htmlspecialchars($_POST["id"]);
 $sql = "SELECT 
         item.*
     FROM 
-        item as item
+        news as item
     WHERE 
         item.ID = '$id'";
 $sqls[] = $sql;
@@ -53,9 +53,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_object($result)) {
-
         $params = (object)[
-
             'ID' => (int)$row->ID,
             'preview_title' => htmlspecialchars_decode($row->preview_title),
             'title' => htmlspecialchars_decode($row->title),
@@ -68,7 +66,6 @@ if (mysqli_num_rows($result) > 0) {
             'show_on_main_page' => (int)$row->show_on_main_page == 1 ? "Активен" : "Отключен",
             'active' => (int)$row->active == 1 ? "Активен" : "Отключен",
         ];
-
     }
 }
 

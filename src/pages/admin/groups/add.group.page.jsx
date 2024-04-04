@@ -28,6 +28,8 @@ const AddGroupPage = () => {
     const [popup, setPopup] = React.useState(<></>);
     const [schedules, setSchedules] = React.useState([]);
     const [photo, setPhoto] = React.useState([]);
+    const [tab, setTab] = React.useState();
+    const formRef = React.useRef();
 
     const back = () => navigate("/admin/groups");
 
@@ -72,10 +74,6 @@ const AddGroupPage = () => {
         if (schedules.length > 0) sendObject["schedules"] = schedules;
 
         if (!checkForComplete(sendObject)) return;
-
-        console.log(sendObject);
-
-        return;
 
         await store.add(sendObject);
 
@@ -157,9 +155,9 @@ const AddGroupPage = () => {
     return (
         <BasicPage mainStore={teachersStore} loadings={[teachersStore]}>
             <TitleBlock title={"Создание группы"} onBack={back}/>
-            <Tabs place={"groups_create"}>
+            <Tabs place={"groups_create"} onResetTab={tab}>
                 <Tab title={"Основная информация"}>
-                    <form id='add_form' onSubmit={handleSubmit(onAdd)} className='admin-form'>
+                    <form ref={formRef} onSubmit={handleSubmit(onAdd)} className='admin-form'>
                         <fieldset className='admin-form__section admin-form__section_width_one-col'>
                             <FieldText
                                 label={"Название*"}
@@ -206,11 +204,11 @@ const AddGroupPage = () => {
                         itemsConfig={itemConfigSchedules}
                         withItemControls={true}
                         onItemsChange={(items) => {
-                            const sort_by = function() {
+                            const sort_by = function () {
                                 let fields = [].slice.call(arguments),
                                     n_fields = fields.length;
 
-                                return function(A, B) {
+                                return function (A, B) {
                                     let a, b, field, key, primer, reverse, result;
                                     for (let i = 0, l = n_fields; i < l; i++) {
                                         result = 0;
@@ -264,10 +262,13 @@ const AddGroupPage = () => {
                 <Button
                     extraClass={"admin-form__button"}
                     type='submit'
-                    form='add_form'
                     onClick={() => {
                         const data = getValues();
                         checkForComplete(data);
+                        setTab(window.global.makeid(8));
+                        setTimeout(() => {
+                            formRef.current?.requestSubmit();
+                        }, 300);
                     }}
                     spinnerActive={store.sending}
                 >

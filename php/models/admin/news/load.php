@@ -9,7 +9,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/php/params.php';
 $sql = "SELECT 
         item.ID, item.preview_title, item.date, item.active
     FROM 
-        item as item
+        news as item
     WHERE 
         item.archive = '0'
     ORDER BY date DESC";

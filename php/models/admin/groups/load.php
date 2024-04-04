@@ -10,10 +10,8 @@ function getScheduleTitle($scheduleID) {
     switch ((int)$scheduleID) {
         case 0:
             return "Не заполнено";
-        case 7:
-            return "Полностью заполнено";
         default:
-            return "Частично заполнено";
+            return "Заполнено";
     }
 }
 

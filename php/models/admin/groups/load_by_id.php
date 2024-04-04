@@ -6,7 +6,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/php/include.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/php/auth.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/php/params.php';
 
-function getTeachers($ID)
+function getTeachers($ID): array
 {
     global $conn, $sqls;
 
@@ -40,7 +40,7 @@ function getTeachers($ID)
 
     return $data;
 }
-function getSchedules($ID)
+function getSchedules($ID): array
 {
     global $conn, $sqls;
 
@@ -60,11 +60,14 @@ function getSchedules($ID)
 
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_object($result)) {
+            $timeFrom = explode(':', htmlspecialchars_decode($row->time_from));
+            $timeTo = explode(':', htmlspecialchars_decode($row->time_to));
+
             $data[] = (object)[
                 'ID' => (int)$row->ID,
                 'day' => (int)$row->day,
-                'time_from' => htmlspecialchars_decode($row->time_from),
-                'time_to' => htmlspecialchars_decode($row->time_to),
+                'startTime' => $timeFrom[0] . ':' . $timeFrom[1],
+                'endTime' => $timeTo[0] . ':' . $timeTo[1],
                 'text' => htmlspecialchars_decode($row->text),
             ];
         }
@@ -72,7 +75,7 @@ function getSchedules($ID)
 
     return $data;
 }
-function getImages($ID)
+function getImages($ID): array
 {
     global $conn;
 
@@ -125,6 +128,7 @@ if (mysqli_num_rows($result) > 0) {
             'text' => htmlspecialchars_decode($row->text),
             'employees' => getTeachers($row->ID),
             'schedules' => getSchedules($row->ID),
+            'images' => getImages($row->ID),
             'image' => $row->image,
             'create_time' => $row->create_time,
         ];

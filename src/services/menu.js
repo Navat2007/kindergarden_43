@@ -7,7 +7,7 @@ export const sortingToSave = signal([]);
 export const getMenuList = async () => {
     try {
         const response = await Api.post('public/menu/load.php');
-        console.log(response);
+
         menuStore.value = {
             sorted: response.params.sorted,
             all: response.params.all

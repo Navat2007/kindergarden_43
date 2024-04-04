@@ -43,40 +43,6 @@ const Table = ({
 
     const { register, handleSubmit, reset, control, setValue, getValues } = useForm();
 
-    React.useEffect(() => {
-        setFiltered(items);
-    }, [items]);
-
-    React.useEffect(() => {
-        setPageCount(Math.ceil(filtered.length / pageSize));
-        setPaginatedItems(
-            lodash(sorted.length > 0 ? sorted : filtered)
-                .slice(startIndex)
-                .take(pageSize)
-                .value()
-        );
-    }, [filtered, sorted, startIndex, pageSize]);
-
-    React.useEffect(() => {
-        if (Cookies.get("table_" + title)) {
-            handleChangePage(Cookies.get("table_" + title));
-        } else {
-            handleChangePage(1);
-        }
-    }, []);
-
-    if (loading) return <p>Загрузка...</p>;
-
-    if (!items) return <p>Ошибка загрузки данных с сервера</p>;
-
-    if (items.length > 0 && !("ID" in items[0])) {
-        console.log(title, "ВНИМАНИЕ! В таблице нет ключа ID.");
-    }
-
-    if (withFilter && withItemControls) {
-        console.log(title, "ВНИМАНИЕ! Выбраны и withFilter и withItemControls.");
-    }
-
     const handleChangePage = (index) => {
         setStartIndex((index - 1) * pageSize);
         setPageIndex(index);
@@ -534,6 +500,40 @@ const Table = ({
             />
         );
     };
+
+    React.useEffect(() => {
+        setFiltered(items);
+    }, [items]);
+
+    React.useEffect(() => {
+        setPageCount(Math.ceil(filtered.length / pageSize));
+        setPaginatedItems(
+            lodash(sorted.length > 0 ? sorted : filtered)
+                .slice(startIndex)
+                .take(pageSize)
+                .value()
+        );
+    }, [filtered, sorted, startIndex, pageSize]);
+
+    React.useEffect(() => {
+        if (Cookies.get("table_" + title)) {
+            handleChangePage(Cookies.get("table_" + title));
+        } else {
+            handleChangePage(1);
+        }
+    }, []);
+
+    if (loading) return <p>Загрузка...</p>;
+
+    if (!items) return <p>Ошибка загрузки данных с сервера</p>;
+
+    if (items.length > 0 && !("ID" in items[0])) {
+        console.log(title, "ВНИМАНИЕ! В таблице нет ключа ID.");
+    }
+
+    if (withFilter && withItemControls) {
+        console.log(title, "ВНИМАНИЕ! Выбраны и withFilter и withItemControls.");
+    }
 
     return (
         <>

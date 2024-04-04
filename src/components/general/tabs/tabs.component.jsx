@@ -3,8 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import "./tabs.scss";
 
-const Tabs = ({ children, place, extraClass, theme }) => {
+const Tabs = ({ children, place, extraClass, theme, onResetTab }) => {
     const [activeTab, setActiveTab] = React.useState(place && window.localStorage.getItem(`${place}_tab`) ? parseInt(window.localStorage.getItem(`${place}_tab`)) : 0);
+
+    React.useEffect(() => {
+        setActiveTab(0);
+    }, [onResetTab]);
 
     if (!children.length)
         return (

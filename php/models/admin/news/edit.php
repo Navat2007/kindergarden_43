@@ -20,7 +20,7 @@ $previewImage = $_POST["previewImage"];
 $reviewImage = $_POST["reviewImage"];
 $images = $_POST["images"];
 
-$sql = "SELECT * FROM item WHERE ID = '$id'";
+$sql = "SELECT * FROM news WHERE ID = '$id'";
 $sqls[] = $sql;
 $result = mysqli_query($conn, $sql);
 
@@ -81,7 +81,7 @@ if ($error === 0) {
 
                 $url = "";
 
-                $helper->createDir("/files/item/" . $lastID);
+                $helper->createDir("/files/news/" . $lastID);
 
                 $temp_name = $_FILES['previewImage']['tmp_name'][$i]['file'];
                 $name = $_FILES['previewImage']['name'][$i]['file'];
@@ -91,17 +91,17 @@ if ($error === 0) {
 
                 $file_token = $helper->gen_token();
 
-                $path = $_SERVER['DOCUMENT_ROOT'] . "/files/item/" . $lastID . "/" . $file_token . "_" . $name;
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/files/news/" . $lastID . "/" . $file_token . "_" . $name;
 
                 @unlink($path);
 
                 if(copy($temp_name, $path))
                 {
-                    $url = "/files/item/" . $lastID . "/" . $file_token . "_" . $name;
+                    $url = "/files/news/" . $lastID . "/" . $file_token . "_" . $name;
 
                     $sql = "
                     UPDATE 
-                        item
+                        news
                     SET
                         preview_image = '$url'
                     WHERE 
@@ -134,7 +134,7 @@ if ($error === 0) {
 
                 $url = "";
 
-                $helper->createDir("/files/item/" . $lastID);
+                $helper->createDir("/files/news/" . $lastID);
 
                 $temp_name = $_FILES['reviewImage']['tmp_name'][$i]['file'];
                 $name = $_FILES['reviewImage']['name'][$i]['file'];
@@ -144,17 +144,17 @@ if ($error === 0) {
 
                 $file_token = $helper->gen_token();
 
-                $path = $_SERVER['DOCUMENT_ROOT'] . "/files/item/" . $lastID . "/" . $file_token . "_" . $name;
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/files/news/" . $lastID . "/" . $file_token . "_" . $name;
 
                 @unlink($path);
 
                 if(copy($temp_name, $path))
                 {
-                    $url = "/files/item/" . $lastID . "/" . $file_token . "_" . $name;
+                    $url = "/files/news/" . $lastID . "/" . $file_token . "_" . $name;
 
                     $sql = "
                     UPDATE 
-                        item
+                        news
                     SET
                         image = '$url'
                     WHERE 
@@ -184,7 +184,7 @@ if ($error === 0) {
 
                 $url = "";
 
-                $helper->createDir("/files/item/" . $lastID);
+                $helper->createDir("/files/news/" . $lastID);
 
                 $temp_name = $_FILES['images']['tmp_name'][$i]['file'];
                 $name = $_FILES['images']['name'][$i]['file'];
@@ -194,13 +194,13 @@ if ($error === 0) {
 
                 $file_token = $helper->gen_token();
 
-                $path = $_SERVER['DOCUMENT_ROOT'] . "/files/item/" . $lastID . "/" . $file_token . "_" . $name;
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/files/news/" . $lastID . "/" . $file_token . "_" . $name;
 
                 @unlink($path);
 
                 if(copy($temp_name, $path))
                 {
-                    $url = "/files/item/" . $lastID . "/" . $file_token . "_" . $name;
+                    $url = "/files/news/" . $lastID . "/" . $file_token . "_" . $name;
 
                     $sql = "
                     INSERT INTO news_images (newsID, url, main, photo_order)

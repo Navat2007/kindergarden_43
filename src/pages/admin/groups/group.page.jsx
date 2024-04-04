@@ -23,7 +23,7 @@ const AdminGroupPage = () => {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            await store.loadByID({ id }, true);
+            await store.loadByID({ id });
         };
 
         fetchData();
