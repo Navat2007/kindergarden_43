@@ -49,7 +49,9 @@ const EditUserPage = () => {
 
     const onEditSubmit = async (params) => {
         params.id = id;
-        store.edit(params);
+
+        const result = await store.edit(params);
+        console.log(result);
 
         if (!store.error) back();
     };

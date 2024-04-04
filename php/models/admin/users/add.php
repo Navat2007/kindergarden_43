@@ -39,7 +39,7 @@ if($error === 0){
     mysqli_query($conn, $sql);
     $lastID = mysqli_insert_id($conn);
 
-    $helper->sendEmailWithPassword($conn, $email, $password, true);
+    //$helper->sendEmailWithPassword($conn, $email, $password, true);
     $log->add($conn, $authorization[1], 'Добавлен администратор #' . $lastID);
 
 }

@@ -86,7 +86,7 @@ if($error === 0){
             $sqls[] = $update_query;
             mysqli_query($conn, $update_query);
 
-            $helper->sendEmailWithPassword($conn, $email, $pwd, false);
+            //$helper->sendEmailWithPassword($conn, $email, $pwd, false);
         }
 
     }

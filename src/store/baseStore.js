@@ -164,6 +164,10 @@ export class Request{
 
         const response = await axios.postForm(url, form, {cancelToken: this.get().cancelToken.token}).catch((error) => {});
 
+        console.log(form);
+        console.log(params);
+        console.log(response);
+
         this.set({[action]: false, cancelToken: null});
 
         if(action === "sending"){
