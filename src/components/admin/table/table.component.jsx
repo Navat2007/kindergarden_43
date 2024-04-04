@@ -16,6 +16,7 @@ import FieldTextArea from "../field/field.textarea.component";
 
 import "./table.scss";
 import { Icons } from "../../svgs.js";
+import FieldSelect from "../field/field.select.component";
 
 const Table = ({
     children,
@@ -127,6 +128,9 @@ const Table = ({
 
     const getElementByType = (configItem, value) => {
         switch (configItem.type) {
+            case "select":
+                return <>{configItem.items.find(item => item.value === value).title}</>;
+
             case "image":
                 return value ? <img className='cell-image-logo' src={window.global.baseUrl + value} alt={""} /> : <></>;
 
@@ -302,6 +306,22 @@ const Table = ({
                             {itemsConfig.map((itemKey) => {
                                 if (itemKey.key !== "ID") {
                                     switch (itemKey.type) {
+                                        case "select":
+                                            return (
+                                                <FieldSelect
+                                                    key={itemKey.key}
+                                                    label={itemKey.header}
+                                                    required={itemKey.required}
+                                                    defaultSelectItem={null}
+                                                    flatOptions={itemKey.items.map((item) => {
+                                                        return <option key={window.global.makeid(8)}
+                                                                       value={item.value}>{item.title}</option>;
+                                                    })}
+                                                    extraClass={`search-filter__field`}
+                                                    {...register(itemKey.key)}
+                                                />
+                                            );
+
                                         case "string":
                                             return (
                                                 <FieldTextArea
@@ -328,6 +348,17 @@ const Table = ({
                                             return (
                                                 <FieldDate
                                                     key={itemKey.key}
+                                                    label={itemKey.header}
+                                                    required={itemKey.required}
+                                                    {...register(itemKey.key)}
+                                                />
+                                            );
+
+                                        case "time":
+                                            return (
+                                                <FieldDate
+                                                    key={itemKey.key}
+                                                    type={"time"}
                                                     label={itemKey.header}
                                                     required={itemKey.required}
                                                     {...register(itemKey.key)}
@@ -390,6 +421,24 @@ const Table = ({
                             {itemsConfig.map((itemKey) => {
                                 if (itemKey.key !== "ID") {
                                     switch (itemKey.type) {
+                                        case "select":
+                                            return (
+                                                <FieldSelect
+                                                    key={itemKey.key}
+                                                    label={itemKey.header}
+                                                    required={itemKey.required}
+                                                    defaultSelectItem={null}
+                                                    flatOptions={itemKey.items.map((item) => {
+                                                        return <option key={window.global.makeid(8)}
+                                                                       value={item.value}>{item.title}</option>;
+                                                    })}
+                                                    extraClass={`search-filter__field`}
+                                                    {...register(itemKey.key, {
+                                                        value: item[itemKey.key]
+                                                    })}
+                                                />
+                                            );
+
                                         case "string":
                                             return (
                                                 <FieldText
@@ -416,6 +465,17 @@ const Table = ({
                                             return (
                                                 <FieldDate
                                                     key={itemKey.key}
+                                                    label={itemKey.header}
+                                                    required={itemKey.required}
+                                                    {...register(itemKey.key, { value: item[itemKey.key] })}
+                                                />
+                                            );
+
+                                        case "time":
+                                            return (
+                                                <FieldDate
+                                                    key={itemKey.key}
+                                                    type={"time"}
                                                     label={itemKey.header}
                                                     required={itemKey.required}
                                                     {...register(itemKey.key, { value: item[itemKey.key] })}

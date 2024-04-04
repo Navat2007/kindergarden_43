@@ -337,6 +337,7 @@ const ImageSelector = ({
                             }${extraClass ? ` ${extraClass}-item` : ``}`}
                         >
                             {getThumbsForGallery(item)}
+                            {/* Номер */}
                             <span
                                 className={`admin-image-selector__current-position${
                                     extraClass ? ` ${extraClass}-current-position` : ``
@@ -344,6 +345,7 @@ const ImageSelector = ({
                             >
                                 {item.order}
                             </span>
+                            {/* Сделать главной, удалить */}
                             <div
                                 className={`admin-image-selector__item-panel${
                                     extraClass ? ` ${extraClass}-item-panel` : ``
@@ -368,6 +370,7 @@ const ImageSelector = ({
                                     onClick={() => handleDeletePhoto(item)}
                                 />
                             </div>
+                            {/* Стрелки перемещения */}
                             <div className={`admin-image-selector__thumbs${extraClass ? ` ${extraClass}-thumbs` : ``}`}>
                                 <Button
                                     type='button'

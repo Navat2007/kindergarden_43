@@ -51,7 +51,6 @@ const EditUserPage = () => {
         params.id = id;
 
         const result = await store.edit(params);
-        console.log(result);
 
         if (!store.error) back();
     };
