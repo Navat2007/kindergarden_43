@@ -13,6 +13,7 @@ import BasicPage from "../../../components/public/basic.page/basic.page.componen
 import Breadcrumbs from "../../../components/public/breadcrumbs/breadcrumbs";
 import MultiSelect from "../../../components/admin/multi_select/multi_select.component";
 import SingleImage from "../../../components/general/single.image/single.image.with.preview";
+import SingleImageWithPreview from "../../../components/general/single.image.with.preview/single.image.with.preview";
 
 const GroupsPage = () => {
     const groupsStore = useGroupsStore();
@@ -169,7 +170,7 @@ const GroupsPage = () => {
                         {
                             images.map(image => (
                                 <SplideSlide key={window.global.makeid()}>
-                                    <SingleImage
+                                    <SingleImageWithPreview
                                         image={image.url}
                                         extraClass={"corner-rounded corner-rounded_size_lg"}
                                     />
