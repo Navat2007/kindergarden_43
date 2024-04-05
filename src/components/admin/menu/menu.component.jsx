@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import Logo from "../../public/logo/logo";
 import Button from "../button/button.component";
 
-import "./menu.scss";
 import { Icons } from "../../svgs.js";
 
 const Menu = ({ menu, burgerOpened, setBurgerOpened }) => {
@@ -81,7 +80,7 @@ const Menu = ({ menu, burgerOpened, setBurgerOpened }) => {
                     </ul>
                     <Button
                         type='button'
-                        iconName={Icons.chevron_down}
+                        iconName={Icons.chevron_left}
                         extraClass='admin-menu__button'
                         aria-label='Свернуть/Развернуть меню'
                         onClick={handleResize}

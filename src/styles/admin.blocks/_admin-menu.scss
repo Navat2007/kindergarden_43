@@ -1,6 +1,3 @@
-@import "../../../styles/vendor/mixins";
-@import "../../../styles/vendor/extends";
-
 .admin-menu {
     position: sticky;
     inset-block-start: 0;
@@ -93,8 +90,8 @@
                 pointer-events: none;
             }
 
-            .admin-menu__button .button__icon {
-                transform: rotate(-90deg);
+            .admin-menu__button .admin-button__icon {
+                transform: scale(-1, 1);
             }
         }
 
@@ -211,10 +208,9 @@
         border-radius: 0;
         padding-block-start: 0.25em;
         padding-block-end: 0.25em;
-        .button__icon {
+        .admin-button__icon {
             margin-inline-start: auto;
             @include box(2.5em);
-            transform: rotate(90deg);
         }
     }
 
