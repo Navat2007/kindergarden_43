@@ -1,18 +1,25 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import {useForm} from "react-hook-form";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+
 import useAboutStore from "../../../store/public/aboutStore";
 import useGroupsStore from "../../../store/public/groupsStore";
 import useEmployeesStore from "../../../store/public/employeesStore";
 
 import BasicPage from "../../../components/public/basic.page/basic.page.component";
 import Breadcrumbs from "../../../components/public/breadcrumbs/breadcrumbs";
+import FieldSelect from "../../../components/admin/field/field.select.component";
+import MultiSelect from "../../../components/admin/multi_select/multi_select.component";
 
 const GroupsPage = () => {
     const aboutStore = useAboutStore();
     const groupsStore = useGroupsStore();
     const teachersStore = useEmployeesStore();
+
+    const {control, getValues, setValue} = useForm();
+    const [selectedGroup, setSelectedGroup] = React.useState(0);
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -22,6 +29,8 @@ const GroupsPage = () => {
         };
 
         fetchData();
+
+        console.log(groupsStore.items);
     }, []);
 
     return (
@@ -44,11 +53,7 @@ const GroupsPage = () => {
                                 url: "/",
                             },
                             {
-                                title: "Педагоги",
-                                url: "/сотрудники/",
-                            },
-                            {
-                                title: "Текущая страница",
+                                title: "Наши группы",
                                 url: "",
                             },
                         ]}
@@ -57,12 +62,23 @@ const GroupsPage = () => {
                         <h1 id={"groups"} className='section__title section__title_with-decor'>
                             Наши группы
                         </h1>
-                        <select name='' id='' className='field field_type_select'>
-                            <option value='' default>
-                                Выберите из списка…
-                            </option>
-                            <option value='1'>Группа №1</option>
-                        </select>
+                        <MultiSelect
+                            control={control}
+                            isMulti={false}
+                            name={"group_select"}
+                            closeMenuOnSelect={true}
+                            placeholder={"Выберите группу"}
+                            options={groupsStore.items?.map((item) => {
+                                return {
+                                    label: item.title,
+                                    value: item.ID,
+                                };
+                            })}
+                            onChange={(selected) => {
+                                setValue("group_select", selected);
+                                setSelectedGroup(selected.value);
+                            }}
+                        />
                     </div>
                 </div>
 

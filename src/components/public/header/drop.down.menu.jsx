@@ -111,9 +111,9 @@ const DropdownMenu = ({items, level = 0}) => {
     return items.map((item) => {
         if(item){
             if (item.submenu?.length > 0)
-                return <DropdownItem key={item.title} item={item} items={item.submenu} level={level + 1}/>;
+                return <DropdownItem key={window.global.makeid()} item={item} items={item.submenu} level={level + 1}/>;
 
-            return <MenuItem key={item.title} item={item}/>;
+            return <MenuItem key={window.global.makeid()} item={item}/>;
         }
     });
 };
