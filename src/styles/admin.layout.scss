@@ -23,11 +23,14 @@
 }
 // layout
 @import "./admin.blocks/app";
-@import "./admin.blocks/admin-menu";
 
-
+// UI blocks
+@import "./admin.blocks/admin-button";
 @import "./admin.blocks/admin-form";
 @import "./admin.blocks/admin-field";
+
+// sections
 @import "./admin.blocks/admin-view-section";
 @import "./admin.blocks/admin-section";
 @import "./admin.blocks/admin-menu-constructor";
+@import "./admin.blocks/admin-menu";
