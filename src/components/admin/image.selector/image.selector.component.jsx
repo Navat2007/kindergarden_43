@@ -5,8 +5,7 @@ import Button from "../button/button.component";
 import FieldInput from "../field/field.text.component";
 import AlertPopup from "../../general/alert.popup/alert.popup";
 import Popup from "../../general/popup/popup.component";
-import "./image.selector.scss";
-import {Icons, FileIcons} from "../../svgs.js";
+import { Icons, FileIcons } from "../../svgs.js";
 import FieldTextarea from "../field/field.textarea.component";
 
 const ImageSelector = ({

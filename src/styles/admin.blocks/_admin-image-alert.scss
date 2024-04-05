@@ -1,0 +1,37 @@
+.admin-image-alert {
+    &__caption {
+        margin: 0 0 1.5em;
+        font-size: 1em;
+        font-weight: 500;
+        color: var(--admin-error-color);
+        line-height: 1.5;
+
+        svg {
+            @include box(1.5em);
+            vertical-align: bottom;
+            fill: currentColor;
+        }
+    }
+
+    &__list {
+        padding-left: 1.5rem;
+    }
+
+    &__item {
+        list-style-position: outside;
+    }
+
+    &__text {
+        line-height: 1.5;
+    }
+
+    &__error-span {
+        color: var(--admin-text-low-color);
+        font-style: italic;
+        font-size: 0.875em;
+
+        &::before {
+            content: "/ ";
+        }
+    }
+}
