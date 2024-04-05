@@ -379,14 +379,13 @@ const ImageSelector = ({
             }
         }
 
-        console.log(item);
+        const DescriptionInput = () => {
+
+        }
 
         return (
             <li
-                key={window.global.makeid(8)}
-                className={`admin-image-selector__item${
-                    orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``
-                }${extraClass ? ` ${extraClass}-item` : ``}`}
+                className={`admin-image-selector__item${orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``}${extraClass ? ` ${extraClass}-item` : ``}`}
             >
                 {getThumbsForGallery(item)}
                 <TopButtons/>
