@@ -14,6 +14,7 @@ import Breadcrumbs from "../../../components/public/breadcrumbs/breadcrumbs";
 import MultiSelect from "../../../components/admin/multi_select/multi_select.component";
 import SingleImage from "../../../components/general/single.image/single.image.with.preview";
 import SingleImageWithPreview from "../../../components/general/single.image.with.preview/single.image.with.preview";
+import ImagePreview from "../../../components/general/image.preview/image.preview.component";
 
 const GroupsPage = () => {
     const groupsStore = useGroupsStore();
@@ -143,6 +144,14 @@ const GroupsPage = () => {
     }
 
     const ImageGallery = ({images}) => {
+        const [preview, setPreview] = React.useState(<></>);
+
+        const handleOpenPreview = (slideIndex) => {
+            setPreview(
+                <ImagePreview open={true} index={slideIndex} items={images} onClose={() => setPreview(<></>)} />
+            );
+        };
+
         if (images && images.length > 0) {
             return (
                 <div className='article__section-item'>
@@ -171,16 +180,20 @@ const GroupsPage = () => {
                         }}
                     >
                         {
-                            images.map(image => (
+                            images.map((image, index) => (
                                 <SplideSlide key={window.global.makeid()}>
-                                    <SingleImageWithPreview
-                                        image={image.url}
-                                        extraClass={"corner-rounded corner-rounded_size_lg"}
+                                    <img
+                                        className={"corner-rounded corner-rounded_size_lg"}
+                                        src={image.url.includes("http") ? image.url : process.env.REACT_APP_BASE_URL + image.url}
+                                        alt={image.url}
+                                        loading='lazy'
+                                        onClick={() => handleOpenPreview(index)}
                                     />
                                 </SplideSlide>
                             ))
                         }
                     </Splide>
+                    {preview}
                 </div>
             )
         }
