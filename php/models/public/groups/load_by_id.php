@@ -54,9 +54,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_object($result)) {
-
         $params = (object)[
-
             'ID' => (int)$row->ID,
             'title' => htmlspecialchars_decode($row->title),
             'preview' => htmlspecialchars_decode($row->preview),
@@ -65,7 +63,6 @@ if (mysqli_num_rows($result) > 0) {
             'image' => $row->image,
             'create_time' => $row->create_time,
         ];
-
     }
 }
 
