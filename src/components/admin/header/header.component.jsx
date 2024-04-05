@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../../admin/button/button.component";
 import ProfileHeader from "../profile.header/profile.header.component";
 import { Icons } from "../../svgs.js";
-import "./header.scss";
 
 const HeaderComponent = ({ children, extraClass, handleBurger }) => {
     return (

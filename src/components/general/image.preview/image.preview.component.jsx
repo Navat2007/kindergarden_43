@@ -4,7 +4,6 @@ import "@splidejs/react-splide/css";
 
 import Button from "../../admin/button/button.component";
 import { Icons } from "../../svgs";
-import "./image.preview.scss";
 
 const ImagePreview = ({ items, open = false, index = 0, onClose }) => {
     const ref = React.createRef();

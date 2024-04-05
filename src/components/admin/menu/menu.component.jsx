@@ -1,9 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import Logo from "../../public/logo/logo";
 import Button from "../button/button.component";
-
 import { Icons } from "../../svgs.js";
 
 const Menu = ({ menu, burgerOpened, setBurgerOpened }) => {
@@ -56,7 +54,12 @@ const Menu = ({ menu, burgerOpened, setBurgerOpened }) => {
                 }`}
             >
                 <nav className='admin-menu__nav'>
-                    <Logo extraClass={"admin-menu__logo"} />
+                    <NavLink
+                        to={"/"}
+                        className='admin-menu__logo'
+                        aria-label='Логотип'
+                        rel='noreferrer nofollow noopener'
+                    />
                     <ul className='admin-menu__list'>
                         {menu.map((item) => (
                             <li
