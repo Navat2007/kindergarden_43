@@ -18,7 +18,7 @@ const baseConfig = () => {
         baseUrl: "https://dssosny.ru/",
     }
 
-    window.global.makeid = (length) => {
+    window.global.makeid = (length = 8) => {
 
         let result = '';
         let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

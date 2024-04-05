@@ -5,23 +5,23 @@ import Button from "../button/button.component";
 import FieldInput from "../field/field.text.component";
 import AlertPopup from "../../general/alert.popup/alert.popup";
 import Popup from "../../general/popup/popup.component";
-import { Icons, FileIcons } from "../../svgs.js";
+import {Icons, FileIcons} from "../../svgs.js";
 import FieldTextarea from "../field/field.textarea.component";
 
 const ImageSelector = ({
-    items,
-    extraClass,
-    orientation = "landscape",
-    multiFiles,
-    onlyOneFile,
-    accept = "image/*",
-    withLinks,
-    withDescription,
-    maxFileSize = 5,
-    onChange,
-    onDelete,
-    onError,
-}) => {
+                           items,
+                           extraClass,
+                           orientation = "landscape",
+                           multiFiles,
+                           onlyOneFile,
+                           accept = "image/*",
+                           withLinks,
+                           withDescription,
+                           maxFileSize = 5,
+                           onChange,
+                           onDelete,
+                           onError,
+                       }) => {
     const [photo, setPhoto] = React.useState([]);
     const [photoAddBtnDisabled, setPhotoAddBtnDisabled] = React.useState(false);
     const [photoFileAddBtnDisabled, setPhotoFileAddBtnDisabled] = React.useState(false);
@@ -295,162 +295,169 @@ const ImageSelector = ({
         );
     };
 
-    return (
-        <>
-            <ul className={`admin-image-selector${extraClass ? ` ${extraClass}` : ``}`}>
-                {photo.map((item, index) =>
-                    item.main ? (
-                        <li
-                            key={index}
-                            className={`admin-image-selector__item${
-                                orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``
-                            }${extraClass ? ` ${extraClass}-item` : ``}`}
-                        >
-                            {getThumbsForGallery(item)}
-                            <div
-                                className={`admin-image-selector__item-panel${
-                                    extraClass ? ` ${extraClass}-item-panel` : ``
-                                }`}
-                            >
-                                <Button
-                                    type='button'
-                                    isIconBtn='true'
-                                    theme='white'
-                                    iconName={Icons.close}
-                                    aria-label='Удалить'
-                                    disabled={photoAddBtnDisabled}
-                                    onClick={() => handleDeletePhoto(item)}
-                                />
-                            </div>
-                            {photo.length > 1 && (
-                                <p className={`admin-image-selector__title${extraClass ? ` ${extraClass}-title` : ``}`}>
-                                    1. Главная
-                                </p>
-                            )}
-                        </li>
-                    ) : (
-                        <li
-                            key={index}
-                            className={`admin-image-selector__item${
-                                orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``
-                            }${extraClass ? ` ${extraClass}-item` : ``}`}
-                        >
-                            {getThumbsForGallery(item)}
-                            {/* Номер */}
-                            <span
-                                className={`admin-image-selector__current-position${
-                                    extraClass ? ` ${extraClass}-current-position` : ``
-                                }`}
-                            >
-                                {item.order}
-                            </span>
-                            {/* Сделать главной, удалить */}
-                            <div
-                                className={`admin-image-selector__item-panel${
-                                    extraClass ? ` ${extraClass}-item-panel` : ``
-                                }`}
-                            >
-                                <Button
-                                    type='button'
-                                    theme='white'
-                                    extraClass='admin-image-selector__button'
-                                    disabled={photoAddBtnDisabled}
-                                    onClick={() => handleMovePhoto(item.order, 1)}
-                                >
-                                    Сделать главной
-                                </Button>
-                                <Button
-                                    type='button'
-                                    isIconBtn='true'
-                                    theme='white'
-                                    iconName={Icons.close}
-                                    aria-label='Удалить'
-                                    disabled={photoAddBtnDisabled}
-                                    onClick={() => handleDeletePhoto(item)}
-                                />
-                            </div>
-                            {/* Стрелки перемещения */}
-                            <div className={`admin-image-selector__thumbs${extraClass ? ` ${extraClass}-thumbs` : ``}`}>
-                                <Button
-                                    type='button'
-                                    isIconBtn='true'
-                                    theme='white'
-                                    iconName={Icons.chevron_left}
-                                    aria-label='Назад'
-                                    disabled={photoAddBtnDisabled}
-                                    onClick={() => handleMovePhoto(item.order, item.order - 1)}
-                                />
-                                {index < photo.length - 1 && (
-                                    <Button
-                                        type='button'
-                                        theme='white'
-                                        isIconBtn='true'
-                                        iconName={Icons.chevron_right}
-                                        aria-label='Вперед'
-                                        disabled={photoAddBtnDisabled}
-                                        onClick={() => handleMovePhoto(item.order, item.order + 1)}
-                                    />
-                                )}
-                            </div>
-                        </li>
-                    )
-                )}
-                {(photo.length === 0 || !onlyOneFile) && (
-                    <li
-                        className={`admin-image-selector__download-block${
-                            extraClass ? ` ${extraClass}-download-block` : ``
-                        }`}
-                        onDrop={(e) => {
-                            e.preventDefault();
-                            handleAddFilePhoto({
-                                target: {
-                                    files: e.dataTransfer.files,
-                                },
-                            });
-                        }}
-                        onDragOver={(e) => {
-                            e.preventDefault();
-                        }}
-                    >
-                        <p
-                            className={`admin-image-selector__download-text${
-                                extraClass ? ` ${extraClass}-download-text` : ``
-                            }`}
-                        >
-                            {onlyOneFile && "Ограничение на кол-во файлов: 1 файл"}
-                            <br />
-                            <span>Ограничение на размер изображения: {maxFileSize} MB.</span>
-                            <br />
-                            <br />
-                            Начните загружать изображения простым перетаскиванием в любое место этого окна.
-                            <span
-                                className={`admin-image-selector__download-span${
-                                    extraClass ? ` ${extraClass}-download-span` : ``
-                                }`}
-                            >
-                                или
-                            </span>
-                        </p>
+    //private components
+    const ImageItem = ({item, index}) => {
+        const TopButtons = () => {
+            return (
+                <div
+                    className={`admin-image-selector__item-panel${
+                        extraClass ? ` ${extraClass}-item-panel` : ``
+                    }`}
+                >
+                    {
+                        !item.main
+                        &&
                         <Button
                             type='button'
-                            disabled={photoFileAddBtnDisabled}
-                            onClick={() => inputFileRef.current.click()}
+                            theme='white'
+                            extraClass='admin-image-selector__button'
+                            disabled={photoAddBtnDisabled}
+                            onClick={() => handleMovePhoto(item.order, 1)}
                         >
-                            {onlyOneFile ? "Выбрать файл" : "Выбрать файлы"}
+                            Сделать главной
                         </Button>
-                        <input
-                            ref={inputFileRef}
-                            key={photoInputKey}
-                            onChange={handleAddFilePhoto}
-                            hidden={true}
-                            type='file'
-                            accept={accept}
-                            multiple={multiFiles}
+                    }
+                    <Button
+                        type='button'
+                        isIconBtn='true'
+                        theme='white'
+                        iconName={Icons.close}
+                        aria-label='Удалить'
+                        disabled={photoAddBtnDisabled}
+                        onClick={() => handleDeletePhoto(item)}
+                    />
+                </div>
+            )
+        }
+
+        const Label = () => {
+            if (item.main) {
+                return (
+                    <>
+                        {photo.length > 1 && (
+                            <p className={`admin-image-selector__title${extraClass ? ` ${extraClass}-title` : ``}`}>
+                                1. Главная
+                            </p>
+                        )}
+                    </>
+                )
+            } else {
+                return (
+                    <span className={`admin-image-selector__current-position${extraClass ? ` ${extraClass}-current-position` : ``}`}>
+                        {item.order}
+                    </span>
+                )
+            }
+        }
+
+        const MoveButtons = () => {
+            if(!item.main) {
+                return (
+                    <div className={`admin-image-selector__thumbs${extraClass ? ` ${extraClass}-thumbs` : ``}`}>
+                        <Button
+                            type='button'
+                            isIconBtn='true'
+                            theme='white'
+                            iconName={Icons.chevron_left}
+                            aria-label='Назад'
+                            disabled={photoAddBtnDisabled}
+                            onClick={() => handleMovePhoto(item.order, item.order - 1)}
                         />
-                    </li>
-                )}
-            </ul>
-            {withLinks && (
+                        {index < photo.length - 1 && (
+                            <Button
+                                type='button'
+                                theme='white'
+                                isIconBtn='true'
+                                iconName={Icons.chevron_right}
+                                aria-label='Вперед'
+                                disabled={photoAddBtnDisabled}
+                                onClick={() => handleMovePhoto(item.order, item.order + 1)}
+                            />
+                        )}
+                    </div>
+                )
+            }
+        }
+
+        console.log(item);
+
+        return (
+            <li
+                key={window.global.makeid(8)}
+                className={`admin-image-selector__item${
+                    orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``
+                }${extraClass ? ` ${extraClass}-item` : ``}`}
+            >
+                {getThumbsForGallery(item)}
+                <TopButtons/>
+                <Label/>
+                <MoveButtons />
+            </li>
+        )
+    }
+
+    const DragOrAddArea = () => {
+        if (photo.length === 0 || !onlyOneFile) {
+            return (
+                <li
+                    className={`admin-image-selector__download-block${
+                        extraClass ? ` ${extraClass}-download-block` : ``
+                    }`}
+                    onDrop={(e) => {
+                        e.preventDefault();
+                        handleAddFilePhoto({
+                            target: {
+                                files: e.dataTransfer.files,
+                            },
+                        });
+                    }}
+                    onDragOver={(e) => {
+                        e.preventDefault();
+                    }}
+                >
+                    <p
+                        className={`admin-image-selector__download-text${
+                            extraClass ? ` ${extraClass}-download-text` : ``
+                        }`}
+                    >
+                        {onlyOneFile && "Ограничение на кол-во файлов: 1 файл"}
+                        <br/>
+                        <span>Ограничение на размер изображения: {maxFileSize} MB.</span>
+                        <br/>
+                        <br/>
+                        Начните загружать изображения простым перетаскиванием в любое место этого окна.
+                        <span
+                            className={`admin-image-selector__download-span${
+                                extraClass ? ` ${extraClass}-download-span` : ``
+                            }`}
+                        >
+                                или
+                            </span>
+                    </p>
+                    <Button
+                        type='button'
+                        disabled={photoFileAddBtnDisabled}
+                        onClick={() => inputFileRef.current.click()}
+                    >
+                        {onlyOneFile ? "Выбрать файл" : "Выбрать файлы"}
+                    </Button>
+                    <input
+                        ref={inputFileRef}
+                        key={photoInputKey}
+                        onChange={handleAddFilePhoto}
+                        hidden={true}
+                        type='file'
+                        accept={accept}
+                        multiple={multiFiles}
+                    />
+                </li>
+            )
+        }
+    }
+
+    const UrlLinks = () => {
+        if (withLinks) {
+            return (
                 <div className={`admin-image-selector__group-block${extraClass ? ` ${extraClass}-group-block` : ``}`}>
                     <FieldInput
                         ref={inputRef}
@@ -469,7 +476,23 @@ const ImageSelector = ({
                         onClick={handleAddPhoto}
                     />
                 </div>
-            )}
+            )
+        }
+    }
+
+    return (
+        <>
+            <ul className={`admin-image-selector${extraClass ? ` ${extraClass}` : ``}`}>
+                {photo.map((item, index) =>
+                    <ImageItem
+                        key={window.global.makeid()}
+                        item={item}
+                        index={index}
+                    />
+                )}
+                <DragOrAddArea/>
+            </ul>
+            <UrlLinks/>
             {notif}
         </>
     );
