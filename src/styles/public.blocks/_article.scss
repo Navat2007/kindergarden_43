@@ -23,4 +23,31 @@
             background-color: var(--main-light-color);
         }
     }
+
+    &__gallery-item {
+        aspect-ratio: 468/284;
+        position: relative;
+        @extend .corner-rounded_size_lg;
+        overflow: hidden;
+    }
+
+    &__gallery-item-image {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__gallery-item-label {
+        position: absolute;
+        inset: auto 0.625em 0.625em;
+        margin-block: 0;
+        padding: 0.625em;
+        font-weight: 500;
+        color: #fff;
+        background-color: rgba(var(--accent-color-opacity), 0.5);
+        backdrop-filter: blur(10px);
+        @extend .corner-rounded;
+        text-align: center;
+    }
 }

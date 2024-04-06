@@ -5,7 +5,8 @@
 @import "react-loading-skeleton/dist/skeleton.css";
 
 :root {
-    --main-color: #4776e6;
+    --main-color: hwb(222 28% 10%);
+    --main-color-opacity: 71, 118, 230;
     --main-light-color: #e4ecff;
     --main-alt-color: #8e54e9;
     --main-gradient-color: var(--main-color) 0%, var(--main-alt-color) 100%;
@@ -15,6 +16,7 @@
     --secondary-gradient-color: var(--secondary-color) 0%, var(--secondary-alt-color) 100%;
 
     --accent-color: #e65c00;
+    --accent-color-opacity: 230, 92, 0;
     --accent-alt-color: #f9d423;
     --accent-gradient-color: var(--accent-color) 0%, var(--accent-alt-color) 100%;
 
