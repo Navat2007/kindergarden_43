@@ -14,12 +14,12 @@ const BasicPage = ({children, loadings = [], loadingTimer = 1500}) => {
     }, [loadingTimer]);
 
     React.useLayoutEffect(() => {
-        if(loadings.filter(item => item.loading).length === 0){
+        if(basicLoading && loadings.filter(item => item.loading).length === 0){
             setLoading(false);
         }
-    }, [loadings]);
+    }, [basicLoading, loadings, setLoading]);
 
-    if(basicLoading === false || loading) {
+    if(basicLoading === false || loadings.filter(item => item.loading).length > 0) {
         return <Preloader loading={true} />;
     }
     else {

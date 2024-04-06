@@ -7,15 +7,13 @@ import useNewsStore from "../../store/public/newsStore";
 import useEmployeesStore from "../../store/public/employeesStore";
 
 import BasicPage from "../../components/public/basic.page/basic.page.component";
-
 import Tabs from "../../components/public/tabs/tabs.component";
 import Tab from "../../components/public/tabs/tab.component";
 import News from "../../components/public/news/news";
+import SingleImage from "../../components/general/single.image/single.image.with.preview";
 
 import no_photo from "../../images/no-photo.jpg";
 import { Icons, AdvantagesIcons } from "../../components/svgs";
-import SingleImage from "../../components/general/single.image/single.image.with.preview";
-import TeachersSlider from "../../components/general/teachers.slider/teachers.slider";
 
 const IndexPage = () => {
     const newsStore = useNewsStore();
@@ -23,15 +21,12 @@ const IndexPage = () => {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            //await store.loadAllMain();
-            await newsStore.loadAll();
+            await newsStore.loadAllMain();
             await employeesStore.loadAll();
         };
 
         fetchData();
     }, []);
-
-    console.log(employeesStore.items);
 
     return (
         <BasicPage>
