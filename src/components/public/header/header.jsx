@@ -49,6 +49,8 @@ const Header = () => {
         let fixedTop = stickyHeader.current.offsetTop;
 
         const stickyHeaderEvent = () => {
+            if(stickyHeader.current === null || stickyHeader.current === undefined) return;
+
             if (window.pageYOffset > fixedTop) {
                 stickyHeader.current.classList.add("header_sticky");
             } else {

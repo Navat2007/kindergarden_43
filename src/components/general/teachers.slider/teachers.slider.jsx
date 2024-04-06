@@ -2,7 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { NavLink } from "react-router-dom";
 
-import SingleImageWithPreview from "../single.image.with.preview/single.image.with.preview";
+import SingleImage from "../single.image/single.image.with.preview";
 
 import "./teachers.slider.scss";
 
@@ -12,7 +12,7 @@ const TeachersSlider = ({ type = "loop", isBorderGradient = true, categories = [
             <SplideSlide key={person.ID} data-splide-interval='5000'>
                 <NavLink className={"card-link"} to={"/сотрудники/" + person.ID}>
                     <article className='person-card'>
-                        <SingleImageWithPreview
+                        <SingleImage
                             image={person.photo}
                             extraClass={"person-card__image"}
                             isPersonImage={true}

@@ -1,29 +1,37 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import { NavLink } from "react-router-dom";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import {Helmet} from "react-helmet";
+import {NavLink} from "react-router-dom";
+import {Splide, SplideSlide} from "@splidejs/react-splide";
 
 import useNewsStore from "../../store/public/newsStore";
+import useEmployeesStore from "../../store/public/employeesStore";
 
 import BasicPage from "../../components/public/basic.page/basic.page.component";
-import { Icons, AdvantagesIcons } from "../../components/svgs";
+
 import Tabs from "../../components/public/tabs/tabs.component";
 import Tab from "../../components/public/tabs/tab.component";
-import VideoPlayer from "../../components/public/video.player/video.player.component";
 import News from "../../components/public/news/news";
 
 import no_photo from "../../images/no-photo.jpg";
+import {Icons, AdvantagesIcons} from "../../components/svgs";
+import SingleImage from "../../components/general/single.image/single.image.with.preview";
+import TeachersSlider from "../../components/general/teachers.slider/teachers.slider";
 
 const IndexPage = () => {
-    const store = useNewsStore();
+    const newsStore = useNewsStore();
+    const employeesStore = useEmployeesStore();
 
     React.useEffect(() => {
         const fetchData = async () => {
             //await store.loadAllMain();
+            await newsStore.loadAll();
+            await employeesStore.loadAll();
         };
 
         fetchData();
     }, []);
+
+    console.log(employeesStore.items);
 
     return (
         <BasicPage>
@@ -44,15 +52,15 @@ const IndexPage = () => {
                     <div className='lead__columns section__wrap'>
                         <div className='lead__column'>
                             <p className='lead__subtitle'>Центр развития ребёнка</p>
-                            <h1 className='lead__title'>Детский сад № 43</h1>
+                            <h1 className='lead__title'>Детский сад № 43</h1>
                             <div className='lead__main-text'>
                                 <p>
-                                    Мы осуществляем качественное воспитание и обучение детей благодаря подбору
-                                    квалифицированных педагогов и использованию инновационных эффективных методик.
+                                    Мы осуществляем качественное воспитание и обучение детей благодаря подбору
+                                    квалифицированных педагогов и использованию инновационных эффективных методик.
                                 </p>
                                 <p>
-                                    Мы успешно создаём в детском саду атмосферу дома, мира удивительных открытий, мира
-                                    творчества и познания.
+                                    Мы успешно создаём в детском саду атмосферу дома, мира удивительных открытий, мира
+                                    творчества и познания.
                                 </p>
                             </div>
                             <a href='#0' className='button button_theme_outline-white button_content_icon-arrow-next'>
@@ -194,9 +202,9 @@ const IndexPage = () => {
                 {/* Об учреждении */}
                 <section className='section about'>
                     <div className='section__wrap page__section-indent section__card bg-color'>
-                        <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
+                        <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
-                            <img className='about__image' src={no_photo} alt='Описание фотографии' loading='lazy' />
+                            <img className='about__image' src={no_photo} alt='Описание фотографии' loading='lazy'/>
                             <div className='about__content'>
                                 <div className='about__main-info'>
                                     <h3 className='about__title'>
@@ -204,7 +212,7 @@ const IndexPage = () => {
                                         Татьяна Александровна
                                     </h3>
                                     <p>Занимаемая должность: Заведующая</p>
-                                    <p>Стаж работы по специальности: 24 года</p>
+                                    <p>Стаж работы по специальности: 24 года</p>
                                 </div>
                                 <div className='about__main-text'>
                                     <p>
@@ -472,15 +480,16 @@ const IndexPage = () => {
                 <section className='section page__section-indent'>
                     <div className='section__wrap'>
                         <div className='section__title-block'>
-                            <h2 className='section__title section__title_with-decor'>Наш коллектив</h2>
-                            <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
+                            <h2 className='section__title section__title_with-decor'>Наш коллектив</h2>
+                            <NavLink className={"button button_theme_outline-main button_content_icon-arrow-next"}
+                                     to='/сотрудники'>
                                 <span className='button__text'>Педагоги</span>
                                 <span className='button__icon'>{Icons.arrow_next}</span>
-                            </a>
+                            </NavLink>
                             <div className='section__main-text'>
                                 <p>
-                                    В нашем детском саду педагогический штат укомплектован на 100%. В педагогическом
-                                    коллективе 31 педагог: 22 человека из них имеют высшее образование; 9 человек
+                                    В нашем детском саду педагогический штат укомплектован на 100%. В педагогическом
+                                    коллективе 31 педагог: 22 человека из них имеют высшее образование; 9 человек
                                     среднее профессиональное образование.
                                 </p>
                             </div>
@@ -516,33 +525,39 @@ const IndexPage = () => {
                                 },
                             }}
                         >
-                            <SplideSlide>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_people'>
-                                        <img
-                                            className='card__image'
-                                            src={no_photo}
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <div className='card__content'>
-                                            <h3 className='card__title'>
-                                                <span className='card__title-accent'>Годик</span>
-                                                Татьяна Михайловна
-                                            </h3>
-                                            <div className='card__main-text'>
-                                                <p className='card__text'>Старший воспитатель</p>
-                                                <p className='card__text'>Стаж работы: 29 лет</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                            </SplideSlide>
+                            {
+                                employeesStore.items.map((category) => {
+                                    return category.persons.map((person) => (
+                                        <SplideSlide key={window.global.makeid()}>
+                                            <NavLink to={`/сотрудники/${person.ID}`} className='card-link'>
+                                                <article className='card card_type_people'>
+                                                    <SingleImage
+                                                        image={person.photo}
+                                                        extraClass={"card__image"}
+                                                    />
+                                                    <div className='card__content'>
+                                                        <h3 className='card__title'>
+                                                            <span
+                                                                className='card__title-accent'>{person.fio.split(" ")[0]}</span>
+                                                            {person.fio.split(" ")[1] + " " + person.fio.split(" ")[2]}
+                                                        </h3>
+                                                        <div className='card__main-text'>
+                                                            <p className='card__text'>{person.position}</p>
+                                                            {/*<p className='card__text'>Стаж работы: 29 лет</p>*/}
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </NavLink>
+                                        </SplideSlide>
+                                    ));
+                                })
+                            }
                         </Splide>
                     </div>
                 </section>
                 {/* Наши новости */}
-                <section className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
+                <section
+                    className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
                     <div className='section__wrap'>
                         <div className='section__title-block section__title-block_theme_white'>
                             <h2 className='section__title section__title_with-decor'>Наши новости</h2>
@@ -570,7 +585,7 @@ const IndexPage = () => {
                                             </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'>
-                                                    НАШ детский сад открыл двери для своих воспитанников!
+                                                    НАШ детский сад открыл двери для своих воспитанников!
                                                 </p>
                                             </div>
                                         </div>
@@ -592,7 +607,7 @@ const IndexPage = () => {
                                                     31.07.23г.
                                                 </time>
                                                 <h3 className='card__title'>
-                                                    Открытие ФГБДОУ «Центр развития ребёнка — детский сад № 43»
+                                                    Открытие ФГБДОУ «Центр развития ребёнка — детский сад № 43»
                                                 </h3>
                                             </div>
                                             <div className='card__main-content'>
@@ -617,15 +632,15 @@ const IndexPage = () => {
                                                     01.09.23г.
                                                 </time>
                                                 <h3 className='card__title'>
-                                                    График проведения выпускных утренников в нашем детском саду График
-                                                    проведения выпускных утренников в нашем детском саду
+                                                    График проведения выпускных утренников в нашем детском саду График
+                                                    проведения выпускных утренников в нашем детском саду
                                                 </h3>
                                             </div>
                                             <div className='card__main-content'>
                                                 <p className='card__text'>
-                                                    НАШ детский сад открыл двери для своих воспитанников! НАШ детский
-                                                    сад открыл двери для своих воспитанников! НАШ детский сад открыл
-                                                    двери для своих воспитанников!
+                                                    НАШ детский сад открыл двери для своих воспитанников! НАШ детский
+                                                    сад открыл двери для своих воспитанников! НАШ детский сад открыл
+                                                    двери для своих воспитанников!
                                                 </p>
                                             </div>
                                         </div>
@@ -646,10 +661,10 @@ const IndexPage = () => {
                                                 <time className='card__date' dateTime='2022-02-01'>
                                                     02.05.23г.
                                                 </time>
-                                                <h3 className='card__title'>День Победы 2023 год</h3>
+                                                <h3 className='card__title'>День Победы 2023 год</h3>
                                             </div>
                                             <div className='card__main-content'>
-                                                <p className='card__text'>Мы помним! Мы гордимся!</p>
+                                                <p className='card__text'>Мы помним! Мы гордимся!</p>
                                             </div>
                                         </div>
                                     </article>
@@ -669,10 +684,10 @@ const IndexPage = () => {
                                                 <time className='card__date' dateTime='2022-02-01'>
                                                     17.02.23г.
                                                 </time>
-                                                <h3 className='card__title'>Масленица 2023 год</h3>
+                                                <h3 className='card__title'>Масленица 2023 год</h3>
                                             </div>
                                             <div className='card__main-content'>
-                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
+                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
                                             </div>
                                         </div>
                                     </article>
@@ -692,10 +707,10 @@ const IndexPage = () => {
                                                 <time className='card__date' dateTime='2022-02-01'>
                                                     17.02.23г.
                                                 </time>
-                                                <h3 className='card__title'>Масленица 2023 год</h3>
+                                                <h3 className='card__title'>Масленица 2023 год</h3>
                                             </div>
                                             <div className='card__main-content'>
-                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
+                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
                                             </div>
                                         </div>
                                     </article>
@@ -704,7 +719,7 @@ const IndexPage = () => {
                         </ul>
                     </div>
                 </section>
-                <News items={store.itemsMain}>
+                <News items={newsStore.itemsMain}>
                     <NavLink className={"more-button-link"} to='/новости'>
                         Все новости &rarr;
                     </NavLink>
@@ -720,18 +735,18 @@ const IndexPage = () => {
                         aria-hidden='true'
                     ></div>
                     <div className='why__card section__wrap'>
-                        <h2 className='section__title'>Почему нас выбирают:</h2>
+                        <h2 className='section__title'>Почему нас выбирают:</h2>
                         <ul className='why__list'>
-                            <li>за доброе и уважительное отношение к детям, за терпение и душевную теплоту</li>
-                            <li>мы умеем завоёвывать доверие ребёнка, быть его надёжным другом</li>
+                            <li>за доброе и уважительное отношение к детям, за терпение и душевную теплоту</li>
+                            <li>мы умеем завоёвывать доверие ребёнка, быть его надёжным другом</li>
                             <li>
-                                мы всегда учитываем возрастные особенности дошкольника, а также индивидуальные
+                                мы всегда учитываем возрастные особенности дошкольника, а также индивидуальные
                                 возможности каждого ребёнка
                             </li>
-                            <li>мы много играем с детьми, предоставляем свободу действий и творчества</li>
-                            <li>у нас каждый ребёнок «единственный»</li>
+                            <li>мы много играем с детьми, предоставляем свободу действий и творчества</li>
+                            <li>у нас каждый ребёнок «единственный»</li>
                             <li>
-                                мы работаем более 60 лет, завоевали признание и уважение органов образования и родителей
+                                мы работаем более 60 лет, завоевали признание и уважение органов образования и родителей
                             </li>
                         </ul>
                     </div>
@@ -855,7 +870,7 @@ const IndexPage = () => {
                 <section className='section page__section-indent'>
                     <div className='section__wrap'>
                         <div className='section__title-block'>
-                            <h2 className='section__title section__title_with-decor'>Отзывы о нас</h2>
+                            <h2 className='section__title section__title_with-decor'>Отзывы о нас</h2>
                             <a href='#0' className='button button_theme_outline-main button_content_icon-arrow-next'>
                                 <span className='button__text'>Отзывы о нас</span>
                                 <span className='button__icon'>{Icons.arrow_next}</span>
@@ -898,17 +913,17 @@ const IndexPage = () => {
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Анна</h3>
                                                 <time className='card__date' dateTime='2022-10-10'>
-                                                    8 ноября 2023 г.
+                                                    8 ноября 2023 г.
                                                 </time>
                                             </div>
                                             <div className='card__main-text'>
                                                 <p className='card__text'>
                                                     Здравствуйте.Благодарю воспитателей, 2-ясельной группы, Прыгункову
-                                                    Любовь Александровну, Ситникову Елену Вячеславовну и помощницу
-                                                    воспитателяЗа доброту, терпение и чуткость к каждому малышу. Детки
-                                                    познакомились друг с другом, полюбили воспитателей. Адаптация прошла
-                                                    быстро.Спасибо за фотографии, которые делают на занятиях. Большая
-                                                    радость для родителей ❤️
+                                                    Любовь Александровну, Ситникову Елену Вячеславовну и помощницу
+                                                    воспитателяЗа доброту, терпение и чуткость к каждому малышу. Детки
+                                                    познакомились друг с другом, полюбили воспитателей. Адаптация прошла
+                                                    быстро.Спасибо за фотографии, которые делают на занятиях. Большая
+                                                    радость для родителей ❤️
                                                 </p>
                                             </div>
                                             <button className='button button_theme_fill-light-main'>
@@ -925,15 +940,15 @@ const IndexPage = () => {
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Таранова Татьяна Сергеевна</h3>
                                                 <time className='card__date' dateTime='2022-10-10'>
-                                                    8 ноября 2023 г.
+                                                    8 ноября 2023 г.
                                                 </time>
                                             </div>
                                             <div className='card__main-text'>
                                                 <p className='card__text'>
-                                                    Уважаемые Светлана Анатольевна и Анастасия Александровна! Огромное
-                                                    вам спасибо за ваш каждодневный труд, заботу и любовь к детям!
-                                                    И за чудесный осенний праздник! Также благодарность музыкальному
-                                                    работнику и хореографу — все номера на высоком уровне, слаженно,
+                                                    Уважаемые Светлана Анатольевна и Анастасия Александровна! Огромное
+                                                    вам спасибо за ваш каждодневный труд, заботу и любовь к детям!
+                                                    И за чудесный осенний праздник! Также благодарность музыкальному
+                                                    работнику и хореографу — все номера на высоком уровне, слаженно,
                                                     красиво!
                                                 </p>
                                             </div>
@@ -951,17 +966,17 @@ const IndexPage = () => {
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Виктория Волкова</h3>
                                                 <time className='card__date' dateTime='2022-10-10'>
-                                                    8 ноября 2023 г.
+                                                    8 ноября 2023 г.
                                                 </time>
                                             </div>
                                             <div className='card__main-text'>
                                                 <p className='card__text'>
-                                                    «Мой ребёнок с удовольствием идёт в детский сад» – фраза, которую
-                                                    мечтает сказать каждая мама. Нам повезло, мы можем произнести
-                                                    эти слова.Каждый родитель знает, насколько волнующим и нервным может
-                                                    быть период адаптации! Наши уже любимые и прекрасные Прыгункова
+                                                    «Мой ребёнок с удовольствием идёт в детский сад» – фраза, которую
+                                                    мечтает сказать каждая мама. Нам повезло, мы можем произнести
+                                                    эти слова.Каждый родитель знает, насколько волнующим и нервным может
+                                                    быть период адаптации! Наши уже любимые и прекрасные Прыгункова
                                                     Любовь Александровна, Ситникова Елена Вячеславовна, Орехова Татьяна
-                                                    Юрьевна совершили маленькое чудо для нашей…
+                                                    Юрьевна совершили маленькое чудо для нашей…
                                                 </p>
                                             </div>
                                             <button className='button button_theme_fill-light-main'>
@@ -978,17 +993,17 @@ const IndexPage = () => {
                                             <div className='card__title-block'>
                                                 <h3 className='card__title'>Анна</h3>
                                                 <time className='card__date' dateTime='2022-10-10'>
-                                                    8 ноября 2023 г.
+                                                    8 ноября 2023 г.
                                                 </time>
                                             </div>
                                             <div className='card__main-text'>
                                                 <p className='card__text'>
                                                     Здравствуйте.Благодарю воспитателей, 2-ясельной группы, Прыгункову
-                                                    Любовь Александровну, Ситникову Елену Вячеславовну и помощницу
-                                                    воспитателяЗа доброту, терпение и чуткость к каждому малышу. Детки
-                                                    познакомились друг с другом, полюбили воспитателей. Адаптация прошла
-                                                    быстро.Спасибо за фотографии, которые делают на занятиях. Большая
-                                                    радость для родителей ❤️
+                                                    Любовь Александровну, Ситникову Елену Вячеславовну и помощницу
+                                                    воспитателяЗа доброту, терпение и чуткость к каждому малышу. Детки
+                                                    познакомились друг с другом, полюбили воспитателей. Адаптация прошла
+                                                    быстро.Спасибо за фотографии, которые делают на занятиях. Большая
+                                                    радость для родителей ❤️
                                                 </p>
                                             </div>
                                             <button className='button button_theme_fill-light-main'>
