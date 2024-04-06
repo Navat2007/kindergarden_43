@@ -1,7 +1,7 @@
 import React from "react";
-import {Helmet} from "react-helmet";
-import {NavLink} from "react-router-dom";
-import {Splide, SplideSlide} from "@splidejs/react-splide";
+import { Helmet } from "react-helmet";
+import { NavLink } from "react-router-dom";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import useNewsStore from "../../store/public/newsStore";
 import useEmployeesStore from "../../store/public/employeesStore";
@@ -13,7 +13,7 @@ import Tab from "../../components/public/tabs/tab.component";
 import News from "../../components/public/news/news";
 
 import no_photo from "../../images/no-photo.jpg";
-import {Icons, AdvantagesIcons} from "../../components/svgs";
+import { Icons, AdvantagesIcons } from "../../components/svgs";
 import SingleImage from "../../components/general/single.image/single.image.with.preview";
 import TeachersSlider from "../../components/general/teachers.slider/teachers.slider";
 
@@ -204,7 +204,7 @@ const IndexPage = () => {
                     <div className='section__wrap page__section-indent section__card bg-color'>
                         <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
-                            <img className='about__image' src={no_photo} alt='Описание фотографии' loading='lazy'/>
+                            <img className='about__image' src={no_photo} alt='Описание фотографии' loading='lazy' />
                             <div className='about__content'>
                                 <div className='about__main-info'>
                                     <h3 className='about__title'>
@@ -481,8 +481,10 @@ const IndexPage = () => {
                     <div className='section__wrap'>
                         <div className='section__title-block'>
                             <h2 className='section__title section__title_with-decor'>Наш коллектив</h2>
-                            <NavLink className={"button button_theme_outline-main button_content_icon-arrow-next"}
-                                     to='/сотрудники'>
+                            <NavLink
+                                className={"button button_theme_outline-main button_content_icon-arrow-next"}
+                                to='/сотрудники'
+                            >
                                 <span className='button__text'>Педагоги</span>
                                 <span className='button__icon'>{Icons.arrow_next}</span>
                             </NavLink>
@@ -525,39 +527,34 @@ const IndexPage = () => {
                                 },
                             }}
                         >
-                            {
-                                employeesStore.items.map((category) => {
-                                    return category.persons.map((person) => (
-                                        <SplideSlide key={window.global.makeid()}>
-                                            <NavLink to={`/сотрудники/${person.ID}`} className='card-link'>
-                                                <article className='card card_type_people'>
-                                                    <SingleImage
-                                                        image={person.photo}
-                                                        extraClass={"card__image"}
-                                                    />
-                                                    <div className='card__content'>
-                                                        <h3 className='card__title'>
-                                                            <span
-                                                                className='card__title-accent'>{person.fio.split(" ")[0]}</span>
-                                                            {person.fio.split(" ")[1] + " " + person.fio.split(" ")[2]}
-                                                        </h3>
-                                                        <div className='card__main-text'>
-                                                            <p className='card__text'>{person.position}</p>
-                                                            {/*<p className='card__text'>Стаж работы: 29 лет</p>*/}
-                                                        </div>
+                            {employeesStore.items.map((category) => {
+                                return category.persons.map((person) => (
+                                    <SplideSlide key={window.global.makeid()}>
+                                        <NavLink to={`/сотрудники/${person.ID}`} className='card-link'>
+                                            <article className='card card_type_people'>
+                                                <SingleImage image={person.photo} extraClass={"card__image"} />
+                                                <div className='card__content'>
+                                                    <h3 className='card__title'>
+                                                        <span className='card__title-accent'>
+                                                            {person.fio.split(" ")[0]}
+                                                        </span>
+                                                        {person.fio.split(" ")[1] + " " + person.fio.split(" ")[2]}
+                                                    </h3>
+                                                    <div className='card__main-text'>
+                                                        <p className='card__text'>{person.position}</p>
+                                                        {/*<p className='card__text'>Стаж работы: 29 лет</p>*/}
                                                     </div>
-                                                </article>
-                                            </NavLink>
-                                        </SplideSlide>
-                                    ));
-                                })
-                            }
+                                                </div>
+                                            </article>
+                                        </NavLink>
+                                    </SplideSlide>
+                                ));
+                            })}
                         </Splide>
                     </div>
                 </section>
                 {/* Наши новости */}
-                <section
-                    className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
+                <section className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
                     <div className='section__wrap'>
                         <div className='section__title-block section__title-block_theme_white'>
                             <h2 className='section__title section__title_with-decor'>Наши новости</h2>
@@ -946,8 +943,8 @@ const IndexPage = () => {
                                             <div className='card__main-text'>
                                                 <p className='card__text'>
                                                     Уважаемые Светлана Анатольевна и Анастасия Александровна! Огромное
-                                                    вам спасибо за ваш каждодневный труд, заботу и любовь к детям!
-                                                    И за чудесный осенний праздник! Также благодарность музыкальному
+                                                    вам спасибо за ваш каждодневный труд, заботу и любовь к детям! И за
+                                                    чудесный осенний праздник! Также благодарность музыкальному
                                                     работнику и хореографу — все номера на высоком уровне, слаженно,
                                                     красиво!
                                                 </p>
@@ -972,8 +969,8 @@ const IndexPage = () => {
                                             <div className='card__main-text'>
                                                 <p className='card__text'>
                                                     «Мой ребёнок с удовольствием идёт в детский сад» – фраза, которую
-                                                    мечтает сказать каждая мама. Нам повезло, мы можем произнести
-                                                    эти слова.Каждый родитель знает, насколько волнующим и нервным может
+                                                    мечтает сказать каждая мама. Нам повезло, мы можем произнести эти
+                                                    слова.Каждый родитель знает, насколько волнующим и нервным может
                                                     быть период адаптации! Наши уже любимые и прекрасные Прыгункова
                                                     Любовь Александровна, Ситникова Елена Вячеславовна, Орехова Татьяна
                                                     Юрьевна совершили маленькое чудо для нашей…

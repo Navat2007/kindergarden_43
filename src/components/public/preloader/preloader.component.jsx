@@ -1,16 +1,14 @@
 import React from "react";
 
-import "./preloader.scss";
-
 const Preloader = ({ children, loading }) => {
     if (loading) {
         return (
-            <div className={"preloader"}>
-                <div className={"preloader__item"}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+            <div className={"preloader preloader--place-page"}>
+                <div className={"preloader__chasing-squares"}>
+                    <div className='preloader__square'></div>
+                    <div className='preloader__square'></div>
+                    <div className='preloader__square'></div>
+                    <div className='preloader__square'></div>
                 </div>
             </div>
         );
