@@ -246,57 +246,18 @@ const ImageSelector = ({
         }
     };
 
-    const getThumbsForGallery = (item) => {
-        if ((item.file && item.file.type.match("application/")) || (item.type && item.type !== "image")) {
-            let iconsType = "default";
-
-            if (item.title.includes(".doc")) {
-                iconsType = "doc";
-            }
-
-            if (item.title.includes(".xls")) {
-                iconsType = "xls";
-            }
-
-            if (item.title.includes(".pdf")) {
-                iconsType = "pdf";
-            }
-
+    //private components
+    const ImageItem = ({item, index}) => {
+        const Image = () => {
             return (
-                <div className={`admin-file-block`}>
-                    {FileIcons[iconsType]}
-                    {withDescription ? (
-                        <FieldTextarea
-                            label='Название'
-                            type='textarea'
-                            extraClass={"admin-file-block__field"}
-                            placeholder='Введите описание файла..'
-                            rows={3}
-                            defaultValue={item.description ? item.description : item.file ? item.file.name : item.title}
-                            onChange={(e) => {
-                                item.description = e.target.value;
-                            }}
-                        />
-                    ) : (
-                        <p className={"admin-file-block__title"}>
-                            {item.description ? item.description : item.file ? item.file.name : item.title}
-                        </p>
-                    )}
-                </div>
+                <img
+                    className={"admin-file-selector__image"}
+                    src={item.isFile === 1 && item.isLoaded === 1 ? process.env.REACT_APP_BASE_URL + item.url : item.url}
+                    alt={"Изображение " + (item.file ? item.file.name : item.title)}
+                />
             );
         }
 
-        return (
-            <img
-                className={"admin-file-selector__image"}
-                src={item.isFile === 1 && item.isLoaded === 1 ? process.env.REACT_APP_BASE_URL + item.url : item.url}
-                alt={"Изображение " + (item.file ? item.file.name : item.title)}
-            />
-        );
-    };
-
-    //private components
-    const ImageItem = ({item, index}) => {
         const TopButtons = () => {
             return (
                 <div
@@ -380,14 +341,31 @@ const ImageSelector = ({
         }
 
         const DescriptionInput = () => {
-
+            if(withDescription){
+                return(
+                    <div className={`admin-file-block`}>
+                        <FieldTextarea
+                            label='Название'
+                            type='textarea'
+                            extraClass={"admin-file-block__field"}
+                            placeholder='Введите описание файла..'
+                            rows={3}
+                            defaultValue={item.description ? item.description : item.file ? item.file.name : item.title}
+                            onChange={(e) => {
+                                item.description = e.target.value;
+                            }}
+                        />
+                    </div>
+                )
+            }
         }
 
         return (
             <li
                 className={`admin-image-selector__item${orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``}${extraClass ? ` ${extraClass}-item` : ``}`}
             >
-                {getThumbsForGallery(item)}
+                <Image />
+                <DescriptionInput />
                 <TopButtons/>
                 <Label/>
                 <MoveButtons />
