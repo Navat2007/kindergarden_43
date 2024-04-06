@@ -5,23 +5,23 @@ import Button from "../button/button.component";
 import FieldInput from "../field/field.text.component";
 import AlertPopup from "../../general/alert.popup/alert.popup";
 import Popup from "../../general/popup/popup.component";
-import {Icons, FileIcons} from "../../svgs.js";
+import { Icons, FileIcons } from "../../svgs.js";
 import FieldTextarea from "../field/field.textarea.component";
 
 const ImageSelector = ({
-                           items,
-                           extraClass,
-                           orientation = "landscape",
-                           multiFiles,
-                           onlyOneFile,
-                           accept = "image/*",
-                           withLinks,
-                           withDescription,
-                           maxFileSize = 5,
-                           onChange,
-                           onDelete,
-                           onError,
-                       }) => {
+    items,
+    extraClass,
+    orientation = "landscape",
+    multiFiles,
+    onlyOneFile,
+    accept = "image/*",
+    withLinks,
+    withDescription,
+    maxFileSize = 5,
+    onChange,
+    onDelete,
+    onError,
+}) => {
     const [photo, setPhoto] = React.useState([]);
     const [photoAddBtnDisabled, setPhotoAddBtnDisabled] = React.useState(false);
     const [photoFileAddBtnDisabled, setPhotoFileAddBtnDisabled] = React.useState(false);
@@ -247,37 +247,31 @@ const ImageSelector = ({
     };
 
     //private components
-    const ImageItem = ({item, index}) => {
+    const ImageItem = ({ item, index }) => {
         const DescriptionInput = () => {
-            if(withDescription){
-                return(
-                    <div className={`admin-file-block`}>
+            if (withDescription) {
+                return (
+                    <div className={`admin-image-selector__field`}>
                         <FieldTextarea
-                            label='Название'
+                            visuallyLabel={false}
+                            style={{ height: "3.125em" }}
                             type='textarea'
-                            extraClass={"admin-file-block__field"}
-                            placeholder='Введите описание изображения...'
-                            rows={2}
+                            placeholder='Введите название изображения...'
+                            rows={1}
                             defaultValue={item.file ? item.file.name : item.title}
                             onChange={(e) => {
                                 item.title = e.target.value;
                             }}
                         />
                     </div>
-                )
+                );
             }
-        }
+        };
 
         const TopButtons = () => {
             return (
-                <div
-                    className={`admin-image-selector__item-panel${
-                        extraClass ? ` ${extraClass}-item-panel` : ``
-                    }`}
-                >
-                    {
-                        !item.main
-                        &&
+                <div className={`admin-image-selector__panel${extraClass ? ` ${extraClass}-panel` : ``}`}>
+                    {!item.main && (
                         <Button
                             type='button'
                             theme='white'
@@ -287,7 +281,7 @@ const ImageSelector = ({
                         >
                             Сделать главной
                         </Button>
-                    }
+                    )}
                     <Button
                         type='button'
                         isIconBtn='true'
@@ -298,8 +292,8 @@ const ImageSelector = ({
                         onClick={() => handleDeletePhoto(item)}
                     />
                 </div>
-            )
-        }
+            );
+        };
 
         const Label = () => {
             if (item.main) {
@@ -311,18 +305,22 @@ const ImageSelector = ({
                             </p>
                         )}
                     </>
-                )
+                );
             } else {
                 return (
-                    <span className={`admin-image-selector__current-position${extraClass ? ` ${extraClass}-current-position` : ``}`}>
+                    <span
+                        className={`admin-image-selector__current-position${
+                            extraClass ? ` ${extraClass}-current-position` : ``
+                        }`}
+                    >
                         {item.order}
                     </span>
-                )
+                );
             }
-        }
+        };
 
         const MoveButtons = () => {
-            if(!item.main) {
+            if (!item.main) {
                 return (
                     <div className={`admin-image-selector__thumbs${extraClass ? ` ${extraClass}-thumbs` : ``}`}>
                         <Button
@@ -346,26 +344,34 @@ const ImageSelector = ({
                             />
                         )}
                     </div>
-                )
+                );
             }
-        }
+        };
 
         return (
             <li
-                className={`admin-image-selector__item${orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``}${extraClass ? ` ${extraClass}-item` : ``}`}
+                className={`admin-image-selector__item${
+                    orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``
+                }${extraClass ? ` ${extraClass}-item` : ``}`}
             >
-                <img
-                    className={"admin-file-selector__image"}
-                    src={item.isFile === 1 && item.isLoaded === 1 ? process.env.REACT_APP_BASE_URL + item.url : item.url}
-                    alt={"Изображение " + (item.file ? item.file.name : item.title)}
-                />
+                <div className='admin-image-selector__card'>
+                    <TopButtons />
+                    <Label />
+                    <MoveButtons />
+                    <img
+                        className={"admin-image-selector__image"}
+                        src={
+                            item.isFile === 1 && item.isLoaded === 1
+                                ? process.env.REACT_APP_BASE_URL + item.url
+                                : item.url
+                        }
+                        alt={"Изображение " + (item.file ? item.file.name : item.title)}
+                    />
+                </div>
                 <DescriptionInput />
-                <TopButtons/>
-                <Label/>
-                <MoveButtons />
             </li>
-        )
-    }
+        );
+    };
 
     const DragOrAddArea = () => {
         if (photo.length === 0 || !onlyOneFile) {
@@ -392,18 +398,18 @@ const ImageSelector = ({
                         }`}
                     >
                         {onlyOneFile && "Ограничение на кол-во файлов: 1 файл"}
-                        <br/>
+                        <br />
                         <span>Ограничение на размер изображения: {maxFileSize} MB.</span>
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
                         Начните загружать изображения простым перетаскиванием в любое место этого окна.
                         <span
                             className={`admin-image-selector__download-span${
                                 extraClass ? ` ${extraClass}-download-span` : ``
                             }`}
                         >
-                                или
-                            </span>
+                            или
+                        </span>
                     </p>
                     <Button
                         type='button'
@@ -422,9 +428,9 @@ const ImageSelector = ({
                         multiple={multiFiles}
                     />
                 </li>
-            )
+            );
         }
-    }
+    };
 
     const UrlLinks = () => {
         if (withLinks) {
@@ -447,23 +453,19 @@ const ImageSelector = ({
                         onClick={handleAddPhoto}
                     />
                 </div>
-            )
+            );
         }
-    }
+    };
 
     return (
         <>
             <ul className={`admin-image-selector${extraClass ? ` ${extraClass}` : ``}`}>
-                {photo.map((item, index) =>
-                    <ImageItem
-                        key={window.global.makeid()}
-                        item={item}
-                        index={index}
-                    />
-                )}
-                <DragOrAddArea/>
+                {photo.map((item, index) => (
+                    <ImageItem key={window.global.makeid()} item={item} index={index} />
+                ))}
+                <DragOrAddArea />
             </ul>
-            <UrlLinks/>
+            <UrlLinks />
             {notif}
         </>
     );
