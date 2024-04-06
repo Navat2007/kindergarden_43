@@ -248,14 +248,24 @@ const ImageSelector = ({
 
     //private components
     const ImageItem = ({item, index}) => {
-        const Image = () => {
-            return (
-                <img
-                    className={"admin-file-selector__image"}
-                    src={item.isFile === 1 && item.isLoaded === 1 ? process.env.REACT_APP_BASE_URL + item.url : item.url}
-                    alt={"Изображение " + (item.file ? item.file.name : item.title)}
-                />
-            );
+        const DescriptionInput = () => {
+            if(withDescription){
+                return(
+                    <div className={`admin-file-block`}>
+                        <FieldTextarea
+                            label='Название'
+                            type='textarea'
+                            extraClass={"admin-file-block__field"}
+                            placeholder='Введите описание изображения...'
+                            rows={2}
+                            defaultValue={item.file ? item.file.name : item.title}
+                            onChange={(e) => {
+                                item.title = e.target.value;
+                            }}
+                        />
+                    </div>
+                )
+            }
         }
 
         const TopButtons = () => {
@@ -340,31 +350,15 @@ const ImageSelector = ({
             }
         }
 
-        const DescriptionInput = () => {
-            if(withDescription){
-                return(
-                    <div className={`admin-file-block`}>
-                        <FieldTextarea
-                            label='Название'
-                            type='textarea'
-                            extraClass={"admin-file-block__field"}
-                            placeholder='Введите описание файла..'
-                            rows={3}
-                            defaultValue={item.description ? item.description : item.file ? item.file.name : item.title}
-                            onChange={(e) => {
-                                item.description = e.target.value;
-                            }}
-                        />
-                    </div>
-                )
-            }
-        }
-
         return (
             <li
                 className={`admin-image-selector__item${orientation === "portrait" ? ` admin-image-selector__item_portrait` : ``}${extraClass ? ` ${extraClass}-item` : ``}`}
             >
-                <Image />
+                <img
+                    className={"admin-file-selector__image"}
+                    src={item.isFile === 1 && item.isLoaded === 1 ? process.env.REACT_APP_BASE_URL + item.url : item.url}
+                    alt={"Изображение " + (item.file ? item.file.name : item.title)}
+                />
                 <DescriptionInput />
                 <TopButtons/>
                 <Label/>
