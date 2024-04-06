@@ -1,10 +1,10 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { NavLink } from "react-router-dom";
-import { isArray } from "lodash";
+import {Helmet} from "react-helmet";
+import {motion} from "framer-motion";
+import {useForm} from "react-hook-form";
+import {Splide, SplideSlide} from "@splidejs/react-splide";
+import {NavLink} from "react-router-dom";
+import {isArray} from "lodash";
 
 import useGroupsStore from "../../../store/public/groupsStore";
 import useEmployeesStore from "../../../store/public/employeesStore";
@@ -20,7 +20,7 @@ const GroupsPage = () => {
     const groupsStore = useGroupsStore();
     const teachersStore = useEmployeesStore();
 
-    const { control, getValues, setValue } = useForm();
+    const {control, getValues, setValue} = useForm();
     const [selectedGroup, setSelectedGroup] = React.useState(0);
 
     React.useEffect(() => {
@@ -32,7 +32,7 @@ const GroupsPage = () => {
         fetchData();
     }, []);
 
-    const Employees = ({ employees }) => {
+    const Employees = ({employees}) => {
         if (isArray(employees) && employees.length > 0) {
             return (
                 <div className='article__section-item'>
@@ -71,8 +71,8 @@ const GroupsPage = () => {
         }
     };
 
-    const Schedules = ({ schedules }) => {
-        const Day = ({ day, shortDay, schedule }) => {
+    const Schedules = ({schedules}) => {
+        const Day = ({day, shortDay, schedule}) => {
             if (schedule && schedule.length > 0) {
                 return (
                     <tr className='table__row'>
@@ -85,7 +85,7 @@ const GroupsPage = () => {
                         <td className='table__cell'>
                             <span className='table__item'>
                                 {schedule.map((item) => (
-                                    <p key={window.global.makeid()} style={{ margin: 0, padding: 0 }}>
+                                    <p key={window.global.makeid()} style={{margin: 0, padding: 0}}>
                                         <span className='table__accent-text'>
                                             {item.startTime} – {item.endTime} 
                                         </span>
@@ -106,54 +106,54 @@ const GroupsPage = () => {
                     <div className='table__container'>
                         <table className='table__table'>
                             <thead>
-                                <tr className='table__row'>
-                                    <th className='table__cell-heading'>
+                            <tr className='table__row'>
+                                <th className='table__cell-heading'>
                                         <span className='table__cell-heading-text'>
                                             <span className='desktop-visible'>День недели</span>
                                             <span className='mobile-visible'>День</span>
                                         </span>
-                                    </th>
-                                    <th className='table__cell-heading'>
-                                        <span className='table__cell-heading-text'>Время, Занятие</span>
-                                    </th>
-                                </tr>
+                                </th>
+                                <th className='table__cell-heading'>
+                                    <span className='table__cell-heading-text'>Время, Занятие</span>
+                                </th>
+                            </tr>
                             </thead>
                             <tbody>
-                                <Day
-                                    day={"Понедельник"}
-                                    shortDay={"Пн"}
-                                    schedule={schedules.filter((schedule) => schedule.day === 1)}
-                                />
-                                <Day
-                                    day={"Вторник"}
-                                    shortDay={"Вт"}
-                                    schedule={schedules.filter((schedule) => schedule.day === 2)}
-                                />
-                                <Day
-                                    day={"Среда"}
-                                    shortDay={"Ср"}
-                                    schedule={schedules.filter((schedule) => schedule.day === 3)}
-                                />
-                                <Day
-                                    day={"Четверг"}
-                                    shortDay={"Чт"}
-                                    schedule={schedules.filter((schedule) => schedule.day === 4)}
-                                />
-                                <Day
-                                    day={"Пятница"}
-                                    shortDay={"Пт"}
-                                    schedule={schedules.filter((schedule) => schedule.day === 5)}
-                                />
-                                <Day
-                                    day={"Суббота"}
-                                    shortDay={"Сб"}
-                                    schedule={schedules.filter((schedule) => schedule.day === 6)}
-                                />
-                                <Day
-                                    day={"Воскресенье"}
-                                    shortDay={"Вс"}
-                                    schedule={schedules.filter((schedule) => schedule.day === 7)}
-                                />
+                            <Day
+                                day={"Понедельник"}
+                                shortDay={"Пн"}
+                                schedule={schedules.filter((schedule) => schedule.day === 1)}
+                            />
+                            <Day
+                                day={"Вторник"}
+                                shortDay={"Вт"}
+                                schedule={schedules.filter((schedule) => schedule.day === 2)}
+                            />
+                            <Day
+                                day={"Среда"}
+                                shortDay={"Ср"}
+                                schedule={schedules.filter((schedule) => schedule.day === 3)}
+                            />
+                            <Day
+                                day={"Четверг"}
+                                shortDay={"Чт"}
+                                schedule={schedules.filter((schedule) => schedule.day === 4)}
+                            />
+                            <Day
+                                day={"Пятница"}
+                                shortDay={"Пт"}
+                                schedule={schedules.filter((schedule) => schedule.day === 5)}
+                            />
+                            <Day
+                                day={"Суббота"}
+                                shortDay={"Сб"}
+                                schedule={schedules.filter((schedule) => schedule.day === 6)}
+                            />
+                            <Day
+                                day={"Воскресенье"}
+                                shortDay={"Вс"}
+                                schedule={schedules.filter((schedule) => schedule.day === 7)}
+                            />
                             </tbody>
                         </table>
                     </div>
@@ -162,12 +162,12 @@ const GroupsPage = () => {
         }
     };
 
-    const ImageGallery = ({ images }) => {
+    const ImageGallery = ({images}) => {
         const [preview, setPreview] = React.useState(<></>);
 
         const handleOpenPreview = (slideIndex) => {
             setPreview(
-                <ImagePreview open={true} index={slideIndex} items={images} onClose={() => setPreview(<></>)} />
+                <ImagePreview open={true} index={slideIndex} items={images} onClose={() => setPreview(<></>)}/>
             );
         };
 
@@ -200,19 +200,23 @@ const GroupsPage = () => {
                     >
                         {images.map((image, index) => (
                             <SplideSlide key={window.global.makeid()}>
-                                <div className="article__gallery-item" style={{ cursor: "pointer" }}>
-                                <img
-                                    className={"article__gallery-item-image"}
-                                    src={
-                                        image.url.includes("http")
-                                            ? image.url
-                                            : process.env.REACT_APP_BASE_URL + image.url
+                                <div className="article__gallery-item" style={{cursor: "pointer"}}>
+                                    <img
+                                        className={"article__gallery-item-image"}
+                                        src={
+                                            image.url.includes("http")
+                                                ? image.url
+                                                : process.env.REACT_APP_BASE_URL + image.url
+                                        }
+                                        alt={image.url}
+                                        loading='lazy'
+                                        onClick={() => handleOpenPreview(index)}
+                                    />
+                                    {
+                                        image.title
+                                        &&
+                                        <p className="article__gallery-item-label">{image.title}</p>
                                     }
-                                    alt={image.url}
-                                    loading='lazy'
-                                    onClick={() => handleOpenPreview(index)}
-                                />
-                                <p className="article__gallery-item-label">Описание</p>
                                 </div>
                             </SplideSlide>
                         ))}
@@ -230,10 +234,10 @@ const GroupsPage = () => {
             </Helmet>
             <motion.div
                 className='article article_place_groups section'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.2, duration: 1 }}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                exit={{opacity: 0}}
+                transition={{delay: 0.2, duration: 1}}
             >
                 <div className='article__header'>
                     <Breadcrumbs
@@ -293,9 +297,9 @@ const GroupsPage = () => {
                                 <div className='section__main-text section__main-text_size_large'>
                                     <p>{item.preview}</p>
                                 </div>
-                                <Employees employees={item.employees} />
-                                <Schedules schedules={item.schedules} />
-                                <ImageGallery images={item.images} />
+                                <Employees employees={item.employees}/>
+                                <Schedules schedules={item.schedules}/>
+                                <ImageGallery images={item.images}/>
                             </div>
                         </section>
                     ))}
