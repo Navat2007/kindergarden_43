@@ -495,7 +495,7 @@ const IndexPage = () => {
                             </div>
                         </div>
                         <Splide
-                            className='splide splide_mobile_auto-width splide_indent-block'
+                            className='splide splide_mobile_auto-width splide_indent-block splide_arrows_wide-indent'
                             aria-label='Фотографии педагогов детского садика'
                             options={{
                                 type: "loop",
@@ -877,7 +877,7 @@ const IndexPage = () => {
                             </a>
                         </div>
                         <Splide
-                            className='splide splide_mobile_auto-width splide_indent-block splide_pagination_grey'
+                            className='splide splide_mobile_auto-width splide_indent-block splide_pagination_grey splide_arrows_wide-indent'
                             aria-label='Отзывы родителей о детском садике'
                             options={{
                                 type: "loop",

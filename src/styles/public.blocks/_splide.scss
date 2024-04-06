@@ -45,7 +45,9 @@
             inline-size: 80%;
             fill: currentColor;
         }
+    }
 
+    &_arrows_wide-indent .splide__arrow {
         @include media(107.5em) {
             &.splide__arrow--prev {
                 left: calc(clamp(0rem, -7.8804rem + 12.6087vw, 7.25rem) * -1);
@@ -53,6 +55,21 @@
             &.splide__arrow--next {
                 right: calc(clamp(0rem, -7.8804rem + 12.6087vw, 7.25rem) * -1);
             }
+        }
+    }
+
+    &_arrows_theme-on-bg .splide__arrow {
+        background-color: transparent;
+        box-shadow: none;
+        color: #fff;
+
+        &:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        &:disabled {
+            background-color: transparent;
         }
     }
 

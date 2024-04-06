@@ -2,37 +2,89 @@
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background-color: rgba(black, 0.84);
+    background-color: rgba(var(--main-color-opacity), 0.8);
+    backdrop-filter: blur(5px);
     display: none;
 
-    &_open {
+    flex-direction: column;
+
+    &__panel {
         display: flex;
+        gap: 1em;
+        padding: 0.75em;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
     }
 
-    &__container {
-        width: 100%;
+    &__title {
+        margin-block: 0;
+        font-size: var(--title-block-large-font-size);
+        font-weight: 600;
+        @extend %cut-text;
+        max-width: 70vw;
+    }
+
+    &__info-text {
+        flex: none;
+        margin-block: 0;
+        margin-right: auto;
+        min-inline-size: 5.75rem;
+        text-align: center;
+        font-weight: 500;
+        font-size: var(--title-card-font-size);
     }
 
     &__close {
-        position: absolute;
-        inset-block-start: min(1.6vh, 1em);
-        inset-inline-end: min(1.6vh, 1em);
-        color: #fff;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.54);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.54);
+        flex: none;
+        border-radius: 50%;
+        margin-left: auto;
+        cursor: pointer;
+
+        block-size: 2.5em;
+        inline-size: 2.5em;
 
         &:hover:not(:disabled) {
-            background-color: transparent;
-            color: var(--admin-error-color);
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    &__container {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 clamp(1rem, -3rem + 8.3333vw, 7rem);
+        max-block-size: calc(100vh - clamp(5.5rem, 4.2106rem + 5.5016vw, 10.8125rem));
+
+        .splide__slide {
+            display: flex;
+            align-items: center;
         }
     }
 
     &__image {
-        object-fit: contain;
+        object-fit: cover;
+        object-position: center;
         margin: auto;
         display: block;
-        width: 100vw;
-        height: 100vh;
+        inline-size: 100%;
+        max-block-size: 100%;
+        @extend .corner-rounded;
+
+        @include media(sm) {
+            block-size: 100%;
+        }
+
+        &_fullsize {
+            object-fit: contain;
+            block-size: 100%;
+        }
+    }
+
+    &_open {
+        display: flex;
     }
 }
