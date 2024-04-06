@@ -32,8 +32,7 @@ $result = mysqli_query($conn, $sql);
 if (!$result) {
     $error = 1;
     $error_text = "Ошибка при редактировании группы: " . mysqli_error($conn);
-}
-else {
+} else {
     $lastID = $id;
 
     $sql = "DELETE FROM group_teachers WHERE groupID = '$id'";
@@ -74,7 +73,7 @@ else {
 
     $dir_name = 'groups';
 
-    if(is_array($image)){
+    if (is_array($image)) {
         for ($i = 0; $i < count($image); $i++) {
             $url = $image[$i]['url'];
             $main = $image[$i]['main'];
@@ -82,7 +81,7 @@ else {
             $isFile = (int)$image[$i]['isFile'];
             $isLoaded = (int)$image[$i]['isLoaded'];
 
-            if($isFile === 1 && $isLoaded === 0){
+            if ($isFile === 1 && $isLoaded === 0) {
                 $url = "";
 
                 $helper->createDir("/files/" . $dir_name . "/" . $id);
@@ -99,8 +98,7 @@ else {
 
                 @unlink($path);
 
-                if(copy($temp_name, $path))
-                {
+                if (copy($temp_name, $path)) {
                     $url = "/files/" . $dir_name . "/" . $id . "/" . $file_token . "_" . $name;
 
                     $sql = "
@@ -118,6 +116,7 @@ else {
     }
 
     for ($i = 0; $i < count($images); $i++) {
+        $ID = $images[$i]['ID'];
         $url = $images[$i]['url'];
         $main = $images[$i]['main'];
         $title = $images[$i]['title'];
@@ -125,7 +124,7 @@ else {
         $isFile = (int)$images[$i]['isFile'];
         $isLoaded = (int)$images[$i]['isLoaded'];
 
-        if($isFile === 1 && $isLoaded === 0){
+        if ($isFile === 1 && $isLoaded === 0) {
             $url = "";
 
             $helper->createDir("/files/" . $dir_name . "/" . $lastID);
@@ -142,8 +141,7 @@ else {
 
             @unlink($path);
 
-            if(copy($temp_name, $path))
-            {
+            if (copy($temp_name, $path)) {
                 $url = "/files/" . $dir_name . "/" . $lastID . "/" . $file_token . "_" . $name;
 
                 $sql = "
@@ -153,6 +151,16 @@ else {
                 $sqls[] = $sql;
                 mysqli_query($conn, $sql);
             }
+        } else {
+            $sql = "
+                    UPDATE 
+                        group_images
+                    SET
+                        title = '$title'
+                    WHERE 
+                        ID = '$ID'";
+            $sqls[] = $sql;
+            mysqli_query($conn, $sql);
         }
 
         unset($url);

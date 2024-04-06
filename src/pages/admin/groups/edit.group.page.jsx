@@ -99,6 +99,8 @@ const EditGroupPage = () => {
 
         if (!checkForComplete(sendObject)) return;
 
+        console.log(sendObject);
+
         await store.edit(sendObject);
 
         if (!store.error) {
