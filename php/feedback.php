@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: Origin, Authorization, Content-Type, X-Aut
 $phone = htmlspecialchars($_POST['phone']);
 $text = htmlspecialchars($_POST['message']);
 
-$to = "dssosny@yandex.ru, navat2007@yandex.ru";
+$to = "tbulaeva@detsad43.ru";
 
 $subject = 'Новая заявка на обратный звонок | ' . date('d.m.Y H:i');
 $message = "";
@@ -30,12 +30,11 @@ $message .= '<tr style="box-sizing: border-box;">
 
 $headers = 'MIME-Version: 1.0' . "\r\n";
 $headers .= "Content-type: text/html; charset=utf-8 \r\n";
-$headers .= "From: Support <kindergarden@forest.ru> \r\n";
+$headers .= "From: Support <kindergarden@43ds.ru> \r\n";
 
 $mail_result = mail($to, $subject, $message, $headers);
 
 $content = (object)[
-
     'input_params' => (object)[
         'POST' => $_POST,
         'GET' => $_GET,
@@ -45,6 +44,5 @@ $content = (object)[
     'subject' => $subject,
     'mail_result' => $mail_result,
     'message' => $message,
-
 ];
 echo json_encode($content);
