@@ -12,7 +12,9 @@ import Tab from "../../components/public/tabs/tab.component";
 import News from "../../components/public/news/news";
 import SingleImage from "../../components/general/single.image/single.image.with.preview";
 
-import no_photo from "../../images/no-photo.jpg";
+import mainEmployeePhoto from "../../images/mainEmployee.jpg";
+import mainSlider1 from "../../images/mainSlide1.jpg";
+import mainSlider2 from "../../images/mainSlide2.jpg";
 import { Icons, AdvantagesIcons } from "../../components/svgs";
 
 const IndexPage = () => {
@@ -77,13 +79,13 @@ const IndexPage = () => {
                         >
                             <SplideSlide className='lead__image'>
                                 <img
-                                    src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                    src={mainSlider1}
                                     alt='Описание изображения'
                                 />
                             </SplideSlide>
                             <SplideSlide className='lead__image'>
                                 <img
-                                    src='https://img.goodfon.ru/original/1600x900/7/f4/novyi-god-bokaly-shampanskoe-ukrashenie-lenta-dekor.jpg'
+                                    src={mainSlider2}
                                     alt='Image 2'
                                 />
                             </SplideSlide>
@@ -199,7 +201,7 @@ const IndexPage = () => {
                     <div className='section__wrap page__section-indent section__card bg-color'>
                         <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
-                            <img className='about__image' src={no_photo} alt='Описание фотографии' loading='lazy' />
+                            <img className='about__image' src={mainEmployeePhoto} alt='Описание фотографии' loading='lazy' />
                             <div className='about__content'>
                                 <div className='about__main-info'>
                                     <h3 className='about__title'>
@@ -223,13 +225,13 @@ const IndexPage = () => {
                                         образования).
                                     </p>
                                 </div>
-                                <a
-                                    href='#0'
-                                    className='button button_theme_outline-main button_content_icon-arrow-next'
-                                >
-                                    <span className='button__text'>На страницу учреждения</span>
-                                    <span className='button__icon'>{Icons.arrow_next}</span>
-                                </a>
+                                {/*<a*/}
+                                {/*    href='#0'*/}
+                                {/*    className='button button_theme_outline-main button_content_icon-arrow-next'*/}
+                                {/*>*/}
+                                {/*    <span className='button__text'>На страницу учреждения</span>*/}
+                                {/*    <span className='button__icon'>{Icons.arrow_next}</span>*/}
+                                {/*</a>*/}
                             </div>
                         </div>
                     </div>

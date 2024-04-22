@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { signal } from "@preact/signals-react";
+import {isMobile, BrowserView, MobileView} from 'react-device-detect';
 import classNames from "classnames";
 
 import useWindowSize from "../../../hook/useWindowSize";
@@ -42,6 +43,7 @@ const Header = () => {
     });
 
     React.useLayoutEffect(() => {
+        setMobileMenuOpened(false);
         setBurgerOpened(false);
     }, [location]);
 
@@ -74,8 +76,8 @@ const Header = () => {
             Object.values(menuList.current.childNodes).reduce((total, children) => total + children.offsetWidth, 0) +
             offset;
 
-        console.log("availableSpace: ", availableSpace);
-        console.log("requiredSpace: ", requiredSpace);
+        //console.log("availableSpace: ", availableSpace);
+        //console.log("requiredSpace: ", requiredSpace);
 
         if (requiredSpace > availableSpace) {
             for (let i = menuList.current.childNodes.length - 1; i >= 0; i--) {
@@ -101,6 +103,11 @@ const Header = () => {
         menuItems.value = menuStore.value.sorted;
     }, [menuStore.value]);
 
+    React.useEffect(() => {
+        if(mobileMenuOpened && isMobile)
+            setBurgerOpened(burgerOpened);
+    }, [mobileMenuOpened]);
+
     return (
         <motion.header
             ref={stickyHeader}
@@ -119,41 +126,52 @@ const Header = () => {
                         menu_opened: mobileMenuOpened,
                     })}
                 >
-                    <ul className={`menu__list`} ref={menuList}>
-                        <DropdownMenu items={menuItems.value} />
-                        <li
-                            className={classNames({
-                                submenu: true,
-                                submenu_opened: burgerOpened,
-                            })}
-                            ref={mobileMenu}
-                            data-level='1'
-                        >
-                            <button
-                                ref={button}
+                    <BrowserView>
+                        <ul className={`menu__list`} ref={menuList}>
+                            <DropdownMenu items={menuItems.value} />
+                            <li
                                 className={classNames({
-                                    "menu__link submenu__button": true,
-                                    submenu__button_actived: burgerOpened,
+                                    submenu: true,
+                                    submenu_opened: burgerOpened,
                                 })}
-                                type='button'
-                                aria-label='Развернуть список'
-                                onClick={() => {
-                                    setBurgerOpened(!burgerOpened);
-                                }}
+                                ref={mobileMenu}
+                                data-level='1'
                             >
-                                <span className='submenu__button-text'>Еще</span>
-                                <span className='submenu__button-icon'>{Icons.chevron_down}</span>
-                            </button>
-                            <div className='submenu__wrap'>
-                                <div className='submenu__top-list-container' ref={node}>
-                                    <p className='submenu__title'>Меню</p>
-                                    <ul className='submenu__top-list' ref={mobileMenuList}>
-                                        <DropdownMenu items={menuMobileItems.value} level={2} />
-                                    </ul>
+                                {
+                                    menuMobileItems.value.length > 0
+                                    &&
+                                    <button
+                                        ref={button}
+                                        className={classNames({
+                                            "menu__link submenu__button": true,
+                                            submenu__button_actived: burgerOpened,
+                                        })}
+                                        type='button'
+                                        aria-label='Развернуть список'
+                                        onClick={() => {
+                                            setBurgerOpened(!burgerOpened);
+                                        }}
+                                    >
+                                        <span className='submenu__button-text'>Еще</span>
+                                        <span className='submenu__button-icon'>{Icons.chevron_down}</span>
+                                    </button>
+                                }
+                                <div className='submenu__wrap'>
+                                    <div className='submenu__top-list-container' ref={node}>
+                                        <p className='submenu__title'>Меню</p>
+                                        <ul className='submenu__top-list' ref={mobileMenuList}>
+                                            <DropdownMenu items={menuMobileItems.value} level={2} />
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </BrowserView>
+                    <MobileView>
+                        <ul className={`menu__list`} ref={menuList}>
+                            <DropdownMenu items={menuItems.value.length > 0 ? menuItems.value : menuMobileItems.value} />
+                        </ul>
+                    </MobileView>
                 </menu>
                 <div className='header__panel'>
                     <SocialGroup />
