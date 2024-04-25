@@ -60,10 +60,13 @@ const IndexPage = () => {
                                     творчества и познания.
                                 </p>
                             </div>
-                            <a href='#0' className='button button_theme_outline-white button_content_icon-arrow-next'>
-                                <span className='button__text'>Об учреждении</span>
+                            <NavLink
+                                to='/набор-и-условия-приёма'
+                                className='button button_theme_outline-white button_content_icon-arrow-next'
+                            >
+                                <span className='button__text'>Набор и условия приема</span>
                                 <span className='button__icon'>{Icons.arrow_next}</span>
-                            </a>
+                            </NavLink>
                         </div>
                         <Splide
                             aria-label='Фотографии детского садика'
