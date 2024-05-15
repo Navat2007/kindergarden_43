@@ -12,7 +12,7 @@ $sql = "DELETE FROM news_images WHERE newsID = '$id'";
 $sqls[] = $sql;
 mysqli_query($conn, $sql);
 
-$sql = "DELETE FROM item WHERE ID = '$id'";
+$sql = "DELETE FROM news WHERE ID = '$id'";
 $sqls[] = $sql;
 mysqli_query($conn, $sql);
 

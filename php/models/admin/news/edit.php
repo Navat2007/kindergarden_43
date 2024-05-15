@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_object($result);
 
     if ($row->title != $title) {
-        $sql = "SELECT * FROM item WHERE title = '$title' AND archive = 0";
+        $sql = "SELECT * FROM news WHERE title = '$title' AND archive = 0";
         $sqls[] = $sql;
         $result = mysqli_query($conn, $sql);
 
@@ -47,7 +47,7 @@ else{
 if ($error === 0) {
 
     $sql = "UPDATE 
-                item
+                news
             SET
                 preview_title = '$previewTitle',
                 title = '$title', 

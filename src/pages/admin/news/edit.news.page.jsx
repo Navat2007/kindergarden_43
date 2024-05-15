@@ -163,7 +163,11 @@ const AdminNewsPage = (props) => {
 
         if (!checkForComplete(sendObject)) return;
 
-        await store.edit(sendObject);
+        console.log(sendObject);
+
+        const result = await store.edit(sendObject);
+
+        console.log(result);
 
         if (!store.error) {
             setPopup(
