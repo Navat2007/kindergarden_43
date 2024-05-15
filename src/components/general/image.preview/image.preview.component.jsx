@@ -16,7 +16,7 @@ const ImagePreview = ({ items, open = false, index = 0, onClose }) => {
     return (
         <div className={`image-preview${open ? ` image-preview_open` : ``}`}>
             <div className='image-preview__panel'>
-                <p className='image-preview__info-text'>1/4</p>
+                <p className='image-preview__info-text'></p>
                 <p className='image-preview__title'>Самое большое описание для картинки</p>
                 <button
                     type='button'
