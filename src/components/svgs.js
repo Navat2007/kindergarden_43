@@ -302,6 +302,11 @@ export const Icons = {
             <path d='M18 13v7H4V6h5.02c.05-.71.22-1.38.48-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-5l-2-2Zm-1.5 5h-11l2.75-3.53 1.96 2.36 2.75-3.54L16.5 18Zm2.8-9.11c.44-.7.7-1.51.7-2.39C20 4.01 17.99 2 15.5 2S11 4.01 11 6.5s2.01 4.5 4.49 4.5c.88 0 1.7-.26 2.39-.7L21 13.42 22.42 12 19.3 8.89ZM15.5 9a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5Z' />
         </svg>
     ),
+    info: (
+        <svg fill='currentColor' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+            <path d='M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z' />
+        </svg>
+    ),
     menu: (
         <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'>
             <path
@@ -328,6 +333,11 @@ export const Icons = {
     search: (
         <svg aria-hidden='true' viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
             <path d='M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z' />
+        </svg>
+    ),
+    success: (
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>
+            <path d='M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' />
         </svg>
     ),
     toolbox: (
