@@ -17,6 +17,19 @@ import mainSlider1 from "../../images/mainSlide1.jpg";
 import mainSlider2 from "../../images/mainSlide2.jpg";
 import { Icons, AdvantagesIcons } from "../../components/svgs";
 
+import sevices__image_01 from "../../images/services__image_01.png";
+import sevices__image_02 from "../../images/services__image_02.png";
+import sevices__image_03 from "../../images/services__image_03.png";
+import sevices__image_04 from "../../images/services__image_04.png";
+import sevices__image_05 from "../../images/services__image_05.png";
+import sevices__image_06 from "../../images/services__image_06.png";
+import gallery__image_01 from "../../images/gallery__image_01.png";
+import gallery__image_02 from "../../images/gallery__image_02.png";
+import gallery__image_03 from "../../images/gallery__image_03.png";
+import gallery__image_04 from "../../images/gallery__image_04.png";
+import gallery__image_05 from "../../images/gallery__image_05.png";
+import gallery__image_06 from "../../images/gallery__image_06.png";
+
 const IndexPage = () => {
     const newsStore = useNewsStore();
     const employeesStore = useEmployeesStore();
@@ -81,16 +94,10 @@ const IndexPage = () => {
                             }}
                         >
                             <SplideSlide className='lead__image'>
-                                <img
-                                    src={mainSlider1}
-                                    alt='Описание изображения'
-                                />
+                                <img src={mainSlider1} alt='Описание изображения' />
                             </SplideSlide>
                             <SplideSlide className='lead__image'>
-                                <img
-                                    src={mainSlider2}
-                                    alt='Image 2'
-                                />
+                                <img src={mainSlider2} alt='Image 2' />
                             </SplideSlide>
                         </Splide>
                     </div>
@@ -204,7 +211,12 @@ const IndexPage = () => {
                     <div className='section__wrap page__section-indent section__card bg-color'>
                         <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
-                            <img className='about__image' src={mainEmployeePhoto} alt='Описание фотографии' loading='lazy' />
+                            <img
+                                className='about__image'
+                                src={mainEmployeePhoto}
+                                alt='Описание фотографии'
+                                loading='lazy'
+                            />
                             <div className='about__content'>
                                 <div className='about__main-info'>
                                     <h3 className='about__title'>
@@ -359,7 +371,7 @@ const IndexPage = () => {
                                 >
                                     <SplideSlide>
                                         <img
-                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            src={sevices__image_01}
                                             alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
                                             loading='lazy'
@@ -367,7 +379,7 @@ const IndexPage = () => {
                                     </SplideSlide>
                                     <SplideSlide>
                                         <img
-                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            src={sevices__image_02}
                                             alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
                                             loading='lazy'
@@ -375,7 +387,7 @@ const IndexPage = () => {
                                     </SplideSlide>
                                     <SplideSlide>
                                         <img
-                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            src={sevices__image_03}
                                             alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
                                             loading='lazy'
@@ -452,21 +464,21 @@ const IndexPage = () => {
                                 >
                                     <SplideSlide>
                                         <img
-                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            src={sevices__image_04}
                                             alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
                                         />
                                     </SplideSlide>
                                     <SplideSlide>
                                         <img
-                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            src={sevices__image_05}
                                             alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
                                         />
                                     </SplideSlide>
                                     <SplideSlide>
                                         <img
-                                            src='https://darfix.ru/wp-content/uploads/8/3/b/83bad5381b0ffc4afb6fbf3a8b12b6e0.jpeg'
+                                            src={sevices__image_06}
                                             alt='Описание изображения'
                                             className='corner-rounded corner-rounded_size_lg'
                                         />
@@ -762,7 +774,7 @@ const IndexPage = () => {
                             <li>
                                 <img
                                     className='gallery__image'
-                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    src={gallery__image_01}
                                     alt='Описание фотографии'
                                     loading='lazy'
                                 />
@@ -770,7 +782,7 @@ const IndexPage = () => {
                             <li>
                                 <img
                                     className='gallery__image'
-                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    src={gallery__image_02}
                                     alt='Описание фотографии'
                                     loading='lazy'
                                 />
@@ -778,7 +790,7 @@ const IndexPage = () => {
                             <li>
                                 <img
                                     className='gallery__image'
-                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    src={gallery__image_03}
                                     alt='Описание фотографии'
                                     loading='lazy'
                                 />
@@ -786,7 +798,7 @@ const IndexPage = () => {
                             <li>
                                 <img
                                     className='gallery__image'
-                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    src={gallery__image_04}
                                     alt='Описание фотографии'
                                     loading='lazy'
                                 />
@@ -794,7 +806,7 @@ const IndexPage = () => {
                             <li>
                                 <img
                                     className='gallery__image'
-                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    src={gallery__image_05}
                                     alt='Описание фотографии'
                                     loading='lazy'
                                 />
@@ -802,7 +814,7 @@ const IndexPage = () => {
                             <li>
                                 <img
                                     className='gallery__image'
-                                    src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
+                                    src={gallery__image_06}
                                     alt='Описание фотографии'
                                     loading='lazy'
                                 />
