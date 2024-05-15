@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import createDOMPurify from "dompurify";
 
 import useNewsStore from "../../store/public/newsStore";
 import useEmployeesStore from "../../store/public/employeesStore";
@@ -29,8 +30,13 @@ import gallery__image_03 from "../../images/gallery__image_03.png";
 import gallery__image_04 from "../../images/gallery__image_04.png";
 import gallery__image_05 from "../../images/gallery__image_05.png";
 import gallery__image_06 from "../../images/gallery__image_06.png";
+import SingleImageWithPreview from "../../components/general/single.image.with.preview/single.image.with.preview";
+import moment from "moment/moment";
+
 
 const IndexPage = () => {
+    const DOMPurify = createDOMPurify(window);
+
     const newsStore = useNewsStore();
     const employeesStore = useEmployeesStore();
 
@@ -566,173 +572,51 @@ const IndexPage = () => {
                     </div>
                 </section>
                 {/* Наши новости */}
-                <section className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
-                    <div className='section__wrap'>
-                        <div className='section__title-block section__title-block_theme_white'>
-                            <h2 className='section__title section__title_with-decor'>Наши новости</h2>
-                            <a href='#0' className='button button_theme_outline-white button_content_icon-arrow-next'>
-                                <span className='button__text'>Новости</span>
-                                <span className='button__icon'>{Icons.arrow_next}</span>
-                            </a>
+                {
+                    newsStore.itemsMain.length > 0
+                    &&
+                    <section className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
+                        <div className='section__wrap'>
+                            <div className='section__title-block section__title-block_theme_white'>
+                                <h2 className='section__title section__title_with-decor'>Наши новости</h2>
+                                <NavLink className={"button button_theme_outline-white button_content_icon-arrow-next"} to='/новости'>
+                                    <span className='button__text'>Новости</span>
+                                    <span className='button__icon'>{Icons.arrow_next}</span>
+                                </NavLink>
+                            </div>
+                            <ul className='news__card-deck'>
+                                {newsStore.itemsMain.map((item) => {
+                                    return (
+                                        <li key={item.ID}>
+                                            <NavLink className={"card-link"} to={"/новости/" + item.ID}>
+                                                <article className='card card_type_article'>
+                                                    <SingleImageWithPreview
+                                                        image={item.preview_image}
+                                                        extraClass={"card__image"}
+                                                    />
+                                                    <div className='card__content'>
+                                                        <div className='card__title-block'>
+                                                            <time dateTime={item.date} className='card__date'>
+                                                                {moment(item.date).format("DD.MM.YYYY")}
+                                                            </time>
+                                                            <h3 className='card__title'>{item.preview_title}</h3>
+                                                        </div>
+                                                        <div
+                                                            className='card__main-content'
+                                                            dangerouslySetInnerHTML={{
+                                                                __html: DOMPurify.sanitize(item.preview_text),
+                                                            }}
+                                                        />
+                                                    </div>
+                                                </article>
+                                            </NavLink>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
                         </div>
-                        <ul className='news__card-deck'>
-                            <li>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article'>
-                                        <img
-                                            className='card__image'
-                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <div className='card__content'>
-                                            <div className='card__title-block'>
-                                                <time className='card__date' dateTime='2022-02-01'>
-                                                    01.08.23г.
-                                                </time>
-                                                <h3 className='card__title'>Открытие нашего сада!</h3>
-                                            </div>
-                                            <div className='card__main-content'>
-                                                <p className='card__text'>
-                                                    НАШ детский сад открыл двери для своих воспитанников!
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article'>
-                                        <img
-                                            className='card__image'
-                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <div className='card__content'>
-                                            <div className='card__title-block'>
-                                                <time className='card__date' dateTime='2022-02-01'>
-                                                    31.07.23г.
-                                                </time>
-                                                <h3 className='card__title'>
-                                                    Открытие ФГБДОУ «Центр развития ребёнка — детский сад № 43»
-                                                </h3>
-                                            </div>
-                                            <div className='card__main-content'>
-                                                <p className='card__text'></p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article'>
-                                        <img
-                                            className='card__image'
-                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <div className='card__content'>
-                                            <div className='card__title-block'>
-                                                <time className='card__date' dateTime='2022-02-01'>
-                                                    01.09.23г.
-                                                </time>
-                                                <h3 className='card__title'>
-                                                    График проведения выпускных утренников в нашем детском саду График
-                                                    проведения выпускных утренников в нашем детском саду
-                                                </h3>
-                                            </div>
-                                            <div className='card__main-content'>
-                                                <p className='card__text'>
-                                                    НАШ детский сад открыл двери для своих воспитанников! НАШ детский
-                                                    сад открыл двери для своих воспитанников! НАШ детский сад открыл
-                                                    двери для своих воспитанников!
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article'>
-                                        <img
-                                            className='card__image'
-                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <div className='card__content'>
-                                            <div className='card__title-block'>
-                                                <time className='card__date' dateTime='2022-02-01'>
-                                                    02.05.23г.
-                                                </time>
-                                                <h3 className='card__title'>День Победы 2023 год</h3>
-                                            </div>
-                                            <div className='card__main-content'>
-                                                <p className='card__text'>Мы помним! Мы гордимся!</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article'>
-                                        <img
-                                            className='card__image'
-                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <div className='card__content'>
-                                            <div className='card__title-block'>
-                                                <time className='card__date' dateTime='2022-02-01'>
-                                                    17.02.23г.
-                                                </time>
-                                                <h3 className='card__title'>Масленица 2023 год</h3>
-                                            </div>
-                                            <div className='card__main-content'>
-                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#0' rel='noreferrer noopener ugs' className='card-link'>
-                                    <article className='card card_type_article'>
-                                        <img
-                                            className='card__image'
-                                            src='https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663411385_5-mykaleidoscope-ru-p-portugaliya-azorskie-ostrova-krasivo-5.jpg'
-                                            alt='Описание фотографии'
-                                            loading='lazy'
-                                        />
-                                        <div className='card__content'>
-                                            <div className='card__title-block'>
-                                                <time className='card__date' dateTime='2022-02-01'>
-                                                    17.02.23г.
-                                                </time>
-                                                <h3 className='card__title'>Масленица 2023 год</h3>
-                                            </div>
-                                            <div className='card__main-content'>
-                                                <p className='card__text'>Сегодня блины, а завтра весна!</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <News items={newsStore.itemsMain}>
-                    <NavLink className={"more-button-link"} to='/новости'>
-                        Все новости &rarr;
-                    </NavLink>
-                </News>
+                    </section>
+                }
                 {/* Почему нас выбирают */}
                 <section className='why page__section-indent section blobs'>
                     <div

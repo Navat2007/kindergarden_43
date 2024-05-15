@@ -11,7 +11,7 @@ $sql = "SELECT
         news as item
     WHERE 
         item.archive = '0' AND item.active = '1' AND item.show_on_main_page = '1' AND item.date <= NOW()
-    ORDER BY item.date DESC LIMIT 4";
+    ORDER BY item.date DESC LIMIT 6";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
