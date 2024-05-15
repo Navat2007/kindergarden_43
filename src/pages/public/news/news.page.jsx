@@ -56,22 +56,22 @@ const NewsPage = () => {
             >
                 <div className='section__wrap'>
                     <h1 className='section__title section__title_with-decor'>{store?.item?.title}</h1>
+                    <time dateTime={store?.item?.date} className='section__caption'>
+                        {moment(store?.item?.date).format("DD.MM.YYYY")}
+                    </time>
+                    {store?.item?.image && (
+                        <SingleImageWithPreview image={store.item.image} extraClass={"section__article-image"} />
+                    )}
+                    <div
+                        className='section__main-text section__main-text_wide'
+                        dangerouslySetInnerHTML={{
+                            __html: DOMPurify.sanitize(store?.item?.text),
+                        }}
+                    />
+                    {store?.item?.images?.length > 0 && (
+                        <ImageGallery extraClass={"section__card-deck"} items={store.item.images} />
+                    )}
                 </div>
-                <time dateTime={store?.item?.date} className='section__caption'>
-                    {moment(store?.item?.date).format("DD.MM.YYYY")}
-                </time>
-                {store?.item?.image && (
-                    <SingleImageWithPreview image={store.item.image} extraClass={"section__article-image"} />
-                )}
-                <div
-                    className='section__main-text section__main-text_wide'
-                    dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(store?.item?.text),
-                    }}
-                />
-                {store?.item?.images?.length > 0 && (
-                    <ImageGallery extraClass={"section__card-deck"} items={store.item.images} />
-                )}
             </motion.section>
         </BasicPage>
     );
