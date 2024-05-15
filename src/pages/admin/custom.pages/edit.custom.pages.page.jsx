@@ -124,8 +124,6 @@ const EditCustomPagesPage = () => {
 
         const response = await store.edit(sendObject);
 
-        console.log(response);
-
         if (response.error === 0) {
             setPopup(
                 <AlertPopup

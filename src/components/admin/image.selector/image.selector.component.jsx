@@ -99,8 +99,6 @@ const ImageSelector = ({
                 }
             })
             .catch((err) => {
-                //console.log(err);
-
                 if (onError) onError("Не удалось загрузить изображение по ссылке");
                 else
                     setNotif(
@@ -204,8 +202,6 @@ const ImageSelector = ({
     };
 
     const handleDeletePhoto = (itemElement) => {
-        //console.log(itemElement);
-
         if (itemElement.isLoaded === 1) {
             setNotif(
                 <AlertPopup

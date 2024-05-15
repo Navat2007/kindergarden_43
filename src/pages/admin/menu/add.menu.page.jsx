@@ -27,8 +27,6 @@ const AddMenuPage = () => {
 
     React.useEffect(() => {
         store.loadAll(undefined, undefined, false);
-        console.log(id);
-        console.log(sorting);
         reset();
     }, []);
 
