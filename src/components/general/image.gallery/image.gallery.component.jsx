@@ -24,7 +24,9 @@ const ImageGallery = ({ extraClass, title, orientation = "landsape", items, fron
                 {items.map((item, index) => (
                     <li
                         key={index}
-                        className={`image-gallery__item${extraClass ? ` ${extraClass}-item` : ``}`}
+                        className={`image-gallery__item${extraClass ? ` ${extraClass}-item` : ``}${
+                            orientation === "square" ? ` image-gallery__item_square` : ``
+                        }`}
                         onClick={() => handleOpenPreview(index)}
                     >
                         <img

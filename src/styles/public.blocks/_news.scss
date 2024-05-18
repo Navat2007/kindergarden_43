@@ -13,8 +13,10 @@
                 grid-row: span 5;
                 .card_type_article {
                     .card__image {
-                        aspect-ratio: unset;
+                        // aspect-ratio: unset;
                         flex: auto;
+                        object-fit: contain;
+                        background-color: var(--main-light-color);
                     }
 
                     .card__title-block {

@@ -50,7 +50,7 @@ const ImagePreview = ({ items, open = false, index = 0, onClose }) => {
                     <SplideSlide key={index}>
                         {/* При клике добавь, чтобы добавлялся модификатор image-preview__image_fullsize, это позволит картинку показать всю, если она была контейнером скрыта. */}
                         <img
-                            className='image-preview__image'
+                            className='image-preview__image image-preview__image_fullsize'
                             src={item.url.includes("http") ? item.url : process.env.REACT_APP_BASE_URL + item.url}
                             alt={item.url}
                         />

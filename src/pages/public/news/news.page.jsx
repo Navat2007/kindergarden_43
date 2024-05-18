@@ -71,7 +71,7 @@ const NewsPage = () => {
                     />
                     <br/>
                     {store?.item?.images?.length > 0 && (
-                        <ImageGallery extraClass={"section__card-deck"} items={store.item.images} />
+                        <ImageGallery extraClass={"section__card-deck"} orientation="square" items={store.item.images} />
                     )}
                 </div>
             </motion.section>
