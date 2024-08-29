@@ -36,7 +36,7 @@ const GroupsPage = () => {
             </Helmet>
             <section className='about about_contain_inner'>
                 <h1 className='main-title'>
-                    ФГБДОУ &laquo;Центр развития ребенка&nbsp;&mdash; детский сад &laquo;Сосны&raquo;
+                    Прогимназия 43
                 </h1>
                 <div className='about__column'>
                     <div className='about__text'>

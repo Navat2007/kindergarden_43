@@ -54,3 +54,7 @@ iframe {
     clip-path: inset(50%);
     white-space: nowrap;
 }
+
+.--hide{
+    display: none;
+}

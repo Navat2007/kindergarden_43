@@ -1,7 +1,7 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import { NavLink } from "react-router-dom";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import {Helmet} from "react-helmet";
+import {NavLink} from "react-router-dom";
+import {Splide, SplideSlide} from "@splidejs/react-splide";
 import createDOMPurify from "dompurify";
 
 import useNewsStore from "../../store/public/newsStore";
@@ -16,7 +16,7 @@ import SingleImage from "../../components/general/single.image/single.image.with
 import mainEmployeePhoto from "../../images/mainEmployee.jpg";
 import mainSlider1 from "../../images/mainSlide1.jpg";
 import mainSlider2 from "../../images/mainSlide2.jpg";
-import { Icons, AdvantagesIcons } from "../../components/svgs";
+import {Icons, AdvantagesIcons} from "../../components/svgs";
 
 import sevices__image_01 from "../../images/services__image_01.png";
 import sevices__image_02 from "../../images/services__image_02.png";
@@ -32,7 +32,7 @@ import gallery__image_05 from "../../images/gallery__image_05.png";
 import gallery__image_06 from "../../images/gallery__image_06.png";
 import SingleImageWithPreview from "../../components/general/single.image.with.preview/single.image.with.preview";
 import moment from "moment/moment";
-
+import ServiceCard from "../../components/public/service.card/service.card";
 
 const IndexPage = () => {
     const DOMPurify = createDOMPurify(window);
@@ -52,7 +52,7 @@ const IndexPage = () => {
     return (
         <BasicPage>
             <Helmet>
-                <title>Детский сад № 43 УДПРФ</title>
+                <title>Прогимназия № 43</title>
             </Helmet>
             <main className='page__content'>
                 {/* Главный баннер со слайдером */}
@@ -67,8 +67,7 @@ const IndexPage = () => {
                     ></div>
                     <div className='lead__columns section__wrap'>
                         <div className='lead__column'>
-                            <p className='lead__subtitle'>Центр развития ребёнка</p>
-                            <h1 className='lead__title'>Детский сад № 43</h1>
+                            <h1 className='lead__title'>Прогимназия № 43</h1>
                             <div className='lead__main-text'>
                                 <p>
                                     Мы осуществляем качественное воспитание и обучение детей благодаря подбору
@@ -100,10 +99,10 @@ const IndexPage = () => {
                             }}
                         >
                             <SplideSlide className='lead__image'>
-                                <img src={mainSlider1} alt='Описание изображения' />
+                                <img src={mainSlider1} alt='Описание изображения'/>
                             </SplideSlide>
                             <SplideSlide className='lead__image'>
-                                <img src={mainSlider2} alt='Image 2' />
+                                <img src={mainSlider2} alt='Image 2'/>
                             </SplideSlide>
                         </Splide>
                     </div>
@@ -213,7 +212,7 @@ const IndexPage = () => {
                     </div>
                 </section>
                 {/* Об учреждении */}
-                <section className='section about'>
+                <section className='section about --hide'>
                     <div className='section__wrap page__section-indent section__card bg-color'>
                         <h2 className='section__title section__title_with-decor'>Об учреждении</h2>
                         <div className='about__two-columns'>
@@ -234,7 +233,7 @@ const IndexPage = () => {
                                 </div>
                                 <div className='about__main-text'>
                                     <p>
-                                        ФГБДОУ "Центр развития ребенка - детский сад № 43" Управления делами Президента
+                                        Прогимназия 43 Управления делами Президента
                                         Российской Федерации расположен в экологически чистом Западном районе г. Москвы.
                                     </p>
                                     <p>
@@ -269,91 +268,33 @@ const IndexPage = () => {
                         </div>
                     </div>
                     <Tabs>
-                        <Tab title='Образовательные услуги'>
+                        <Tab title='Образовательные программы НОО'>
                             <div className='services__content'>
                                 <ul className='services__list section__wrap'>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.teaching}</span>
-                                            <span className='text-item__text'>Обучение грамоте</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.growth}</span>
-                                            <span className='text-item__text'>Ранее развитие (с 1,6лет)</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.art}</span>
-                                            <span className='text-item__text'>Изостудия</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.sensorics}</span>
-                                            <span className='text-item__text'>Сенсорика</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.math}</span>
-                                            <span className='text-item__text'>Математика</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.brain}</span>
-                                            <span className='text-item__text'>Логика</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.music_v2}</span>
-                                            <span className='text-item__text'>Музыка, пение</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.dance}</span>
-                                            <span className='text-item__text'>Музыкально-ритмические движения</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.lego}</span>
-                                            <span className='text-item__text'>Конструирование</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.horeography}</span>
-                                            <span className='text-item__text'>Хореография</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.logoped}</span>
-                                            <span className='text-item__text'>Занятия с логопедом</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.ecology}</span>
-                                            <span className='text-item__text'>Экология</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.multy_studio}</span>
-                                            <span className='text-item__text'>Мультстудия</span>
-                                        </p>
-                                    </li>
+                                    <ServiceCard title={"Рабочая программа труд (технология)"}
+                                                 link={"https://43ds.ru//files/mediaFiles/86/ee80fab2-6e81-4f76-a35b-0d4c95a2b342/Рабочая%20программа%20труд%20(технология).pdf"}/>
+                                    <ServiceCard title={"Рабочая программа по окружающему миру"}
+                                                 link={"https://43ds.ru//files/mediaFiles/87/166949b8-ce06-4eeb-8cbe-eef9f2f4913c/Рабочая%20программа%20по%20окружающему%20миру.pdf"}/>
+                                    <ServiceCard title={"Рабочая программа русский язык"}
+                                                 link={"https://43ds.ru//files/mediaFiles/88/2317672d-0d5a-4a1b-b2ed-4ad6ab7e4fc2/Рабочая%20программа%20русский%20язык.pdf"}/>
+                                    <ServiceCard title={"Рабочая программа по физической культуре"}
+                                                 link={"https://43ds.ru//files/mediaFiles/89/766a7297-8e69-4c6c-8f44-f61a197afc8f/Рабочая%20программа%20по%20физической%20культуре.pdf"}/>
+                                    <ServiceCard title={"Рабочая программа ОРКСЭ"}
+                                                 link={"https://43ds.ru//files/mediaFiles/90/e138d6d7-9d72-4de5-9670-e11830f053e1/Рабочая%20программа%20ОРКСЭ.pdf"}/>
+                                    <ServiceCard title={"Рабочая программа математика (ФОП)"}
+                                                 link={"https://43ds.ru//files/mediaFiles/91/4c72d6c6-2f1d-4e54-876e-9897f4d71ad3/Рабочая%20программа%20математика%20(ФОП).pdf"}/>
+                                    <ServiceCard title={"Рабочая программа литературное чтение"}
+                                                 link={"https://43ds.ru//files/mediaFiles/92/84157d4f-5483-4c91-af87-8855fbc73ee1/Рабочая%20программа%20литературное%20чтение.pdf"}/>
+                                    <ServiceCard title={"Рабочая программа иностранный язык (ФОП)"}
+                                                 link={"https://43ds.ru//files/mediaFiles/93/2704efce-cbdc-4d8a-9172-a0a258e36bc3/Рабочая%20программа%20иностранный%20язык%20(ФОП).pdf"}/>
+                                    <ServiceCard title={"Рабочая программа ИЗО (ФОП)"}
+                                                 link={"https://43ds.ru//files/mediaFiles/94/5dd84e89-6026-452d-af03-95f938723615/Рабочая%20программа%20ИЗО%20(ФОП).pdf"}/>
+                                    <ServiceCard title={"Рабочая программа музыка (ФОП)"}
+                                                 link={"https://43ds.ru//files/mediaFiles/95/22bad82c-7763-4a40-9abc-743c557e6d23/Рабочая%20программа%20музыка%20(ФОП).pdf"}/>
                                 </ul>
                                 <Splide
-                                    className='splide splide_size_wide splide_type_bottom-carousel'
-                                    aria-label='Фотографии детского садика'
+                                    className='splide splide_size_wide splide_type_bottom-carousel --hide'
+                                    aria-label='Фотографии'
                                     options={{
                                         type: "loop",
                                         cloneStatus: false,
@@ -402,54 +343,31 @@ const IndexPage = () => {
                                 </Splide>
                             </div>
                         </Tab>
-                        <Tab title='Оздоровительные услуги'>
+                        <Tab title='Дополнительные образовательные программы ДО'>
                             <div className='services__content'>
                                 <ul className='services__list section__wrap'>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.fitness_v4}</span>
-                                            <span className='text-item__text'>Физкультурные занятий</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.fitness_v5}</span>
-                                            <span className='text-item__text'>Занятия на свежем воздухе</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.pool}</span>
-                                            <span className='text-item__text'>Бассеин</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.sun}</span>
-                                            <span className='text-item__text'>Утренняя гимнастика</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.fitness}</span>
-                                            <span className='text-item__text'>Оздоровительная гимнастика</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.fitness_v3}</span>
-                                            <span className='text-item__text'>Корригирующая гимнастика</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className='text-item services__item'>
-                                            <span className='text-item__icon'>{AdvantagesIcons.checkers}</span>
-                                            <span className='text-item__text'>Шашки</span>
-                                        </p>
-                                    </li>
+                                    <ServiceCard
+                                        title={"Рабочая программа мультстудии"}
+                                        link={"https://43ds.ru//files/mediaFiles/77/17a0fbe1-468a-447e-9c50-79f25bcf8232/программа%20мультстудии.pdf"}/>
+                                    <ServiceCard
+                                        title={"Рабочая программа творческой мастерской"}
+                                        link={"https://43ds.ru//files/mediaFiles/78/2ce454a6-bfbb-41c7-a4b3-992bf20fd2dc/Программа%20творческой%20мастерской.pdf"}
+                                    />
+                                    <ServiceCard
+                                        title={"Рабочая программа ОФП̆"}
+                                        link={"https://43ds.ru//files/mediaFiles/79/dbb0c6a0-4155-45a3-ace0-d722298463fb/Программа%20ОФП.pdf"}
+                                    />
+                                    <ServiceCard
+                                        title={"Рабочая программа по тхэквондо"}
+                                        link={"https://43ds.ru//files/mediaFiles/110/b1163726-a532-444f-a736-35a902c3b7b0/Рабочая%20программа%20по%20тхэквондо.pdf"}
+                                    />
+                                    <ServiceCard
+                                        title={"Рабочая программа шашки"}
+                                        link={"https://43ds.ru//files/mediaFiles/111/e3634853-f4f0-4249-a335-9914d5e0f3d2/Рабочая%20программа%20шашки.pdf"}
+                                    />
                                 </ul>
                                 <Splide
-                                    className='splide splide_size_wide splide_type_bottom-carousel'
+                                    className='splide splide_size_wide splide_type_bottom-carousel --hide'
                                     aria-label='Фотографии детского садика'
                                     options={{
                                         type: "loop",
@@ -492,9 +410,20 @@ const IndexPage = () => {
                                 </Splide>
                             </div>
                         </Tab>
+                        <Tab title='Дополнительные образовательные программы ДО НОО'>
+                            <div className='services__content'>
+                                <ul className='services__list section__wrap'>
+                                    <ServiceCard title={"Изо студия рабочая программа"} link={"https://43ds.ru//files/mediaFiles/80/9df6a24c-7ac1-4bb0-8a49-948e08350df4/ИЗО%20СТУДИЯ%20рабочая%20программа.pdf"}/>
+                                    <ServiceCard title={"Робототехника рабочая программа"} link={"https://43ds.ru//files/mediaFiles/81/2511c3f8-2276-43bb-ba77-39c6db0d3535/РОБОТОТЕХНИКА%20рабочая%20программа.pdf"}/>
+                                    <ServiceCard title={"Современный танец рабочая программа"} link={"https://43ds.ru//files/mediaFiles/82/76162f0e-b58b-4f5b-b77e-04a25ee62923/СОВРЕМЕННЫЙ%20ТАНЕЦ%20рабочая%20программа.pdf"}/>
+                                    <ServiceCard title={"Театральная студия рабочая программа"} link={"https://43ds.ru//files/mediaFiles/83/c434ea80-4a04-418b-bd55-de8f2381e04b/ТЕАТРАЛЬНАЯ%20СТУДИЯ%20рабочая%20программа.pdf"}/>
+                                    <ServiceCard title={"Шахматы рабочая программа"} link={"https://43ds.ru//files/mediaFiles/84/ddbac00e-3b1d-4f57-8d93-adeec7cf29d4/ШАХМАТЫ%20рабочая%20программа.pdf"}/>
+                                </ul>
+                            </div>
+                        </Tab>
                     </Tabs>
                 </section>
-                {/* Наш коллектив */}
+                {/* Наш коллектив */}
                 <section className='section page__section-indent'>
                     <div className='section__wrap'>
                         <div className='section__title-block'>
@@ -550,7 +479,7 @@ const IndexPage = () => {
                                     <SplideSlide key={window.global.makeid()}>
                                         <NavLink to={`/сотрудники/${person.ID}`} className='card-link'>
                                             <article className='card card_type_people'>
-                                                <SingleImage image={person.photo} extraClass={"card__image"} />
+                                                <SingleImage image={person.photo} extraClass={"card__image"}/>
                                                 <div className='card__content'>
                                                     <h3 className='card__title'>
                                                         <span className='card__title-accent'>
@@ -575,11 +504,13 @@ const IndexPage = () => {
                 {
                     newsStore.itemsMain.length > 0
                     &&
-                    <section className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
+                    <section
+                        className='news page__section-indent section wave-decor wave-decor_place_top wave-decor_place_bottom bg-color bg-color_main-gradient'>
                         <div className='section__wrap'>
                             <div className='section__title-block section__title-block_theme_white'>
                                 <h2 className='section__title section__title_with-decor'>Наши новости</h2>
-                                <NavLink className={"button button_theme_outline-white button_content_icon-arrow-next"} to='/новости'>
+                                <NavLink className={"button button_theme_outline-white button_content_icon-arrow-next"}
+                                         to='/новости'>
                                     <span className='button__text'>Новости</span>
                                     <span className='button__icon'>{Icons.arrow_next}</span>
                                 </NavLink>
@@ -864,7 +795,7 @@ const IndexPage = () => {
                                             </div>
                                             <div className='card__main-text'>
                                                 <p className='card__text'>
-                                                    «Мой ребёнок с удовольствием идёт в детский сад» – фраза, которую
+                                                    «Мой ребёнок с удовольствием идёт в Прогимназию 43» – фраза, которую
                                                     мечтает сказать каждая мама. Нам повезло, мы можем произнести эти
                                                     слова.Каждый родитель знает, насколько волнующим и нервным может
                                                     быть период адаптации! Наши уже любимые и прекрасные Прыгункова

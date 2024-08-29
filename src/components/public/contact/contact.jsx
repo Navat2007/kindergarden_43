@@ -61,7 +61,7 @@ const Contact = ({ place = "landing" }) => {
                             <Placemark
                                 geometry={[55.740882, 37.399416]}
                                 properties={{
-                                    iconContent: "Детский сад № 43 УДПРФ",
+                                    iconContent: "Прогимназия 43",
                                 }}
                                 options={{ preset: "islands#blueStretchyIcon" }}
                             />
@@ -82,7 +82,7 @@ const Contact = ({ place = "landing" }) => {
                         <Placemark
                             geometry={[55.740882, 37.399416]}
                             properties={{
-                                iconContent: "Детский сад № 43 УДПРФ",
+                                iconContent: "Прогимназия 43",
                             }}
                             options={{ preset: "islands#blueStretchyIcon" }}
                         />
