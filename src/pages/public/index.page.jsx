@@ -14,7 +14,7 @@ import News from "../../components/public/news/news";
 import SingleImage from "../../components/general/single.image/single.image.with.preview";
 
 import mainEmployeePhoto from "../../images/mainEmployee.jpg";
-import mainSlider1 from "../../images/mainSlide1.jpg";
+import mainSlider1 from "../../images/progimn.jpg";
 import mainSlider2 from "../../images/mainSlide2.jpg";
 import {Icons, AdvantagesIcons} from "../../components/svgs";
 
@@ -74,8 +74,7 @@ const IndexPage = () => {
                                     квалифицированных педагогов и использованию инновационных эффективных методик.
                                 </p>
                                 <p>
-                                    Мы успешно создаём в детском саду атмосферу дома, мира удивительных открытий, мира
-                                    творчества и познания.
+                                    Мы успешно создаём атмосферу дома, мира удивительных открытий, мира творчества и познания.
                                 </p>
                             </div>
                             <NavLink
@@ -87,7 +86,7 @@ const IndexPage = () => {
                             </NavLink>
                         </div>
                         <Splide
-                            aria-label='Фотографии детского садика'
+                            aria-label='Фотографии'
                             options={{
                                 type: "fade",
                                 rewind: true,
@@ -161,7 +160,8 @@ const IndexPage = () => {
                                         {AdvantagesIcons.baby}
                                     </span>
                                     <span className='text-item__text'>
-                                        Возраст детей: <span className='text-item__text-accent'>с 1,6 до 7 лет</span>
+                                        Дошкольное отделение: <span
+                                        className='text-item__text-accent'>с 1,6 до 7 лет</span>
                                     </span>
                                 </p>
                             </li>
@@ -185,6 +185,17 @@ const IndexPage = () => {
                                     </span>
                                     <span className='text-item__text'>
                                         Помещение: <span className='text-item__text-accent'>800 кв.м</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p className='text-item'>
+                                    <span className='text-item__icon advantages__color-item-icon'>
+                                        {AdvantagesIcons.house}
+                                    </span>
+                                    <span className='text-item__text'>
+                                        Школьное отделение: <span
+                                        className='text-item__text-accent'>с 6,6 до 12 лет</span>
                                     </span>
                                 </p>
                             </li>
@@ -237,7 +248,7 @@ const IndexPage = () => {
                                         Российской Федерации расположен в экологически чистом Западном районе г. Москвы.
                                     </p>
                                     <p>
-                                        В детском саду № 43 реализуется уникальная образовательная программа, проводится
+                                        В прогимназии № 43 реализуется уникальная образовательная программа, проводится
                                         качественная подготовка детей к школе, после которой дети с легкостью поступают
                                         в престижные школы. С детьми работают опытные и квалифицированные педагоги
                                         (воспитатели, учителя-логопеды, инструктор по физической культуре, тренер по
@@ -368,7 +379,7 @@ const IndexPage = () => {
                                 </ul>
                                 <Splide
                                     className='splide splide_size_wide splide_type_bottom-carousel --hide'
-                                    aria-label='Фотографии детского садика'
+                                    aria-label='Фотографии'
                                     options={{
                                         type: "loop",
                                         cloneStatus: false,
@@ -437,15 +448,15 @@ const IndexPage = () => {
                             </NavLink>
                             <div className='section__main-text'>
                                 <p>
-                                    В нашем детском саду педагогический штат укомплектован на 100%. В педагогическом
-                                    коллективе 31 педагог: 22 человека из них имеют высшее образование; 9 человек
-                                    среднее профессиональное образование.
+                                    В нашей образовательной организации педагогический штат укомплектован на 100%.
+                                    В педагогическом коллективе 31 педагог: 22 человека из них имеют высшее образование;
+                                    9 человек среднее профессиональное образование.
                                 </p>
                             </div>
                         </div>
                         <Splide
                             className='splide splide_mobile_auto-width splide_indent-block splide_arrows_wide-indent'
-                            aria-label='Фотографии педагогов детского садика'
+                            aria-label='Фотографии педагогов'
                             options={{
                                 type: "loop",
                                 arrowPath:
@@ -702,7 +713,7 @@ const IndexPage = () => {
                         </div>
                         <Splide
                             className='splide splide_mobile_auto-width splide_indent-block splide_pagination_grey splide_arrows_wide-indent'
-                            aria-label='Отзывы родителей о детском садике'
+                            aria-label='Отзывы родителей'
                             options={{
                                 type: "loop",
                                 arrowPath:
