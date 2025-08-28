@@ -354,6 +354,15 @@ const IndexPage = () => {
                                 </Splide>
                             </div>
                         </Tab>
+						<Tab title='Образовательные программы ДО'>
+							<div className='services__content'>
+								<ul className='services__list section__wrap'>
+									<ServiceCard
+										title={"Образовательные программы ДО"}
+										link={"https://43ds.ru/%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"}/>
+								</ul>
+							</div>
+						</Tab>
                         <Tab title='Дополнительные образовательные программы ДО'>
                             <div className='services__content'>
                                 <ul className='services__list section__wrap'>
@@ -435,7 +444,7 @@ const IndexPage = () => {
                     </Tabs>
                 </section>
                 {/* Наш коллектив */}
-                <section className='section page__section-indent'>
+                <section className='section page__section-indent --hide'>
                     <div className='section__wrap'>
                         <div className='section__title-block'>
                             <h2 className='section__title section__title_with-decor'>Наш коллектив</h2>
