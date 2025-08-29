@@ -22,7 +22,7 @@ const Resourses = () => {
                     <h2 className='section__title section__title_with-decor'>Полезные ресурсы</h2>
                     <Splide
                         className='splide splide_indent-block splide_pagination_grey'
-                        aria-label='Отзывы родителей о детском садике'
+                        aria-label='Отзывы родителей'
                         options={{
                             type: "loop",
                             cloneStatus: false,
